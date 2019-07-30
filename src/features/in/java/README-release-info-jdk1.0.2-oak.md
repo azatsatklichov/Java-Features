@@ -6,5 +6,5 @@
  
 
 # Java 1
-# The first version was released on January 23, 1996. The first stable version, JDK 1.0.2, is called Java 1.
+### The first version was released on January 23, 1996. The first stable version, JDK 1.0.2, is called Java 1.
  
