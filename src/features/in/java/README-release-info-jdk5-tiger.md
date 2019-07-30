@@ -1,10 +1,16 @@
+[Open JDK](https://openjdk.java.net/),
+[Specs](https://docs.oracle.com/javase/specs/), 
+[Java Doc](https://docs.oracle.com/en/java/index.html),
+[The Java™ Tutorials](https://docs.oracle.com/javase/tutorial/),
+[JAVA Guide](http://sahet.net/htm/java.html) 
+ 
 
+# Java 5
 Codename Tiger. The release on September 30, 2004 was originally numbered 1.5, which is still used as the internal version number. The number was changed to "better reflect the level of maturity, stability, scalability and security of the J2SE". This version was developed under JSR 176.
-
 J2SE 5.0 entered its end-of-public-updates period on April 8, 2008; updates are no longer available to the public as of November 3, 2009. Updates were available to paid Oracle customers until May 2015.[18]
-
 Tiger added a number of significant new language features:
 
+``````
 - Generics: provides compile-time (static) type safety for collections and eliminates the need for most typecasts (type conversion) (specified by JSR 14)
 - Metadata: also called annotations; allows language constructs such as classes and methods to be tagged with additional data, which can then be processed by metadata-aware utilities (specified by JSR 175)
 - Autoboxing/unboxing: automatic conversions between primitive types (such as int) and primitive wrapper classes (such as Integer) (specified by JSR 201)

@@ -1,3 +1,12 @@
+[Open JDK](https://openjdk.java.net/),
+[Specs](https://docs.oracle.com/javase/specs/), 
+[Java Doc](https://docs.oracle.com/en/java/index.html),
+[The Java™ Tutorials](https://docs.oracle.com/javase/tutorial/),
+[JAVA Guide](http://sahet.net/htm/java.html) 
+ 
+
+# Java 4
+
 Codename Merlin. The February 6, 2002 release was the first release of the Java platform developed under the Java Community Process as JSR 59. Major changes included:
 
 - Language changes

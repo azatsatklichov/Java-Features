@@ -1,7 +1,13 @@
-# Major additions in the release on February 19, 1997 included:
+[Open JDK](https://openjdk.java.net/),
+[Specs](https://docs.oracle.com/javase/specs/), 
+[Java Doc](https://docs.oracle.com/en/java/index.html),
+[The Java™ Tutorials](https://docs.oracle.com/javase/tutorial/),
+[JAVA Guide](http://sahet.net/htm/java.html) 
+ 
 
-[The Java™ Tutorials](https://docs.oracle.com/javase/tutorial/) 
-
+# Java 1.1
+## Major additions in the release on February 19, 1997 included:
+````
 - an extensive retooling of the AWT event model
 - inner classes added to the language
 - JavaBeans
