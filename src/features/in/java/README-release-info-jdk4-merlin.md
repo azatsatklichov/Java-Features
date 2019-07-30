@@ -7,7 +7,7 @@
 
 # Java 4
 
-Codename Merlin. The February 6, 2002 release was the first release of the Java platform developed under the Java Community Process as JSR 59. Major changes included:
+Codename Merlin ([API](https://docs.oracle.com/javase/1.4.2/docs/api/)). The February 6, 2002 release was the first release of the Java platform developed under the Java Community Process as JSR 59. Major changes included:
 
 - Language changes
 - assert keyword (specified in JSR 41)

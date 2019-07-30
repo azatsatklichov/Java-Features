@@ -7,17 +7,20 @@
 
 #Java 5 Features
 [Java SE 5 Documentation](https://docs.oracle.com/javase/1.5.0/docs/), 
+[API](https://docs.oracle.com/javase/1.5.0/docs/api/), 
 [Features](https://www.oracle.com/technetwork/articles/entarch/java-5-features-083037.html)
 
 
 
 #Java 6 Features
-[Java SE 6 Documentation](https://docs.oracle.com/javase/6/docs/), 
+[Java SE 6 Documentation](https://docs.oracle.com/javase/6/docs/),
+[API](https://docs.oracle.com/javase/6/docs/api/),  
 [Open JDK](https://openjdk.java.net/projects/jdk6/)
 
 
 # JavaSE 7 Features
-[Java SE 7 Documentation](https://docs.oracle.com/javase/7/docs/index.html), 
+[Java SE 7 Documentation](https://docs.oracle.com/javase/7/docs/index.html),
+ [API](https://docs.oracle.com/javase/7/docs/api/), 
 [Open JDK](https://openjdk.java.net/projects/jdk7/)
 
 The important features of JavaSE 7 are try with resource, catching multiple exceptions etc.
@@ -30,7 +33,8 @@ The important features of JavaSE 7 are try with resource, catching multiple exce
 
 
 # JavaSE 8 Features (initial release 18-Mar 2014)
-[JDK 8 doc/API](https://docs.oracle.com/javase/8/), 
+[JDK 8 doc](https://docs.oracle.com/javase/8/),
+[API](https://docs.oracle.com/javase/8/docs/api/),  
 [What's New in JDK 8](https://www.oracle.com/technetwork/java/javase/8-whats-new-2157071.html), 
 [Open JDK](https://openjdk.java.net/projects/jdk8/)
 
@@ -71,7 +75,8 @@ The important features of JavaSE 8 are lambda expressions, methods references, d
 
 
 #Java 9 Features
-[JDK 9 doc/API](https://docs.oracle.com/javase/9/), 
+[JDK 9 doc](https://docs.oracle.com/javase/9/),
+[API](https://docs.oracle.com/javase/9/docs/api/overview-summary.html),   
 [What's New in JDK 9](https://docs.oracle.com/javase/9/whatsnew/toc.htm), 
 [Open JDK](https://openjdk.java.net/projects/jdk9/) 
 
@@ -104,7 +109,8 @@ Oracle has released Java 9 with rich set of new features. It includes various up
 
 
 # Java 10 Features
-[JDK 10 doc/API](https://docs.oracle.com/javase/10/), 
+[JDK 10 doc](https://docs.oracle.com/javase/10/),
+[API](https://docs.oracle.com/javase/10/docs/api/overview-summary.html), 
 [What's New in JDK 10](https://www.oracle.com/technetwork/java/javase/10-relnote-issues-4108729.html#NewFeature),
 [Open JDK](https://openjdk.java.net/projects/jdk/10/) 
 
@@ -125,7 +131,8 @@ Oracle has released Java 9 with rich set of new features. It includes various up
 
 
 # Java 11 Features
-[JDK 11 doc/API](https://docs.oracle.com/en/java/javase/11/),  
+[JDK 11 doc](https://docs.oracle.com/en/java/javase/11/),
+[API](https://docs.oracle.com/en/java/javase/11/docs/api/index.html),  
 [What's New in JDK 11](https://www.oracle.com/technetwork/java/javase/11-relnote-issues-5012449.html#NewFeature),  
 [Open JDK](https://openjdk.java.net/projects/jdk/11/) 
 
@@ -154,7 +161,8 @@ Oracle has released Java 9 with rich set of new features. It includes various up
 
 # Java 12 Features
 
-[JDK 12 doc/API](https://docs.oracle.com/en/java/javase/12/index.html),  
+[JDK 12 doc](https://docs.oracle.com/en/java/javase/12/index.html),
+[API](https://docs.oracle.com/en/java/javase/12/docs/api/index.html),     
 [What's New in JDK 12](https://www.oracle.com/technetwork/java/javase/12-relnote-issues-5211422.html#NewFeature), 
 [Open JDK](https://openjdk.java.net/projects/jdk/12/) 
 

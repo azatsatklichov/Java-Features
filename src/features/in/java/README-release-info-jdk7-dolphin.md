@@ -6,7 +6,7 @@
  
 
 # Java 7
-Codename Dolphin is a major update that was launched on July 7, 2011[138] and was made available for developers on July 28, 2011.[139] The development period was organized into thirteen milestones; on June 6, 2011, the last of the thirteen milestones was finished.[140][141] On average, 8 builds (which generally included enhancements and bug fixes) were released per milestone. The feature list at the OpenJDK 7 project lists many of the changes.
+Codename Dolphin ([API](https://docs.oracle.com/javase/7/docs/api/)) is a major update that was launched on July 7, 2011[138] and was made available for developers on July 28, 2011.[139] The development period was organized into thirteen milestones; on June 6, 2011, the last of the thirteen milestones was finished.[140][141] On average, 8 builds (which generally included enhancements and bug fixes) were released per milestone. The feature list at the OpenJDK 7 project lists many of the changes.
 
 Additions in Java 7 include:[142]
 

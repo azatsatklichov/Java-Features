@@ -6,7 +6,7 @@
  
 
 # Java 3
-## Codename Kestrel. The most notable changes in the May 8, 2000 release were: 
+## Codename Kestrel ([API](https://docs.oracle.com/javase/1.3/docs/api/)). The most notable changes in the May 8, 2000 release were: 
 ````
 - HotSpot JVM included (the HotSpot JVM was first released in April 1999 for the J2SE 1.2 JVM)
 - RMI was modified to support optional compatibility with CORBA

@@ -7,7 +7,7 @@
 
 # Java 6
 
-Codename Mustang. As of the version released on December 11, 2006, Sun replaced the name "J2SE" with Java SE and dropped the ".0" from the version number. Internal numbering for developers remains 1.6.0.[45] This version was developed under JSR 270.
+Codename Mustang ([API](https://docs.oracle.com/javase/6/docs/api/)). As of the version released on December 11, 2006, Sun replaced the name "J2SE" with Java SE and dropped the ".0" from the version number. Internal numbering for developers remains 1.6.0.[45] This version was developed under JSR 270.
 
 During the development phase, new builds including enhancements and bug fixes were released approximately weekly. Beta versions were released in February and June 2006, leading up to a final release that occurred on December 11, 2006.
 
