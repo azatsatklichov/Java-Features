@@ -11,7 +11,6 @@ J2SE 5.0 entered its end-of-public-updates period on April 8, 2008; updates are 
 Tiger added a number of significant new language features:
 
 
-``````
 - Generics: provides compile-time (static) type safety for collections and eliminates the need for most typecasts (type conversion) (specified by JSR 14)
 - Metadata: also called annotations; allows language constructs such as classes and methods to be tagged with additional data, which can then be processed by metadata-aware utilities (specified by JSR 175)
 - Autoboxing/unboxing: automatic conversions between primitive types (such as int) and primitive wrapper classes (such as Integer) (specified by JSR 201)
