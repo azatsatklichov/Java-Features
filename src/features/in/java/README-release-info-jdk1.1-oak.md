@@ -1,4 +1,6 @@
-Major additions in the release on February 19, 1997 included:
+# Major additions in the release on February 19, 1997 included:
+
+[The Java™ Tutorials](https://docs.oracle.com/javase/tutorial/) 
 
 - an extensive retooling of the AWT event model
 - inner classes added to the language
