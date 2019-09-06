@@ -1,4 +1,4 @@
-package features.in.java1to7;
+package features.in.java1_7;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
