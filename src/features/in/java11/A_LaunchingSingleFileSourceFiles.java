@@ -19,5 +19,4 @@ public class A_LaunchingSingleFileSourceFiles {
          * with java tool.
          */
     }
-
 }

@@ -1,7 +1,8 @@
-﻿[Oracle Java SE at a Glance](https://www.oracle.com/technetwork/java/javase/overview/index.html), 
+﻿[Java Features at GitHub](https://github.com/azatsatklichov/Java-Features.git) 
+
+[Oracle Java SE at a Glance](https://www.oracle.com/technetwork/java/javase/overview/index.html), 
 [JEP](https://openjdk.java.net/jeps/0), 
 [Open JDK](http://openjdk.java.net/)
-
 
 
 
@@ -74,7 +75,7 @@ The important features of JavaSE 8 are lambda expressions, methods references, d
 
 
 
-#Java 9 Features
+# Java 9 Features
 [JDK 9 doc](https://docs.oracle.com/javase/9/),
 [API](https://docs.oracle.com/javase/9/docs/api/overview-summary.html),   
 [What's New in JDK 9](https://docs.oracle.com/javase/9/whatsnew/toc.htm), 
