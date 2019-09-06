@@ -2,7 +2,9 @@ package features.in.java9;
 
 /**
  * Diamond operator was introduced in java 7 to make code more readable but it
- * could not be used with Anonymous inner classes. In java 9, it can be used
+ * could not be used with Anonymous inner classes. 
+ * 
+ * In java 9, it can be used
  * with annonymous class as well to simplify code and improves readability.
  * 
  * Consider the following code prior to Java 9.

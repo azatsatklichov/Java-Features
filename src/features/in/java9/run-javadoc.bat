@@ -2,7 +2,7 @@
 #javadoc -sourcepath ./src/features/in/java9 -d ImprovedJavaDoc.java
 
 # old way of GENERATING 
-javadoc -d C:/JAVA_doc ImprovedJavaDoc.java
+#javadoc -d C:/JAVA_doc ImprovedJavaDoc.java
  
 #  NEW Java9 javadoc way 
 javadoc -d C:/JAVA_doc_new -html5 ImprovedJavaDoc.java
