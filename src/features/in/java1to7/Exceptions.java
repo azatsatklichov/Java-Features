@@ -1,4 +1,4 @@
-package features.in.java;
+package features.in.java1to7;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -44,7 +44,7 @@ public class Exceptions {
  * successfully opens a file for input, but is unable to read the file because
  * of a hardware or system malfunction. The unsuccessful read will throw
  * java.io.IOError. An application might choose to catch this exception, in
- * order to notify the user of the problem — but it also might make sense for
+ * order to notify the user of the problem ï¿½ but it also might make sense for
  * the program to print a stack trace and exit.
  * 
  * Errors are not subject to the Catch or Specify Requirement. Errors are those
@@ -115,7 +115,7 @@ class THreeKindOfExceptions {
          * The unsuccessful read will throw java.io.IOError.
          * 
          * An application might choose to catch this exception, in order to
-         * notify the user of the problem — but it also might make sense for the
+         * notify the user of the problem ï¿½ but it also might make sense for the
          * program to print a stack trace and exit.
          */
 
@@ -546,11 +546,11 @@ class Advantages_of_Exceptions {
         
         
         At first glance, this function seems simple enough, but it ignores all the following potential errors.
-        •What happens if the file can't be opened?
-        •What happens if the length of the file can't be determined?
-        •What happens if enough memory can't be allocated?
-        •What happens if the read fails?
-        •What happens if the file can't be closed?
+        ï¿½What happens if the file can't be opened?
+        ï¿½What happens if the length of the file can't be determined?
+        ï¿½What happens if enough memory can't be allocated?
+        ï¿½What happens if the read fails?
+        ï¿½What happens if the file can't be closed?
          * 
          * </pre>
          * 

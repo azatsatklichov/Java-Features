@@ -75,13 +75,16 @@ public class CollectionFactoryMethods {
 	public static void main(String[] args) {
 		// Set<String> set = Set.of("A", "B", "A", "B", "C"); Exception in thread "main"
 		// java.lang.IllegalArgumentException: duplicate element: A
-		Set<String> set = Set.of("A", "B", "A2", "B2", "C");
+		Set<String> set = Set.of("A", "B", "A2", "B2", "C", "c", "C");
 		System.out.println(set);
 
 		set = Set.of("A", "B", "A2", "B2", "C", "D", "E", "F", "G", "H", "I", "zz", "PP");
 		System.out.println(set);
 
 		List<String> list = List.of("A", "B", "A", "B", "C");
+		System.out.println(list);
+		
+		list.add("OO");
 		System.out.println(list);
 
 		Map<Integer, String> map = Map.of(1, "Ole", 3, "Gule", 5, "Sule");

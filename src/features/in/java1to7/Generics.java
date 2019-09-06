@@ -1,4 +1,4 @@
-package features.in.java;
+package features.in.java1to7;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -100,13 +100,13 @@ class Box<T> {
  * The difference is that the inputs to formal parameters are values, while the inputs to type parameters are types.
 
 Code that uses generics has many benefits over non-generic code:
-•Stronger type checks at compile time.
+ï¿½Stronger type checks at compile time.
  A Java compiler applies strong type checking to generic code and issues errors if the code violates type safety. Fixing compile-time errors is easier 
  
  than fixing runtime errors, which can be difficult to find.
 
 
-•Elimination of casts.
+ï¿½Elimination of casts.
  The following code snippet without generics requires casting: 
 List list = new ArrayList();
 list.add("hello");
@@ -118,17 +118,17 @@ list.add("hello");
 String s = list.get(0);   // no cast
 
 
-• Enabling programmers to implement generic algorithms.
+ï¿½ Enabling programmers to implement generic algorithms.
  By using generics, programmers can implement generic algorithms that work on collections of different types, can be customized, and are type safe and easier to read.
  * 
  * 
  * The most commonly used type parameter names are:
-    •   E - Element (used extensively by the Java Collections Framework)
-    •   K - Key
-    •   N - Number
-    •   T - Type
-    •   V - Value
-    •   S,U,V etc. - 2nd, 3rd, 4th types
+    ï¿½   E - Element (used extensively by the Java Collections Framework)
+    ï¿½   K - Key
+    ï¿½   N - Number
+    ï¿½   T - Type
+    ï¿½   V - Value
+    ï¿½   S,U,V etc. - 2nd, 3rd, 4th types
  * 
  * </pre>
  * 
@@ -518,11 +518,11 @@ class WildcardFixed {
 
 /**
  * <pre>
- * Wildcard Guidelines: •An "in" variable is defined with an upper bounded wildcard, using the extends keyword.
+ * Wildcard Guidelines: ï¿½An "in" variable is defined with an upper bounded wildcard, using the extends keyword.
  * 
-    • An "out" variable is defined with a lower bounded wildcard, using the super keyword.
-    • In the case where the "in" variable can be accessed using methods defined in the Object class, use an unbounded wildcard.
-    • In the case where the code needs to access the variable as both an "in" and an "out" variable, do not use a wildcard.
+    ï¿½ An "out" variable is defined with a lower bounded wildcard, using the super keyword.
+    ï¿½ In the case where the "in" variable can be accessed using methods defined in the Object class, use an unbounded wildcard.
+    ï¿½ In the case where the code needs to access the variable as both an "in" and an "out" variable, do not use a wildcard.
  * 
  * </pre>
  * 
@@ -545,11 +545,11 @@ class TypeErasure {
 	/**
 	 * Generics were introduced to the Java language to provide tighter type checks
 	 * at compile time and to support generic programming. To implement generics,
-	 * the Java compiler applies type erasure to: •Replace all type parameters in
+	 * the Java compiler applies type erasure to: ï¿½Replace all type parameters in
 	 * generic types with their bounds or Object if the type parameters are
 	 * unbounded. The produced bytecode, therefore, contains only ordinary classes,
-	 * interfaces, and methods. •Insert type casts if necessary to preserve type
-	 * safety. •Generate bridge methods to preserve polymorphism in extended generic
+	 * interfaces, and methods. ï¿½Insert type casts if necessary to preserve type
+	 * safety. ï¿½Generate bridge methods to preserve polymorphism in extended generic
 	 * types.
 	 * 
 	 * Type erasure ensures that no new classes are created for parameterized types;
@@ -601,7 +601,7 @@ class NonReifiable_Types {
 
 		System.out.println(
 				"Non-Reifiable Types:   are types where information has been removed at compile-time by type \n"
-						+ "erasure — invocations of generic types that are not defined as unbounded wildcards. ");
+						+ "erasure ï¿½ invocations of generic types that are not defined as unbounded wildcards. ");
 		System.out.println("A non-reifiable type does not have all of its information available at runtime. \n"
 				+ "Examples of non-reifiable types are List<String> and List<Number>; the JVM cannot tell the difference between these types at runtime. ");
 		System.out.println();

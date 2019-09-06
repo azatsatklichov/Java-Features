@@ -24,14 +24,14 @@ public class ExecuteAround {
 
     public static String processFileLimited() throws IOException {
         try (BufferedReader br =
-                     new BufferedReader(new FileReader("C:\\workspace\\Java-Features\\data.txt"))) {
+                     new BufferedReader(new FileReader("C:\\workspace\\Java-Features\\src\\features\\in\\java8\\lambdasinaction\\data.txt"))) {
             return br.readLine();
         }
     }
 
 
 	public static String processFile(BufferedReaderProcessor p) throws IOException {
-		try(BufferedReader br = new BufferedReader(new FileReader("C:\\workspace\\Java-Features\\data.txt"))){
+		try(BufferedReader br = new BufferedReader(new FileReader("C:/workspace/Java-Features/src/features/in/java8/lambdasinaction/data.txt"))){
 			return p.process(br);
 		}
 
