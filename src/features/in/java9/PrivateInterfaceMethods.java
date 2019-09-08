@@ -15,6 +15,7 @@ With Java 8 interfaces can have following type of variables/methods.
 
 Constant variables
 Abstract methods
+
 Default methods
 Static methods
  
@@ -25,24 +26,21 @@ Constant variables
 Abstract methods
 Default methods
 Static methods
-Private methods
+
+Private methods - To avoid redundant code and more re-usability.
 Private Static methods
  * 
  * 
  * </pre>
  */
 public interface PrivateInterfaceMethods {
-
-}
-
-class Tester {
 	public static void main(String[] args) {
 		Logging log = new LogOracle();
 		log.logInfo("a");
 		log.logWarn("b");
 		log.logError("c");
 		log.logFatal("d");
-		
+
 		System.out.println();
 
 		Logging log1 = new LogMySql();
@@ -51,6 +49,7 @@ class Tester {
 		log1.logError("3");
 		log1.logFatal("4");
 	}
+
 }
 
 final class LogOracle implements Logging {

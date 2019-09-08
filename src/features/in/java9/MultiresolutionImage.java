@@ -14,14 +14,29 @@ import javax.imageio.ImageIO;
 /**
  * With Java 9, a new multi-resolution image API has been introduced which
  * supports multiple images with different resolution variants.
+ * 
+ * This API allows a set of images with different resolution to be used as a
+ * single multi-resolution image.
+ * 
+ * 
+ * There are two important functions in the MultiResolutionImage.
+ * 
+ * getResolutionVariant() – This method returns an instance of java.awt.Image
+ * from the set of variants based on the width and height of the image given as
+ * parameters to the function. It will throw an IllegalArgumentException if the
+ * double values representing the dimensions are zero, negative, infinity or Not
+ * A Number.
+ * 
+ * 
+ * getResolutionVariants() – This method returns all the variants available for
+ * the given image. It returns a List containing objects of type java.awt.Image.
  *
  */
 public class MultiresolutionImage {
 	public static void main(String[] args) throws IOException, MalformedURLException {
 
 		List<String> imgUrls = List.of("http://sahet.net/src/collected/palow.jpg",
-				"http://sahet.net/src/software/internet2.jpg",
-				"http://sahet.net/src/software/web-development.png");
+				"http://sahet.net/src/software/internet2.jpg", "http://sahet.net/src/software/web-development.png");
 
 		List<Image> images = new ArrayList<Image>();
 
