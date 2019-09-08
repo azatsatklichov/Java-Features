@@ -26,6 +26,8 @@ public class ImprovedJavaDoc {
 	 * @param args command line arguments
 	 */
 	public static void main(String[] args) {
-		System.out.println("Java 9");
+		System.out.println("Java 9 - We no longer need to use Google to find the right documentation. The new Javadoc came with search right in the API documentation itself. "
+				+ "Moreover, the Javadoc output was HTML5 compliant."
+				+ "Every Javadoc page includes information on which JDK module the class or interface comes from.");
 	}
 }

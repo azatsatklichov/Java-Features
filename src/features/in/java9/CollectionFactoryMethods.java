@@ -45,6 +45,10 @@ class OldWayOfCreationOrConversion {
 		System.out.println(strings);
 
 		// Java 8:
+		Stream<String> language = Stream.of("java", "python", "node", null, "ruby", null, "php");
+        List<String> result = language.collect(Collectors.toList());
+        System.out.println(result);
+        
 		Stream<Integer> stream = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9);
 		stream.forEach(p -> System.out.println(p));
 
@@ -108,7 +112,7 @@ public class CollectionFactoryMethods {
 
 		// Set<String> set = Set.of("A", "B", "A", "B", "C"); Exception in thread "main"
 		// java.lang.IllegalArgumentException: duplicate element: A
-		Set<String> set = Set.of("A", "B", "A2", "B2", "C", "c", "C");
+		Set<String> set = Set.of("A", "B", "A2", "B2", "C", "c", "C", null);
 		System.out.println(set);
 
 		set = Set.of("A", "B", "A2", "B2", "C", "D", "E", "F", "G", "H", "I", "zz", "PP");
@@ -116,9 +120,18 @@ public class CollectionFactoryMethods {
 
 		List<String> list = List.of("A", "B", "A", "B", "C");
 		System.out.println(list);
+		
+		List<String> emptyList = List.of();
+		System.out.println(emptyList);
 
 		list.add("OO");
 		System.out.println(list);
+		
+		Stream<String> language = Stream.of("java", "python", "node", null, "ruby", null, "php");
+
+
+		Map emptyImmutableMap = Map.of();
+		// emptyImmutableMap ==> {}
 
 		Map<Integer, String> map = Map.of(1, "Ole", 3, "Gule", 5, "Sule");
 		// Map<Integer, String> map = Map.of("Bir", "Ole", "Uc", "Gule", "Bas", "Sule");
@@ -132,6 +145,9 @@ public class CollectionFactoryMethods {
 		Map<String, Long> age = Map.of("Bruce", 59L, "Steve", 61L, "Dave", 60L, "Adrian", 60L, "Janick", 60L, "Nicko",
 				65L);
 		System.out.println(age);
+
+		Map<String, String> addr = Map.of("Bruce", "US", "Steve", "RU", "Dave", "PL", "Adrian", "TR", "Janick", "CZ");
+		System.out.println(addr);
 
 		age = Map.ofEntries(Map.entry("Bruce", 59L), Map.entry("Steve", 61L), Map.entry("Dave", 60L),
 				Map.entry("Adrian", 60L), Map.entry("Janick", 60L), Map.entry("Nicko", 65L));
