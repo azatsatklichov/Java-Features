@@ -13,6 +13,6 @@ package features.in.java9;
  * store version-specific classes and resource files.
  * </pre>
  */
-public class MultireleaseJAR {
+public class JMultireleaseJAR {
 
 }
