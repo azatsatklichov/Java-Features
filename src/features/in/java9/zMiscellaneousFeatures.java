@@ -16,6 +16,10 @@ Enhanced Method Handles
 Java Platform Logging API and Service
 Compact Strings
 Parser API for Nashorn
+
+Installer Enhancement for Microsoft windows - This installer allows us to enable and disable web deployment. 
+Installer Enhancements for macOS - CPU Version Availability, User Experience
+
  * </pre>
  */
 public class zMiscellaneousFeatures {

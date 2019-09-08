@@ -26,6 +26,9 @@ New factory methods added.
 public class zCompletableFutureAPIImprovements {
 
 	public static void main(String[] args) {
+		
+		System.out.println("See also ProcessAPIImprovements#onExit");
+		
 		//This example will show how to delay the completion of a CompletableFuture with a specific value by one second.
 		CompletableFuture<Object> future = new CompletableFuture<>();
 		future.completeAsync(() -> "input", CompletableFuture.delayedExecutor(1, TimeUnit.SECONDS));

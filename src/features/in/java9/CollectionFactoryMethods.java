@@ -124,7 +124,7 @@ public class CollectionFactoryMethods {
 		List<String> emptyList = List.of();
 		System.out.println(emptyList);
 
-		list.add("OO");
+		list.add("OO"); //It is unmodifiable, UnsupportedOperationException
 		System.out.println(list);
 		
 		Stream<String> language = Stream.of("java", "python", "node", null, "ruby", null, "php");
