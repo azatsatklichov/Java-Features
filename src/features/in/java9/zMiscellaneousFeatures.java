@@ -18,6 +18,6 @@ Compact Strings
 Parser API for Nashorn
  * </pre>
  */
-public class MiscellaneousFeatures {
+public class zMiscellaneousFeatures {
 
 }
