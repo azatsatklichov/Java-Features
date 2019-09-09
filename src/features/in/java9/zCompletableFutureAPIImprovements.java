@@ -15,7 +15,7 @@ It supports dependent functions and actions which got triggered upon the future'
 In java 9 CompletableFuture API has been enhanced further. Following are the relevant changes done to the API.
 
 Support for delays and timeouts.
-Improved support for subclassing.
+Improved support for sub classing.
 New factory methods added.
  * 
  * https://docs.oracle.com/javase/9/docs/api/java/util/concurrent/CompletableFuture.html

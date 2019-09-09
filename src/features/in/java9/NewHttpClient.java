@@ -34,7 +34,7 @@ Update: The HTTP Client JEP is being moved to Incubator module, so it is no long
  * 
  * </pre>
  */
-public class NewHttpCalls {
+public class NewHttpClient {
 	public static void main(String[] args) throws URISyntaxException {
 
 		HttpClient client = HttpClient.newHttpClient();
@@ -42,7 +42,7 @@ public class NewHttpCalls {
 		HttpRequest req = HttpRequest.newBuilder(URI.create("http://www.google.com")).header("User-Agent", "Java").GET()
 				.build();
 
-		HttpResponse<String> resp = client.send(req, HttpResponse.BodyHandler.asString());
+		//HttpResponse<String> resp = client.send(req, HttpResponse.BodyHandler.asString());
 
 		System.out.println(req.bodyPublisher().get());
 	}
