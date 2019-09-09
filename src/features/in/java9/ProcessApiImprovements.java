@@ -26,6 +26,12 @@ import java.util.stream.Stream;
  * 
  * It has onExit method, the CompletableFuture class can perform
  * action asynchronously when process exits.
+ * 
+ * Two new interfcase in Process API:
+
+java.lang.ProcessHandle
+
+java.lang.ProcessHandle.Info
  * </pre>
  * 
  */

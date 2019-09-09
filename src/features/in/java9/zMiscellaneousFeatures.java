@@ -20,6 +20,11 @@ Parser API for Nashorn
 Installer Enhancement for Microsoft windows - This installer allows us to enable and disable web deployment. 
 Installer Enhancements for macOS - CPU Version Availability, User Experience
 
+Remove Launch-Time JRE Version Selection - Java 9 has removed JRE (Java Runtime Environment) version selection at launch time. 
+	Now days, modern application has own active installer that further contains methods to manage the JRE. that?s why JRE version selection has been removed.
+	
+
+ * 
  * </pre>
  */
 public class zMiscellaneousFeatures {

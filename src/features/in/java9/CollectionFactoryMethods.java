@@ -62,14 +62,20 @@ class OldWayOfCreationOrConversion {
 
 		// above in Java 8, creation of unnecessary objects and this method can't be
 		// used for creating a Map.
+		stream = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9);
 		List<Integer> numbersList = stream.collect(Collectors.toList());
 		System.out.println(numbersList);
+		
+
+		stream = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9);
 		List<Integer> evenNumbersList = stream.filter(i -> i % 2 == 0).collect(Collectors.toList());
 		System.out.println(numbersList);
 
 		// Java 8, convert array to List, primitive int[] to List<Integer>
 		int iArray[] = new int[] { 1, 2, 3 };
 		List<Integer> list3 = Arrays.stream(iArray).boxed().collect(Collectors.toList());
+
+		stream = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9);
 		Integer[] evenNumbersArr = stream.filter(i -> i % 2 == 0).toArray(Integer[]::new);
 
 	}
