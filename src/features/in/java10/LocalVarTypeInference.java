@@ -47,7 +47,8 @@ public class LocalVarTypeInference {
 		 * compatibility for programs using var say, as a function or variable name. var
 		 * is a reserved type name, just like int.
 		 */
-		System.out.println("Note that this feature is available only for local variables with the initializer.");
+		System.out.println("Note that this feature is available only for local variables with the initializer. "
+				+ "No runtime overhead in using var nor does it make Java a dynamically typed language. ");
 		var message2 = "Hello, Java 10";
 		assertTrue(message2 instanceof String);
 	}
@@ -218,18 +219,18 @@ class LegalLocalVarInferenceDemo {
 		data.add(Map.of("key11", "value11", "key22", "value22"));
 		System.out.println(data);
 
-		System.out.println("********** As iteration variable in enhanced for-loop ***************");
+		System.out.println("--  As iteration variable in enhanced for-loop -- ");
 		for (var object : data) {
 			System.out.println(String.format("%s of type %s", object, object.getClass().getName()));
 		}
 
-		System.out.println("********** As looping index in for-loop ***************");
+		System.out.println("--  As looping index in for-loop -- ");
 		for (var i = 0; i < data.size(); i++) {
 			var object = data.get(i);
 			System.out.println(String.format("%s of type %s", object, object.getClass().getName()));
 		}
 
-		System.out.println("********** As a return value from another method ***************");
+		System.out.println("--  As a return value from another method -- ");
 		var anInteger = someAnotherMethod();
 		System.out.println("someAnotherMethod returned " + anInteger);
 

@@ -32,6 +32,8 @@ public class UnmodifiableCollections {
 	@Test(expected = UnsupportedOperationException.class)
 	public void whenModifyCopyOfList_thenThrowsException() {
 		List<String> list = List.of("A", "B", "A", "B", "C");
+		list.add("gg");
+		System.out.println(list);
 		List<String> copyList = List.copyOf(list);
 		System.out.println(copyList);
 		copyList.add("Z");

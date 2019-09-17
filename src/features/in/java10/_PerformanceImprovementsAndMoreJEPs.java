@@ -23,6 +23,15 @@ reducing the stop-the-world time during full GC.
  * The aim of JEP 307 is to parallelize the full GC algorithm so that in the
  * unlikely event of a G1 Full GC then the same number of threads can be used as
  * in the concurrent collections.
+ * 
+ * 
+ * 
+ * Description
+	The G1 garbage collector is designed to avoid full collections, but when the concurrent collections 
+	can't reclaim memory fast enough a fall back full GC will occur. The current implementation of the 
+	full GC for G1 uses a single threaded mark-sweep-compact algorithm. We intend to parallelize the mark-sweep-compact 
+	algorithm and use the same number of threads as the Young and Mixed collections do. The number of threads can be controlled 
+	by the -XX:ParallelGCThreads option, but this will also affect the number of threads used for Young and Mixed collections.
  * </pre>
  */
 class ParallelFullGC4G1 {
@@ -40,8 +49,20 @@ class ParallelFullGC4G1 {
  * exclude a GC from a JDK build and making it easier to add a new GC without it
  * affecting the code base.
  * 
+ * SUMMARY 
+ * 
  *  Improves the source code isolation of different garbage collectors by 
  *  introducing a clean garbage collector (GC) interface.
+ *  
+ *  Goals
+	Better modularity for HotSpot internal GC code
+	Make it simpler to add a new GC to HotSpot without perturbing the current code base
+	Make it easier to exclude a GC from a JDK build
+	
+	Non-Goals
+	It is not a goal to actually add or remove a GC.
+	This work will make progress towards build-time isolation of GC algorithms in HotSpot, but it is not a 
+	goal to fully achieve build-time isolation (that is for another JEP).
  * </pre>
  */
 class GarbageCollectorInterface {
@@ -158,12 +179,14 @@ class HeapAllocationOnAlternativeMemoryDevices {
 /**
  * Consolidate the JDK Forest into a Single Repository
  * 
+ * For many years, the full code base of the JDK has been broken into numerous
+ * Mercurial repositories. In JDK 9 there are eight repos: root, corba, hotspot,
+ * jaxp, jaxws, jdk, langtools, and nashorn.
+ * 
  * <pre>
  * Nothing much to say about this JEP aside the fact that it's all about housekeeping. It will combine the
  * numerous repositories of the JDK forest into a single repository.
- * 
- *  For many years, the full code base of the JDK has been broken into numerous Mercurial repositories. 
- *  In JDK 9 there are eight repos: root, corba, hotspot, jaxp, jaxws, jdk, langtools, and nashorn.
+ *  
  *  
  *  From Java 10: 
  *  Combine the numerous repositories of the JDK forest into a single repository in order to simplify and streamline development.
@@ -267,6 +290,11 @@ class ContainerAwareness {
  * builds.
  * </pre>
  * 
+ * The cacerts keystore will be populated with a set of root certificates issued
+ * by the CAs of Oracle's Java SE Root CA Program.
+ * 
+ * TRY: > cd C:\apps\jdk-12.0.1\lib\security > keytool -list -keystore cacerts >
+ * changeit
  * 
  * 
  */
@@ -320,6 +348,7 @@ OpenJDK 64-Bit Server VM 18.3 (build 10+46, mixed mode)
  * some needed clarifications, with a six-month release model.
  *
  *
+ *>java -version
  * </pre>
  */
 class TimeBasedReleaseVersioning {

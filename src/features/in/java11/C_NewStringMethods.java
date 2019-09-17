@@ -5,7 +5,8 @@ import java.util.stream.Collectors;
 
 public class C_NewStringMethods {
     public static void main(String[] args) {
-
+    	
+    	System.out.println("-- strip() , stripLeading() , stripTrailing() -- ");
         String str = " JD ";
         System.out.print("Start");
         System.out.print(str.strip());
@@ -19,6 +20,7 @@ public class C_NewStringMethods {
         System.out.print(str.stripTrailing());
         System.out.println("End");
 
+        
         var word = "falcon ";
 
         System.out.println(word.repeat(5));
@@ -31,18 +33,21 @@ public class C_NewStringMethods {
         System.out.println(word2.strip() + "sky");
         System.out.println();
 
+        System.out.println("--\n isBlank(), lines(), repeat(n) --");
         var word3 = "  ";
-        System.out.println(word3.isEmpty());
-        System.out.println(word3.isBlank());
+        System.out.println("isEmpty: "+word3.isEmpty());
+        System.out.println("isBlank: "+word3.isBlank());
 
         var words = "falcon\neagle\nsky\nwood\nforest";
         words.lines().forEach(System.out::println);
+        System.out.println();
+        
 
         // repeat(int) - The repeat method simply repeats the string that many numbers
         // of times as mentioned in the method in the form of an int.
         // Your code here!
 
-        String rstr = "=".repeat(12);
+        String rstr = "$=$ ".repeat(9);
         System.out.println(rstr); // prints ==
 
         // lines - This method returns a string array which is a collection of all
