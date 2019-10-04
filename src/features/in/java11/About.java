@@ -1,6 +1,6 @@
 package features.in.java11;
 
-public class _About {
+public class About {
 
 	/**
 	 * Java 11 organizational changes Java 11 did a lot of house-keeping. Java EE,

@@ -9,7 +9,7 @@ import java.net.http.HttpResponse;
  * HttpClient standardized The new HttpClient has been standardized. It is
  * located in the java.net.http package.
  */
-public class B_HttpClient_Standardized {
+public class HttpClientStandardized {
     public static void main(String[] args) {
 
         var client = HttpClient.newHttpClient();

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class C_NewStringMethods {
+public class NewStringMethods {
     public static void main(String[] args) {
     	
     	System.out.println("-- strip() , stripLeading() , stripTrailing() -- ");
