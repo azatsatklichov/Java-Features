@@ -1,5 +1,4 @@
 package features.in.java10;
- 
 
 import static org.junit.Assert.assertTrue;
 
@@ -29,8 +28,7 @@ import org.junit.Test;
  * https://www.journaldev.com/19871/java-10-local-variable-type-inference
  * </pre>
  */
-public class LocalVarTypeInference {
-
+class BeforeJava10 {
 	@Test
 	public void whenVarInitWithString_thenGetStringTypeVar() {
 
@@ -52,33 +50,12 @@ public class LocalVarTypeInference {
 		var message2 = "Hello, Java 10";
 		assertTrue(message2 instanceof String);
 	}
+}
+
+public class LocalVarTypeInference {
 
 	public static void main(String[] args) {
 
-		// This enhancement helps in reducing the boilerplate code; for example:
-		// Pre Java 10
-		Map<Integer, String> map = new HashMap<>();
-		List<Actor> actors = List.of(new Actor());
-
-		// This can now be rewritten as:
-		var idToNameMap = new HashMap<Integer, String>();
-		var list = new ArrayList<String>(); // infers ArrayList<String>
-		var stream = list.stream(); // infers Stream<String>
-
-		var actors10 = List.of(new Actor()); // Java 10 onwards
-
-		var map1 = new HashMap(); // Inferred as HashMap
-		var map2 = new HashMap<>(); // Inferred as HashMap<Object, Object>
-
-		var runnable = new Runnable() {
-			@Override
-			public void run() {
-				var numbers = List.of(5, 4, 3, 2, 1);
-				for (var number : numbers) {
-					System.out.println(number);
-				}
-			}
-		};
 		// runThread(runnable);
 
 		System.out.println(" - Local Variable Type Inference Usage Scenarios");
@@ -91,7 +68,7 @@ public class LocalVarTypeInference {
 		 * 
 		 * Local declared in for loop
 		 */
-		var numbers = List.of(1, 2, 3, 4, 5); // inferred value ArrayList<String>
+		var numbers = List.of(1, 2, 3, 4, 5); // inferred value List<Integer>
 		// Index of Enhanced For Loop
 		for (var number : numbers) {
 			System.out.println(number);
@@ -146,6 +123,7 @@ public class LocalVarTypeInference {
 		 */
 
 		var empList = new ArrayList<>();
+		// ArrayList<Object>
 
 		// The type of empListwill be ArrayList<Object>and not List<Object>.
 		// If we want it to be ArrayList<Employee>, we will have to be explicit:
@@ -159,6 +137,31 @@ public class LocalVarTypeInference {
 		// error:
 		// obj = new Object(); // error: Object cannot be converted to <anonymous
 		// Object>
+
+		// This enhancement helps in reducing the boilerplate code; for example:
+		// Pre Java 10
+		Map<Integer, String> map = new HashMap<>();
+		List<Actor> actors = List.of(new Actor());
+
+		// This can now be rewritten as:
+		var idToNameMap = new HashMap<Integer, String>();
+		var list = new ArrayList<String>(); // infers ArrayList<String>
+		var stream = list.stream(); // infers Stream<String>
+
+		var actors10 = List.of(new Actor()); // Java 10 onwards
+
+		var map1 = new HashMap(); // Inferred as HashMap
+		var map2 = new HashMap<>(); // Inferred as HashMap<Object, Object>
+
+		var runnable = new Runnable() {
+			@Override
+			public void run() {
+				var numbers = List.of(5, 4, 3, 2, 1);
+				for (var number : numbers) {
+					System.out.println(number);
+				}
+			}
+		};
 
 	}
 

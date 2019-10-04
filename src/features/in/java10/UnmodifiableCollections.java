@@ -1,12 +1,11 @@
 package features.in.java10;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.junit.Test;
- 
- 
-
 
 /**
  * 
@@ -30,10 +29,23 @@ public class UnmodifiableCollections {
 	 * </pre>
 	 */
 	@Test(expected = UnsupportedOperationException.class)
-	public void whenModifyCopyOfList_thenThrowsException() {
+	public void whenModifyCopyOf_thenThrowsException() {
+
+		System.out.println();
+		Map<String, Long> agesMap = Map.of("Bruce", 59L, "Steve", 61L, "Dave", 60L, "Adrian", 60L, "Janick", 60L, "Nicko",
+				65L); 
+		System.out.println(agesMap); 
+		Map<String, Long> agesMap2 = Map.copyOf(agesMap);
+		System.out.println(agesMap2); 
+		
+		Set<String> set  =  Set.of("Q", "V", "E", "R", "T", "Y");
+		System.out.println(set);
+		Set<String> set2  = Set.copyOf(set); 
+		System.out.println(set2); 
+
 		List<String> list = List.of("A", "B", "A", "B", "C");
-		list.add("gg");
 		System.out.println(list);
+		list.add("gg");
 		List<String> copyList = List.copyOf(list);
 		System.out.println(copyList);
 		copyList.add("Z");

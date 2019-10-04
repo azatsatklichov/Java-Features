@@ -1,8 +1,8 @@
 package features.in.java10;
 
 /**
-*  
-* <pre>
+ * 
+ * <pre>
 *8.1. Command Line Options and Tools
 *----------------------------------
 Tool javah has been removed from Java 10 which generated C headers and source files which were required to implement 
@@ -19,9 +19,19 @@ The user should now use jmap tool instead.
 Deprecated java.security.acl package has been marked forRemoval=true and is subject to removal in a 
 future version of Java SE. It’s been replaced by java.security.Policy and related classes.
 
+https://www.baeldung.com/spring-security-acl
+
 Similarly, java.security.{Certificate,Identity,IdentityScope,Signer} APIs are marked forRemoval=true.
-*</pre>
-*/
+ * </pre>
+ */
 public class DeprecationsAndRemovals {
+
+	/**
+	 * @see java.security.acl.Acl
+	 * @see java.security.acl.AclEntry
+	 */
+	public static void main(String[] args) {
+
+	}
 
 }

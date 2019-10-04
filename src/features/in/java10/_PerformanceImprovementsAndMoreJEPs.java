@@ -3,8 +3,34 @@ package features.in.java10;
 //https://www.baeldung.com/java-10-performance-improvements
 /**
  * <pre>
+ * 
+ * Stop-the-world will occur no matter which GC algorithm you choose. Stop-the-world means that the JVM is stopping the application from running to execute a GC.
+ * When stop-the-world occurs, every thread except for the threads needed for the GC will stop their tasks.
+ * 
+ * Java does not explicitly specify a memory and remove it in the program code. Some people sets the relevant object to null or use System.gc() method to remove the memory explicitly.
+ * 
+ * Young generation: Most of the newly created objects are located here. Since most objects soon become unreachable, many objects are created in the young generation, then disappear. 
+ * When objects disappear from this area, we say a "minor GC" has occurred.
+ * 
+ * Old generation: The objects that did not become unreachable and survived from the young generation are copied here.
+ * 
+ * Permanent Generation
+ * 
+According to JDK 7, there are 5 GC types. 
+-----------------------------------------
+Serial GC
+Parallel GC
+Parallel Old GC (Parallel Compacting GC)
+Concurrent Mark & Sweep GC  (or "CMS")
+Garbage First (G1) GC
+----------------------------------------
+
+ *   
+ * 
+ * 
 *Parallel Full GC for G1
 *
+*If you want to understand G1 GC, forget everything you know about the young generation and the old generation.
 *Improves G1 worst-case latencies by making the full GC parallel.
 *
 The G1 garbage collector is the default one since JDK 9. However, the full GC for G1 used 
@@ -35,7 +61,14 @@ reducing the stop-the-world time during full GC.
  * </pre>
  */
 class ParallelFullGC4G1 {
-
+	// https://plumbr.io/handbook/what-is-garbage-collection
+	// https://docs.oracle.com/javase/9/gctuning/garbage-first-garbage-collector.htm#JSGCT-GUID-F1BE86FA-3EDC-4D4F-BDB4-4B044AD83180
+	public static void main(String[] args) {
+		System.out.println(
+				"\nThe G1 garbage collector is the default one since JDK 9. However, the full GC for G1 used a single threaded mark-sweep-compact algorithm.");
+		System.out.println(
+				"This has been changed to the parallel mark-sweep-compact algorithm in Java 10 effectively reducing the STOP-the-WORLD time during full GC.");
+	}
 }
 
 /**
@@ -67,6 +100,30 @@ class ParallelFullGC4G1 {
  */
 class GarbageCollectorInterface {
 
+	public static void main(String[] args) {
+		System.out.println("https://openjdk.java.net/jeps/304");
+		System.out.println("Better modularity for HotSpot internal GC code");
+		System.out.println("Make it simpler to add a new GC to HotSpot without perturbing the current code base");
+		System.out.println("Make it easier to exclude a GC from a JDK build ");
+		/**
+		 * @see sun.jvm.hotspot.gc.shared.CollectedHeap
+		 * 
+		 *      More specifically, a garbage collector implementation will have to
+		 *      provide: e.g. @link CollectedHeap.java
+		 * 
+		 *      The heap, a subclass of CollectedHeap The barrier set, a subclass of
+		 *      BarrierSet, which implements the various barriers for the runtime An
+		 *      implementation of CollectorPolicy An implementation of
+		 *      GCInterpreterSupport, which implements the various barriers for a GC for
+		 *      the interpreter (using assembler instructions) An implementation of
+		 *      GCC1Support, which implements the various barriers for a GC for the C1
+		 *      compiler An implementation of GCC2Support, which implements the various
+		 *      barriers for a GC for the C2 compiler Initialization of eventual GC
+		 *      specific arguments Setup of a MemoryService, the related memory pools,
+		 *      memory managers, etc.
+		 */
+
+	}
 }
 
 /**
@@ -114,7 +171,10 @@ class ApplicationClassDataSharing {
 	 * </pre>
 	 */
 	public static void main(String[] args) {
-
+		System.out.println(
+				" to reduce startup time which can also reduce dynamic memory footprint when multiple JVMs share the same archive file");
+		System.out.println(
+				"AppCDS was a commercial feature in Oracle JDK for JDK 8 and JDK 9. Now it is open sourced and made publicly available.");
 	}
 
 }
@@ -149,32 +209,80 @@ To enable Graal as the JIT compiler, use the following options on the java comma
 
  
 -XX:+UnlockExperimentalVMOptions -XX:+UseJVMCICompiler
+
 Note that this is an experimental feature and we may not necessarily get better performance than the existing JIT compilers.
  * </pre>
  */
 class ExperimentalJavaBasedJITCompiler {
+	public static void main(String[] args) {
+		System.out.println(
+				"Grall is a dynamic compiler -  it's focused on high performance and extensibility. It's also the basis of the experimental Ahead-of-Time (AOT) compiler introduced in JDK 9");
+		System.out.println("Note that this is an experimental feature and we may not necessarily");
+		System.out.println(
+				"Project GraalVM is a research project created by Oracle with the goal to replace the HotSpot entirely. It accepts the JVM bytecode and produces the machine code. ");
+		System.out.println(
+				"When Graal is compiling a method, it'll pass the bytecode of that method as the input to the JVMCI'. As an output, we'll get the compiled machine code.");
 
+		System.out.println(
+				"JVMCI actually allows us to do is to exclude the standard tiered compilation and plug in our brand new compiler (i.e. Graal) without the need of changing anything in the JVM.");
+	}
 }
+
+
 
 /**
- * JEP 316: Heap Allocation on Alternative Memory Devices
  * 
  * <pre>
- * Enables the HotSpot VM to allocate the Java object heap on an alternative memory device, 
- * such as an NV-DIMM, specified by the user.
- * 
- * 
- *This JEP enables the
- * HotSpot VM to allocate the Java object heap on an alternative memory device,
- * specified by the user. This new feature would, for example, make it possible
- * in a multi-JVM environment to assign lower priority processes to use the
- * NV-DIMM memory, and instead only allocate the higher priority processes to
- * the DRAM.
+* Revises the version-string scheme of the Java SE Platform and the JDK, and related versioning information, 
+* for present and future time-based release models.
+* 
+* 
+*Starting with Java 10, Oracle has moved to the time-based release of Java. This has following implications:
+
+1. A new Java release every six months. The March 2018 release is JDK 10, the September 2018 release is JDK 11, 
+and so forth. These are called feature releases and are expected to contain at least one or two significant features
+
+2. Support for the feature release will last only for six months, i.e., until next feature release
+
+3. Long-term support release will be marked as LTS. Support for such release will be for three years
+
+4. Java 11 will be an LTS release
+java -version will now contain the GA date, making it easier to identify how old the release is:
+ 
+$ java -version
+openjdk version "10" 2018-03-20
+OpenJDK Runtime Environment 18.3 (build 10+46)
+OpenJDK 64-Bit Server VM 18.3 (build 10+46, mixed mode)
+
+ 
+ *
+ * Time-Based Release Versioning
+ 
+ * This JEP talks about revising the version
+ * string scheme of the Java SE Platform and the JDK, as well as the related
+ * versioning information, for present and future time-based release models for
+ * some needed clarifications, with a six-month release model.
+ *
+ *
+ *>java -version
  * </pre>
  */
-class HeapAllocationOnAlternativeMemoryDevices {
+class TimeBasedReleaseVersioning {
+	public static void main(String[] args) {
+		//https://www.oracle.com/technetwork/java/java-se-support-roadmap.html
+		System.out.println(
+				"A new Java release every six months. The March 2018 release is JDK 10, the September 2018 release is JDK 11, and so on.");
+		System.out.println(
+				"Support for the feature release will last only for six months, i.e., until next feature release");
+		System.out.println(
+				"Long-term support release will be marked as LTS. Support for such release will be for three years");
+		System.out.println("Java 11 will be an LTS release");
+
+	}
 
 }
+
+
 
 /**
  * Consolidate the JDK Forest into a Single Repository
@@ -259,7 +367,7 @@ class ThreadLocalHandshake {
 -XX:MinRAMPercentage
  * </pre>
  */
-class ContainerAwareness {
+class ContainerAwareness_eg_Docker {
 
 }
 
@@ -314,43 +422,30 @@ class AdditionalUnicodeLanguageTagExtensions {
 
 }
 
+
 /**
+ * JEP 316: Heap Allocation on Alternative Memory Devices
  * 
  * <pre>
-* Revises the version-string scheme of the Java SE Platform and the JDK, and related versioning information, 
-* for present and future time-based release models.
-* 
-* 
-*Starting with Java 10, Oracle has moved to the time-based release of Java. This has following implications:
-
-1. A new Java release every six months. The March 2018 release is JDK 10, the September 2018 release is JDK 11, 
-and so forth. These are called feature releases and are expected to contain at least one or two significant features
-
-2. Support for the feature release will last only for six months, i.e., until next feature release
-
-3. Long-term support release will be marked as LTS. Support for such release will be for three years
-
-4. Java 11 will be an LTS release
-java -version will now contain the GA date, making it easier to identify how old the release is:
- 
-$ java -version
-openjdk version "10" 2018-03-20
-OpenJDK Runtime Environment 18.3 (build 10+46)
-OpenJDK 64-Bit Server VM 18.3 (build 10+46, mixed mode)
-
- 
- *
- * Time-Based Release Versioning
- 
- * This JEP talks about revising the version
- * string scheme of the Java SE Platform and the JDK, as well as the related
- * versioning information, for present and future time-based release models for
- * some needed clarifications, with a six-month release model.
- *
- *
- *>java -version
+ * Enables the HotSpot VM to allocate the Java object heap on an alternative memory device, 
+ * such as an NV-DIMM, specified by the user.
+ * 
+ * 
+ *This JEP enables the
+ * HotSpot VM to allocate the Java object heap on an alternative memory device,
+ * specified by the user. This new feature would, for example, make it possible
+ * in a multi-JVM environment to assign lower priority processes to use the
+ * NV-DIMM memory, and instead only allocate the higher priority processes to
+ * the DRAM.
+ * 
+ * 
+ * 
+ * A non-volatile dual in-line memory module (NVDIMM) is a type of random-access memory for computers. 
  * </pre>
  */
-class TimeBasedReleaseVersioning {
-
+class HeapAllocationOnAlternativeMemoryDevices {
+	public static void main(String[] args) {
+		System.out.println("XX:AllocateHeapAt=<file system path>");
+		System.out.println("Enable the HotSpot VM to allocate the Java object heap on an alternative memory device, such as an NV-DIMM, specified by the user.");
+	}
 }

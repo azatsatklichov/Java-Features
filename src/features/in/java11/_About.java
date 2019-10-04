@@ -33,11 +33,11 @@ public class _About {
 	 * </pre>
 	 */
 	public static void main(String[] args) {
-		System.out.println("\nJDK 11 and helps developers to minimize coding efforts.\n");
+		System.out.println("\nJDK 11 and helps developers to minimize coding efforts."
+				+ "\n"
+				+ "Java 11 is the second LTS release after Java 8. Since Java 11, Oracle JDK would no longer be free for commercial use.\n");
 		
-		System.out.println(
-				"Java 11 is the second LTS release after Java 8. Since Java 11, Oracle JDK would no longer be free for commercial use.");
-		System.out.println(
+		 System.out.println(
 				"You can use it in developing stages but to use it commercially, you need to buy a license. \n "
 						+ "If you don’t, you can get an invoice bill from Oracle any day!");
 		System.out.println("Java 10 was the last free Oracle JDK that could be downloaded.");

@@ -1,6 +1,7 @@
 package features.in.java11;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class C_NewStringMethods {
@@ -59,13 +60,18 @@ public class C_NewStringMethods {
         // Local-Variable Syntax for Lambda Parameters
         System.out.println("J11 - Local-Variable Syntax for Lambda Parameters");
         /**
-         * ocal-Variable Syntax for Lambda Parameters is the only language feature
+         * local-Variable Syntax for Lambda Parameters is the only language feature
          * release in Java 11. In Java 10, Local Variable Type Inference was introduced.
          * Thus we could infer the type of the variable from the RHS – var list = new
          * ArrayList<String>();
          * 
          */
         var list = new ArrayList<String>();
+        System.out.println(list);
+        var list2 = List.of();
+        System.out.println(list2);
+        var list3 = List.of("hello", "hi");
+        System.out.println(list3);
         //We can now define :
         /** <pre>
         *(var s1, s2) -> s1 + s2 //no skipping allowed
@@ -74,6 +80,7 @@ public class C_NewStringMethods {
         var s1 -> s1 //not allowed. Need parentheses if you use var in lambda.
         *</pre>
         */
+        
         
         
         
