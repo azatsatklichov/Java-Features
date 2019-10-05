@@ -7,7 +7,7 @@ import java.nio.file.Path;
 public class FilesReadStringWriteString {
 	public static void main(String[] args) throws IOException {
 
-		var words = "forest\nwood\nsky\nrock";
+		var words = "forest\nwood\nsky\nrock\nelma";
 
 		/**
 		 * writeString method is used to write the contents to a file. Characters are
