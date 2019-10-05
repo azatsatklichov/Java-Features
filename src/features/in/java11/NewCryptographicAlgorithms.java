@@ -24,27 +24,32 @@ import javax.crypto.spec.SecretKeySpec;
  * </pre>
  * 
  * 
- * more details {@link here https://tools.ietf.org/html/rfc7539}
- * and  {@link here https://javainterviewpoint.com/chacha20-poly1305-encryption-and-decryption/}
+ * more details {@link here https://tools.ietf.org/html/rfc7539} and {@link here
+ * https://javainterviewpoint.com/chacha20-poly1305-encryption-and-decryption/}
  * 
  */
 public class NewCryptographicAlgorithms {
 
 	public static void main(String[] args) {
+		/**
+		 * * more details {@link here https://tools.ietf.org/html/rfc7539} and
+		 * {@link here
+		 * https://javainterviewpoint.com/chacha20-poly1305-encryption-and-decryption/}
+		 */
 		System.out.println(
-				"ChaCha20 is a relatively new stream cipher that can replace the older, insecure RC4 stream cipher.");
+				"1. ChaCha20 is a relatively new stream cipher that can replace the older, insecure RC4 stream cipher.");
+
+		// https://tools.ietf.org/html/rfc7748
+		System.out.println("2. Curve25519 and Curve448 key agreement is impelented");
 
 	}
 
 }
 
-
-class ChaCha20Poly1305Example
-{
+class ChaCha20Poly1305Example {
 	static String plainText = "This is a plain text which will be encrypted and decrypted by ChaCha20 Poly1305 Algorithm";
 
-	public static void main(String[] args) throws Exception
-	{
+	public static void main(String[] args) throws Exception {
 		KeyGenerator keyGenerator = KeyGenerator.getInstance("ChaCha20");
 		keyGenerator.init(256);
 
@@ -61,13 +66,12 @@ class ChaCha20Poly1305Example
 
 	}
 
-	public static byte[] encrypt(byte[] plaintext, SecretKey key) throws Exception
-	{
+	public static byte[] encrypt(byte[] plaintext, SecretKey key) throws Exception {
 		byte[] nonceBytes = new byte[12];
 
 		// Get Cipher Instance
 		Cipher cipher = Cipher.getInstance("ChaCha20-Poly1305/None/NoPadding");
-		
+
 		// Create IvParamterSpec
 		AlgorithmParameterSpec ivParameterSpec = new IvParameterSpec(nonceBytes);
 
@@ -83,8 +87,7 @@ class ChaCha20Poly1305Example
 		return cipherText;
 	}
 
-	public static String decrypt(byte[] cipherText, SecretKey key) throws Exception
-	{
+	public static String decrypt(byte[] cipherText, SecretKey key) throws Exception {
 		byte[] nonceBytes = new byte[12];
 
 		// Get Cipher Instance
@@ -92,7 +95,7 @@ class ChaCha20Poly1305Example
 
 		// Create IvParamterSpec
 		AlgorithmParameterSpec ivParameterSpec = new IvParameterSpec(nonceBytes);
-				
+
 		// Create SecretKeySpec
 		SecretKeySpec keySpec = new SecretKeySpec(key.getEncoded(), "ChaCha20");
 

@@ -1,5 +1,15 @@
 package features.in.java11;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
+
+import jdk.jfr.Event;
+import jdk.jfr.Label;
+import jdk.jfr.ValueDescriptor;
+import jdk.jfr.consumer.RecordedEvent;
+import jdk.jfr.consumer.RecordingFile;
+
 /**
  * Flight Recorder which earlier used to be a commercial add-on in Oracle JDK is
  * now open-sourced since Oracle JDK is itself not free anymore.
@@ -73,3 +83,40 @@ public class FlightRecorder {
 
 	}
 }
+
+//https://metebalci.com/blog/what-is-new-in-java-11/#jep-328-flight-recorder
+class JEP328 extends Event {
+
+	  @Label("message")
+	  String message;
+
+	  public static void main(String[] args) throws Exception {
+
+	    if (args.length > 0) {
+
+	      for (int i = 0; i < 100; i++) {
+
+	        final JEP328 j = new JEP328();
+	        j.message = String.valueOf(i);
+	        j.commit();
+
+	        Thread.sleep(1000);
+
+	      }
+
+	    } else {
+
+	      Path p = Paths.get("1.out");
+	      for (RecordedEvent e : RecordingFile.readAllEvents(p)) {
+	        final List<ValueDescriptor> lvd = e.getFields();
+	        System.out.println(e.getStartTime());
+	        for (ValueDescriptor vd : lvd) {
+	          System.out.println(vd.getLabel() + "=" + e.getValue(vd.getName()));
+	        }
+	        System.out.println("***");
+	      }
+
+	    }
+
+	  }
+	}
