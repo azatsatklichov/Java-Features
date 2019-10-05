@@ -1,6 +1,6 @@
 package features.in.java12;
 
-public class X {
+public class SwitchExpressions {
 
 	// https://blog.codefx.org/java/java-12-guide/
 
@@ -24,8 +24,8 @@ public class X {
 	}
 
 	public static void main(String[] argv) {
-		new X().foo(2);
-		new X().foo2(2);
+		new SwitchExpressions().foo(2);
+		new SwitchExpressions().foo2(2);
 	}
 
 }

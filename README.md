@@ -177,8 +177,8 @@ Oracle has released Java 9 with rich set of new features. It includes various up
 - 346:	Promptly Return Unused Committed Memory from G1
 
 # Java 13 Features
-
-[Java SE at a Glance](https://www.oracle.com/technetwork/java/javase/overview/index.html),  
+[JDK 12 doc](https://docs.oracle.com/en/java/javase/13/index.html),
+[API](https://docs.oracle.com/en/java/javase/13/docs/api/index.html),  
 [ava 13 Preview Features](https://blog.jetbrains.com/idea/2019/07/support-for-java-13-preview-features-in-intellij-idea-2019-2/), 
 [Open JDK](https://openjdk.java.net/projects/jdk/13/) 
 
@@ -190,3 +190,17 @@ Oracle has released Java 9 with rich set of new features. It includes various up
 - 341:	Default CDS Archives
 - 344:	Abortable Mixed Collections for G1
 - 346:	Promptly Return Unused Committed Memory from G1
+
+
+
+# Java 14 Features
+[Java SE at a Glance](https://www.oracle.com/technetwork/java/javase/overview/index.html),  
+[JDK 14 doc](https://docs.oracle.com/en/java/javase/14/index.html),
+[API](https://docs.oracle.com/en/java/javase/14/docs/api/index.html),  
+[Java 14 Preview Features](https://www.infoworld.com/article/3436795/jdk-14-the-new-features-in-java-14.html), 
+[Open JDK](https://openjdk.java.net/projects/jdk/14/) 
+
+
+JEPs targeted to JDK 14, so far
+- 352:	Non-Volatile Mapped Byte Buffers
+- 358:	Helpful NullPointerExceptions
