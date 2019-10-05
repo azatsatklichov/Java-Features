@@ -15,7 +15,8 @@ public class FilesReadStringWriteString {
 		 * UTF-8 charset.
 		 */
 		Path path = Files.writeString(Path.of("words.txt"), words);
-		// Path path = Files.writeString(Files.createTempFile("test", ".txt") 
+		Files.writeString(Path.of("words2.txt"), words);
+		// Path path = Files.writeString(Files.createTempFile("test", ".txt")
 		System.out.println(path);
 
 		/**
@@ -23,7 +24,7 @@ public class FilesReadStringWriteString {
 		 * from bytes to characters using the UTF-8 charset.
 		 */
 		var data = Files.readString(Path.of("words.txt"));
-		//String data = Files.readString(path);
+		// String data = Files.readString(path);
 		System.out.println(data);
 
 		/**
@@ -31,6 +32,9 @@ public class FilesReadStringWriteString {
 		 * This method returns true if two path objects are equal without even checking
 		 * the file existence.
 		 */
+
+		System.out.println("Same files  = " + Files.isSameFile(Path.of("words.txt"), Path.of("words2.txt")));
+		;
 
 	}
 }

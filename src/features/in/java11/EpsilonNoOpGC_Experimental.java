@@ -4,7 +4,8 @@ package features.in.java11;
  * <pre>
  * 
  * Unlike the JVM GC which is responsible for allocating memory and releasing it, Epsilon only allocates memory.
- * It allocates memory for the following things:
+ * This handles memory allocation but does not have actual memory reclamation mechanism. Once the available Java heap is exhausted, JVM will shut down.
+	Its goals are:-  It allocates memory for the following things: 
 	
 	Performance testing.
 	Memory pressure testing.

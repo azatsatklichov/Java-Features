@@ -33,30 +33,7 @@ public class NegatePredicate {
 	}
 }
 
-class MatchPredicate {
 
-	public static void main(String[] args) {
-
-		// There is a new asMatchPredicate method for working with regular expressions.
-		var words = Arrays.asList("dog", "Dog", "DOG", "Doggy");
-		var asMatchPredicate = Pattern.compile("dog", Pattern.CASE_INSENSITIVE).asMatchPredicate();
-
-		words.forEach((word) -> {
-			if (asMatchPredicate.test(word)) {
-				System.out.printf("%s matches%n", word);
-			} else {
-				System.out.printf("%s does not match%n", word);
-			}
-		});
-
-		// before Java 10
-		Predicate<String> asMatchPredicate2 = Pattern.compile("dog", Pattern.CASE_INSENSITIVE).asMatchPredicate();
-		if (asMatchPredicate2.test("dog")) {
-			System.out.println("\nmatched");
-		}
-
-	}
-}
 
 class Person {
 	private static final int ADULT_AGE = 18;
