@@ -14,21 +14,23 @@ public class FilesReadStringWriteString {
 		 * encoded into bytes using the specified charset, and the default value is a
 		 * UTF-8 charset.
 		 */
-		Files.writeString(Path.of("words.txt"), words);
+		Path path = Files.writeString(Path.of("words.txt"), words);
+		// Path path = Files.writeString(Files.createTempFile("test", ".txt") 
+		System.out.println(path);
 
 		/**
 		 * readString method will read all contents from a file into a string, decoding
 		 * from bytes to characters using the UTF-8 charset.
 		 */
 		var data = Files.readString(Path.of("words.txt"));
-
+		//String data = Files.readString(path);
 		System.out.println(data);
 
 		/**
-		 * isSameFile  method is used for tests if two paths locate the same file or
-		 * not. This method returns true if two path objects are equal without even
-		 * checking the file existence.
+		 * isSameFile method is used for tests if two paths locate the same file or not.
+		 * This method returns true if two path objects are equal without even checking
+		 * the file existence.
 		 */
-		
+
 	}
 }
