@@ -4,6 +4,9 @@ import java.util.Arrays;
 import java.util.function.Predicate;
 import java.util.regex.Pattern;
 
+public class PatternRecognizingMethod {
+}
+
 class MatchPredicate {
 
 	public static void main(String[] args) {

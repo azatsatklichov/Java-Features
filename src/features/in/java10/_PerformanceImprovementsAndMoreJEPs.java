@@ -1,5 +1,13 @@
 package features.in.java10;
 
+/**
+ * 
+ * {@link ApplicationClassDataSharing}
+ *
+ */
+public class _PerformanceImprovementsAndMoreJEPs {
+}
+
 //https://www.baeldung.com/java-10-performance-improvements
 /**
  * <pre>
@@ -228,8 +236,6 @@ class ExperimentalJavaBasedJITCompiler {
 	}
 }
 
-
-
 /**
  * 
  * <pre>
@@ -269,7 +275,7 @@ OpenJDK 64-Bit Server VM 18.3 (build 10+46, mixed mode)
  */
 class TimeBasedReleaseVersioning {
 	public static void main(String[] args) {
-		//https://www.oracle.com/technetwork/java/java-se-support-roadmap.html
+		// https://www.oracle.com/technetwork/java/java-se-support-roadmap.html
 		System.out.println(
 				"A new Java release every six months. The March 2018 release is JDK 10, the September 2018 release is JDK 11, and so on.");
 		System.out.println(
@@ -281,8 +287,6 @@ class TimeBasedReleaseVersioning {
 	}
 
 }
-
-
 
 /**
  * Consolidate the JDK Forest into a Single Repository
@@ -422,7 +426,6 @@ class AdditionalUnicodeLanguageTagExtensions {
 
 }
 
-
 /**
  * JEP 316: Heap Allocation on Alternative Memory Devices
  * 
@@ -440,12 +443,13 @@ class AdditionalUnicodeLanguageTagExtensions {
  * 
  * 
  * 
- * A non-volatile dual in-line memory module (NVDIMM) is a type of random-access memory for computers. 
+ * A non-volatile dual in-line memory module (NVDIMM) is a type of random-access memory for computers.
  * </pre>
  */
 class HeapAllocationOnAlternativeMemoryDevices {
 	public static void main(String[] args) {
 		System.out.println("XX:AllocateHeapAt=<file system path>");
-		System.out.println("Enable the HotSpot VM to allocate the Java object heap on an alternative memory device, such as an NV-DIMM, specified by the user.");
+		System.out.println(
+				"Enable the HotSpot VM to allocate the Java object heap on an alternative memory device, such as an NV-DIMM, specified by the user.");
 	}
 }
