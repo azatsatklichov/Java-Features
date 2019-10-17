@@ -36,7 +36,8 @@ public class ImproveAarch64Intrinsics {
 		//https://bell-sw.com/java/arm/performance/2019/01/15/the-status-of-java-on-arm/
 		System.out.println(
 				"Today, as Arm processors are primarily viewed as targeting the embedded market, and justifiably so, "
-				+ "multiple hardware vendors are using this architecture to build server CPUs and to compete with Intel in the cloud and High Performance Computing (HPC) segment. ");
+				+ "\nmultiple hardware vendors are using this architecture to build server CPUs and to compete with Intel "
+				+ "in the cloud and High Performance Computing (HPC) segment. ");
 		System.out.println("Availability of Java on Arm");
 		
 		/**

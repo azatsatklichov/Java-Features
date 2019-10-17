@@ -34,7 +34,14 @@ package features.in.java11;
  */
 public class EpsilonNoOpGC_Experimental {
 	public static void main(String[] args) {
+		// -XX:+UseEpsilonGC Use Epsilon GC
+		System.out
+				.println("Epsilon is the \"no-op\" garbage collector. It allocates new memory but never recycles it. ");
 		System.out.println(
 				"Epsilon is good only for test environments. It will lead to OutOfMemoryError in production and crash the applications");
+		System.out.println(
+				"Provide a completely passive GC implementation with a bounded allocation limit and the lowest latency overhead possible, at the expense of memory \r\n"
+						+ "footprint and memory throughput. ");
+
 	}
 }

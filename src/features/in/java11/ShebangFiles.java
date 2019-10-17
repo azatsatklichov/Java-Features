@@ -16,6 +16,8 @@ public class ShebangFiles {
 		// images
 		// cd C:\apps\Git
 		// run git-bash
+		//./single-shebang-file.sh
+
 
 		// Gotcha #4 — File name, not class name!
 		// https://medium.com/the-java-report/new-java-11-feature-launch-single-file-source-code-programs-fadd698abf54

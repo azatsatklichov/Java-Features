@@ -28,13 +28,15 @@ import javax.crypto.spec.SecretKeySpec;
  * https://javainterviewpoint.com/chacha20-poly1305-encryption-and-decryption/}
  * 
  */
-public class NewCryptographicAlgorithms {
+public class TLSNewCryptographicAlgorithms {
 
 	public static void main(String[] args) {
 		/**
 		 * * more details {@link here https://tools.ietf.org/html/rfc7539} and
 		 * {@link here
 		 * https://javainterviewpoint.com/chacha20-poly1305-encryption-and-decryption/}
+		 * 
+		 * https://www.eweek.com/development/oracle-improves-security-performance-in-java-11
 		 */
 		System.out.println(
 				"1. ChaCha20 is a relatively new stream cipher that can replace the older, insecure RC4 stream cipher.");

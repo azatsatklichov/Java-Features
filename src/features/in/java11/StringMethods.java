@@ -21,7 +21,7 @@ public class StringMethods {
 		 * Character.isWhitespace(c) to know if a unicode is whitespace or not.
 		 * Unicode-aware trimming routines should use Character::isWhitespace(int).
 		 * 
-		 * The java lang.string.trim()is a built-in function that eliminates leading and
+		 * The java lang.string.trim() is a built-in function that eliminates leading and
 		 * trailing spaces. The Unicode value of space character is '\u0020'. The
 		 * definition of space used by String::trim is any code point less than or equal
 		 * to the space code point (\u0020), commonly referred to as ASCII or ISO
@@ -96,20 +96,6 @@ public class StringMethods {
 		System.out.println(newWord);
 		System.out.println();
 
-		// Local-Variable Syntax for Lambda Parameters
-		System.out.println("J11 - Local-Variable Syntax for Lambda Parameters");
-		/**
-		 * local-Variable Syntax for Lambda Parameters is the only language feature
-		 * release in Java 11. In Java 10, Local Variable Type Inference was introduced.
-		 * Thus we could infer the type of the variable from the RHS – var list = new
-		 * ArrayList<String>();
-		 * 
-		 */
-		var list = new ArrayList<String>();
-		System.out.println(list);
-		var list2 = List.of();
-		System.out.println(list2);
-		var list3 = List.of("hello", "hi");
-		System.out.println(list3);
+		
 	}
 }

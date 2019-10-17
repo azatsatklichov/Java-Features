@@ -18,8 +18,7 @@ public class HttpClientStandardized {
 
 		var client = HttpClient.newHttpClient();
 		var request = HttpRequest.newBuilder()
-				// .uri(URI.create("http://webcode.me"))
-				.uri(URI.create("http://sahet.net")).build();
+				.uri(URI.create("https://www.baeldung.com/java-flight-recorder-monitoring")).build(); //http://sahet.net
 
 		client.sendAsync(request, HttpResponse.BodyHandlers.ofString()).thenApply(HttpResponse::body)
 				.thenAccept(System.out::println).join();
