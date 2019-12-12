@@ -22,15 +22,15 @@ public class RawStringLiterals_DroppedFromJDK12 {
 	     * 
 	     * Use backtick 
 	     */
-	    String daysInAWeekStr = `Days in a week
-                Sunday
-                 Monday
-                 Tuesday
-                 Wednesday
-                 Thursday
-                 Friday
-                 Saturday`;
-	    System.out.println(daysInAWeekStr);
+//	   String daysInAWeekStr = `Days in a week
+//                Sunday
+//                 Monday
+//                 Tuesday
+//                 Wednesday
+//                 Thursday
+//                 Friday
+//                 Saturday`;
+//	    System.out.println(daysInAWeekStr);
 	    
  
 
