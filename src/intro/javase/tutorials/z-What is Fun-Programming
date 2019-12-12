@@ -1,0 +1,30 @@
+
+In Java 8's java.util.function package, we have:
+•Function: Takes one argument, produces one result.
+•Consumer: Takes one argument, produces nothing.
+•Supplier: Takes no argument, produces one result.
+
+•...: Other cases handling primitives, 2 arguments, etc...
+
+But I need to handle the "takes no argument, produces nothing" case.
+
+There is nothing for this in java.util.functionnal.
+
+So, the question is:
+
+What is the name of 'a function that takes no argument and returns nothing'?
+
+In Java 8, its definition would be:
+@FunctionalInterface
+public interface InsertANameHere {
+    void execute();
+}
+
+Executor already exists and has another purpose : "An object that executes submitted Runnable tasks". 
+ signature doesn't match (execute(Runnable):void) and is not even a functional interface.
+
+Runnable exists, but it is strongly linked to the threading context:
+•The package is java.lang, not java.util.function.
+•The javadoc states : "The Runnable interface should be implemented by any class whose instances are 
+intended to be executed by a thread".
+•The name "Runnable" suggest some running code inside a thread.

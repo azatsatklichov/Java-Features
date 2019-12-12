@@ -1,0 +1,99 @@
+
+
+What is local datetime API in JAVA8?
+Local − Simplified date-time API with no complexity of timezone handling.
+
+
+What is zoned datetime API in JAVA8?
+Zoned − Specialized date-time API to deal with various timezones.
+
+
+What is chromounits in java8?
+java.time.temporal.ChronoUnit enum is added in Java 8 to replace the integer values 
+used in old API to represent day, month, etc.
+
+
+How will you get the current date using local datetime api of java8?
+Following code gets the current date using local datetime api −
+//Get the current date
+LocalDate today = LocalDate.now();
+System.out.println("Current date: " + today);
+
+
+How will you add 1 week to current date using local datetime api of java8?
+Following code adds 1 week to current date using local datetime api −
+//add 1 week to the current date
+LocalDate today = LocalDate.now();
+LocalDate nextWeek = today.plus(1, ChronoUnit.WEEKS);
+System.out.println("Next week: " + nextWeek);
+
+
+How will you add 1 month to current date using local datetime api of java8?
+Following code adds 1 month to current date using local datetime api:
+//add 1 month to the current date
+LocalDate today = LocalDate.now();
+LocalDate nextMonth = today.plus(1, ChronoUnit.MONTHS);
+System.out.println("Next month: " + nextMonth);
+
+
+How will you add 1 year to current date using local datetime api of java8?
+Following code adds 1 year to current date using local datetime api −
+//add 1 year to the current date
+LocalDate today = LocalDate.now();
+LocalDate nextYear = today.plus(1, ChronoUnit.YEARS);
+System.out.println("Next year: " + nextYear);
+
+
+How will you add 10 years to current date using local datetime api of java8?
+Following code adds 10 years to current date using local datetime api −
+//add 10 years to the current date
+LocalDate today = LocalDate.now();
+LocalDate nextDecade = today.plus(1, ChronoUnit.DECADES);
+System.out.println("Date after ten year: " + nextDecade);
+
+
+How will you get next tuesday using java8?
+
+Following code gets next tuesday using java8 −
+//get the next tuesday
+LocalDate today = LocalDate.now();
+LocalDate nextTuesday = today.with(TemporalAdjusters.next(DayOfWeek.TUESDAY));
+System.out.println("Next Tuesday on : " + nextTuesday);
+
+
+How will you get second saturday of next month using java8?
+
+
+Following code gets second saturday of next month using java8 −
+//get the second saturday of next month
+LocalDate firstInYear = LocalDate.of(date1.getYear(),date1.getMonth(), 1);
+LocalDate secondSaturday = firstInYear.with(TemporalAdjusters.nextOrSame(DayOfWeek.SATURDAY)).with(TemporalAdjusters.next(DayOfWeek.SATURDAY));
+System.out.println("Second Saturday on : " + secondSaturday);
+
+
+How will you get the instant of current date in terms of milliseconds using java8?
+
+
+Following code gets the instant of current date in terms of milliseconds −
+//Get the instant of current date in terms of milliseconds
+Instant now = currentDate.toInstant();
+
+
+How will you get the instant of local date time using time in of milliseconds using java8?
+
+
+Following code gets the instant of local date time using time in of milliseconds −
+Instant now = currentDate.toInstant();
+ZoneId currentZone = ZoneId.systemDefault();
+LocalDateTime localDateTime = LocalDateTime.ofInstant(now, currentZone);
+System.out.println("Local date: " + localDateTime);
+
+
+How will you get the instant of zoned date time using time in of milliseconds using java8?
+
+
+Following code gets the instant of zoned date time using time in of milliseconds −
+Instant now = currentDate.toInstant();
+ZoneId currentZone = ZoneId.systemDefault();
+ZonedDateTime zonedDateTime = ZonedDateTime.ofInstant(now, currentZone);
+System.out.println("Zoned date: " + zonedDateTime);

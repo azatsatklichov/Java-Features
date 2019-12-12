@@ -1,0 +1,18 @@
+
+
+What is Nashorn in Java8?
+
+
+With Java 8, Nashorn, a much improved javascript engine is introduced, to replace the existing Rhino. 
+Nashorn provides 2 to 10 times better performance, as it directly compiles the code in memory and passes 
+the bytecode to JVM. Nashorn uses invokedynamics feature, introduced in Java 7 to improve performance.
+
+
+What is jjs in JAVA8?
+
+
+For Nashorn engine, JAVA 8 introduces a new command line tool, jjs, to execute javascript codes at console.
+
+
+Can you execute javascript code from java 8 code base?
+Yes! Using ScriptEngineManager, JavaScript code can be called and interpreted in Java.

@@ -1,0 +1,182 @@
+What are functional interfaces?
+
+
+Functional interfaces have a single functionality to exhibit. For example, a Comparable
+ interface with a single method 'compareTo' is used for comparison purpose. Java 8 has defined a lot 
+ of functional interfaces to be used extensively in lambda expressions.
+
+ 
+ What is the purpose of BiConsumer<T,U> functional interface? 
+It represents an operation that accepts two input arguments, and returns no result.
+
+
+What is the purpose of Consumer<T> functional interface? 
+It represents an operation that accepts a single input argument and returns no result. 
+
+
+What is the purpose of DoubleConsumer functional interface?
+It represents an operation that accepts a single double-valued argument and returns no result.
+ 
+ 
+ What is the purpose of BiFunction<T,U,R> functional interface?  
+It represents a function that accepts two arguments and produces a result.
+
+What is the purpose of DoubleFunction<R> functional interface?
+It represents a function that accepts a double-valued argument and produces a result.
+
+What is the purpose of DoubleToIntFunction functional interface?
+It represents a function that accepts a double-valued argument and produces an int-valued result.
+
+
+ 
+ What is the purpose of BinaryOperator<T> functional interface? 
+It represents an operation upon two operands of the same type, producing a result of the same type as the operands.
+ 
+ 
+ What is the purpose of DoubleBinaryOperator functional interface? 
+It represents an operation upon two double-valued operands and producing a double-valued result.
+
+ 
+ What is the purpose of BiPredicate<T,U> functional interface? 
+It represents a predicate (Boolean-valued function) of two arguments.
+
+What is the purpose of DoublePredicate functional interface?
+It represents a predicate (Boolean-valued function) of one double-valued argument.
+
+ 
+ What is the purpose of BooleanSupplier functional interface? 
+It represents a supplier of Boolean-valued results.
+ 
+ What is the purpose of DoubleSupplier functional interface?
+It represents a supplier of double-valued results.
+
+
+
+ 
+
+What is the purpose of DoubleToLongFunction functional interface?
+It represents a function that accepts a double-valued argument and produces a long-valued result.
+
+
+What is the purpose of DoubleUnaryOperator functional interface?
+It represents an operation on a single double-valued operand that produces a double-valued result.
+
+
+What is the purpose of Function<T,R> functional interface?
+It represents a function that accepts one argument and produces a result.
+
+
+What is the purpose of IntBinaryOperator functional interface?
+It represents an operation upon two int-valued operands and produces an int-valued result.
+
+
+What is the purpose of IntConsumer functional interface?
+It represents an operation that accepts a single int-valued argument and returns no result.
+
+
+What is the purpose of IntFunction<R> functional interface?
+It represents a function that accepts an int-valued argument and produces a result.
+
+
+What is the purpose of IntPredicate functional interface?
+It represents a predicate (Boolean-valued function) of one int-valued argument.
+
+
+What is the purpose of IntSupplier functional interface?
+It represents a supplier of int-valued results.
+
+
+What is the purpose of IntToDoubleFunction functional interface?
+It represents a function that accepts an int-valued argument and produces a double-valued result.
+
+
+What is the purpose of IntToLongFunction functional interface?
+It represents a function that accepts an int-valued argument and produces a long-valued result.
+
+
+What is the purpose of IntUnaryOperator functional interface?
+It represents an operation on a single int-valued operand that produces an int-valued result.
+
+
+What is the purpose of LongBinaryOperator functional interface?
+It represents an operation upon two long-valued operands and produces a long-valued result.
+
+
+What is the purpose of LongConsumer functional interface?
+It represents an operation that accepts a single long-valued argument and returns no result.
+
+
+What is the purpose of LongFunction<R> functional interface?
+It represents a function that accepts a long-valued argument and produces a result.
+
+
+What is the purpose of LongPredicate functional interface?
+It represents a predicate (Boolean-valued function) of one long-valued argument.
+
+
+What is the purpose of LongSupplier functional interface?
+It represents a supplier of long-valued results.
+
+
+What is the purpose of LongToDoubleFunction functional interface?
+It represents a function that accepts a long-valued argument and produces a double-valued result.
+
+
+What is the purpose of LongToIntFunction functional interface?
+It represents a function that accepts a long-valued argument and produces an int-valued result.
+
+
+What is the purpose of LongUnaryOperator functional interface?
+It represents an operation on a single long-valued operand that produces a long-valued result.
+
+
+What is the purpose of ObjDoubleConsumer<T> functional interface?
+It represents an operation that accepts an object-valued and a double-valued argument, and returns no result.
+
+
+What is the purpose of ObjIntConsumer<T> functional interface?
+It represents an operation that accepts an object-valued and an int-valued argument, and returns no result.
+
+
+What is the purpose of ObjLongConsumer<T> functional interface?
+It represents an operation that accepts an object-valued and a long-valued argument, and returns no result.
+
+
+What is the purpose of Predicate<T> functional interface?
+It represents a predicate (Boolean-valued function) of one argument.
+
+
+What is the purpose of Supplier<T> functional interface?
+It represents a supplier of results.
+
+
+What is the purpose of ToDoubleBiFunction<T,U> functional interface?
+It represents a function that accepts two arguments and produces a double-valued result.
+
+
+What is the purpose of ToDoubleFunction<T> functional interface?
+It represents a function that produces a double-valued result.
+
+
+What is the purpose of ToIntBiFunction<T,U> functional interface?
+It represents a function that accepts two arguments and produces an int-valued result.
+
+
+What is the purpose of ToIntFunction<T> functional interface?
+It represents a function that produces an int-valued result.
+
+
+What is the purpose of ToLongBiFunction<T,U> functional interface?
+It represents a function that accepts two arguments and produces a long-valued result.
+
+
+What is the purpose of ToLongFunction<T> functional interface?
+It represents a function that produces a long-valued result.
+
+
+What is the purpose of UnaryOperator<T> functional interface?
+It represents an operation on a single operand that produces a result of the same type as its operand.
+
+ 
+ 
+ 

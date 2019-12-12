@@ -1,10 +1,4 @@
-https://www.journaldev.com/24601/java-11-features
-
 https://openjdk.java.net/projects/jdk/11/
-https://dzone.com/articles/features-of-java-11
-https://www.journaldev.com/24601/java-11-features
-https://www.geeksforgeeks.org/java-11-features-and-comparison/
-https://www.journaldev.com/24601/java-11-features
 
 JDK 11
 JDK 11 is the open-source reference implementation of version 11 of the Java SE 11 Platform as specified by by JSR 384 in the Java Community Process.
@@ -29,7 +23,7 @@ Features
 331: Low-Overhead Heap Profiling
 332: Transport Layer Security (TLS) 1.3
 333: ZGC: A Scalable Low-Latency Garbage Collector
-â€�â€�â€�(Experimental)
+   (Experimental)
 335: Deprecate the Nashorn JavaScript Engine
 336: Deprecate the Pack200 Tools and API
 Schedule

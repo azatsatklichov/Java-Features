@@ -1,0 +1,10 @@
+
+How will you sort a list of string using Java 8 lambda expression?
+
+
+Following code sorts a list of string using Java 8 lambda expression:
+//sort using java 8
+
+private void sortUsingJava8(List<String> names) {
+  Collections.sort(names, (s1, s2) -> s1.compareTo(s2));
+}
