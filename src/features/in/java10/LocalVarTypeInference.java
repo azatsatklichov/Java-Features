@@ -248,7 +248,7 @@ class LegalLocalVarInferenceDemo {
 
 }
 
-class IllegalLocalVarInferenceDemo {
+class IllegalLocalVarInferenceDemo2 {
 	// Not permitted in class fields
 	// var someProperty;
 
