@@ -29,7 +29,7 @@ package features.in.java12;
  * 
  * On Oracle’s OpenJDK Early-Release build:
  */
-public class Shenandoah_LowPauseTimeGC_Experimental {
+public class z_Shenandoah_LowPauseTimeGC_Experimental {
 	//https://wiki.openjdk.java.net/display/shenandoah/Main
 
 }

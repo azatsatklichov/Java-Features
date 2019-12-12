@@ -1,31 +1,38 @@
 package features.in.java12;
 
 public class RawStringLiterals_DroppedFromJDK12 {
-	public static void main(String args[]) {
+	public static void main(String args[]) { 
+	    
+	    
+	    String daysInAWeekStr = "Days in a week \n" +
+                "\t\t\tSunday\n" +
+                 "\t\t\tMonday\n" +
+                "\t\t\tTuesday\n" +
+                "\t\t\tWednesday\n" +
+                 "\t\t\tThursday\n" +
+                 "\t\t\tFriday\n" +
+                 "\t\t\tSaturday\n";
+	    System.out.println(daysInAWeekStr);
 
-	    // traditional string
-	    final String s1 = "test";
-	    // traditional multiline string
-	    final String s2 = "line1\nline2";
-
-	    //0 raw string literals
-//	    final String rs1 =`test`;
-//	    final String rs2 =`
-//	    		line1
-//	    			line2
-//	    				line3`;
-//	    final String rs3 = ``backtick`inside``;
-//	    final String rs4 = `\n`;
-//
-//	    System.out.println(rs1);
-//	    
-//	    System.out.println(rs2);
-//	    System.out.println(rs2.align());
-//	    System.out.println(rs3);
-
-	    // String::unescape() is not implemented yet on jdk12+21
-//	    System.out.println(rs4.length());
-//	     System.out.println(rs4.unescape().length());
+	    
+	    //In Java 12
+	    /**
+	     * This feature is now (as of writing this blog) available as a preview feature in JDK 12 
+	     * early access builds. In order to enable this use, pass the --enable-preview argument.
+	     * 
+	     * Use backtick 
+	     */
+	    String daysInAWeekStr = `Days in a week
+                Sunday
+                 Monday
+                 Tuesday
+                 Wednesday
+                 Thursday
+                 Friday
+                 Saturday`;
+	    System.out.println(daysInAWeekStr);
+	    
+ 
 
 	  }
 

@@ -14,7 +14,7 @@ package features.in.java12;
  * implementation
  * 
  */
-public class MicrobenchmarkSuite {
+public class z_MicrobenchmarkSuite {
 	public static void main(String[] args) {
 		
 	}

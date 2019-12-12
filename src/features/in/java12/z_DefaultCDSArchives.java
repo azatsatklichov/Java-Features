@@ -12,7 +12,7 @@ import features.in.java10._PerformanceImprovementsAndMoreJEPs;
  * {@link _PerformanceImprovementsAndMoreJEPs}
  * {@link ApplicationClassDataSharing}
  */
-public class DefaultCDSArchives {
+public class z_DefaultCDSArchives {
 	
 	/**
 	 * The goal is to improve startup time. From Java 12, CDS is by default ON.

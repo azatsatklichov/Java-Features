@@ -84,6 +84,16 @@ class AnotherExample {
 		}
 	}
 
+	/**
+	 * In the above example, we defined the Connection object outside the
+	 * try-with-resource block, hence we need to close it explicitly in the finally
+	 * block. We can't put a dbCon object reference in our try-with-resource block,
+	 * which was an obvious bug in Java 7. 
+	 * 
+	 * Fortunately, it was fixed in Java 9. See below.
+	 * 
+	 * @throws SQLException
+	 */
 	public void loadDataFromDBJava7() throws SQLException {
 		Connection dbCon = DriverManager.getConnection("url", "user", "password");
 		try (ResultSet rs = dbCon.createStatement().executeQuery("select * from emp")) {

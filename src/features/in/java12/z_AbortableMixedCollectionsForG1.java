@@ -1,6 +1,6 @@
 package features.in.java12;
 
-public class AbortableMixedCollectionsForG1 {
+public class z_AbortableMixedCollectionsForG1 {
 	public static void main(String[] args) {
 		/**
 		 * Improvements in G1 efficiency include making G1 mixed collections abortable

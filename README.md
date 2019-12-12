@@ -109,7 +109,7 @@ Oracle has released Java 9 with rich set of new features. It includes various up
 - Reactive Streams API: A new Reactive Streams API in Java SE 9 has been introduced to support reactive programming in java 9
 
 
-# Java 10 Features (March 20, 2018)
+# Java 10 Features (GA 2018/03/20)
 [JDK 10 doc](https://docs.oracle.com/javase/10/),
 [API](https://docs.oracle.com/javase/10/docs/api/overview-summary.html), 
 [What's New in JDK 10](https://www.oracle.com/technetwork/java/javase/10-relnote-issues-4108729.html#NewFeature),
@@ -131,7 +131,7 @@ Oracle has released Java 9 with rich set of new features. It includes various up
 - Deprecated Features and Options in Java 10
 
 
-# Java 11 Features
+# Java 11 Features (GA 2018/09/25)
 [JDK 11 doc](https://docs.oracle.com/en/java/javase/11/),
 [API](https://docs.oracle.com/en/java/javase/11/docs/api/index.html),  
 [What's New in JDK 11](https://www.oracle.com/technetwork/java/javase/11-relnote-issues-5012449.html#NewFeature),  
@@ -160,7 +160,7 @@ Oracle has released Java 9 with rich set of new features. It includes various up
 - 286: Local-Variable Type Inference
 
 
-# Java 12 Features
+# Java 12 Features (GA 2019/03/19)
 
 [JDK 12 doc](https://docs.oracle.com/en/java/javase/12/index.html),
 [API](https://docs.oracle.com/en/java/javase/12/docs/api/index.html),     
@@ -176,7 +176,7 @@ Oracle has released Java 9 with rich set of new features. It includes various up
 - 344:	Abortable Mixed Collections for G1
 - 346:	Promptly Return Unused Committed Memory from G1
 
-# Java 13 Features
+# Java 13 Features (GA 2019/09/17)
 [JDK 12 doc](https://docs.oracle.com/en/java/javase/13/index.html),
 [API](https://docs.oracle.com/en/java/javase/13/docs/api/index.html),  
 [ava 13 Preview Features](https://blog.jetbrains.com/idea/2019/07/support-for-java-13-preview-features-in-intellij-idea-2019-2/), 
@@ -192,8 +192,7 @@ Oracle has released Java 9 with rich set of new features. It includes various up
 - 346:	Promptly Return Unused Committed Memory from G1
 
 
-
-# Java 14 Features
+# Java 14 Features (in development)
 [Java SE at a Glance](https://www.oracle.com/technetwork/java/javase/overview/index.html),  
 [JDK 14 doc](https://docs.oracle.com/en/java/javase/14/index.html),
 [API](https://docs.oracle.com/en/java/javase/14/docs/api/index.html),  

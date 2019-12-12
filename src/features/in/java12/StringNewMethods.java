@@ -9,7 +9,7 @@ import java.util.Optional;
 /**
  * 4 new methods have been introduced in Java 12 which are:
  * 
- * indent(int n)
+ * indent(int n) - The string is conceptually separated into lines using lines(). lines() is the String API introduced in Java 11.
  * 
  * transform(Function f)
  * 
@@ -23,19 +23,36 @@ public class StringNewMethods {
 
 	public static void main(String[] args) {
 		System.out.println("indent(int n)");
-		String str = "*****\n  Hi\n  \tHello friend\rHow are you?\n*****";
+		String str = "*****\n  Hi\n\tHello fri end\rHow are you?\n*****";
 
 		System.out.println(str.indent(0));
 		System.out.println(str.indent(3));
 		System.out.println(str.indent(-3));
 
 		System.out.println("transform(Function<? super String,​? extends R> f)");
+		String result = "hello".transform(input -> input + " world!");
+		System.out.println(result);
+		
 		String s = "Hi,Hello,Howdy";
-		List strList = s.transform(s1 -> {
+		var strList = s.transform(s1 -> {
 			return Arrays.asList(s1.split(","));
 		});
 		System.out.println(strList);
+		
+		List<String> names = List.of("   Alex", "An");
 
+		List<String> transformedNames = new ArrayList<>();
+
+		for (String name : names) {
+			String transformedName = name.transform(String::strip).transform(String::toUpperCase);
+			transformedNames.add(transformedName);
+		}		
+		System.out.println(transformedNames);
+		
+		int num = "42".transform(Integer::parseInt);
+		System.out.println(num);
+
+		
 		System.out.println();
 		System.out.println("Optional<String> describeConstable()");
 		/**
@@ -43,7 +60,7 @@ public class StringNewMethods {
 		 * interfaces from Constants API – Constable, and ConstantDesc.
 		 */
 		String so = "Hello";
-		Optional os = so.describeConstable();
+		Optional<String> os = so.describeConstable();
 		System.out.println(os);
 		System.out.println(os.get());
 
@@ -52,17 +69,7 @@ public class StringNewMethods {
 		String resolveConstantDesc = so1.resolveConstantDesc(MethodHandles.lookup());
 		System.out.println(resolveConstantDesc);
 
-		List<String> names = List.of("   Alex", "brian");
-
-		List<String> transformedNames = new ArrayList<>();
-
-		for (String name : names) {
-			String transformedName = name.transform(String::strip).transform(String::toUpperCase);
-
-			transformedNames.add(transformedName);
-		}
 		
-		System.out.println(transformedNames);
 
 	}
 }

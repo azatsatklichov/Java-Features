@@ -57,7 +57,8 @@ public class DynamicClassFileConstants {
 		System.out.println(
 				" SO by using invokedynamic it has become possible to delay the binding of a method call until its first invocation.");
 		System.out.println(
-				"\nWith Java 11 'constantdynamic' a similar mechanism was introduced to EXTEND Extend the Java class-file format to support a new constant-pool form, CONSTANT_Dynamic");
+				"\nWith Java 11 'constantdynamic' a similar mechanism was introduced to"
+				+ " EXTEND Extend the Java class-file format to support a new constant-pool form, CONSTANT_Dynamic");
 
 		System.out.println(" SO that it delays the creation of a constant value");
 

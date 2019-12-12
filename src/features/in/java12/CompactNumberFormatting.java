@@ -16,11 +16,14 @@ public class CompactNumberFormatting {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		System.out.println("Compact Formatting");
+		System.out.println("Compact Formatting\n");
 		NumberFormat upvotes = NumberFormat.getCompactNumberInstance(new Locale("en", "US"), NumberFormat.Style.SHORT);
 		upvotes.setMaximumFractionDigits(1);
 
 		System.out.println(upvotes.format(2592) + " upvotes");
+		upvotes.setMaximumFractionDigits(2);
+
+		System.out.println(upvotes.format(2592) + " upvotes\n");
 
 		NumberFormat upvotes2 = NumberFormat.getCompactNumberInstance(new Locale("en", "US"), NumberFormat.Style.LONG);
 		upvotes2.setMaximumFractionDigits(2);

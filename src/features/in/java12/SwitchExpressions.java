@@ -27,7 +27,7 @@ public class SwitchExpressions {
 		case 4:
 		case 5:
 		case 6:
-			System.out.println("weekday");
+			System.out.println("weekday 3,4,5,6");
 			break;
 		case 7:
 		case 1:
@@ -39,14 +39,14 @@ public class SwitchExpressions {
 
 		// case L -> syntax no break necessary, only code next to -> runs
 		switch (day) {
-		case 2, 3, 4, 5, 6 -> System.out.println("weekday");
+		case 2, 3, 4, 5, 6 -> System.out.println("weekday -> 3,4,5,6");
 		case 7, 1 -> System.out.println("weekend");
 		default -> System.out.println("invalid");
 		}
 
 		// switch expression
 		final String attr = switch (day) {
-		case 2, 3, 4, 5, 6 -> "weekday";
+		case 2, 3, 4, 5, 6 -> "workings day";
 		case 7, 1 -> "weekend";
 		// it is possible to do this without a block and break
 		// so default -> "invalid"; is actually enough here
@@ -54,11 +54,12 @@ public class SwitchExpressions {
 			break "invalid";
 		}
 		};
-
+ 
 		System.out.println();
-		System.out.println(attr);
+		System.out.println("VALUE returned by SWITCH -> "+attr);
 		System.out.println();
 
+		
 		new SwitchExpressions().foo(2);
 		new SwitchExpressions().foo2(2);
 
@@ -84,15 +85,20 @@ public class SwitchExpressions {
 }
 
 class Test {
+	
+	public static void main(String[] args) {
+		String day_1 = getDay_1(Day.THUR);
+		System.out.println(day_1);
+	}
 
 	enum Day {
 		MON, TUE, WED, THUR, FRI, SAT, SUN
 	};
 
 	@SuppressWarnings("preview")
-	public String getDay_1(Day today) {
+	public static String getDay_1(Day today) {
 		String day = switch (today) {
-		case MON, TUE, WED, THUR, FRI -> "Weekday";
+		case MON, TUE, WED, THUR, FRI -> " today's working day is = "+today;
 		case SAT, SUN -> "Weekend";
 		};
 		return day;
