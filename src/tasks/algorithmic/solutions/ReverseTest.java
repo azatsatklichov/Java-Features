@@ -47,8 +47,9 @@ public class ReverseTest {
 	}
 
 	private static void swap(char[] arr, int len, int i) {
-		char tmp = arr[len - i - 1];
-		arr[len - i - 1] = arr[i];
+		int j = len - i - 1;
+		char tmp = arr[j];
+		arr[j] = arr[i];
 		arr[i] = tmp;
 	}
 
