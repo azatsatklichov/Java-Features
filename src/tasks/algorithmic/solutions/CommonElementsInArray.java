@@ -46,7 +46,10 @@ class CommonElement {
 		String[] arrayD = { "A", "B", "F", };
 		System.out.println(isInBoth2("B", arrayC, arrayD));
 		System.out.println(isInBoth2("C", arrayC, arrayD));
-
+				
+		System.out.println();
+		System.out.println(isArrayContainsValueFix("C", arrayC));
+		
 	}
 
 	/**
@@ -94,6 +97,17 @@ class CommonElement {
 				break;
 			}
 			;
+		}
+		return found;
+	}
+	
+	private static boolean isArrayContainsValueFix(String value, String[] arrayB) {
+		boolean found = false;
+		for (String val : arrayB) {
+			if (value.equals(val)) {
+				found = true;
+				break;
+			};
 		}
 		return found;
 	}
