@@ -21,9 +21,8 @@ public class PatternMatching {
 			System.out.println(s);
 		}
 
-		// new way is -- Early Java12
+		// new way is -- Early Java12  NO CASTING NEEDED
 //		if (obj instanceof String x) {
-//		 //NO CASTING NEEDED
 //		    System.out.println(x);
 //		} 
 	}

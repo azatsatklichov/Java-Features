@@ -50,9 +50,7 @@ public class SwitchExpressions {
 		case 7, 1 -> "weekend";
 		// it is possible to do this without a block and break
 		// so default -> "invalid"; is actually enough here
-		default -> {
-			break "invalid";
-		}
+		default ->  "invalid"; 
 		};
  
 		System.out.println();
