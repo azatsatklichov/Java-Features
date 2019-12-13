@@ -1,0 +1,48 @@
+package net.sahet.vatinfo.infor;
+
+import java.util.Map;
+
+
+
+class WantsToBeChanged_Old {
+
+	public void performOperation(OperationDefinition op, Map<Long, String> theMainMap, OperSummary sum) {
+		for (int d = 0; d < op.getOperationDetailsStore().size();) {
+			CommitFail opDetails = op.getOperationDetailsStore().get(d);
+			if (opDetails.getOpStatusId() == 1 || opDetails.getOpStatusId() == 3 || opDetails.getOpStatusId() == 4) {
+				sum.setOpCond(true);
+				if (opDetails.getRelblkId() != null && opDetails.getOperationsumRefId() != null
+						&& opDetails.getOperationsumParentId() != null) {
+					sum.setIsReliefOperation("Y");
+					theMainMap.put(opDetails.getOperationsumId(), "Y");
+				}
+			} else {
+				if (opDetails.getRelblkId() != null && opDetails.getOperationsumRefId() != null
+						&& opDetails.getOperationsumParentId() != null) {
+					sum.setOpCond(true);
+					sum.setIsReliefOperation("Y");
+					theMainMap.put(opDetails.getOperationsumId(), "Y");
+				} else {
+					sum.setOpCond(true);
+				}
+			}
+			break;
+		}
+	}
+}
+
+public  class hangedCode  {
+
+	public void performOperation(OperationDefinition op, Map<Long, String> theMainMap, OperSummary sum) {
+		Map<Long, String> operationDetailsStore = op.getOperationDetailsStore();
+		if (null == operationDetailsStore)
+			return;
+		CommitFail opDetails = operationDetailsStore.get(0);
+		sum.setOpCond(true);
+		if (null != opDetails && null != opDetails.getRelblkId() && null != opDetails.getOperationsumRefId()
+				&& null != opDetails.getOperationsumParentId()) {
+			sum.setIsReliefOperation("Y");
+			theMainMap.put(opDetails.getOperationsumId(), "Y");
+		}
+	}
+}
