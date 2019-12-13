@@ -280,6 +280,4 @@ class IllegalLocalVarInferenceDemo2 {
 	// }
 }
 
-class Actor {
-
-}
+ 
