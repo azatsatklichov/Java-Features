@@ -1,6 +1,6 @@
-package tasks.algorithmic.solutions;
+package tasks.programmaing.paradigms;
 
-public class TestInitialization {
+public class Initialization {
 	/*
 	 * What is the result?
 	 * 
