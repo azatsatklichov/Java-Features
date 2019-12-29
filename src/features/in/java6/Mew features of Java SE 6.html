@@ -2,53 +2,8 @@
 <head>
 <title>Java 6 - Mustang features</title>
 </head>
-<body>
-
-<p>Codename <b>Mustang</b>. As of this version, Sun replaced the name "J2SE" with <b>Java SE</b> and dropped the ".0" from the version number.<sup id="cite_ref-naming_13-0" class="reference"><a href="#cite_note-naming-13"><span>[</span>14<span>]</span></a></sup> Internal numbering for developers remains 1.6.0.<sup id="cite_ref-version_6_14-0" class="reference"><a href="#cite_note-version_6-14"><span>[</span>15<span>]</span></a></sup> This version was developed under <a href="http://www.jcp.org/en/jsr/detail?id=270" class="external text" rel="nofollow">JSR 270</a>.</p>
-
-<p>During the development phase, new builds including enhancements and bug fixes were released approximately weekly. Beta versions were released in February and June 2006, leading up to a final release that occurred on December 11, 2006. The current revision is Update 24 which was released in February 2011.</p>
-<p>Major changes included in this version:<sup id="cite_ref-pr16_15-0" class="reference"><a href="#cite_note-pr16-15"><span>[</span>16<span>]</span></a></sup><sup id="cite_ref-ch16_16-0" class="reference"><a href="#cite_note-ch16-16"><span>[</span>17<span>]</span></a></sup></p>
-<ul>
-<li>Support for older Win9x versions dropped. Unofficially Java 6 Update 7 is the last release of Java shown to work on these versions of Windows. This is believed to be due to the major changes in Update 10.</li>
-<li>Scripting Language Support (<a href="/wiki/JSR_223" class="mw-redirect" title="JSR 223">JSR 223</a>): Generic API for tight integration with scripting languages, and built-in <a href="/wiki/Mozilla">Mozilla</a> <a href="/wiki/JavaScript">JavaScript</a> <a href="/wiki/Rhino_(JavaScript_engine)" title="Rhino (JavaScript engine)">Rhino</a> integration</li>
-
-<li>Dramatic performance improvements for the core platform,<sup id="cite_ref-lobby_17-0" class="reference"><a href="#cite_note-lobby-17"><span>[</span>18<span>]</span></a></sup><sup id="cite_ref-weblog_18-0" class="reference"><a href="#cite_note-weblog-18"><span>[</span>19<span>]</span></a></sup> and <a href="/wiki/Swing_(Java)" title="Swing (Java)">Swing</a>.</li>
-<li>Improved Web Service support through <a href="/wiki/JAX-WS" class="mw-redirect" title="JAX-WS">JAX-WS</a> (<a href="/wiki/JSR_224" class="mw-redirect" title="JSR 224">JSR 224</a>)</li>
-
-<li><a href="/wiki/JDBC" class="mw-redirect" title="JDBC">JDBC</a> 4.0 support (<a href="/wiki/JSR_221" class="mw-redirect" title="JSR 221">JSR 221</a>).</li>
-<li>Java Compiler API (<a href="/wiki/JSR_199" class="mw-redirect" title="JSR 199">JSR 199</a>): an API allowing a Java program to select and invoke a Java Compiler programmatically.</li>
-<li>Upgrade of <a href="/wiki/JAXB" class="mw-redirect" title="JAXB">JAXB</a> to version 2.0: Including integration of a <a href="/wiki/StAX">StAX</a> parser.</li>
-
-<li>Support for pluggable <a href="/wiki/Java_annotation" title="Java annotation">annotations</a> (<a href="/w/index.php?title=JSR_269&amp;action=edit&amp;redlink=1" class="new" title="JSR 269 (page does not exist)">JSR 269</a>)<sup id="cite_ref-19" class="reference"><a href="#cite_note-19"><span>[</span>20<span>]</span></a></sup></li>
-<li>Many <a href="/wiki/GUI" class="mw-redirect" title="GUI">GUI</a> improvements, such as integration of <a href="/wiki/SwingWorker">SwingWorker</a> in the API, table sorting and filtering, and true <a href="/wiki/Swing_(Java)" title="Swing (Java)">Swing</a> double-buffering (eliminating the gray-area effect).</li>
-
-<li><a href="/wiki/JVM" class="mw-redirect" title="JVM">JVM</a> improvements include: <a href="/wiki/Data_synchronization" title="Data synchronization">synchronization</a> and <a href="/wiki/Compiler">compiler</a> performance optimizations, new algorithms and upgrades to existing <a href="/wiki/Garbage_collection_(computer_science)" title="Garbage collection (computer science)">garbage collection algorithms</a>, and application start-up performance.<sup id="cite_ref-20" class="reference"><a href="#cite_note-20"><span>[</span>21<span>]</span></a></sup></li>
-</ul>
-<h3><span class="editsection">[<a href="/w/index.php?title=Java_version_history&amp;action=edit&amp;section=8" title="Edit section: Java SE 6 Update 10">edit</a>]</span> <span class="mw-headline" id="Java_SE_6_Update_10">Java SE 6 Update 10</span></h3>
-
-<p>Java SE 6 Update 10 (previously known as Java SE 6 Update N) was released October 15, 2008 and while it does not change any public API, is meant as a major enhancement in terms of end-user usability. The release version is currently available for download.<sup id="cite_ref-JSE6upd10_21-0" class="reference"><a href="#cite_note-JSE6upd10-21"><span>[</span>22<span>]</span></a></sup></p>
-<p>Major changes for this update include:<sup id="cite_ref-JSE6upd10_21-1" class="reference"><a href="#cite_note-JSE6upd10-21"><span>[</span>22<span>]</span></a></sup><sup id="cite_ref-6u10intro_22-0" class="reference"><a href="#cite_note-6u10intro-22"><span>[</span>23<span>]</span></a></sup></p>
-<ul>
-<li>Java Deployment Toolkit, a set of <a href="/wiki/JavaScript">JavaScript</a> functions to ease the deployment of <a href="/wiki/Java_applet" title="Java applet">applets</a> and <a href="/wiki/Java_Web_Start">Java Web Start</a> applications.<sup id="cite_ref-23" class="reference"><a href="#cite_note-23"><span>[</span>24<span>]</span></a></sup></li>
-
-<li>Java Kernel, a small installer including only the most commonly used JRE classes. Other packages are downloaded when needed.</li>
-<li>Enhanced updater.</li>
-<li>Enhanced versioning and pack200 support: server-side support is no longer required.<sup id="cite_ref-24" class="reference"><a href="#cite_note-24"><span>[</span>25<span>]</span></a></sup></li>
-<li>Java Quick Starter, to improve cold start-up time.</li>
-<li>Improved performance of <a href="/wiki/Java2D" class="mw-redirect" title="Java2D">Java2D</a> graphics primitives on Windows, using <a href="/wiki/Direct3D" class="mw-redirect" title="Direct3D">Direct3D</a> and hardware acceleration.</li>
-
-<li>A new <a href="/wiki/Swing_(Java)" title="Swing (Java)">Swing</a> <a href="/wiki/Look_and_feel">look and feel</a> called Nimbus and based on <a href="/wiki/Synth_Look_and_Feel" title="Synth Look and Feel">synth</a>.<sup id="cite_ref-25" class="reference"><a href="#cite_note-25"><span>[</span>26<span>]</span></a></sup></li>
-<li>Next-Generation Java Plug-In: applets now run in a separate process and support many features of Web Start applications.<sup id="cite_ref-6u10plugin_26-0" class="reference"><a href="#cite_note-6u10plugin-26"><span>[</span>27<span>]</span></a></sup></li>
-
-</ul>
-
-
-
-
-<hr/>
- <p><font color="#000080">Following are the new features in SE 6.</font></p>
- <a href="http://www.roseindia.net/java/jdk6/Changes-in-IO.shtml">book link</a>
- 
+<body> 
+ <p><font color="#000080">Following are the new features in SE 6.</font></p> 
     <ol>
       <li>
         <p style="margin-left:.25in"><font color="#000080"><b>Changes in I/O<br>

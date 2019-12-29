@@ -1,7 +1,7 @@
 [Open JDK](https://openjdk.java.net/),
 [Specs](https://docs.oracle.com/javase/specs/), 
 [Java Doc](https://docs.oracle.com/en/java/index.html),
-[The Java™ Tutorials](https://docs.oracle.com/javase/tutorial/),
+[The Java Tutorials](https://docs.oracle.com/javase/tutorial/),
 [JAVA Guide](http://sahet.net/htm/java.html) 
  
 
