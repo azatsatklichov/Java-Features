@@ -1,4 +1,4 @@
-package net.sahet.demo.intw;
+package tasks.programmaing.paradigms;
 
 public interface Java8Interface {
 

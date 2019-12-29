@@ -13,7 +13,7 @@ package tasks.algorithmic.solutions;
  * </pre>
  * 
  */
-public class ReverseTest {
+public class ReverseTestInfr {
 
 	static int reverseNumber(int n) {
 		int rev = 0;

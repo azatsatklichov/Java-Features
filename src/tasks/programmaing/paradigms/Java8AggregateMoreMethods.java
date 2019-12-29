@@ -1,4 +1,4 @@
-package net.sahet.demo.intw;
+package tasks.programmaing.paradigms;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class TryEpamMaporFlatMap {
+public class Java8AggregateMoreMethods {
 
     /**
      * Map and flatMap

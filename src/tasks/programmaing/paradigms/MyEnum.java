@@ -1,4 +1,4 @@
-package net.sahet.demo.intw;
+package tasks.programmaing.paradigms;
  
 
 public enum MyEnum  { //by default implements Serializable

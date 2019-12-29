@@ -1,9 +1,6 @@
-package net.sahet.demo.intw;
-
+package tasks.algorithmic.solutions;
 
 /**
- * Desc:
- * 
  * <pre>
  * Program: Write a program to reverse a number.
  * 

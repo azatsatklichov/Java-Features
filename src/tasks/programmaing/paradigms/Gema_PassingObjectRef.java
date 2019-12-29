@@ -1,5 +1,4 @@
-package tasks.algorithmic.solutions;
- 
+package tasks.programmaing.paradigms;
 
 import java.awt.Dimension;
 import java.util.Arrays;
@@ -33,7 +32,7 @@ public class Gema_PassingObjectRef {
 
 		int[] a = { 0 };
 
-		System.out.println("\n    --- Gemalto question --- ");
+		System.out.println("\n    --- Gema question --- ");
 		System.out.println("Before modify() int[] a  = " + Arrays.toString(a));
 		rt.modify(a);
 		System.out.println("After modify() int[] a  = " + Arrays.toString(a));
@@ -50,13 +49,13 @@ public class Gema_PassingObjectRef {
 	}
 
 	/**
-	 * The bottom line on pass-by-value: the called method can't change the
-	 * caller's variable, although for object reference variables, the called
-	 * method can change the object the variable referred to. What's the
-	 * difference between changing the variable and changing the object? For
-	 * object references, it means the called method can't reassign the caller's
-	 * original reference variable and make it refer to a different object, or
-	 * null. For example, in the following code fragment,
+	 * The bottom line on pass-by-value: the called method can't change the caller's
+	 * variable, although for object reference variables, the called method can
+	 * change the object the variable referred to. What's the difference between
+	 * changing the variable and changing the object? For object references, it
+	 * means the called method can't reassign the caller's original reference
+	 * variable and make it refer to a different object, or null. For example, in
+	 * the following code fragment,
 	 */
 	void bar() {
 		Fooq f = new Fooq();
@@ -66,14 +65,14 @@ public class Gema_PassingObjectRef {
 	/**
 	 * reassigning g does not reassign f! At the end of the bar() method, two
 	 * ReturnTypeOverload objects have been created, one referenced by the local
-	 * variable f and one referenced by the local (argument) variable g. Because
-	 * the doStuff() method has a copy of the reference variable, it has a way
-	 * to get to the original ReturnTypeOverload object, for instance to call
-	 * the setName() method. But, the doStuff() method does not have a way to
-	 * get to the f reference variable. So doStuff() can change values within
-	 * the object f refers to, but doStuff() can't change the actual contents
-	 * (bit pattern) of f. In other words, doStuff() can change the state of the
-	 * object that f refers to, but it can't make f refer to a different object!
+	 * variable f and one referenced by the local (argument) variable g. Because the
+	 * doStuff() method has a copy of the reference variable, it has a way to get to
+	 * the original ReturnTypeOverload object, for instance to call the setName()
+	 * method. But, the doStuff() method does not have a way to get to the f
+	 * reference variable. So doStuff() can change values within the object f refers
+	 * to, but doStuff() can't change the actual contents (bit pattern) of f. In
+	 * other words, doStuff() can change the state of the object that f refers to,
+	 * but it can't make f refer to a different object!
 	 * 
 	 * @param g
 	 */
@@ -98,4 +97,3 @@ class Fooq {
 	}
 
 }
-

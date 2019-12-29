@@ -8,6 +8,8 @@ package tasks.algorithmic.solutions;
  * Write a program to swap or exchange two numbers. You should not use any
  * temporary or third variable to swap.
  * 
+ * SWAP is an IN=PLACE Algorithm
+ * 
  * 
  * 
  */
@@ -43,6 +45,12 @@ public class SwapJustBetweenTwoNumbers {
 		System.out.println("y value: " + b);
 	}
 
+	private static void swap(String[] arr, int i, int j) {
+		String temp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = temp;
+	}
+
 	/**
 	 * using temp place holder
 	 * 
@@ -66,14 +74,14 @@ public class SwapJustBetweenTwoNumbers {
 		System.out.println("x value: " + a);
 		System.out.println("y value: " + b);
 	}
-	
+
 	private static void swap3(int a, int b) {
-        a = a * b;
-        b = a / b;
-        a = a / b;
-        System.out.println("After swap3:");
-        System.out.println("x value: " + a);
-        System.out.println("y value: " + b);
-    }
+		a = a * b;
+		b = a / b;
+		a = a / b;
+		System.out.println("After swap3:");
+		System.out.println("x value: " + a);
+		System.out.println("y value: " + b);
+	}
 
 }
