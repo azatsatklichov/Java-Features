@@ -11,7 +11,7 @@ public class NavigableMapExample {
 		navMap.put(2, "February");
 		navMap.put(3, "March");
 		navMap.put(4, "April");
-		navMap.put(5, "May");
+		navMap.put(5, "May ");
 		navMap.put(6, "June");
 		navMap.put(7, "July");
 		navMap.put(8, "August");
