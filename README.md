@@ -3,6 +3,62 @@
 [Oracle Java SE at a Glance](https://www.oracle.com/technetwork/java/javase/overview/index.html), 
 [JEP](https://openjdk.java.net/jeps/0), 
 [Open JDK](http://openjdk.java.net/)
+[Wikipedia](https://en.wikipedia.org/wiki/Java_version_history#JDK_1.0)
+
+
+#Java 1 Features 
+The first version was released on January 23, 1996. The first stable version, JDK 1.0.2, is called Java 1.
+Java 1.1 Major additions in the release on February 19, 1997 included:
+- an extensive retooling of the AWT event model
+- inner classes added to the language
+- JavaBeans
+- JDBC
+- RMI
+- reflection which supported Introspection only, no modification at runtime was possible. (The ability to modify objects reflectively was added in J2SE 1.2, by introducing the AccessibleObject class and its subclasses such as the Field class.)
+- JIT (Just In Time) compiler on Microsoft Windows platforms, produced for JavaSoft by Symantec
+- Internationalization and Unicode support originating from Taligent 
+
+
+
+#Java 2 Features 
+Codename Playground. The release on December 8, 1998 and subsequent releases through J2SE were rebranded retrospectively Java 2 and the version name "J2SE" (Java 2 Platform, Standard Edition) replaced JDK to distinguish the base platform from J2EE (Java 2 Platform, Enterprise Edition) and J2ME (Java 2 Platform, Micro Edition). This was a very significant release of Java as it tripled the size of the Java platform to 1520 classes in 59 packages. Major additions included:
+- strictfp keyword
+- the Swing graphical API was integrated into the core classes
+- Sun's JVM was equipped with a JIT compiler for the first time
+- Java plug-in
+- Java IDL, an IDL implementation for CORBA interoperability
+- Collections framework
+
+
+#Java 3 Features
+Codename Kestrel ([API](https://docs.oracle.com/javase/1.3/docs/api/)). The most notable changes in the May 8, 2000 release were: 
+- HotSpot JVM included (the HotSpot JVM was first released in April 1999 for the J2SE 1.2 JVM)
+- RMI was modified to support optional compatibility with CORBA
+- Java Naming and Directory Interface (JNDI) included in core libraries (previously available as an extension)
+- Java Platform Debugger Architecture (JPDA)
+- JavaSound
+- Synthetic proxy classes
+
+
+#Java 4 Features
+Codename Merlin ([API](https://docs.oracle.com/javase/1.4.2/docs/api/)). The February 6, 2002 release was the first release of the Java platform developed under the Java Community Process as JSR 59. Major changes included:
+
+- Language changes
+- assert keyword (specified in JSR 41)
+- Library improvements
+- Regular expressions modeled after Perl regular expressions
+- Exception chaining allows an exception to encapsulate original lower-level exception
+- Internet Protocol version 6 (IPv6) support
+- Non-blocking I/O (Java) (named NIO) (specified in JSR 51)
+- Logging API (specified in JSR 47)
+- Image I/O API for reading and writing images in formats like JPEG and PNG
+- Integrated XML parser and XSLT processor (JAXP) (specified in JSR 5 and JSR 63)
+- Integrated security and cryptography extensions (JCE, JSSE, JAAS)
+- Java Web Start included (Java Web Start was first released in March 2001 for J2SE 1.3) (specified in JSR 56)
+- Preferences API (java.util.prefs)
+
+Public support and security updates for Java 1.4 ended in October 2008. Paid security updates for Oracle customers ended in February 2013
+
 
 
 
@@ -11,12 +67,51 @@
 [API](https://docs.oracle.com/javase/1.5.0/docs/api/), 
 [Features](https://www.oracle.com/technetwork/articles/entarch/java-5-features-083037.html)
 
+Codename Tiger ([API](https://docs.oracle.com/javase/1.5.0/docs/api/)) The release on September 30, 2004 was originally numbered 1.5, which is still used as the internal version number. The number was changed to "better reflect the level of maturity, stability, scalability and security of the J2SE". This version was developed under JSR 176.
+J2SE 5.0 entered its end-of-public-updates period on April 8, 2008; updates are no longer available to the public as of November 3, 2009. Updates were available to paid Oracle customers until May 2015. 
+Tiger added a number of significant new language features:
+
+- Generics: provides compile-time (static) type safety for collections and eliminates the need for most typecasts (type conversion) (specified by JSR 14)
+- Metadata: also called annotations; allows language constructs such as classes and methods to be tagged with additional data, which can then be processed by metadata-aware utilities (specified by JSR 175)
+- Autoboxing/unboxing: automatic conversions between primitive types (such as int) and primitive wrapper classes (such as Integer) (specified by JSR 201)
+- Enumerations: the enum keyword creates a typesafe, ordered list of values (such as Day.MONDAY, Day.TUESDAY, etc.); previously this could only be achieved by non-typesafe constant integers or manually constructed classes (typesafe enum pattern) (specified by JSR 201)
+- Varargs: the last parameter of a method can now be declared using a type name followed by three dots (e.g. void drawtext(String... lines)); in the calling code any number of parameters of that type can be used and they are then placed in an array to be passed to the method, or alternatively the calling code can pass an array of that type
+- Enhanced for each loop: the for loop syntax is extended with special syntax for iterating over each member of either an array or any Iterable, such as the standard Collection classes (specified by JSR 201)
+- Improved semantics of execution for multi-threaded Java programs; the new Java memory model addresses issues of complexity, effectiveness, and performance of previous specifications 
+- Static imports
+
+There were also the following improvements to the standard libraries:
+
+- Automatic stub generation for RMI objects
+- Swing: New skinnable look and feel, called synth
+- The concurrency utilities in package java.util.concurrent 
+- Scanner class for parsing data from various input streams and buffers
+ 
+Version 1.5.0 or 5.0?  This correspondence continued through later releases (Java 6 = JDK 1.6, Java 7 = JDK 1.7, and so on).
+
 
 
 #Java 6 Features
 [Java SE 6 Documentation](https://docs.oracle.com/javase/6/docs/),
 [API](https://docs.oracle.com/javase/6/docs/api/),  
 [Open JDK](https://openjdk.java.net/projects/jdk6/)
+
+Codename Mustang ([API](https://docs.oracle.com/javase/6/docs/api/)). As of the version released on December 11, 2006, Sun replaced the name "J2SE" with Java SE and dropped the ".0" from the version number. Internal numbering for developers remains 1.6.0.  This version was developed under JSR 270.
+ 
+Java 6 reached the end of its supported life in February 2013, at which time all public updates, including security updates, were scheduled to be stopped.  Oracle released two more updates to Java 6 in March and April 2013, which patched some security vulnerabilities. 
+
+Major changes included in this version: 
+- Support for older Win9x versions dropped; unofficially, Java 6 Update 7 was the last release of Java shown to work on these versions of Windows.[citation needed] This is believed[by whom?] to be due to the major changes in Update 10.
+- Scripting Language Support (JSR 223): Generic API for tight integration with scripting languages, and built-in Mozilla JavaScript Rhino integration.
+- Dramatic performance improvements for the core platform, and Swing.
+- Improved Web Service support through JAX-WS (JSR 224).
+- JDBC 4.0 support (JSR 221).
+- Java Compiler API (JSR 199): an API allowing a Java program to select and invoke a Java Compiler programmatically.
+- Upgrade of JAXB to version 2.0: Including integration of a StAX parser.
+- Support for pluggable annotations (JSR 269). 
+- Many GUI improvements, such as integration of SwingWorker in the API, table sorting and filtering, and true Swing double-buffering (eliminating the gray-area effect).
+- JVM improvements include: synchronization and compiler performance optimizations, new algorithms and upgrades to existing garbage collection algorithms, and application start-up performance.
+
 
 
 # JavaSE 7 Features
