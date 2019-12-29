@@ -6,14 +6,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Desc:
- * 
- * <pre>
- * 
- * </pre>
- * 
- */
 class GenericMethodTest {
 	// generic method printArray
 	public static <E> void printArray(E[] inputArray) {
