@@ -13,8 +13,8 @@ public class RecursiveWalk {
 		Path itunes = Paths.get("/Users/amiller/Music/iTunes/iTunes Music");
 		try {
 			Files.walkFileTree(itunes, new Mp3Visitor(itunes));
-		} catch (IOException e) { 
-			// TODO Auto-generated catch block
+		} catch (IOException e) {
+			// TBD
 			e.printStackTrace();
 		}
 
@@ -29,9 +29,10 @@ class Mp3Visitor extends SimpleFileVisitor<Path> {
 		this.root = root;
 	}
 
-	public FileVisitResult visitFile(Path file,
-			BasicFileAttributes attrs) {
+	public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) {
 
 		System.out.println(root.relativize(file));
+		// TBD
+		return null;
 	}
 }

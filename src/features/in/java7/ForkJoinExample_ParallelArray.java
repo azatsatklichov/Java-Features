@@ -6,7 +6,13 @@ import java.util.concurrent.RecursiveTask;
 import java.util.stream.LongStream;
 
 //https://www.mkyong.com/java/java-fork-join-framework-examples/
-public class ForkJoinExample extends RecursiveTask<Long> {
+public class ForkJoinExample_ParallelArray extends RecursiveTask<Long> {
+
+	/**
+	 * ParallelArray is a set of your domain items whose work is backed by a
+	 * ForkJoinPool. You can define many common functional operators -- such as
+	 * filter, map, and apply them to a ParallelArray
+	 */
 
 	private static final long serialVersionUID = 1L;
 
@@ -15,11 +21,11 @@ public class ForkJoinExample extends RecursiveTask<Long> {
 	private final int end;
 	public static final long threshold = 10_000;
 
-	public ForkJoinExample(long[] numbers) {
+	public ForkJoinExample_ParallelArray(long[] numbers) {
 		this(numbers, 0, numbers.length);
 	}
 
-	private ForkJoinExample(long[] numbers, int start, int end) {
+	private ForkJoinExample_ParallelArray(long[] numbers, int start, int end) {
 		this.numbers = numbers;
 		this.start = start;
 		this.end = end;
@@ -37,10 +43,10 @@ public class ForkJoinExample extends RecursiveTask<Long> {
 			return add();
 		}
 
-		ForkJoinExample firstTask = new ForkJoinExample(numbers, start, start + length / 2);
+		ForkJoinExample_ParallelArray firstTask = new ForkJoinExample_ParallelArray(numbers, start, start + length / 2);
 		firstTask.fork(); // start asynchronously
 
-		ForkJoinExample secondTask = new ForkJoinExample(numbers, start + length / 2, end);
+		ForkJoinExample_ParallelArray secondTask = new ForkJoinExample_ParallelArray(numbers, start + length / 2, end);
 
 		Long secondTaskResult = secondTask.compute();
 		Long firstTaskResult = firstTask.join();
@@ -59,7 +65,7 @@ public class ForkJoinExample extends RecursiveTask<Long> {
 
 	public static long startForkJoinSum(long n) {
 		long[] numbers = LongStream.rangeClosed(1, n).toArray();
-		ForkJoinTask<Long> task = new ForkJoinExample(numbers);
+		ForkJoinTask<Long> task = new ForkJoinExample_ParallelArray(numbers);
 		return new ForkJoinPool().invoke(task);
 	}
 
