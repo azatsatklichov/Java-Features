@@ -276,15 +276,12 @@ Oracle has released Java 9 with rich set of new features. It includes various up
 [API](https://docs.oracle.com/en/java/javase/13/docs/api/index.html),  
 [ava 13 Preview Features](https://blog.jetbrains.com/idea/2019/07/support-for-java-13-preview-features-in-intellij-idea-2019-2/), 
 [Open JDK](https://openjdk.java.net/projects/jdk/13/) 
-
-- 189:	Shenandoah: A Low-Pause-Time Garbage Collector (Experimental)
-- 230:	Microbenchmark Suite
-- 325:	Switch Expressions (Preview)
-- 334:	JVM Constants API
-- 340:	One AArch64 Port, Not Two
-- 341:	Default CDS Archives
-- 344:	Abortable Mixed Collections for G1
-- 346:	Promptly Return Unused Committed Memory from G1
+ 
+- JEP 350: Dynamic CDS Archives
+- JEP-351: ZGC: Uncommit Unused Memory
+- JEP-353: Reimplement the Legacy Socket API
+- JEP-354: Switch Expressions (Preview) (developer feature)
+- JEP-355: Text Blocks (Preview) (developer feature)
 
 
 # Java 14 Features (in development)
@@ -294,7 +291,21 @@ Oracle has released Java 9 with rich set of new features. It includes various up
 [Java 14 Preview Features](https://www.infoworld.com/article/3436795/jdk-14-the-new-features-in-java-14.html), 
 [Open JDK](https://openjdk.java.net/projects/jdk/14/) 
 
-
 JEPs targeted to JDK 14, so far
+
+- 305:	Pattern Matching for instanceof (Preview)
+- 343:	Packaging Tool (Incubator)
+- 345:	NUMA-Aware Memory Allocation for G1
+- 349:	JFR Event Streaming
 - 352:	Non-Volatile Mapped Byte Buffers
 - 358:	Helpful NullPointerExceptions
+- 359:	Records (Preview)
+- 361:	Switch Expressions (Standard)
+- 362:	Deprecate the Solaris and SPARC Ports
+- 363:	Remove the Concurrent Mark Sweep (CMS) Garbage Collector
+- 364:	ZGC on macOS
+- 365:	ZGC on Windows
+- 366:	Deprecate the ParallelScavenge + SerialOld GC Combination
+- 367:	Remove the Pack200 Tools and API
+- 368:	Text Blocks (Second Preview)
+- 370:	Foreign-Memory Access API (Incubator)
