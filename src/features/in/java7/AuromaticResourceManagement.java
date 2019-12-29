@@ -24,21 +24,24 @@ public class AuromaticResourceManagement {
 
 	// this is verbose, now within Java 7 they are automatically managed
 	static String readLineFromFile7(String path) throws IOException {
-			try (Reader fin = new FileReader(path); BufferedReader br = new BufferedReader(fin)) {
+		try (Reader fin = new FileReader(path); BufferedReader br = new BufferedReader(fin)) {
 			return br.readLine();
-			}
+		}
 	}
 
 	/**
 	 * Automatic Resource Management
 	 * 
-	 * Some resources in Java need to be closed manually like InputStream,
-	 * Writers, Sockets, Sql classes. This language feature allows the try
-	 * statement itself to declare one of more resources. These resources are
-	 * scoped to the try block and are closed automatically.
+	 * Some resources in Java need to be closed manually like InputStream, Writers,
+	 * Sockets, Sql classes. This language feature allows the try statement itself
+	 * to declare one of more resources. These resources are scoped to the try block
+	 * and are closed automatically.
+	 * 
+	 * @return
+	 * @throws IOException
 	 */
 
-	public static void main(String[] args) {
+	public static String main(String[] args) throws IOException {
 		String path = "sdsd";
 		BufferedReader br = null;
 
@@ -52,25 +55,16 @@ public class AuromaticResourceManagement {
 			try {
 				br.close();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block 
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
-		
-		//new
-		try (BufferedReader br = new BufferedReader(new FileReader(path)) 
-		{
-			   return br.readLine();
+
+		// new
+		try (BufferedReader br2 = new BufferedReader(new FileReader(path))) {
+			return br2.readLine();
 		}
-		
-		//or You can declare more than one resource to close:
-		try (
-				InputStream in = new FileInputStream(src);
-				OutputStream out = new FileOutputStream(dest))
-		{
-				 // code
-		}
-		
+
 	}
 
 }
