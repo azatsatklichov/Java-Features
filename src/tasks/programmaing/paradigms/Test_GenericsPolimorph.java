@@ -1,4 +1,4 @@
-package cx55.and.cx65.ch7.collections.generics;
+package tasks.programmaing.paradigms;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,12 +18,7 @@ class Cat extends Animal {
         System.out.println("Cat checkup");
     }
 }
-
-class Bird extends Animal {
-    public void checkup() { // implement Bird-specific code
-        System.out.println("Bird checkup");
-    }
-}
+ 
 
 class AnimalDoctor {
     // method takes an array of any animal subtype
@@ -41,7 +36,7 @@ class AnimalDoctor {
         AnimalDoctor doc = new AnimalDoctor();
         doc.checkAnimals(dogs); // pass the Dog[]
         doc.checkAnimals(cats); // pass the Cat[]
-        doc.checkAnimals(birds); // pass the Bird[]
+        //doc.checkAnimals(birds); // pass the Bird[]
     }
 }
 

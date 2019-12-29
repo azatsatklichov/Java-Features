@@ -1,4 +1,4 @@
-package cx55.and.cx65.ch9.threads;
+package tasks.programmaing.paradigms;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;

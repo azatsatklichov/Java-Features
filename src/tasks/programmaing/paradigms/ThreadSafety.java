@@ -1,4 +1,4 @@
-package com.jenkov.multithreading;
+package tasks.programmaing.paradigms;
 
 import java.math.BigInteger;
 

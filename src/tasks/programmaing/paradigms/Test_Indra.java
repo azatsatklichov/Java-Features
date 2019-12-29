@@ -1,4 +1,4 @@
-package net.sahet.demo.intw;
+package tasks.programmaing.paradigms;
 
 
 //indracompany.com da interviewda bolanymda testde bardy, Hudson, Wrapper equality, Buffer  123null

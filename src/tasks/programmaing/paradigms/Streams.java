@@ -1,4 +1,4 @@
-package com.jenkov.functional;
+package tasks.programmaing.paradigms;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package cx55.and.cx65.ch7.collections.generics;
+package tasks.programmaing.paradigms;
 
 import java.util.ArrayList;
 import java.util.List;

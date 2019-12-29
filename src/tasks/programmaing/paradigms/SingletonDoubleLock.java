@@ -1,4 +1,4 @@
-package _interview.tasks.solutions;
+package tasks.programmaing.paradigms;
 
 //https://www.baeldung.com/java-singleton-double-checked-locking
 

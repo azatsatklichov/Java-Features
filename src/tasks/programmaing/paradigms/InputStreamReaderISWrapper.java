@@ -1,4 +1,4 @@
-package cx55.and.cx65.ch6.strings.format.parse.io;
+package tasks.programmaing.paradigms;
 
 import java.io.FileInputStream;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package net.sahet.demo.intw;
+package tasks.programmaing.paradigms;
 
 //https://www.baeldung.com/java-common-concurrency-pitfalls
 public class Deadlock {

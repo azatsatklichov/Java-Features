@@ -1,3 +1,10 @@
+package tasks.programmaing.paradigms;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+
 public class Test_GenericsLongWordFinder {
     public static void main(String[] args) {
         String[] array = { "123", "12345678", "1", "12", "1234567890" };
@@ -13,7 +20,7 @@ public class Test_GenericsLongWordFinder {
         System.out.println(Arrays.toString(array));
 
         list  = Arrays.asList(new String[] { "123", "12345678", "1", "12", "1234567890" });
-        Collection<String> resultList = getLongWords(list);
+        Collection<String> resultList = null; // getLongWords(list);
         System.out.println("done");
     }
 }

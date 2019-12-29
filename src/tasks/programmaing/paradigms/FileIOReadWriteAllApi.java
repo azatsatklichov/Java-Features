@@ -1,4 +1,4 @@
-package cx55.and.cx65.ch6.strings.format.parse.io;
+package tasks.programmaing.paradigms;
 
 //http://tutorials.jenkov.com/java-io/files.html
 public class FileIOReadWriteAllApi {

@@ -1,4 +1,4 @@
-package cx55.and.cx65.ch6.strings.format.parse.io;
+package tasks.programmaing.paradigms;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -46,7 +46,7 @@ import org.junit.jupiter.api.Test;
  * 
  * 
  * In this tutorial we'll explore different ways to read from a File in Java;
- * we’ll make use of BufferedReader, Scanner, StreamTokenizer, DataInputStream,
+ * weâ€™ll make use of BufferedReader, Scanner, StreamTokenizer, DataInputStream,
  * SequenceInputStream and FileChannel.
  * 
  * i.a Hayirlisi, INWK happening, ....
@@ -175,7 +175,7 @@ public class FileReadOptions {
 
     @Test
     public void whenReadUTFEncodedFile_thenCorrect() throws IOException {
-        String expected_value = "青空";
+        String expected_value = "é�’ç©º";
         BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file2), "UTF-8"));
         String currentLine = reader.readLine();
         reader.close();

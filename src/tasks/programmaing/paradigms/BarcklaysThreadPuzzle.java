@@ -1,4 +1,4 @@
-package _interview.tasks.solutions;
+package tasks.programmaing.paradigms;
 
 public class BarcklaysThreadPuzzle {
 

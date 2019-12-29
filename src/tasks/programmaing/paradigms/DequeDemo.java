@@ -1,4 +1,4 @@
-package com.jenkov.collection;
+package tasks.programmaing.paradigms;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

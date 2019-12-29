@@ -1,4 +1,4 @@
-package com.java2novice.interview.programs;
+package tasks.programmaing.paradigms;
 
 /**
  * 

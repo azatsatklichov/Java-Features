@@ -1,4 +1,4 @@
-package net.sahet.demo.intw;
+package tasks.programmaing.paradigms;
 
 
 public class Test_Local_Init {
@@ -19,11 +19,11 @@ public class Test_Local_Init {
  * </pre>
  * 
  */
-class Dark {
+class Dark2 {
 	int x = 3;
 
 	public static void main(String[] args) {
-		new Dark().go1();
+		new Dark2().go1();
 	}
 
 	void go1() {

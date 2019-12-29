@@ -1,4 +1,4 @@
-package cx55.and.cx65.ch7.collections.generics;
+package tasks.programmaing.paradigms;
 
 public class Test2_ArraysIssuesTypeCollection {
 	public static void main(String[] args) {

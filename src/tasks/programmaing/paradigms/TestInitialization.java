@@ -1,4 +1,4 @@
-package net.sahet.demo.intw;
+package tasks.programmaing.paradigms;
 
 
 public class TestInitialization {
@@ -26,22 +26,22 @@ public class TestInitialization {
 
 }
 
-class Bird {
+class Bird3 {
 	{
 		System.out.print("b1 ");
 	}
 
-	public Bird() {
+	public Bird3() {
 		System.out.print("b2 ");
 	}
 }
 
-class Raptor extends Bird {
+class Raptor3 extends Bird3 {
 	static {
 		System.out.print("r1 ");
 	}
 
-	public Raptor() {
+	public Raptor3() {
 		System.out.print("r2 ");
 	}
 
@@ -64,11 +64,11 @@ class Raptor extends Bird {
  * @author Azat
  * 
  */
-class Hawk extends Raptor {
+class Hawk3 extends Raptor3 {
 	public static void main(String[] args) {
 		System.out.print("pre ");
-		new Hawk();
+		new Hawk3();
 		System.out.println("hawk ");
-		new Hawk(); //mine, as you see no static vars. loaded again
+		new Hawk3(); //mine, as you see no static vars. loaded again
 	}
 }
