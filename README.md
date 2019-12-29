@@ -6,7 +6,7 @@
 [Wikipedia](https://en.wikipedia.org/wiki/Java_version_history#JDK_1.0)
 
 
-#Java 1 Features 
+# Java 1 Features 
 The first version was released on January 23, 1996. The first stable version, JDK 1.0.2, is called Java 1.
 Java 1.1 Major additions in the release on February 19, 1997 included:
 - an extensive retooling of the AWT event model
@@ -20,7 +20,7 @@ Java 1.1 Major additions in the release on February 19, 1997 included:
 
 
 
-#Java 2 Features 
+# Java 2 Features 
 Codename Playground. The release on December 8, 1998 and subsequent releases through J2SE were rebranded retrospectively Java 2 and the version name "J2SE" (Java 2 Platform, Standard Edition) replaced JDK to distinguish the base platform from J2EE (Java 2 Platform, Enterprise Edition) and J2ME (Java 2 Platform, Micro Edition). This was a very significant release of Java as it tripled the size of the Java platform to 1520 classes in 59 packages. Major additions included:
 - strictfp keyword
 - the Swing graphical API was integrated into the core classes
@@ -30,7 +30,7 @@ Codename Playground. The release on December 8, 1998 and subsequent releases thr
 - Collections framework
 
 
-#Java 3 Features
+# Java 3 Features
 Codename Kestrel ([API](https://docs.oracle.com/javase/1.3/docs/api/)). The most notable changes in the May 8, 2000 release were: 
 - HotSpot JVM included (the HotSpot JVM was first released in April 1999 for the J2SE 1.2 JVM)
 - RMI was modified to support optional compatibility with CORBA
@@ -40,7 +40,7 @@ Codename Kestrel ([API](https://docs.oracle.com/javase/1.3/docs/api/)). The most
 - Synthetic proxy classes
 
 
-#Java 4 Features
+# Java 4 Features
 Codename Merlin ([API](https://docs.oracle.com/javase/1.4.2/docs/api/)). The February 6, 2002 release was the first release of the Java platform developed under the Java Community Process as JSR 59. Major changes included:
 
 - Language changes
@@ -62,7 +62,7 @@ Public support and security updates for Java 1.4 ended in October 2008. Paid sec
 
 
 
-#Java 5 Features
+# Java 5 Features
 [Java SE 5 Documentation](https://docs.oracle.com/javase/1.5.0/docs/), 
 [API](https://docs.oracle.com/javase/1.5.0/docs/api/), 
 [Features](https://www.oracle.com/technetwork/articles/entarch/java-5-features-083037.html)
@@ -91,7 +91,7 @@ Version 1.5.0 or 5.0?  This correspondence continued through later releases (Jav
 
 
 
-#Java 6 Features
+# Java 6 Features
 [Java SE 6 Documentation](https://docs.oracle.com/javase/6/docs/),
 [API](https://docs.oracle.com/javase/6/docs/api/),  
 [Open JDK](https://openjdk.java.net/projects/jdk6/)
