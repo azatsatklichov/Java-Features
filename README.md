@@ -281,8 +281,10 @@ Oracle has released Java 9 with rich set of new features. It includes various up
 - JEP-351: ZGC: Uncommit Unused Memory
 - JEP-353: Reimplement the Legacy Socket API
 - JEP-354: Switch Expressions (Preview) (developer feature)
-- JEP-355: Text Blocks (Preview) (developer feature)
-
+- JEP-355: Text Blocks (Preview) (developer feature) and New Methods in String Class for Text Blocks
+- FileSystems.newFileSystem() Method
+- Support for Unicode 12.1
+- DOM and SAX Factories with Namespace Support
 
 # Java 14 Features (in development)
 [Java SE at a Glance](https://www.oracle.com/technetwork/java/javase/overview/index.html),  

@@ -5,26 +5,24 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * The underlying implementations of java.net.Socket and java.net.ServerSocket
+ * JEP-353 Reimplement the Legacy Socket API
+ * 
+ * <pre>
+ *  The underlying implementations of java.net.Socket and java.net.ServerSocket
  * is very old, date back to JDK 1.0, it is a mix of legacy Java and C code that
  * is hard to maintain and debug. This JEP introduces a new underlying
  * implementations for the Socket APIs and it is the default implementation in
  * Java 13.
- * 
- * Before Java 13, it uses the PlainSocketImpl for the SocketImpl
- * 
- * 
- * The underlying implementation of the java.net.Socket and
- * java.net.ServerSocket APIs have been rewritten. The new implementation,
- * NioSocketImpl, is a drop-in replacement for PlainSocketImpl.
- * 
- * It uses java.util.concurrent locks rather than synchronized methods. If you
- * want to use the legacy implementation, use the java option
- * -Djdk.net.usePlainSocketImpl.
  *
+ *
+ *
+ *In Java 13, it introduces a new NioSocketImpl class as a drop-in replacement for PlainSocketImpl.
+ *
+ * </pre>
  */
-public class JEP353Socket {
-	// -Djdk.net.usePlainSocketImpl.
+
+//java -XX:+TraceClassLoading JEP353  | findStr Socket 
+public class JEP353ReimplementLegacySocketAPI {
 	public static void main(String[] args) {
 
 		try (ServerSocket serverSocket = new ServerSocket(8888)) {
@@ -33,7 +31,7 @@ public class JEP353Socket {
 			while (running) {
 
 				Socket clientSocket = serverSocket.accept();
-				// do something with clientSocket
+				// process
 			}
 
 		} catch (IOException e) {
