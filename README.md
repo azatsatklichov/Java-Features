@@ -272,7 +272,7 @@ Oracle has released Java 9 with rich set of new features. It includes various up
 - 346:	Promptly Return Unused Committed Memory from G1
 
 # Java 13 Features (GA 2019/09/17)
-[JDK 12 doc](https://docs.oracle.com/en/java/javase/13/index.html),
+[JDK 13 doc](https://docs.oracle.com/en/java/javase/13/index.html),
 [API](https://docs.oracle.com/en/java/javase/13/docs/api/index.html),  
 [ava 13 Preview Features](https://blog.jetbrains.com/idea/2019/07/support-for-java-13-preview-features-in-intellij-idea-2019-2/), 
 [Open JDK](https://openjdk.java.net/projects/jdk/13/) 
