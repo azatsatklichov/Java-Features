@@ -1,455 +1,133 @@
 package tasks.algorithmic.solutions;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
+import java.net.URISyntaxException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Comparator;
-import java.util.Set;
 import java.util.TreeSet;
 
-import tasks.algorithmic.solutions.MaxCharacters_Desc.Entries;
-import tasks.algorithmic.solutions.MaxCharacters_Desc.Mgm;
-import tasks.algorithmic.solutions.MaxCharacters_Desc.MyComp;
-
 public class FindByMax {
+	/**
+	 * Given a file (suppose quite big file) with domain names and count of its
+	 * accessibility, mixed order. Task is read first top 10 and list them by max
+	 * accessibility.
+	 * 
+	 * @throws URISyntaxException
+	 * 
+	 */
+	public static void main(String[] args) throws URISyntaxException {
+		// InputStream inputStream = FindByMax.class.getResourceAsStream("domains.txt");
+		int N = 10; // first top 10
 
-}
-
-
-
-/**
- * Program: Write a program to find two lines with max characters in descending
- * order.
- * 
- * Description:
- * 
- * Write a program to read a multiple line text file and write the 'N' longest
- * lines to the output console, where the file to be read is specified as
- * command line aruguments. The program should read an input file. The first
- * line should contain the value of the number 'N' followed by multiple lines.
- * 'N' should be a valid positive integer.
- * 
- * @author Azat
- * 
- */
-public class MaxCharacters_Desc {
-	public static void main(String[] args) {
-
-		BufferedReader br = null;
-		String filePath = "C:\\workspace-java essentials\\_MainJavaCorner\\ahoj2"; // args[0];
-		int topList = 0;
-		Set<Entries> liSet = new TreeSet<Entries>(new MyComp());
-		try {
-			br = new BufferedReader(new FileReader(new File(filePath)));
-			String line = br.readLine();
-			topList = Integer.parseInt(line.trim());
-			while ((line = br.readLine()) != null) {
-				line = line.trim();
-				if (!"".equals(line)) {
-					liSet.add(new Entries(line.length(), line));
-				}
-			}
-			int count = 0;
-			for (Entries ent : liSet) {
-				System.out.println(ent.line);
-				if (++count == topList) {
-					break;
-				}
-			}
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-
-	public static class Entries {
-		Integer length;
-		String line;
-
-		public Entries(Integer l, String line) {
-			length = l;
-			this.line = line;
-		}
-	}
-
-	public static class MyComp implements Comparator<Entries> {
-
-		@Override
-		public int compare(Entries e1, Entries e2) {
-			if (e2.length > e1.length) {
+		Comparator<Domain> dc = (d1, d2) -> {
+			if (d2.getAccessCount() > d1.getAccessCount()) {
 				return 1;
 			} else {
 				return -1;
 			}
+		};
+
+		TreeSet<Domain> domainSet = new TreeSet<Domain>(dc); // Set
+		Path path = Paths.get(FindByMax.class.getClassLoader().getResource("domains.txt").toURI());
+		int count = 0;
+		try (BufferedReader reader = Files.newBufferedReader(path)) { // for big files
+			String line;
+			while ((line = reader.readLine()) != null) {
+				//System.out.println(line);
+				line = line.strip(); /// trim();
+				if (!"".equals(line)) {
+					String[] split = line.split(";");
+					// if (count < N) {
+					domainSet.add(new Domain(Long.valueOf(split[0]), split[1], Long.valueOf(split[2])));
+					/*
+					 * } else {
+					 *//**
+						 * rates.stream().sorted((o1, o2) ->
+						 * o2.getStandardRate().compareTo(o1.getStandardRate()))
+						 * .limit(count).map(Rate::getName).collect(Collectors.toList());
+						 *//*
+							 * domainSet.add(new Domain(Long.valueOf(split[0]), split[1],
+							 * Long.valueOf(split[2]))); Domain smallest = domainSet.last();
+							 * System.out.println(smallest); boolean removed = domainSet.remove(smallest);
+							 * System.out.println(removed); }
+							 */
+				}
+				count++;
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 
+		domainSet.stream().limit(10).forEach(System.out::println);
+
 	}
 }
 
+class Domain implements Comparable<Domain> {
+	private Long rank;
+	private String domainName;
+	private Long accessCount;
 
-@Test
-    public void whenReadBigFile_MGM() throws IOException {
-        List<Mgm> list = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(file3))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                addMgm(list, line);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+	public Domain(Long rank, String domainName, Long accessCount) {
+		this.rank = rank;
+		this.domainName = domainName;
+		this.accessCount = accessCount;
+	}
 
-        assertEquals(4, list.size());
-    }
+	public String getDomainName() {
+		return domainName;
+	}
 
-    @Test
-    public void whenReadByScanner_MGM() throws IOException {
-        List<Mgm> list = new ArrayList<>();
-        try (Scanner scanner = new Scanner(new File(file3))) {
-            while (scanner.hasNext()) {
-                String line = scanner.nextLine();
-                addMgm(list, line);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+	public Long getAccessCount() {
+		return accessCount;
+	}
 
-        assertEquals(4, list.size());
-    }
+	public Long getRank() {
+		return rank;
+	}
 
-    private void addMgm(List<Mgm> list, String line) {
-        System.out.println(line);
-        String[] split = line.toString().split(";");
-        Mgm mgm = new Mgm(split[0], new Integer(split[1]));
-        list.add(mgm);
-    }
-	
-	
-	
-class Mgm {
-    private String domain;
-    private int accessCount;
+	@Override
+	public String toString() {
+		return "Domain [" + domainName + ", accessCount = " + accessCount + "]";
+	}
 
-    public Mgm(String domain, int accessCount) {
-        this.domain = domain;
-        this.accessCount = accessCount;
-    }
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
 
-    public String getDomain() {
-        return domain;
-    }
+		Domain that = (Domain) obj;
+		if (this.getAccessCount().equals(that.getAccessCount()) && this.getRank().equals(that.getRank())
+				&& this.getDomainName().equals(that.getDomainName())) {
+			return true;
+		}
 
-    public int getAccessCount() {
-        return accessCount;
-    }
+		return false;
+	}
 
-    @Override
-    public String toString() {
-        return "domain: " + domain + "; accessCount:" + accessCount;
-    }
+	@Override
+	public int hashCode() {
+		return (int) (this.getAccessCount() * 17);
+	}
 
+	@Override
+	public int compareTo(Domain o) {
+		return this.accessCount.compareTo((long) o.compareTo(o));
+	}
 }
 
+class DomainComparator implements Comparator<Domain> {
 
-
-
-Optional<String> minElement = stringList.stream().min((val1, val2) -> {
-            return val1.compareTo(val2);
-        });
-        System.out.println(minElement.get());
-        
-
-        List<Integer> ints = Arrays.asList(new Integer[] { 34, 5, -5, 55, 6 });
-        Integer min = ints.stream().min(Comparator.comparing(item -> item)).get();
-        System.out.println(min);
-
-
-
-    @Test
-    public void whenReadBigFile_MGM() throws IOException {
-        List<Mgm> list = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(file3))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                addMgm(list, line);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        assertEquals(4, list.size());
-    }
-
-    @Test
-    public void whenReadByScanner_MGM() throws IOException {
-        List<Mgm> list = new ArrayList<>();
-        try (Scanner scanner = new Scanner(new File(file3))) {
-            while (scanner.hasNext()) {
-                String line = scanner.nextLine();
-                addMgm(list, line);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        assertEquals(4, list.size());
-    }
-
-    private void addMgm(List<Mgm> list, String line) {
-        System.out.println(line);
-        String[] split = line.toString().split(";");
-        Mgm mgm = new Mgm(split[0], new Integer(split[1]));
-        list.add(mgm);
-    }
-
-    /**
-     * MGM and HPE uchin gereklidi
-     * 
-     * @throws IOException
-     */
-    @Test
-    public void whenReadLargeFileJava7_thenCorrect() throws IOException {
-        Path path = Paths.get(file3);
-
-        // String line = reader.readLine();
-        int count = 0;
-        try (BufferedReader reader = Files.newBufferedReader(path)) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                System.out.println(line);
-                count++;
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        assertEquals(4, count);
-    }
-
-    @Test
-    public void whenReadWithLineNumberReader_thenCorrect() throws IOException {
-
-        String expect = null;
-        String line = null;
-        try (LineNumberReader lineNumberReader2 = new LineNumberReader(new FileReader(file))) {
-            line = lineNumberReader2.readLine();
-            while (line != null) {
-                System.out.println(line);
-                line = lineNumberReader2.readLine();
-            }
-        }
-
-        assertEquals(expect, line);
-    }
-
-    @Test
-    public void whenListFiles_thenCount() throws IOException {
-        File search = new File(
-                "C:\\workspace\\_MainJava\\scjp(cx55-cx65)\\cx55\\and\\cx65\\ch6\\strings\\format\\parse\\io");
-
-        String[] files = search.list();
-        for (String fn : files)
-            System.out.println("found:  " + fn + "; nameLength = " + fn.length());
-        assertEquals(62, files.length);
-    }
-
-    @Test()
-    public void whenReadByConsole_thenCorrect() throws IOException {
-        Assertions.assertThrows(NullPointerException.class, () -> {
-            Console c = System.console();
-            String u = c.readLine("%s", "username: ");
-            System.out.println("hello " + u);
-            String pw; // must be char[]
-            // if(c != null && (pw = c.readPassword("%s", "password: ")) != null)
-            // check for valid password
-            assertEquals("hello", u);
-        });
-
-    }
-
-    private void fileWrappers() throws IOException {
-        BufferedWriter b2 = new BufferedWriter(new FileWriter("f1"));
-        BufferedWriter b3 = new BufferedWriter(new PrintWriter("f2"));
-        Writer bw = null;// do it
-        BufferedWriter b4 = new BufferedWriter(new BufferedWriter(bw));
-    }
-
-    @Test()
-    public void whenReadByURLConnection_thenCorrect() throws IOException {
-        String file3 = "file:///C:\\workspace\\_MainJava\\scjp(cx55-cx65)\\cx55\\and\\cx65\\ch6\\strings\\format\\parse\\io\\mgm.txt";
-
-        URL url = new URL(file3);// http://sahet.net/src/downloads/presentation.pdf
-        // file:///C:/MINE/kitaplar/Enterprise%20Java%20Beans%20%28Ejb%29%203%20In%20Action%20%5B2007%5D.pdf
-        URLConnection urlConnection = url.openConnection();
-        InputStream input = urlConnection.getInputStream();
-        int data = input.read();
-        while (data != -1) {
-            System.out.print((char) data);
-            data = input.read();
-        }
-        input.close();
-    }
-
-}
-
-class Mgm {
-    private String domain;
-    private int accessCount;
-
-    public Mgm(String domain, int accessCount) {
-        this.domain = domain;
-        this.accessCount = accessCount;
-    }
-
-    public String getDomain() {
-        return domain;
-    }
-
-    public int getAccessCount() {
-        return accessCount;
-    }
-
-    @Override
-    public String toString() {
-        return "domain: " + domain + "; accessCount:" + accessCount;
-    }
-
-}
-
-
-class PriorityQueueTest {
-	static class PQsort implements Comparator<Integer> { // inverse sort
-		public int compare(Integer one, Integer two) {
-			return two - one; // unboxing
+	@Override
+	public int compare(Domain d1, Domain d2) {
+		if (d2.getAccessCount() > d1.getAccessCount()) {
+			return 1;
+		} else {
+			return -1;
 		}
 	}
-
-	public static void main(String[] args) {
-		int[] ia = { 1, 5, 3, 7, 6, 9, 8 }; // unordered data
-		PriorityQueue<Integer> pq1 = new PriorityQueue<Integer>(); // use
-																	// natural
-																	// order
-		for (int x : ia)
-			// load queue
-			pq1.offer(x);
-		for (int x : ia)
-			// review queue
-			System.out.print(pq1.poll() + " ");
-		System.out.println("  all polled");
-		PQsort pqs = new PQsort(); // get a Comparator
-		PriorityQueue<Integer> pq2 = new PriorityQueue<Integer>(10, pqs); // use
-																			// Comparator
-		for (int x : ia)
-			// load queue
-			pq2.offer(x);
-		System.out.println("size " + pq2.size());
-		System.out.println("peek " + pq2.peek());
-		System.out.println("size " + pq2.size());
-		System.out.println("poll " + pq2.poll());
-		System.out.println("size " + pq2.size());
-		for (int x : ia)
-			// review queue
-			System.out.print(pq2.poll() + " ");
-
-		/**
-		 * Itâ€™s important to know some of the details of natural ordering. The
-		 * following code will help you understand the relative positions of
-		 * uppercase characters, lowercase characters, and spaces in a natural
-		 * ordering:
-		 */
-		String[] sa = { ">ff<", "> f<", ">f <", ">FF<" }; // ordered?
-		PriorityQueue<String> pq3 = new PriorityQueue<String>();
-		for (String s : sa)
-			pq3.offer(s);
-		for (String s : sa)
-			System.out.print(pq3.poll() + " ");
-		/**
-		 * This produces
-		 * 
-		 * > f< >FF< >f < >ff<
-		 * 
-		 * If you remember that spaces sort before characters and that uppercase
-		 * letters sort before lowercase characters, you should be good to go
-		 * for the exam.
-		 */
-	}
-
-
-
-
-class Car {
-    public String brand;
-    public String numberPlate;
-    public int noOfDoors;
-
-    public Car(String brand, String numberPlate, int noOfDoors) {
-        this.brand = brand;
-        this.numberPlate = numberPlate;
-        this.noOfDoors = noOfDoors;
-    }
-
-    @Override
-    public String toString() {
-        return "Car [brand=" + brand + ", numberPlate=" + numberPlate + ", noOfDoors=" + noOfDoors + "]";
-    }
-}
-
-class SortingLists {
-    public static void main(String[] args) {
-
-        List<String> l = new ArrayList<String>();
-
-        l.add("c");
-        l.add("b");
-        l.add("d");
-        l.add("a");
-
-        System.out.println(l);
-        Collections.sort(l);
-        System.out.println(l);
-        Collections.sort(l, Comparator.reverseOrder());
-        System.out.println(l);
-
-        List<Car> carList = new ArrayList<>();
-
-        carList.add(new Car("Volvo V40", "XYZ 201845", 5));
-        carList.add(new Car("Citroen C1", "ABC 164521", 4));
-        carList.add(new Car("Dodge Ram", "KLM 845990", 2));
-
-        Comparator<Car> carBrandComparator = new Comparator<Car>() {
-            @Override
-            public int compare(Car car1, Car car2) {
-                return car1.brand.compareTo(car2.brand);
-            }
-        };
-
-        System.out.println(carList);
-        Collections.sort(carList, carBrandComparator);
-        System.out.println(carList);
-
-        List<Car> list = new ArrayList<>();
-
-        list.add(new Car("Volvo V40", "XYZ 201845", 5));
-        list.add(new Car("Citroen C1", "ABC 164521", 4));
-        list.add(new Car("Dodge Ram", "KLM 845990", 2));
-
-        Comparator<Car> carBrandComparatorLambda = (car1, car2) -> car1.brand.compareTo(car2.brand);
-        Comparator<Car> carNumberPlatComparatorLambda = (car1, car2) -> car1.numberPlate.compareTo(car2.numberPlate);
-        Comparator<Car> carNoOfDoorsComparatorLambda = (car1, car2) -> car1.noOfDoors - car2.noOfDoors;
-
-        System.out.println();
-        Collections.sort(list, carBrandComparatorLambda);
-        System.out.println(list);
-        Collections.sort(list, carNumberPlatComparatorLambda);
-        System.out.println(list);
-        Collections.sort(list, carNoOfDoorsComparatorLambda);
-        System.out.println(list);
-        
-        
-    }
 }
