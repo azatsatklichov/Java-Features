@@ -1,4 +1,4 @@
-package features.in.java6;
+package tasks.programmaing.paradigms;
 
 import java.net.InterfaceAddress;
 import java.net.NetworkInterface;
