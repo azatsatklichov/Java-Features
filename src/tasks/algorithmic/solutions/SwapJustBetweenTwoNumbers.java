@@ -1,4 +1,4 @@
-package com.java2novice.interview.programs;
+package tasks.algorithmic.solutions;
 
 /**
  * Program: How to swap two numbers without using temporary variable?

@@ -1,4 +1,4 @@
-package com.java2novice.interview.programs;
+package tasks.algorithmic.solutions;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -58,8 +58,8 @@ public class DuplicateElements {
 				input[++j] = input[i++];
 			}
 		}
-		int[] output = new int[j -1];
-		System.arraycopy(input, 0, output, 0, j-1);
+		int[] output = new int[j - 1];
+		System.arraycopy(input, 0, output, 0, j - 1);
 
 		return output;
 	}

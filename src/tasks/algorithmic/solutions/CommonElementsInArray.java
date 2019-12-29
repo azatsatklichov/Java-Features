@@ -1,4 +1,4 @@
-package net.sahet.demo.intw;
+package tasks.algorithmic.solutions;
 
 /**
  * Program: Write a program to find common elements between two arrays.
@@ -8,8 +8,6 @@ package net.sahet.demo.intw;
  * Write a program to identify common elements or numbers between two given
  * arrays. You should not use any inbuilt methods are list to find common
  * values.
- * 
- * 
  * 
  */
 public class CommonElementsInArray {

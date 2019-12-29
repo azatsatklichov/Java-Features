@@ -1,4 +1,4 @@
-package com.java2novice.interview.programs;
+package tasks.algorithmic.solutions;
 
 import java.io.BufferedReader;
 import java.io.File;

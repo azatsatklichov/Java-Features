@@ -1,4 +1,4 @@
-package com.java2novice.interview.programs;
+package tasks.algorithmic.solutions;
 
 /**
  * Program: Write a program to find the given number is Armstrong number or not?
@@ -6,7 +6,7 @@ package com.java2novice.interview.programs;
  * Description:
  * 
  * Armstrong numbers are the sum of their own digits to the power of the number
- * of digits. It is also known as narcissistic numbers. 
+ * of digits. It is also known as narcissistic numbers.
  * 
  * 
  */
@@ -36,11 +36,8 @@ public class ArmstrongNumber {
 
 	public static void main(String a[]) {
 		ArmstrongNumber man = new ArmstrongNumber();
-		System.out.println("Is 371 Armstrong number? "
-				+ man.isArmstrongNumber(371));
-		System.out.println("Is 523 Armstrong number? "
-				+ man.isArmstrongNumber(523));
-		System.out.println("Is 153 Armstrong number? "
-				+ man.isArmstrongNumber(153));
+		System.out.println("Is 371 Armstrong number? " + man.isArmstrongNumber(371));
+		System.out.println("Is 523 Armstrong number? " + man.isArmstrongNumber(523));
+		System.out.println("Is 153 Armstrong number? " + man.isArmstrongNumber(153));
 	}
 }
