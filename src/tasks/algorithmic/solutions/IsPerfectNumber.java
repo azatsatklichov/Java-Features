@@ -1,4 +1,5 @@
-package tasks.algorithmic.solutions;
+package net.sahet.demo.intw;
+
 
 /**
  * Program: Write a program to find perfect number or not.

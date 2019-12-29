@@ -1,4 +1,6 @@
-package tasks.algorithmic.solutions;
+package net.sahet.demo.intw;
+
+import java.util.stream.Stream;
 
 /**
  * Program: Write a program to print fibonacci series.
@@ -18,50 +20,33 @@ public class Fibonacci {
 
 	public static void main(String a[]) {
 
-		fiboIterative(5);
-		fiboIterative(15);
-		
-		printFibonacciSeries(5);
-		printFibonacciSeries(15);
-
-	}
-
-	/**
-	 * Print first N fibonacci elements in the series
-	 * 
-	 * @param N
-	 */
-	private static void fiboIterative(int N) {
-		int[] feb = new int[N];
+		int febCount = 15;
+		int[] feb = new int[febCount];
 		feb[0] = 0;
 		feb[1] = 1;
-		for (int i = 2; i < N; i++) {
+		for (int i = 2; i < febCount; i++) {
 			feb[i] = feb[i - 1] + feb[i - 2];
 		}
 
-		for (int i = 0; i < N; i++) {
+		for (int i = 0; i < febCount; i++) {
 			System.out.print(feb[i] + " ");
 		}
-		System.out.println();
+		
+		
+		
+		
+		int[] fibs = {0, 1};
+		Stream<Integer> fibonacci = Stream.generate(() -> {
+		    int result = fibs[1];
+		    int fib3 = fibs[0] + fibs[1];
+		    fibs[0] = fibs[1];
+		    fibs[1] = fib3;
+		    return result;
+		}).limit(44); 
+		//fibonacci.forEach(System.out::println);
+		 
+		fibonacci.forEach(x -> {  
+			System.out.print(x+ ",  ");
+		});
 	}
-
-	/**
-	 * Print first N fibonacci elements in the series
-	 * 
-	 * @param N
-	 */
-	private  static void printFibonacciSeries(int N) {
-		System.out.println();
-		for (int i = 0; i < N; i++) {
-			System.out.print(fiboRecursive(i)+ " ");
-		}
-	}
-
-	private static int fiboRecursive(int N) {
-		if (N == 0 || N == 1) {
-			return N;
-		}
-		return fiboRecursive(N - 1) + fiboRecursive(N - 2);
-	}
-
 }

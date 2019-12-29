@@ -1,0 +1,4 @@
+www.seznam.cz;445
+www.sahet.net;14
+www.google.com;1145
+www.kun.uz;145

@@ -1,4 +1,4 @@
-package features.in.java1_7;
+package features.in.java7;
 
 import java.util.ArrayList;
 import java.util.Arrays;
