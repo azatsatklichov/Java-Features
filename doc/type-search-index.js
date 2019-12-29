@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"features.in.java9","l":"ImprovedJavaDoc"}]
