@@ -29,6 +29,8 @@ class ArrCasting {
 		Object o1 = a;
 		int[][] a2 = (int[][]) o1;
 		int[] b2 = (int[]) o1; // ClassCastException: [[I cannot be cast to [I
+		// correction
+		int[][] b22 = (int[][]) o1; // ClassCastException: [[I cannot be cast to [I
 		System.out.println(b[1]);
 	}
 }

@@ -32,7 +32,7 @@ import java.util.TreeSet;
  * </pre>
  * 
  */
-public class C_Queue_Navigable_Demo {
+public class Queue_PriorityQ_Navigable_Demo {
 
 }
 
@@ -53,12 +53,11 @@ class Ferry {
 		/*
 		 * As you can see in the preceding code, before the addition of the
 		 * 
-		 * NavigableSet interface, zeroing in on an arbitrary spot in a
-		 * Set—using the methods available in Java 5—was a compute-expensive and
-		 * clunky proposition.
+		 * NavigableSet interface, zeroing in on an arbitrary spot in a Set—using the
+		 * methods available in Java 5—was a compute-expensive and clunky proposition.
 		 * 
-		 * On the other hand, using the new Java 6 methods lower() and higher(),
-		 * the code becomes a lot cleaner.
+		 * On the other hand, using the new Java 6 methods lower() and higher(), the
+		 * code becomes a lot cleaner.
 		 */
 		TreeSet<Integer> times = new TreeSet<Integer>();
 		times.add(1205); // add some departure times
@@ -70,7 +69,7 @@ class Ferry {
 		System.out.println(times);
 		// Java 5 version
 		TreeSet<Integer> headSet = new TreeSet<Integer>();
-		headSet = (TreeSet) times.headSet(1830); //to element  
+		headSet = (TreeSet) times.headSet(1830); // to element
 		System.out.println(headSet);
 		System.out.println("J5 - last before 4pm is: " + headSet.first());
 		System.out.println("J5 - last before 4pm is: " + headSet.last());
@@ -79,7 +78,7 @@ class Ferry {
 		System.out.println(tailSet);
 		System.out.println("J5 - first after 8pm is: " + tailSet.first());
 		System.out.println("J5 - first after 8pm is: " + tailSet.last());
-		
+
 		System.out.println("");
 		// Java 6 version using the new lower() and higher() methods
 		System.out.println("J6 - last before 4pm is: " + times.lower(1600));
@@ -88,23 +87,22 @@ class Ferry {
 		// Polling
 		System.out.println("\n-- Polling");
 		/*
-		 * Although the idea of polling isn't new to Java 6 (as you'll see in a
-		 * minute, PriorityQueue had a poll() method before Java 6), it is new
-		 * to TreeSet and TreeMap. The idea of polling is that we want both to
-		 * retrieve and remove an element from either the beginning or the end
-		 * of a collection. In the case of TreeSet, pollFirst() returns and
-		 * removes the first entry in the set, and pollLast() returns and
-		 * removes the last. Similarly, TreeMap now provides pollFirstEntry()
-		 * and pollLastEntry() to retrieve and remove key-value pairs.
+		 * Although the idea of polling isn't new to Java 6 (as you'll see in a minute,
+		 * PriorityQueue had a poll() method before Java 6), it is new to TreeSet and
+		 * TreeMap. The idea of polling is that we want both to retrieve and remove an
+		 * element from either the beginning or the end of a collection. In the case of
+		 * TreeSet, pollFirst() returns and removes the first entry in the set, and
+		 * pollLast() returns and removes the last. Similarly, TreeMap now provides
+		 * pollFirstEntry() and pollLastEntry() to retrieve and remove key-value pairs.
 		 */
 
 		// Descending Order
 		System.out.println("\n-- Descending Order");
 		/*
 		 * Also new to Java 6 for TreeSet and TreeMap are methods that return a
-		 * collection in the reverse order of the collection on which the method
-		 * was invoked. The important methods for the exam are
-		 * TreeSet.descendingSet() and TreeMap .descendingMap().
+		 * collection in the reverse order of the collection on which the method was
+		 * invoked. The important methods for the exam are TreeSet.descendingSet() and
+		 * TreeMap .descendingMap().
 		 */
 	}
 }
@@ -113,28 +111,28 @@ class Ferry {
  * Backed Collections
  * 
  * 
- * Some of the classes in the java.util package support the concept of
- * "backed collections". We'll use a little code to help explain the idea:
+ * Some of the classes in the java.util package support the concept of "backed
+ * collections". We'll use a little code to help explain the idea:
  */
 class BackedCollections {
 	public static void main(String[] args) {
 		/**
-		 * The important method in this code is the TreeMap.subMap() method.
-		 * It's easy to guess (and it's correct), that the subMap() method is
-		 * makportioing a copy of a n of the TreeMap named map. The first line
-		 * of output verifies the conclusions we've just drawn.
+		 * The important method in this code is the TreeMap.subMap() method. It's easy
+		 * to guess (and it's correct), that the subMap() method is makportioing a copy
+		 * of a n of the TreeMap named map. The first line of output verifies the
+		 * conclusions we've just drawn.
 		 * 
 		 * 
-		 * What happens next is powerful and a little bit unexpected (now we're
-		 * getting to why they're called backed collections).
+		 * What happens next is powerful and a little bit unexpected (now we're getting
+		 * to why they're called backed collections).
 		 * 
 		 * 
 		 * When we add key-value pairs to either the original TreeMap or the
-		 * partial-copy SortedMap, the new entries were automatically added to
-		 * the other collection—sometimes. When submap was created, we provided
-		 * a value range for the new collection. This range defines not only
-		 * what should be included when the partial copy is created, but also
-		 * defines the range of values that can be added to the copy.
+		 * partial-copy SortedMap, the new entries were automatically added to the other
+		 * collection—sometimes. When submap was created, we provided a value range
+		 * for the new collection. This range defines not only what should be included
+		 * when the partial copy is created, but also defines the range of values that
+		 * can be added to the copy.
 		 */
 
 		TreeMap<String, String> map = new TreeMap<String, String>();
@@ -145,7 +143,7 @@ class BackedCollections {
 		submap = map.subMap("b", "g"); // #1 create a backed collection
 		System.out.println(map + " <--> " + submap); // #2 show contents
 		map.put("b", "bat"); // #3 add to original
-		map.put("a", "anttt"); //update
+		map.put("a", "anttt"); // update
 		submap.put("f", "fish"); // #4 add to copy
 		map.put("r", "raccoon"); // #5 add to original - out of range
 		// submap.put("p", "pig"); // #6 add to copy - out of range
@@ -206,9 +204,8 @@ class PriorityQueueTest {
 
 		/**
 		 * It’s important to know some of the details of natural ordering. The
-		 * following code will help you understand the relative positions of
-		 * uppercase characters, lowercase characters, and spaces in a natural
-		 * ordering:
+		 * following code will help you understand the relative positions of uppercase
+		 * characters, lowercase characters, and spaces in a natural ordering:
 		 */
 		String[] sa = { ">ff<", "> f<", ">f <", ">FF<" }; // ordered?
 		PriorityQueue<String> pq3 = new PriorityQueue<String>();
@@ -221,9 +218,8 @@ class PriorityQueueTest {
 		 * 
 		 * > f< >FF< >f < >ff<
 		 * 
-		 * If you remember that spaces sort before characters and that uppercase
-		 * letters sort before lowercase characters, you should be good to go
-		 * for the exam.
+		 * If you remember that spaces sort before characters and that uppercase letters
+		 * sort before lowercase characters, you should be good to go for the exam.
 		 */
 	}
 }

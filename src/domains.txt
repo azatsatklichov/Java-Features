@@ -222,3 +222,6 @@
 221;mega.nz;137365
 222;lycos.com;699300
 223;https://www.alexa.com/topsites;0
+1000;www.seznam.cz;445
+1001;www.sahet.net;14
+2001;www.kun.uz;145

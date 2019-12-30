@@ -1,6 +1,6 @@
 package tasks.programmaing.paradigms;
 
-public class BarcklaysThreadPuzzle {
+public class BrcyThreadPuzzle {
 
     public static void main(String[] args) {
         BarcklaysThread t1 = new BarcklaysThread();

@@ -20,20 +20,16 @@ class TestAbove {
 
 		test.hello();
 
-		System.out
-				.println(" Interfaces do not have constructors. Interfaces are not part of an object's  inheritance tree. BUT see below");
+		System.out.println(
+				" Interfaces do not have constructors. Interfaces are not part of an object's  inheritance tree. BUT see below");
 		System.out.println(test.hashCode());
 
 		if (test instanceof Object)
-			System.out.println("you see, it is instance of Object");
+			System.out.println("you see, it is instance of Object. Becuse it is implemented by Anonymous class");
 		else
 			System.out.println("you see, it is not");
 	}
 }
-
-
-
-
 
 interface NotPartOfObjectInheritanceTree {
 }
@@ -77,10 +73,8 @@ class UseBarr {
 	public static void main(String[] args) {
 		Barr b = new Barr();
 		// b.takeInt(); // Try to invoke a no-arg takeInt() method
-		System.out
-				.println("Hayirlisi, 3-gezek ang boljak bolyan, bye bye rpt21, ims, inwk unfair 'equality world' ");
-		
-		System.out
-        .println("zato, RPT like IMS de ishlap yorun, but other way project looks like ICM Logica   ");
+		System.out.println("bye bye rpt21/ims, inw unfair 'equality world' ");
+
+		System.out.println("zato, RPT like IMS de ishlap yorun, but other way project looks like ICM Logica   ");
 	}
 }

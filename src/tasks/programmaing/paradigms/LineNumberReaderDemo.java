@@ -19,34 +19,34 @@ import java.io.LineNumberReader;
  */
 public class LineNumberReaderDemo {
 
-    private static final String file = "C:\\workspace\\_MainJava\\scjp(cx55-cx65)\\cx55\\and\\cx65\\ch6\\strings\\format\\parse\\io\\dos2.txt";
+	private static final String file = "words.txt";
 
-    public static void main(String[] args) throws IOException {
-        LineNumberReader lineNumberReader = new LineNumberReader(new FileReader(file));
+	public static void main(String[] args) throws IOException {
+		LineNumberReader lineNumberReader = new LineNumberReader(new FileReader(file));
 
-        int data = lineNumberReader.read();
-        int lineNumber = lineNumberReader.getLineNumber();
-        while (data != -1) {
-            char dataChar = (char) data;
-            System.out.println(dataChar);
+		int data = lineNumberReader.read();
+		int lineNumber = lineNumberReader.getLineNumber();
+		while (data != -1) {
+			char dataChar = (char) data;
+			System.out.println(dataChar);
 
-            System.out.println(" line#" + lineNumber);
-            data = lineNumberReader.read();
-            lineNumber = lineNumberReader.getLineNumber();
-        }
-        lineNumberReader.close();
+			System.out.println(" line#" + lineNumber);
+			data = lineNumberReader.read();
+			lineNumber = lineNumberReader.getLineNumber();
+		}
+		lineNumberReader.close();
 
-        System.out.println();
-        try (LineNumberReader lineNumberReader2 = new LineNumberReader(new FileReader(file))) {
+		System.out.println();
+		try (LineNumberReader lineNumberReader2 = new LineNumberReader(new FileReader(file))) {
 
-            String line = lineNumberReader2.readLine();
-            while (line != null) {
+			String line = lineNumberReader2.readLine();
+			while (line != null) {
 
-                System.out.println(line);
-                line = lineNumberReader2.readLine();
-            }
+				System.out.println(line);
+				line = lineNumberReader2.readLine();
+			}
 
-        }
-    }
+		}
+	}
 
 }

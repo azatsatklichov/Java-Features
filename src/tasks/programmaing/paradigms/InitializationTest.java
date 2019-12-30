@@ -1,7 +1,7 @@
 package tasks.programmaing.paradigms;
 
 
-public class TestInitialization {
+public class InitializationTest {
 	/*
 	 * What is the result?
 	 * 
@@ -60,8 +60,7 @@ class Raptor3 extends Bird3 {
  * run right after the call to super() in a constructor. When multiple init
  * blocks of a single type occur in a class, they run in order, from the top
  * down.
- * 
- * @author Azat
+ *  
  * 
  */
 class Hawk3 extends Raptor3 {

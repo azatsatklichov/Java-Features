@@ -18,7 +18,7 @@ package tasks.programmaing.paradigms;
  * </pre>
  * 
  */
-public class MyDeadlock {
+public class Deadlock2 {
 
 	String str1 = "Java";
 	String str2 = "UNIX";
@@ -48,7 +48,7 @@ public class MyDeadlock {
 	};
 
 	public static void main(String a[]) {
-		MyDeadlock mdl = new MyDeadlock();
+		Deadlock2 mdl = new Deadlock2();
 		mdl.trd1.start();
 		mdl.trd2.start();
 		

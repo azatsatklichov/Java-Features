@@ -7,7 +7,7 @@ import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.List;
 
-public class NetInt {
+public class NetworkInterfaceDemo {
 	public static void main(String args[]) throws SocketException {
 		Enumeration<NetworkInterface> netis = NetworkInterface.getNetworkInterfaces();
 		while (netis.hasMoreElements()) {

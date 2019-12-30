@@ -6,7 +6,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class DataInputStreamExample {
+public class IODataInputStreamExample {
     /**
      * The Java DataInputStream class, java.io.DataInputStream, enables you to read
      * Java primitives (int, float, long etc.) from an InputStream instead of only
@@ -14,7 +14,7 @@ public class DataInputStreamExample {
      * Java primitives via ' the DataInputStream. That is why it is called
      * DataInputStream - because it reads data (numbers) instead of just bytes.
      */
-    private static final String file = "C:\\workspace\\_MainJava\\scjp(cx55-cx65)\\cx55\\and\\cx65\\ch6\\strings\\format\\parse\\io\\dos.txt";
+    private static final String file = "dos.txt";
 
     public static void main(String[] args) throws IOException {
         DataOutputStream dataOutputStream = new DataOutputStream(new FileOutputStream(file));
