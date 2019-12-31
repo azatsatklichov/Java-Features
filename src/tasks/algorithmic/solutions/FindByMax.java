@@ -8,6 +8,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Comparator;
 import java.util.TreeSet;
+import java.util.stream.Stream;
 
 public class FindByMax {
 	/**
@@ -36,7 +37,7 @@ public class FindByMax {
 		try (BufferedReader reader = Files.newBufferedReader(path)) { // for big files
 			String line;
 			while ((line = reader.readLine()) != null) {
-				//System.out.println(line);
+				// System.out.println(line);
 				line = line.strip(); /// trim();
 				if (!"".equals(line)) {
 					String[] split = line.split(";");
@@ -117,6 +118,16 @@ class Domain implements Comparable<Domain> {
 	@Override
 	public int compareTo(Domain o) {
 		return this.accessCount.compareTo((long) o.compareTo(o));
+	}
+
+	private void readByLineJava8(String fileName) { // URI fileName
+		// read file into stream, try-with-resources
+		try (Stream<String> stream = Files.lines(Paths.get(fileName))) { 
+			stream.forEach(System.out::println);
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 }
 
