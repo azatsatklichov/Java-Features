@@ -12,9 +12,19 @@ import java.net.Socket;
  * Java 13.
  * 
  * Before Java 13, it uses the PlainSocketImpl for the SocketImpl
+ * 
+ * 
+ * The underlying implementation of the java.net.Socket and
+ * java.net.ServerSocket APIs have been rewritten. The new implementation,
+ * NioSocketImpl, is a drop-in replacement for PlainSocketImpl.
+ * 
+ * It uses java.util.concurrent locks rather than synchronized methods. If you
+ * want to use the legacy implementation, use the java option
+ * -Djdk.net.usePlainSocketImpl.
  *
  */
 public class JEP353Socket {
+	// -Djdk.net.usePlainSocketImpl.
 	public static void main(String[] args) {
 
 		try (ServerSocket serverSocket = new ServerSocket(8888)) {

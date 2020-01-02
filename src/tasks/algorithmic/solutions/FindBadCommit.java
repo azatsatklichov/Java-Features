@@ -60,7 +60,7 @@ public class FindBadCommit {
 	public static int findBadCommit(int[] commitIds) {
 
 		int left = 0;
-		int right = commitIds.length-1;
+		int right = commitIds.length - 1;
 		int badCommitId = 0;
 
 		/**
@@ -69,15 +69,15 @@ public class FindBadCommit {
 		 */
 		while (left < right) {
 			int mid = (left + right) / 2;
-			//int mid = left + (right - left) / 2;
-		 
+			// int mid = left + (right - left) / 2;
+
 			if (executeTests(commitIds[mid - 1]) && !executeTests(commitIds[mid + 1])) {
 				badCommitId = commitIds[mid];
 				break;
 			} else if (executeTests(commitIds[mid])) { // bad commit is on right
 				left = mid + 1;
 			} else { // on left
-				right = mid+1;
+				right = mid + 1;
 			}
 		}
 

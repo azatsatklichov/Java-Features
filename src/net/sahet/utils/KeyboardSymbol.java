@@ -1,10 +1,10 @@
 package net.sahet.utils;
 
-
 /**
  * enum-constant, used to represent keyboard symbols.
  * 
- * @author asatklic
+ * 
+ * @author Azat
  */
 public enum KeyboardSymbol {
 	EXCLAMATION("!"), //
