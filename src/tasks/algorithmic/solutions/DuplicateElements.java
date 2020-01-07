@@ -31,6 +31,7 @@ public class DuplicateElements {
 			if (input[i] == input[j]) {
 				i++;
 			} else {
+				//super logic
 				input[++j] = input[i++];
 			}
 		}

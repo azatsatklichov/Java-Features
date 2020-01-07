@@ -1,12 +1,15 @@
 package tasks.algorithmic.solutions;
 
 import java.util.Calendar;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class NCalls {
 	/**
 	 * allowedCount (V) can be configurable
 	 */
 	private static int allowedCount = 1000;
+	//use, probably omio-reverts becuase of this 
+	AtomicInteger aCounter = new AtomicInteger();
 	private static int count = 1;
 	private static long startTime = 0;
 	private static long stopTime = 0;
