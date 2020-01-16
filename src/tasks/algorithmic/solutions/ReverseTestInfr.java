@@ -46,6 +46,23 @@ public class ReverseTestInfr {
 		return arr;
 	}
 
+	/**
+	 * in place
+	 * 
+	 * @param arr
+	 * @return
+	 */
+	static int[] reverseCharArrOrcl(int[] arr) {
+		int len = arr.length;
+		for (int i = 0; i < len / 2; i++) {
+			arr[i] = arr[i] + arr[len - i];
+			arr[len - i] = arr[i] - arr[len - i];
+			arr[i] = arr[i] - arr[len - i];
+		}
+
+		return arr;
+	}
+
 	private static void swap(char[] arr, int len, int i) {
 		int j = len - i - 1;
 		char tmp = arr[j];
@@ -58,13 +75,12 @@ public class ReverseTestInfr {
 		int num = 143303;
 		System.out.println(num);
 		System.out.println(reverseNumber(num));
-		
+
 		num = 254790054;
 		System.out.println(num);
 		System.out.println(reverseNumber(num));
-		
+
 		System.out.println();
-		
 
 		char[] arr = "ABCDEF".toCharArray();
 		System.out.println(arr);
