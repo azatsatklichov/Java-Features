@@ -69,6 +69,9 @@ public class JEP350DynamicCDSArchives {
 		 * activated with command line commands. In a future extension, the archiving of
 		 * classes could then run completely automatically and transparently.
 		 */
+		
+		//Dynamic AppCDS Archives
+		
 
 	}
 

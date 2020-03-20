@@ -1,5 +1,9 @@
 package features.in.java8;
 
+import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.DateFormatSymbols;
+import java.text.SimpleDateFormat;
 import java.time.DayOfWeek;
 import java.time.Duration;
 import java.time.Instant;
@@ -10,52 +14,45 @@ import java.time.Month;
 import java.time.Period;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAdjusters;
 import java.util.Date;
+import java.util.Locale;
+import java.util.Set;
 
 /**
  * <pre>
+ * 
+ * Regarding to below issues, it is already in Java 7, joda-time library started used. 
+ * And Java 8 is based on joda-time library. 
+ * 
+ * 
  Java 8, new Date-Time API is introduced to cover the following drawbacks of old date-time API.
  
-Not thread safe − java.util.Date is not thread safe, thus developers have to deal with concurrency issue while using date. The new date-time API is immutable and does not have setter methods.
+java.util.Date is Mutable, this cause a corrupted data. Otherwise you need to solve the issue with Defencive copying 
 
-Poor design − Default Date starts from 1900, month starts from 1, and day starts from 0, so no uniformity. The old API had less direct methods for date operations. The new API provides numerous utility methods for such operations.
+ 
+Not thread safe  java.util.Date is not thread safe, thus developers have to deal with concurrency issue while using date. 
+The new date-time API is immutable and does not have setter methods.
 
-Difficult time zone handling − Developers had to write a lot of code to deal with timezone issues. The new API has been developed keeping domain-specific design in mind.
+Poor design  Default Date starts from 1900, month starts from 1, and day starts from 0, so no uniformity. 
+The old API had less direct methods for date operations. The new API provides numerous utility methods for such operations.
 
-Java 8 introduces a new date-time API under the package java.time. Following are some of the important classes introduced in java.time package.
+Difficult time zone handling  Developers had to write a lot of code to deal with timezone issues. 
+The new API has been developed keeping domain-specific design in mind.
 
-Local − Simplified date-time API with no complexity of timezone handling.
+Java 8 introduces a new date-time API under the package java.time. 
+Following are some of the important classes introduced in java.time package.
 
-Zoned − Specialized date-time API to deal with various timezones.
+Local  Simplified date-time API with no complexity of timezone handling.
+
+Zoned  Specialized date-time API to deal with various timezones.
  * </pre>
  *
  */
 public class NewDateTimeAPI {
 }
-
-/**
- * Desc:
- * 
- * <pre>
-With Java 8, a new Date-Time API is introduced to cover the following drawbacks of old date-time API.
-
-Not thread safe − java.util.Date is not thread safe, thus developers have to deal with concurrency
- issue while using date. The new date-time API is immutable and does not have setter methods.
-
-
-Poor desig
-n − Default Date starts from 1900, month starts from 1, and day starts from 0, so no uniformity. The old API had less direct methods for date operations. The new API provides numerous utility methods for such operations.
-
-
-Difficult time zone handling − Developers had to write a lot of code to deal with timezone issues. 
-The new API has been developed keeping domain-specific design in mind.
- * 
- * 
- * </pre>
- * 
- */
 
 class LocalDateTimeDemo {
 
@@ -67,10 +64,10 @@ class LocalDateTimeDemo {
 		 * 
 		 * <pre>
 		
-		Local − Simplified date-time API with no complexity of timezone handling.
+		Local  Simplified date-time API with no complexity of timezone handling.
 		
 		
-		Zoned − Specialized date-time API to deal with various timezones.
+		Zoned  Specialized date-time API to deal with various timezones.
 		 * 
 		 * 
 		 * </pre>
@@ -122,6 +119,12 @@ class LocalDateTimeDemo {
 
 		LocalTime tm = currentTime.toLocalTime();
 		System.out.println("date1: " + tm);
+
+		// bed time cal
+		LocalTime time2Sleep = LocalTime.of(23, 49);
+		LocalTime wakeUp = time2Sleep.plusHours(7); // LocalTime.of(7, 33);
+		System.out.println(time2Sleep + ", " + wakeUp);
+
 	}
 
 	/*
@@ -172,55 +175,85 @@ class ZonedDateTimeDemo {
 		System.out.println("CurrentZone: " + currentZone);
 		System.out.println();
 		System.out.println("All: " + ZoneId.SHORT_IDS);
+
+		Set<String> availableZoneIds = ZoneId.getAvailableZoneIds();
+		System.out.println(availableZoneIds);
+
+		ZoneId dubai = ZoneId.of("Asia/Dubai");
+		System.out.println(dubai);
+		ZonedDateTime date = ZonedDateTime.now(dubai);
+		System.out.println("Time in Dubai now: " + date);
+
+		// custom
+		ZonedDateTime meeting = ZonedDateTime.of(1733, Month.MAY.getValue(), 18, 23, 0, 0, 0, ZoneId.of("Asia/Aqtau"));
+		System.out.println("Time in Dubai now: " + meeting);
+
+		// meeting organizing
+		meeting = ZonedDateTime.of(LocalDate.of(2020, Month.APRIL, 1), LocalTime.of(9, 30), ZoneId.of("Europe/Prague"));
+		System.out.println("Meeting time Prague: " + meeting);
+		// Returns a copy of this date-time with the specified amount added
+		meeting = meeting.plus(Period.ofWeeks(1)); // example of immutable
+		System.out.println("next Meeting in a week: " + meeting);
+
+		meeting = meeting.plus(Period.ofMonths(1));
+		System.out.println("next Meeting in a Month: " + meeting);
+
+		meeting = meeting.plus(Period.ofMonths(4));
+		System.out.println("next Meeting after 3 month: " + meeting);
+
+		// to setup it to your collegues in different timeZone
+		meeting = meeting.withZoneSameInstant(ZoneId.of("US/Central"));
+		System.out.println("next Meeting with Venkat: " + meeting);
+
 	}
 
 }
 
-/**
- * Backward Compatibility
- * 
- * <pre>
+class InstantDurationAndPeriod {
+	public static void main(String[] args) throws InterruptedException {
+		InstantDurationAndPeriod pad = new InstantDurationAndPeriod();
 
-A toInstant() method is added to the original Date and Calendar objects, which can be used to convert them to the new Date-Time API. Use an ofInstant(Insant,ZoneId) method to get a LocalDateTime or ZonedDateTime object. Let us see them in action.
-
-Create the following Java program using any editor of your choice in, say, C:\> JAVA.
- * 
- * </pre>
- * 
- */
-class BackwardCompatibility {
-	public static void main(String args[]) {
-		BackwardCompatibility pad = new BackwardCompatibility();
-		pad.testBackwardCompatability();
-	}
-
-	public void testBackwardCompatability() {
-
-		// Get the current date
-		Date currentDate = new Date();
-		System.out.println("Current date: " + currentDate);
-
-		// Get the instant of current date in terms of milliseconds
-		Instant now = currentDate.toInstant();
-		ZoneId currentZone = ZoneId.systemDefault();
-
-		LocalDateTime localDateTime = LocalDateTime.ofInstant(now, currentZone);
-		System.out.println("Local date: " + localDateTime);
-
-		ZonedDateTime zonedDateTime = ZonedDateTime.ofInstant(now, currentZone);
-		System.out.println("Zoned date: " + zonedDateTime);
-	}
-}
-
-class PeriodAndDuration {
-	public static void main(String[] args) {
-		System.out.println("Period  - It deals with DATE based amount of time.");
-
-		System.out.println("Duration  - It deals with TIME based amount of time.");
-		PeriodAndDuration pad = new PeriodAndDuration();
-		pad.testPeriod();
-		System.out.println();
+		System.out.println("Duration  - It deals with TIME based amount of time. "
+				+ "So Duration is an amount between two Instants");
 		pad.testDuration();
+		System.out.println();
+
+		// Some cases are not an Instance(time) based, but Date based, e.g. Let's meet
+		// tomorrow at 14:00
+		System.out.println("Period  - It deals with DATE based amount of time. Period is amount between two dates");
+		pad.testPeriod();
+
+	}
+
+	public void testDuration() throws InterruptedException {
+
+		System.out.println("Instant - is a point on Timeline, measured with nanosecond. It is IMMUTABLE");
+		Instant.now();
+		/*
+		 * Instant o means 1970 at midnight GMT Instant.MAX = 31.Dec 1000000000 year or
+		 * 1 billion years after
+		 * 
+		 * Instant.MIN - 1 billion years ago;
+		 * 
+		 * Instant
+		 */
+		Instant start = Instant.now();
+		Thread.currentThread().sleep(3000);
+		Instant end = Instant.now();
+		Duration elapsed = Duration.between(start, end);
+		System.out.println("Duration  = " + elapsed);
+
+		LocalTime time1 = LocalTime.now();
+
+		Duration twentyFiveHours = Duration.ofHours(25);
+		LocalTime time2 = time1.plus(twentyFiveHours);
+		// LocalTime time2 = time1.plus(2, ChronoUnit.HOURS);
+
+		Duration duration = Duration.between(time1, time2);
+
+		System.out.println("Duration: " + duration);
+		System.out.println("Nanos  = " + duration.toNanos());
+		System.out.println("Days  = " + duration.toDays());
 	}
 
 	public void testPeriod() {
@@ -235,19 +268,28 @@ class PeriodAndDuration {
 
 		Period period = Period.between(date2, date1);
 		System.out.println("Period: " + period);
+
+		LocalDate birth = LocalDate.of(1733, Month.MAY, 18);
+		System.out.println(birth);
+		Period yearsPassed = birth.until(LocalDate.now());
+		System.out.println("Years passed: " + yearsPassed.getYears());
+
+		long years2Way = birth.until(LocalDate.now(), ChronoUnit.YEARS);
+		System.out.println("Years passed: " + years2Way);
+
+		long asyr = birth.until(LocalDate.now(), ChronoUnit.CENTURIES);
+		System.out.println("Asyr passed: " + asyr);
+
+		long days = birth.until(LocalDate.now(), ChronoUnit.DAYS);
+		System.out.println("days passed: " + days);
+
+		System.out.println("Period: P286Y9M24D Period, 286 year 9 month 24 day " + yearsPassed);
+		System.out.println(yearsPassed.get(ChronoUnit.YEARS));
+		System.out.println(yearsPassed.get(ChronoUnit.MONTHS));
+		System.out.println(yearsPassed.get(ChronoUnit.DAYS));
+
 	}
 
-	public void testDuration() {
-		LocalTime time1 = LocalTime.now();
-
-		Duration twoHours = Duration.ofHours(2);
-		LocalTime time2 = time1.plus(twoHours);
-		// LocalTime time2 = time1.plus(2, ChronoUnit.HOURS);
-
-		Duration duration = Duration.between(time1, time2);
-
-		System.out.println("Duration: " + duration);
-	}
 }
 
 class TemporalAdjustersDemo {
@@ -270,5 +312,122 @@ class TemporalAdjustersDemo {
 		LocalDate secondSaturday = firstInYear.with(TemporalAdjusters.nextOrSame(DayOfWeek.SATURDAY))
 				.with(TemporalAdjusters.next(DayOfWeek.SATURDAY));
 		System.out.println("Second Saturday on : " + secondSaturday);
+
+		// shows week day in month, so first friday in this month
+		LocalDate daysOfWeekInMonth = LocalDate.now().with(TemporalAdjusters.dayOfWeekInMonth(1, DayOfWeek.FRIDAY));
+		System.out.println("daysOfWeekInMonth : " + daysOfWeekInMonth);
+		// after five weeks (4 weeks for this month), Friday
+		daysOfWeekInMonth = LocalDate.now().with(TemporalAdjusters.dayOfWeekInMonth(5, DayOfWeek.FRIDAY));
+		System.out.println("daysOfWeekInMonth : " + daysOfWeekInMonth);
 	}
+}
+
+/**
+ * Backward Compatibility
+ * 
+ * <pre>
+
+A toInstant() method is added to the original Date and Calendar objects, which can be used to convert them to the new Date-Time API. Use an ofInstant(Insant,ZoneId) method to get a LocalDateTime or ZonedDateTime object. Let us see them in action.
+
+Create the following Java program using any editor of your choice in, say, C:\> JAVA.
+ * 
+ * </pre>
+ * 
+ */
+class BackwardCompatibilityBrdgesBetweenAPIs {
+	public static void main(String args[]) {
+		BackwardCompatibilityBrdgesBetweenAPIs pad = new BackwardCompatibilityBrdgesBetweenAPIs();
+		pad.testBackwardCompatability();
+	}
+
+	public void testBackwardCompatability() {
+
+		System.out.println();
+		Instant instant = Instant.now();
+		System.out.println("Instant: " + instant);
+		System.out.println();
+		System.out.println("from Instant to Legacy Date and back");
+		// from Instant to Legacy Date
+		Date legacyDate = Date.from(instant);
+		System.out.println(legacyDate);
+
+		// from Legacy Date to Instant
+		Instant instant2 = legacyDate.toInstant();
+		System.out.println(instant2);
+
+		System.out.println();
+		System.out.println("from Instant to Legacy Timestamp and back");
+
+		// from Instant to legacyTimestamp
+		Timestamp legacyTimestamp = Timestamp.from(instant);
+		System.out.println(legacyTimestamp);
+
+		// from legacyTimestamp to Instant
+		Instant instant3 = legacyTimestamp.toInstant();
+		System.out.println(instant3);
+
+		System.out.println();
+		LocalDate date = LocalDate.now();
+		Instant nowi  = date.atStartOfDay(ZoneId.systemDefault()).toInstant();
+		ZoneId currentZone = ZoneId.systemDefault();
+
+		LocalDateTime localDateTime = LocalDateTime.ofInstant(nowi, currentZone);
+		System.out.println("Local date: " + localDateTime);
+
+		ZonedDateTime zonedDateTime = ZonedDateTime.ofInstant(nowi, currentZone);
+		System.out.println("Zoned date: " + zonedDateTime);
+
+	}
+}
+
+class DateTimeFormatters {
+
+	public static void main(String args[]) {
+		System.out.println("old DateTime API way");
+		Locale locale = new Locale("fr", "FR");
+		DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.DEFAULT, locale);
+		String date = dateFormat.format(new Date());
+		System.out.print(date);
+
+		// http://tutorials.jenkov.com/java-internationalization/simpledateformat.html
+		String pattern = "EEEEE dd MMMMM yyyy HH:mm:ss.SSSZ";
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern, new Locale("da", "DK"));
+
+		date = simpleDateFormat.format(new Date());
+		System.out.println(date);
+
+		locale = new Locale("en", "UK");
+		DateFormatSymbols dateFormatSymbols = new DateFormatSymbols(locale);
+		dateFormatSymbols.setWeekdays(new String[] { "Unused", "Sad Sunday", "Manic Monday", "Thriving Tuesday",
+				"Wet Wednesday", "Total Thursday", "Fat Friday", "Super Saturday", });
+
+		pattern = "EEEEE MMMMM yyyy";
+		simpleDateFormat = new SimpleDateFormat(pattern, dateFormatSymbols);
+
+		date = simpleDateFormat.format(new Date());
+		System.out.println(date);
+
+		System.out.println("\nnew DateTime API way");
+		ZonedDateTime meeting = ZonedDateTime.of(LocalDate.of(2020, Month.APRIL, 1), LocalTime.of(9, 30),
+				ZoneId.of("Europe/Prague"));
+		System.out.println(meeting);
+		System.out.println("ISO_DATE_TIME formatted = " + DateTimeFormatter.ISO_DATE_TIME.format(meeting));
+		System.out.println("RFC_1123_DATE_TIME formatted = " + DateTimeFormatter.RFC_1123_DATE_TIME.format(meeting));
+
+		DateTimeFormatter formatter = DateTimeFormatter.BASIC_ISO_DATE;
+		System.out.println("BASIC_ISO_DATE formatted = " + formatter.format(meeting));
+
+		System.out.println();
+		LocalDate now = LocalDate.now();
+		String formattedDate = formatter.format(now);
+		System.out.println(now);
+		System.out.println("formattedLocaleDate = " + formattedDate);
+
+		ZonedDateTime zonedNow = ZonedDateTime.now();
+		String formattedZonedDate = formatter.format(zonedNow);
+		System.out.println(zonedNow);
+		System.out.println("formattedZonedDate = " + formattedZonedDate);
+
+	}
+
 }

@@ -25,6 +25,11 @@ import java.net.Socket;
 public class JEP353ReimplementLegacySocketAPI {
 	public static void main(String[] args) {
 
+		/*
+		 * 
+		java.net.Socket -> java.net.serverSocket
+		sun.ni.ch.NioSocketImplementation
+		 */
 		try (ServerSocket serverSocket = new ServerSocket(8888)) {
 
 			boolean running = true;
@@ -37,6 +42,8 @@ public class JEP353ReimplementLegacySocketAPI {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+		
 
 	}
 }

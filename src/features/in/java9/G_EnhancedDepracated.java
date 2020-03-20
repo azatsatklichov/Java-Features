@@ -26,3 +26,12 @@ Following example of Boolean class javadoc on Java 9 illustrate the use of since
 public class G_EnhancedDepracated {
 
 }
+
+
+class NoAloneUnderscore{
+	//From Java 9, "_" is a keyword, and can not be used as an identifier
+	//String _ = "aloneUnderscore";
+	
+	//"_" Possible future use, so element is not taken into account just ignored
+	//list.forEach(_ -> doSomething())
+}

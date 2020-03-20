@@ -1,0 +1,41 @@
+"module commands"
+
+Read about Java Modularity more: https://javamodularity.com/
+
+
+>java --list-modules
+
+//like opening a module-info.class or module-info.java
+>java --describe-module java.sql
+
+
+-- Migrating Java 8 to Modular-Java9 or greater
+
+1) Migration is easy, it will use unnamed-module, but your code must be compiled with Java8 then Run under Java9 or bigger JVM
+
+2) Or use  --illegal-access=deny
+Or if you can not change the code the 
+--illegal-access=permit
+
+//also
+>javac --add-exports java.base/sun.security.x509=ALL-UNNAMED Main.java
+
+--Using non-default modules
+//at development time
+>javac --add-modules java.xml.bind Main.java
+
+//at runtime
+>java --add-modules java.xml.bind Main
+>java --add-modules java.se.ee Main
+
+ 
+
+--- Use 
+
+-- Profile TOOL "jdeps" to find out how deep encapsulated modules used
+>jdeps  -jdkinternals Main.class
+> jdeps -jdkinternals zAllOtherNews.class
+>C:\workspace_ext\Java-Features\bin\features\in\java9>jdeps -jdkinternals SafeVargs.class
+
+
+

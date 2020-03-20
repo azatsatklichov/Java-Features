@@ -36,7 +36,7 @@ public class SwitchEnhancements {
 
 		// switch expressions, use yield to return, in Java 12 it was break
 		/**
-		 * A new keyword ‘yield’ is introduced to return a value from the switch.
+		 * A new keyword ‘yield’ is introduced to return a value from the switch. Python has similar concept.
 		 * 
 		 * P.S This is a preview language feature in Java 13
 		 */
@@ -44,7 +44,7 @@ public class SwitchEnhancements {
 		case 1, 2, 3:
 			yield choice;
 		default:
-			yield -1;
+			yield -1;//doing a role of return 
 		};
 		System.out.println("x = " + x);
 

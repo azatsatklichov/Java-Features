@@ -7,7 +7,7 @@ package features.in.java13;
  * 
  * 
  * <pre>
- *  - Updates to Unicode support
+ *  - Updates to Unicode support - 4 new scripts, 555 new characters, 61 new emoji, Japanese New Era (Emperor ;) 2019	 )
  *  
  *  - Three new methods in String to support text blocks already described.
  *  

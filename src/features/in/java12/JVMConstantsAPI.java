@@ -7,6 +7,10 @@ package features.in.java12;
 public class JVMConstantsAPI {
 	public static void main(String[] args) {
 		System.out.println("A new package java.lang.constant is introduced with this JEP");
+		/**
+		 * Low-level JVM Feature
+		 * 
+		 */
 	}
 
 }

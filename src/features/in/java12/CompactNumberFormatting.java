@@ -3,6 +3,7 @@ package features.in.java12;
 import java.text.CompactNumberFormat;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.util.List;
 import java.util.Locale;
 
 public class CompactNumberFormatting {
@@ -20,6 +21,7 @@ public class CompactNumberFormatting {
 		NumberFormat upvotes = NumberFormat.getCompactNumberInstance(new Locale("en", "US"), NumberFormat.Style.SHORT);
 		upvotes.setMaximumFractionDigits(1);
 
+		
 		System.out.println(upvotes.format(2592) + " upvotes");
 		upvotes.setMaximumFractionDigits(2);
 
@@ -38,5 +40,32 @@ public class CompactNumberFormatting {
 
 		final CompactNumberFormat customCompactNumberFormat = new CompactNumberFormat(decimalFormat.toPattern(),
 				decimalFormat.getDecimalFormatSymbols(), compactPatterns);
+		
+		
+		
 	}
 }
+
+
+class CompactNumberFormatExample {
+	  public static void main(String[] args) {
+	      formatForLocale(Locale.US);
+	      formatForLocale(Locale.GERMANY);
+	  }
+
+	  private static void formatForLocale(Locale locale) {
+	      List<Integer> numbers = List.of(1000, 1000000, 1000000000);
+	      System.out.printf("-- SHORT format for locale=%s --%n", locale);
+	      numbers.stream().forEach((num) -> {
+	          NumberFormat nf = NumberFormat.getCompactNumberInstance(locale, NumberFormat.Style.SHORT);
+	          String format = nf.format(num);
+	          System.out.println(format);
+	      });
+	      System.out.printf("-- LONG format for locale=%s --%n", locale);
+	      numbers.stream().forEach((num) -> {
+	          NumberFormat nf = NumberFormat.getCompactNumberInstance(locale, NumberFormat.Style.LONG);
+	          String format = nf.format(num);
+	          System.out.println(format);
+	      });
+	  }
+	}

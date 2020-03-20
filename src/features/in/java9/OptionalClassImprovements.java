@@ -15,11 +15,14 @@ import java.util.stream.Stream;
 *
 *In java 9, three new methods are added to improve its functionality.
 
-stream() - If a value is present, it returns a sequential Stream containing only that value, otherwise returns an empty Stream.
+stream() - If a value is present, it returns a sequential Stream containing only that value, 
+otherwise returns an empty Stream.
 
-ifPresentOrElse() - If a value is present, performs the given action with the value, otherwise performs the given empty-based action.
+ifPresentOrElse() - If a value is present, performs the given action with the value, 
+otherwise performs the given empty-based action.
 
-or() - If a value is present, returns an Optional describing the value, otherwise returns an Optional produced by the supplying function.
+or() - If a value is present, returns an Optional describing the value, otherwise returns an Optional produced 
+by the supplying function.
  * 
  * </pre>
  */
@@ -41,7 +44,6 @@ public class OptionalClassImprovements {
 		System.out.println(filteredListJava9);
 		System.out.println();
 
-
 		// If a value is present, performs the given action with the value, otherwise
 		// performs the given empty-based action.
 		Optional<Integer> optional = Optional.of(1);
@@ -58,6 +60,20 @@ public class OptionalClassImprovements {
 		optional1 = Optional.empty();
 		optional1 = optional1.or(supplierString);
 		optional1.ifPresent(x -> System.out.println("Value: " + x));
+
+		// long way
+		Optional<Integer> o = Optional.of(23);
+		if (o.isPresent()) {
+			System.out.println("Value = " + o.get());
+		} else {
+			System.out.println("Empty  ");
+		}
+
+
+		/**
+		 * See {@link OptionalClass}
+		 */
+		optional.ifPresentOrElse(x -> System.out.println("Value: " + x), () -> System.out.println("Not Present."));
 
 	}
 

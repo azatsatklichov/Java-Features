@@ -39,8 +39,8 @@ public class _About {
                 + "If you don’t, you can get an invoice bill from Oracle any day!");
         System.out.println("Java 10 was the last free Oracle JDK that could be downloaded."); 
         System.out.println("Oracle stops Java 8 support from January 2019. You’ll need to pay for more support. Bugun January 20");
-        System.out.println("Meni DHL ITS de, ajayip ullandylar, in sonky project IMS, Java EE 1.4, almost kill the developer"); 
-        
+        System.out.println("Meni DHL ITS de, ajayip ullandylar, in sonky project IMS, Java EE 1.4, almost kill the developer");
+  
 
     }
 }

@@ -10,6 +10,12 @@ public class TextBlockString {
 				Hi
 				Hello
 				Yes""";
+		
+		String textBlock2 = """
+				Hi
+				Hello
+				Yes
+			""";// .. play this (space preserved, or ... white-space essential)
 
 		String str = "Hi\nHello\nYes";
 

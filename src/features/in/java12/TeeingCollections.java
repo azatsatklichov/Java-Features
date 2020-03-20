@@ -5,11 +5,14 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class TeeingCollections {
 	/**
 	 * Java 12 added a new static method teeing for Collectors that accepts two
 	 * collectors and a function to merge their results.
+	 * 
+	 * So apply two collectors and combine them together at the end.
 	 * 
 	 * 
 	 * Teeing Collector is the new collector utility introduced in the Streams API.
@@ -23,10 +26,8 @@ public class TeeingCollections {
 				new Employee(3, "C", 300), new Employee(4, "D", 400));
 
 		HashMap<String, Employee> result = employeeList.stream()
-				.collect(Collectors.teeing(
-						Collectors.maxBy(Comparator.comparing(Employee::getSalary)),
-						Collectors.minBy(Comparator.comparing(Employee::getSalary)), 
-						(e1, e2) -> {
+				.collect(Collectors.teeing(Collectors.maxBy(Comparator.comparing(Employee::getSalary)),
+						Collectors.minBy(Comparator.comparing(Employee::getSalary)), (e1, e2) -> {
 							HashMap<String, Employee> map = new HashMap();
 							map.put("MAX", e1.get());
 							map.put("MIN", e2.get());
@@ -39,17 +40,22 @@ public class TeeingCollections {
 				new Employee(4, "D", 400));
 
 		HashMap<String, Object> result2 = employeeList.stream()
-				.collect(Collectors.teeing(
-						Collectors.filtering(e -> e.getSalary() > 200, Collectors.toList()),
-						Collectors.filtering(e -> e.getSalary() > 200, Collectors.counting()), 
-						(list, count) -> {
+				.collect(Collectors.teeing(Collectors.filtering(e -> e.getSalary() > 200, Collectors.toList()),
+						Collectors.filtering(e -> e.getSalary() > 200, Collectors.counting()), (list, count) -> {
 							HashMap<String, Object> map = new HashMap();
 							map.put("list", list);
 							map.put("count", count);
 							return map;
 						}));
 
-		System.out.println(result2); 
+		System.out.println(result2);
+
+		System.out.println();
+		var ints = Stream.of(45, 75, 67, 23);
+		Long arithAverage = ints.collect(Collectors.teeing(Collectors.summingInt(Integer::valueOf),
+				Collectors.counting(), (sum, count) -> sum / count));
+		System.out.println(arithAverage);
+
 	}
 }
 

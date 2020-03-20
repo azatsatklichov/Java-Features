@@ -1,5 +1,6 @@
 package features.in.java9;
 
+import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.http.HttpClient;
@@ -8,7 +9,22 @@ import java.net.http.HttpResponse;
 
 /**
  * 
- * A New HTTP Client
+ * A New HTTP Client - replacement of old HTTPURLConnection  
+ * 
+ * Supports HTTP/2, and WebSockets
+ * 
+ * Fulfills what HTTP/1.1 does, support all methods PUT, GET, POST, ...
+ * 
+ * Difference is HTTP/2 is
+ *  
+ * -Binary protocol, 
+ * - and TLS is mandatory 
+ * - and support Multplex on TCP
+ * - Server Push Capability
+ * 
+ * 
+ * 
+ * 
  *
  * A new way of performing HTTP calls arrives with Java 9. As existing or Legacy
  * HTTP Client API has numerous issues (like supports HTTP/1.1 protocol and does
@@ -35,16 +51,25 @@ Update: The HTTP Client JEP is being moved to Incubator module, so it is no long
  * </pre>
  */
 public class NewHttpClient {
-	public static void main(String[] args) throws URISyntaxException {
+	public static void main(String[] args) throws URISyntaxException, IOException, InterruptedException {
 
 		HttpClient client = HttpClient.newHttpClient();
 
-		HttpRequest req = HttpRequest.newBuilder(URI.create("http://www.google.com")).header("User-Agent", "Java").GET()
+		HttpRequest req = 
+				HttpRequest.newBuilder(URI.create("http://www.google.com")).header("User-Agent", "Java")
+				.GET()
 				.build();
 
-		//HttpResponse<String> resp = client.send(req, HttpResponse.BodyHandler.asString());
+		//sync
+		HttpResponse<String> resp = client.send(req, HttpResponse.BodyHandlers.ofString());
+		
+		 
 
-		System.out.println(req.bodyPublisher().get());
+		System.out.println(req.bodyPublisher().get()); 
+		
+		
+		
+		
 	}
 
 }

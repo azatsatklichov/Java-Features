@@ -22,5 +22,6 @@ public class HttpClientStandardized {
 
 		client.sendAsync(request, HttpResponse.BodyHandlers.ofString()).thenApply(HttpResponse::body)
 				.thenAccept(System.out::println).join();
+		 
 	}
 }

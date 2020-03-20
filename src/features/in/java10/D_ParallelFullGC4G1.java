@@ -1,10 +1,10 @@
 package features.in.java10;
 
 /**
- * Parallel Full GC for G1 In Java 9
+ * In java 10, Parallel Full GC for G1
  * 
  * <pre>
- * , G1 was made the default GC, which was
+ * G1 was made the default GC in Java 9, which was
  * designed to avoid full collections, but when the concurrent collections
  * couldn’t reclaim memory quick enough it would end up falling back on a full
  * GC, and here is where the problem lies.

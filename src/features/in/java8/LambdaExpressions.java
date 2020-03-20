@@ -1,8 +1,12 @@
 package features.in.java8;
 
+import java.io.File;
+import java.io.FileFilter;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Consumer;
 
 /**
  * 
@@ -16,7 +20,9 @@ Optional parenthesis around parameter: No need to declare a single parameter in 
 
 Optional curly braces: No need to use curly braces in expression body if the body contains a single statement.
 
-Optional return keyword: The compiler automatically returns the value if the body has a single expression to return the value. Curly braces are required to indicate that expression returns a value.
+Optional return keyword: The compiler automatically returns the value if the body has a single expression to return the value. 
+
+Curly braces are required to indicate that expression returns a value.
  * 
  * 
  * </pre>
@@ -139,6 +145,31 @@ public class LambdaExpressions {
 			// many lines of code
 			return result;
 		};
+
+		// more examples - pass Lanbda function as Parameter
+		FileFilter ff = (File f) -> f.getName().endsWith(".java");
+		File dir = new File("C:\\workspace_ext\\Java-Features\\src\\features\\in\\java8");
+		File[] fArr = dir.listFiles(ff);
+		Arrays.asList(fArr).forEach(System.out::println);
+
+		// Type of Lambda ? It is a type of Functional interface, which it implements
+		// Assign Lambda to a Variable
+		Consumer<String> c1 = s -> System.out.println(s);
+		Consumer<String> c2 = System.out::println;
+
+		Comparator<String> cmp1 = (String s1, String s2) -> Integer.compare(s1.length(), s2.length());
+		Comparator<String> cmp2 = (s1, s2) -> Integer.compare(s1.length(), s2.length());
+
+		Comparator<Integer> cmp3 = (i1, i2) -> Integer.compare(i1, i2);
+		Comparator<Integer> cmp4 = Integer::compare;
+
+		List<String> l = List.of("A", "L", "C", "Z");
+		l.forEach(s -> System.out.print(s));
+		System.out.println();
+		l.forEach(System.out::print);
+		System.out.println();
+		l.stream().sorted().forEach(System.out::print);
+		
 
 	}
 

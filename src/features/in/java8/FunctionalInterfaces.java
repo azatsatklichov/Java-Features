@@ -1,8 +1,10 @@
 package features.in.java8;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.BiPredicate;
+import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
@@ -47,6 +49,22 @@ public class FunctionalInterfaces {
 
 		System.out.println("\nPrint if two numbers sum is greater than 7  :");
 		evalViaBiPredicate(list, (a, b) -> a + b > 7);
+
+		List<String> l = Arrays.asList("alma", "enar", "uzum", "enjir");
+		List<String> result = new ArrayList<>();
+
+		// Consumers, use functions as a parameters
+		Consumer<String> c1 = System.out::println;
+		Consumer<String> c2 = result::add;
+		l.forEach(c1);
+		System.out.println();
+		l.forEach(c1.andThen(c2));
+		System.out.println("size = "+result.size());
+
+		// Predicates
+		Predicate<String> predicate1 = s -> s.length() > 3;
+		Predicate<String> predicate2 = s -> s.length() < 6; 
+
 	}
 
 	public static void evalViaPredicate(List<Integer> list, Predicate<Integer> predicate) {

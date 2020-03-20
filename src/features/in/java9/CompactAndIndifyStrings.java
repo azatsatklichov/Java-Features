@@ -32,6 +32,26 @@ public class CompactAndIndifyStrings {
 	public static void main(String[] args) {
 		System.out.println("Compact Strings");
 		/**
+		 * 
+		 * Compact Strings
+		 * 
+		 * //Lower memory usage
+		 * 
+		 * //Effective immediately without code changes 
+		 * 
+		 * invokedynamic bytocode
+		 * 
+		 * 
+		 * String concatenation changes
+		 * 
+		 * - change concatenation translation strategy
+		 * 
+		 * - Groundwork for future improvements
+		 * 
+		 * 
+		 * 
+		 * 
+		 * 
 		 * The JEP 254 goal was to build a more memory efficient String when possible
 		 * that would have at least the same performance as the current implementation.
 		 * Instead of switching between char[] and byte[], it is always backed by a
@@ -89,7 +109,6 @@ public class CompactAndIndifyStrings {
 		 * generated from java making it easier to maintain.
 		 */
 		String str = "foo" + "bar";
-		
 
 	}
 

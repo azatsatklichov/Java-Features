@@ -34,7 +34,7 @@ public class C_NewStringMethods {
         var word3 = "  ";
         System.out.println(word3.isEmpty());
         System.out.println(word3.isBlank());
-
+        
         var words = "falcon\neagle\nsky\nwood\nforest";
         words.lines().forEach(System.out::println);
 

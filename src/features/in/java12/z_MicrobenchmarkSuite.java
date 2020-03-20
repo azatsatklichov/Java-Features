@@ -16,6 +16,26 @@ package features.in.java12;
  */
 public class z_MicrobenchmarkSuite {
 	public static void main(String[] args) {
+		/**
+		 * http://tutorials.jenkov.com/java-performance/jmh.html
+		 * 
+		 * 
+		 * Microbenchmarking?
+		 * 
+		 * Measure execution time
+		 * 
+		 * Small pieces of code
+		 * 
+		 * Compare alternatives
+		 * 
+		 * Prevent performance regaression
+		 * 
+		 */
+		//Use Maven Archetype
+		//jmh-java-benchmark-archetype
+//		/@Benchmark
+//		/@BenchmarkMode
+		
 		
 	}
 
