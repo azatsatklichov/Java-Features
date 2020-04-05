@@ -1,0 +1,4 @@
+.settings/org.eclipse.jdt.core.prefs
+bin/features/
+bin/net/
+bin/run-set-java12home.bat
