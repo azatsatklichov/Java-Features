@@ -3,12 +3,15 @@ package features.in.java11.httpclient;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
+import java.net.http.HttpClient.Redirect;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 
 public class H_HttpClientConfigDemo {
@@ -17,10 +20,12 @@ public class H_HttpClientConfigDemo {
 
 	public static void main(String[] args) throws IOException, InterruptedException {
 
-		httpClient = HttpClient.newHttpClient();
+		httpClient = HttpClient.newBuilder().followRedirects(Redirect.NORMAL).connectTimeout(Duration.ofSeconds(5))
+				.executor(Executors.newFixedThreadPool(5)).build();
+
 		List<CompletableFuture<String>> completableFutureStringListResponse = Files
 				.lines(Path
-						.of("C:\\workspace-eclipse\\Java-Features\\src\\features\\in\\java11\\hhtpclient\\domains.txt"))
+						.of("C:/workspace-eclipse/Java-Features/src/features/in/java11/httpclient/domains.txt"))
 				.map(H_HttpClientConfigDemo::validateLink).collect(Collectors.toList());
 
 		// later these futures executed in parallel, is faster than

@@ -7,8 +7,9 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 /**
- * Desc: HttpClient
- *
+ * Desc: HttpClient, some examples are her influenced from the HttpClient course of Sander Mak
+ * from pluralsight.
+ * 
  * 
  * HttpClient standardized The new HttpClient has been standardized. It is
  * located in the java.net.http package. It is designed to improve the overall

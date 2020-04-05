@@ -20,7 +20,7 @@ public class F_HttpClientAsyncronousDemo {
 		httpClient = HttpClient.newHttpClient();
 		List<CompletableFuture<String>> completableFutureStringListResponse = Files
 				.lines(Path
-						.of("C:\\workspace-eclipse\\Java-Features\\src\\features\\in\\java11\\hhtpclient\\domains.txt"))
+						.of("C:/workspace-eclipse/Java-Features/src/features/in/java11/httpclient/domains.txt"))
 				.map(F_HttpClientAsyncronousDemo::validateLink).collect(Collectors.toList());
 
 		// later these futures executed in parallel, is faster than
