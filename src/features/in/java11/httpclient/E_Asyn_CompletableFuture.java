@@ -7,7 +7,7 @@ import java.net.http.HttpResponse;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
-public class E_HttpClientAsyn_CompletableFuture {
+public class E_Asyn_CompletableFuture {
 
 	public static void main(String[] args) {
 

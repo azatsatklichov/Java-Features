@@ -8,7 +8,7 @@ import java.net.http.HttpResponse;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class D_HttpClientSynchronous {
+public class D_HttpClientSynchronousDemo {
 
 	private static HttpClient httpClient;
 
@@ -16,7 +16,7 @@ public class D_HttpClientSynchronous {
 
 		httpClient = HttpClient.newHttpClient();
 		Files.lines(Path.of("C:\\workspace-eclipse\\Java-Features\\src\\features\\in\\java11\\hhtpclient\\domains.txt"))
-				.map(D_HttpClientSynchronous::validateLink).forEach(System.out::println);
+				.map(D_HttpClientSynchronousDemo::validateLink).forEach(System.out::println);
 
 	}
 

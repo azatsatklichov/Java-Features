@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
-public class F_HttpClientAsyncronous {
+public class F_HttpClientAsyncronousDemo {
 
 	private static HttpClient httpClient;
 
@@ -21,7 +21,7 @@ public class F_HttpClientAsyncronous {
 		List<CompletableFuture<String>> completableFutureStringListResponse = Files
 				.lines(Path
 						.of("C:\\workspace-eclipse\\Java-Features\\src\\features\\in\\java11\\hhtpclient\\domains.txt"))
-				.map(F_HttpClientAsyncronous::validateLink).collect(Collectors.toList());
+				.map(F_HttpClientAsyncronousDemo::validateLink).collect(Collectors.toList());
 
 		// later these futures executed in parallel, is faster than
 		// D_HttpClientSynchronous
