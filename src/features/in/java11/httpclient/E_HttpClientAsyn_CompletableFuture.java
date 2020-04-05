@@ -1,4 +1,4 @@
-package features.in.java11.hhtpclient;
+package features.in.java11.httpclient;
 
 import java.net.URI;
 import java.net.http.HttpClient;
