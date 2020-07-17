@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Code-Style</title>
+    <style>
+        body {
+            background-color: rgba(0, 128, 0, 0);
+            margin-left: 200px;
+        }
+
+        h1 {
+            color: crimson;
+            text-align: center;
+        }
+
+        h2 {
+            color: #0f0f0f;
+            margin-top: 40px;
+			background-color: #eeeeee;	
+			width: 80%;
+        }
+
+        div {
+            margin-top: 20px;    
+        }
+
+        p {
+            font-family: verdana;
+            font-size: 14px;
+        }
+
+        a {
+            color: slateblue;
+            text-decoration: none;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 14px;
+        }
+
+        a:hover {
+            color: deeppink;
+            text-decoration: underline;
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 80%;
+        }
+
+        td,
+        th {
+            border: 1px solid #eeeeee;
+            text-align: left;
+            padding: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>c4z Code Style - Code Review</h1>
+
+    <div>
+        <ul style="list-style-type:none;">
+            <li><a href="#id0">DoD </a></li>
+            <li><a href="#id1">Sonar Rules</a></li>
+            <li><a href="#id2">Java Coding Standards</a></li>
+            <li><a href="#id3">Typescript (inc. VSCode API) Coding Standards</a></li>
+            <li><a href="#id4">Common Standards</a></li>
+            <li><a href="#id5">Code Review - Code of Conducts</a></li>
+        </ul>
+    </div>
+
+- hamcrest,  XDD/BDD style testing
+- 
+https://www.geeksforgeeks.org/coding-standards-and-guidelines/
+
+https://github.com/marketplace/actions/assign-to-one-project
+
+    <p>
+      Action:  After each Code Style related technical discussions, or topics presented, below tables will be updated according to team-agreed action-points. 
+    </p>
+
+    <h2 id="id0">DoD - Definition of Done </h2>
+    Check if all steps of DoD completed:
+    
+    <a href="https://cawiki.ca.com/display/AU/Definition+of+Done">DoD in Rally</a>,
+    <a href="https://ci.eclipse.org/che4z/job/LSP%20for%20COBOL/">Jenkins build</a>,
+    <a href="https://www.scrumguides.org/scrum-guide.html#artifact-transparency-done">DoD in Scrum</a>
+
+
+
+    <h2 id="id1">Sonar Rules </h2>
+
+    <div>
+        <table>
+            <tr>
+                <td>
+                    <b>Java Rules, .. </b>
+                </td>
+                <td>
+                    <b>Typescript Rules </b>
+                </td>
+                <td>
+                    More ..
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="https://sonarqube.broadcom.net/coding_rules?languages=java">Sonarqube-Java</a>,
+                    <a href="https://sonarcloud.io/organizations/eclipse/rules?languages=java">Sonarcloud-Java</a>,
+                    <a href="https://sonarcloud.io/dashboard?id=eclipse_che-che4z-lsp-for-cobol">sonarcloud-che4z-lsp-for-cobol</a>,
+					<a href="https://sonarcloud.io/organizations/eclipse/rules?languages=cobol">Cobol</a>,  <br />
+    <a href="https://github.com/eclipse/che-che4z-lsp-for-cobol/wiki/Code-Style-Guide">eclipse/che-che4z-lsp-for-cobol - code style</a>					
+                </td>
+                <td>
+                    <a href="https://sonarqube.broadcom.net/coding_rules?languages=ts">Sonarqube-TS</a>,
+                    <a href="https://sonarcloud.io/organizations/eclipse/rules?languages=ts">Sonarcloud-TS</a>
+                </td>
+                <td>
+                    <a href="https://rules.sonarsource.com/ " target="_blank">Sonar Rules</a>,
+                    <a href=" https://www.sonarqube.org/">Sonarqube</a>,
+                    <a href="https://docs.sonarqube.org/latest/analysis/languages/java/">docs</a>,
+                    <a href="https://sonarcloud.io/">sonarcloud</a>,
+					<a href="https://owasp.org/www-pdf-archive/OWASP_Top_10-2017_%28en%29.pdf.pdf">OWASP</a>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+
+
+    <h2 id="id2">Java Coding Standards</h2>
+
+    <p>
+        To build robust Java enterprise application, it is important for development teams to adopt proven design
+        techniques and follow good coding standards.
+        <br />
+        Official: <a href="https://www.oracle.com/technetwork/java/codeconvtoc-136057.html">Code Conventions for the
+            Java</a>,
+        <a href="https://en.wikibooks.org/wiki/Java_Programming/Coding_conventions">wiki</a>, Google's coding standards
+        for source code in the Java™ Programming Language:
+        <a href="https://google.github.io/styleguide/javaguide.html#s4.6.2-horizontal-whitespace">Google Java Style
+            Guide</a>
+    </p>
+
+    <p>
+        As a development team we follow these conventions, and also improve it according to project need by defining
+        some agreed coding styles in below table.
+    </p>
+
+    <div>
+        <table>
+            <tr>
+                <td>
+                    <b>Argument</b>
+                </td>
+                <td>
+                    <b>Example</b>
+                </td>
+                <td>
+                    <b>Reason</b>
+                </td>
+                <td>
+                    <b>Comment</b>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Using Collection Factory methods
+                </td>
+                <td>
+                <code>
+                	List<String> expected = new ArrayList<>();<br/>
+    				expected.add(VAR1);<br/>
+    				expected.add(VAR2);<br/>
+    				//becomes<br/>
+    				List<String> expected = List.of(VAR1, VAR2);<br/>
+    				
+    				//or  if Arrays.asList usage is immutable <br />
+                    Arrays.asList(new CobolText("CPYBK1", COPYBOOK1), new CobolText("CPYBK2", COPYBOOK2))<br/>
+                    //better use List.of <br/>	
+                   List.of(new CobolText("CPYBK1", COPYBOOK1), new CobolText("CPYBK2", COPYBOOK2))</code>
+                </td>
+                <td>
+                    unmodifiable, otherwise UnsupportedOperationException, also allows List.copyOf(list);
+                </td>
+                <td>
+                    17.6.2020 ?
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Guava Lists.newarraysList
+                </td>
+                <td>
+                
+                    <code>List<String> lines = new ArrayList<>(); (//or  if Arrays.asList usage is mutable)<br/>
+                    lines.add(firstLine);<br/>
+                    lines.add(""); </br/>
+                    
+                    //becomes<br/>
+                   List<String> lines = Lists.newArrayList(firstLine, "");</code>
+                </td>
+                <td>
+                Allows add, remove,Iterables.removeIf. Also shorter, cleaner and still mutable.
+                </td>
+                <td>
+                    17.6.2020 ?
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                   Benefit of Predicate.not/or.., Optionals
+                </td>
+                <td>
+                
+                    
+                </td>
+                <td>
+                Reusable code and null-safe code
+                </td>
+                <td>
+                    17.6.2020 ?
+                </td>
+            </tr>
+            
+            
+
+            <tr>
+                <td>
+                    Using Local Var
+
+                </td>
+                <td>
+                 <code> long genDt = Instant.now().minus(1, ChronoUnit.MILLIS).toEpochMilli();<br/>  
+                 CopybookStorable storableCpy = new CopybookStorable("REMOVE", "URI", "DUMMY CONTENT");<br/>                  
+                    //becomes<br/>
+                   var genDt = Instant.now().minus(1, ChronoUnit.MILLIS).toEpochMilli();<br/>
+                   var storableCpy = new CopybookStorable("REMOVE", "URI", "DUMMY CONTENT");</code> 
+                </td>
+                <td>
+                   shorter, and should not be used for long Streams piped chains 
+                </td>
+                <td>
+                    17.6.2020 ?
+                </td>
+            </tr> 
+            
+            <tr>
+                <td>
+                    Using Unicode-aware new String methods like: isBlank(), strip(), <br/>  
+                    stripLeading() , stripTrailing() .. instead of isEmpty(), trim(), ..
+                </td>
+                <td>
+                 <code> var res = "   "; //"\n\t\u2005"<br/> 
+                 //return false 
+                 assertTrue(res.isEmpty());<br/>
+                    //works correctly<br/>
+                   assertTrue(res.isBlank());<br/></code> 
+                </td>
+                <td>
+                     Unicode-aware based on Character::isWhitespace, not like before on \u0020 
+                </td>
+                <td>
+                    17.6.2020 ?
+                </td>
+            </tr> 
+			
+			
+			 
+
+
+        </table>
+    </div>
+
+    <h2 id="id3">Typescript (inc. VSCode API) Coding Standards</h2>
+
+    <p>
+        Starting with ECMAScript 2015, a.k.a ECMAScript 6, JavaScript programmers will be able to build their
+        applications using this object-oriented class-based approach. <br />
+        In TypeScript, developers are allowed to use these techniques now, and compile them down to JavaScript that
+        works across all major browsers and platforms, without having <br />
+        to wait for the next version of JavaScript.
+
+
+        Official: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html">Typescript</a>, and
+        API reference documentation for - <a href="https://nodejs.org/api/fs.html"> Node.js - API</a>, Google JavaScript: <a href="https://google.github.io/styleguide/jsguide.html">Style Guide</a> <br />
+       <b>VS Code API</b> is a set of JavaScript APIs that you can invoke in your <b>VS Code extension</b> - <a
+            href="https://code.visualstudio.com/api/references/vscode-api">VS Code API</a>,
+        <a href="https://github.com/Microsoft/vscode/wiki/Coding-Guidelines">Coding Guidelines</a> 
+    </p>
+
+    <div>
+        <table>
+            <tr>
+                <td>
+                    <b>Argument</b>
+                </td>
+                <td>
+                    <b>Example</b>
+                </td>
+                <td>
+                    <b>Reason</b>
+                </td>
+                <td>
+                    <b>Comment</b>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Assigning TypeScript injections<br /> through parameters
+                </td>
+                <td>
+                    <code>
+                        // Don't do this<br />
+                        class User {<br />
+                        private firstName: string;<br />
+                        private lastName: string;<br />
+
+                        constructor(firstName: string, lastName: string) {<br />
+                        this.firstName = firstName;<br />
+                        this.lastName = lastName;<br />
+                        }<br />
+                        }<br />
+
+                        <br />
+                        //Instead do this<br />
+                        class User {<br />
+                        constructor(private firstName: string, private lastName: string) {<br />
+                        }<br />
+                        }
+
+                    </code>
+                </td>
+                <td>
+                    Reduces duplicate work<br />
+                    Cleans up injections
+                </td>
+                <td>
+                    17.6.2020 ?
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Using TypeScript Destructions </td>
+                <td>
+                    <code>
+                        //Instead of this<br />
+                        let input = [1, 2];<br />
+                        let first = input[0];<br />
+                        let second = input[1];<br />
+                        }<br />
+                        }
+
+                        <br />
+                        //Use destructions <br />
+                        let input = [1, 2];<br />
+                        let [first, second] = input;<br />
+                        }<br />
+                        }
+
+                    </code>
+                </td>
+                <td>
+                    More convenient, especially handy using with remaining items in a list using the syntax ... REST
+                </td>
+                <td>
+                    17.6.2020 ?
+                </td>
+            </tr>
+
+
+        </table>
+    </div>
+
+
+    <h2 id="id4">Common Standards</h2>
+    <div>
+        <table>
+            <tr>
+                <td>
+                    <b>Argument</b>
+                </td>
+                <td>
+                    <b>Example</b>
+                </td>
+                <td>
+                    <b>Reason</b>
+                </td>
+                <td>
+                    <b>Comment</b>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    JSON comments
+                </td>
+                <td>
+                    <code>
+                        "search.exclude": {<br />
+                        "out": true // false to include "out" folder in search results<br />
+                        }<br /><br />
+                        //should be <br />
+                        "search.exclude": {<br />
+                        "out": true <br />
+                        }
+                    </code>
+                </td>
+                <td>
+                   Even though valid. According to JSON spec,
+                    comments are not allowed inside the structure.  
+                </td>
+                <td>
+                    17.6.2020 ?
+                </td>
+            </tr>
+			
+			<tr>
+                <td>
+                    Git Merge or Rebage
+                </td>
+                <td>
+                    When to apply Rebase or Merge
+                </td>
+                <td>
+				Regarding to multi-branching, merge conflicts better to apply agreed pattern. 
+                </td>
+                <td>
+                    1.6.2020
+                </td>
+            </tr>
+
+
+        </table>
+    </div>
+
+
+    <h2 id="id5">Code Review - Code of Conducts</h2>
+    <ul style="list-style-type:none;">
+        <li>Provide code quality together - Team Work</li>
+        <li>Learn and improve together</li>
+        <li>Code Review is a discussion process to reach a consensus.</li>
+        <li>Provide best practices, APIs, links to resources i.e wiki, stack overflow, etc. </li>
+        <li>Collaborate with teammate/s to move Code Review forward via. g-chat, or g-meet, etc.</li>
+        <li>Provide constructive comments, "This will improve ..." or "According to spec... " or "Java Coding Standards
+            ...", "Sonar findings" etc. </li>
+        <li>Collaborate with asking questions and provide answers to understand each-other</li>
+        <li>Review big PR/s with pause breaks which helps you to recharge/rehydrate, and to concentrate more</li>
+    </ul>
+</body>
+
+</html>

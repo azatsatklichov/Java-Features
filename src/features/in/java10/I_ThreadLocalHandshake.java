@@ -19,5 +19,9 @@ package features.in.java10;
  * </pre>
  */
 public class I_ThreadLocalHandshake {
+	
+	public static void main(String[] args) {
+		
+	}
 
 }

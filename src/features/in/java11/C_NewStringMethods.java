@@ -54,7 +54,7 @@ public class C_NewStringMethods {
         // Local-Variable Syntax for Lambda Parameters
         System.out.println("J11 - Local-Variable Syntax for Lambda Parameters");
         /**
-         * ocal-Variable Syntax for Lambda Parameters is the only language feature
+         * Local-Variable Syntax for Lambda Parameters is the only language feature
          * release in Java 11. In Java 10, Local Variable Type Inference was introduced.
          * Thus we could infer the type of the variable from the RHS – var list = new
          * ArrayList<String>();

@@ -32,7 +32,7 @@ public class ForkJoinExample_ParallelArray extends RecursiveTask<Long> {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(startForkJoinSum(1_000_000));
+		System.out.println(startForkJoinSum(1_000_000_000));
 	}
 
 	@Override

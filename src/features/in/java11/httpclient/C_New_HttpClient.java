@@ -7,8 +7,8 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 /**
- * Desc: HttpClient, some examples are her influenced from the HttpClient course of Sander Mak
- * from pluralsight.
+ * Desc: HttpClient, some examples are her influenced from the HttpClient course
+ * of Sander Mak from pluralsight.
  * 
  * 
  * HttpClient standardized The new HttpClient has been standardized. It is
@@ -17,14 +17,15 @@ import java.net.http.HttpResponse;
  * server. It also natively supports WebSockets.
  * 
  * <pre>
-* 
 	 *  - Available since Java 11
+	 *  
+	 *  - modular, java.net.http
 	 *  
 	 *  - Replaces HttpURLConnection API
 	 *  
 	 *  - The new API supports both HTTP/1.1 and HTTP/2, WebSockets
 	 *  
-	 *  - Sync and Async methoda
+	 *  - Sync and Async methods
 	 *  
 	 *  - In case you do modular-application then use "java.net.http" in your module-info.java
  * 
@@ -35,7 +36,21 @@ public class C_New_HttpClient {
 	public static void main(String[] args) throws IOException, InterruptedException {
 
 		/**
-		 * client with default settings
+		 * client with default settings <code>
+		 * The default settings include:
+				prefer HTTP/2
+				no connection timeout - Don't confuse with request timeout!
+				redirection policy of NEVER
+				no cookie handler
+				no authenticator
+				default thread pool executor
+				default proxy selector
+				default SSL context
+		 * </code>
+		 * 
+		 * 
+		 * To configure yourself, use Otherwise use
+		 * HttpClient.newBuilder().version(Version.HTTP_1_1) ..
 		 */
 		HttpClient httpClient = HttpClient.newHttpClient();
 		HttpRequest httpRequest = HttpRequest.newBuilder(URI.create("http://sahet.net")).build();
@@ -67,8 +82,10 @@ class HttpClientSendAsync {
 	public static void main(String[] args) {
 
 		var client = HttpClient.newHttpClient();
-		var request = HttpRequest.newBuilder()
-				.uri(URI.create("https://www.baeldung.com/java-flight-recorder-monitoring")).build();
+		var request = HttpRequest.newBuilder().uri(URI.create("https://www.baeldung.com/java-flight-recorder-monitoring")).build();
+		
+		var request2Way = HttpRequest.newBuilder().
+				uri(URI.create("https://www.baeldung.com/java-flight-recorder-monitoring")).build();
 
 		client.sendAsync(request, HttpResponse.BodyHandlers.ofString()).thenApply(HttpResponse::body)
 				.thenAccept(System.out::println).join();

@@ -19,7 +19,7 @@ public class WatchService {
 		path.register(watchService, StandardWatchEventKinds.ENTRY_CREATE, StandardWatchEventKinds.ENTRY_DELETE,
 				StandardWatchEventKinds.ENTRY_MODIFY);
 
-		WatchKey key;
+		WatchKey key;//wow
 		while ((key = watchService.take()) != null) {
 			for (WatchEvent<?> event : key.pollEvents()) {
 				System.out.println("Event kind:" + event.kind() + ". File affected: " + event.context() + ".");

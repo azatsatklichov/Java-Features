@@ -1,4 +1,4 @@
-﻿[Java Features at GitHub](https://github.com/azatsatklichov/Java-Features.git) 
+ï»¿[Java Features at GitHub](https://github.com/azatsatklichov/Java-Features.git) 
 
 [Oracle Java SE at a Glance](https://www.oracle.com/technetwork/java/javase/overview/index.html), 
 [JEP](https://openjdk.java.net/jeps/0), 
@@ -119,6 +119,8 @@ Major changes included in this version:
  [API](https://docs.oracle.com/javase/7/docs/api/), 
 [Open JDK](https://openjdk.java.net/projects/jdk7/)
 
+Codename Dolphin
+ 
 The important features of JavaSE 7 are try with resource, catching multiple exceptions etc.
 
 - String in switch statement (Java 7)
@@ -134,6 +136,7 @@ The important features of JavaSE 7 are try with resource, catching multiple exce
 [What's New in JDK 8](https://www.oracle.com/technetwork/java/javase/8-whats-new-2157071.html), 
 [Open JDK](https://openjdk.java.net/projects/jdk8/)
 
+Codename Spider
 The important features of JavaSE 8 are lambda expressions, methods references, default methods, functional interface, java 8 date/time, stream classes etc. 
 
 
@@ -148,7 +151,7 @@ The important features of JavaSE 8 are lambda expressions, methods references, d
 - Type annotations and repeating annotations: Type annotations provide the ability to apply an annotation anywhere a type is used, not just on a declaration. Repeating Annotations provide the ability to apply the same annotation type more than once to the same declaration or type use.    
 
 ##### Collections
-- Stream API − `java.util.stream`. New stream API to facilitate pipeline processing. Process data in a declarative way similar to SQL. Supports aggregate operations like filter, map, limit, reduce, find, match,count, sorted, statistics,  and so on.
+- Stream API âˆ’ `java.util.stream`. New stream API to facilitate pipeline processing. Process data in a declarative way similar to SQL. Supports aggregate operations like filter, map, limit, reduce, find, match,count, sorted, statistics,  and so on.
 - forEach method 
 - Collectors
 - StringJoiner
@@ -215,7 +218,7 @@ Oracle has released Java 9 with rich set of new features. It includes various up
 - 296: Consolidate the JDK Forest into a Single Repository
 - 304: Garbage-Collector Interface: improve the source code isolation of different garbage collectors by introducing a clean garbage collector (GC) interface
 - 307: Parallel Full GC for G1: improves G1 worst-case latencies by making the full GC parallel
-- 310: Application Class-Data Sharing:  JEP extends the existing Class-Data Sharing (“CDS”) feature
+- 310: Application Class-Data Sharing:  JEP extends the existing Class-Data Sharing (â€œCDSâ€�) feature
 - 312: Thread-Local Handshakes
 - 314: Additional Unicode Language-Tag Extensions
 - 316: Heap Allocation on Alternative Memory Devices: It enables the HotSpot VM to allocate the Java object heap on an alternative memory device, such as an NV-DIMM, specified by the user.
@@ -249,7 +252,7 @@ Oracle has released Java 9 with rich set of new features. It includes various up
 - 331: Low-Overhead Heap Profiling
 - 332: Transport Layer Security (TLS) 1.3
 - 333: ZGC: A Scalable Low-Latency Garbage Collector
-   (Experimental)
+ (Experimental)
 - 335: Deprecate the Nashorn JavaScript Engine
 - 336: Deprecate the Pack200 Tools and API
 - 286: Local-Variable Type Inference
@@ -274,7 +277,6 @@ Oracle has released Java 9 with rich set of new features. It includes various up
 # Java 13 Features (GA 2019/09/17)
 [JDK 13 doc](https://docs.oracle.com/en/java/javase/13/index.html),
 [API](https://docs.oracle.com/en/java/javase/13/docs/api/index.html),  
-[ava 13 Preview Features](https://blog.jetbrains.com/idea/2019/07/support-for-java-13-preview-features-in-intellij-idea-2019-2/), 
 [Open JDK](https://openjdk.java.net/projects/jdk/13/) 
  
 - JEP 350: Dynamic CDS Archives
@@ -286,12 +288,11 @@ Oracle has released Java 9 with rich set of new features. It includes various up
 - Support for Unicode 12.1
 - DOM and SAX Factories with Namespace Support
 
-# Java 14 Features (in development)
-[Java SE at a Glance](https://www.oracle.com/technetwork/java/javase/overview/index.html),  
+# Java 14 Features (GA 2020/03/17)
 [JDK 14 doc](https://docs.oracle.com/en/java/javase/14/index.html),
-[API](https://docs.oracle.com/en/java/javase/14/docs/api/index.html),  
-[Java 14 Preview Features](https://www.infoworld.com/article/3436795/jdk-14-the-new-features-in-java-14.html), 
+[API](https://docs.oracle.com/en/java/javase/14/docs/api/index.html), 
 [Open JDK](https://openjdk.java.net/projects/jdk/14/) 
+ 
 
 JEPs targeted to JDK 14, so far
 
@@ -311,3 +312,7 @@ JEPs targeted to JDK 14, so far
 - 367:	Remove the Pack200 Tools and API
 - 368:	Text Blocks (Second Preview)
 - 370:	Foreign-Memory Access API (Incubator)
+
+# Java 15 Features  (in development)
+
+# Java 16 Features  (...)

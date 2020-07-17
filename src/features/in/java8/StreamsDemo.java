@@ -34,6 +34,7 @@ public class StreamsDemo {
 				"distinct squaresList = " + integers.stream().map(i -> i * i).distinct().collect(Collectors.toList()));
 
 		List<String> strings = Arrays.asList("abc", "", "bc", "efg", "abcd", "", "jkl");
+		strings.stream().sorted().forEach(System.out::println);
 		strings.stream().sorted(Comparator.reverseOrder()).forEach(System.out::println);
 
 		System.out.println(

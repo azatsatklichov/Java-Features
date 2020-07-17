@@ -20,6 +20,7 @@ public class H_HttpClientConfigDemo {
 
 	public static void main(String[] args) throws IOException, InterruptedException {
 
+		System.out.println("Async tasks run in parallel by 5 therads .. ");
 		httpClient = HttpClient.newBuilder().followRedirects(Redirect.NORMAL).connectTimeout(Duration.ofSeconds(5))
 				.executor(Executors.newFixedThreadPool(5)).build();
 

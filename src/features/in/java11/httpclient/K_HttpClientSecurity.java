@@ -59,12 +59,38 @@ class HttpClientBasicAuth {
 	public static void main(String[] args) throws IOException, InterruptedException, NoSuchAlgorithmException {
 
 		/**
+		 * Basic Authentication is a simple way to protect resources on the server. If a
+		 * client accesses such resources without any authentication, the server sends
+		 * back a status code of 401. The client then re-sends the request with an
+		 * authentication header attached to it.
+		 * 
+		 * 
 		 * Security - See Basic Authentication (base64), e.g see servlet one, or Spring
 		 * one ...
 		 * 
 		 * 1. Use Authenticator
 		 * 
-		 * 2. Proxy  - also used for security purposes as well
+		 * 2. Proxy - also used for security purposes as well
+		 * 
+		 * To set a proxy for the request, the builder method proxy is used to provide a
+		 * ProxySelector. If the proxy host and port are fixed, the proxy selector can
+		 * be hardcoded in the selector:
+		 * 
+		 * https://golb.hplar.ch/2019/01/java-11-http-client.html
+		 * 
+		 * <code>
+		 * var client = HttpClient.newBuilder()
+		          .authenticator(new BasicAuthenticator("user", "password"))
+		          .build();
+		          
+		    or 
+		    
+		    Authenticator.setDefault(new BasicAuthenticator("user", "password"));
+			var client = HttpClient.newBuilder()
+		            .authenticator(Authenticator.getDefault())
+		            .build();
+		 * </code>
+		 * 
 		 * 
 		 */
 		Authenticator authenticator = new Authenticator() {
@@ -74,14 +100,10 @@ class HttpClientBasicAuth {
 
 		};
 
-
-		//ProxySelector proxySelector   = ProxySelector.getDefault();
+		// ProxySelector proxySelector = ProxySelector.getDefault();
 		ProxySelector proxySelector = ProxySelector.of(new InetSocketAddress("company.proxyserver.com", 8080));
-		
-		HttpClient httpClient = HttpClient.newBuilder()
-				.authenticator(authenticator)
-				.proxy(proxySelector)
-				.build();
+
+		HttpClient httpClient = HttpClient.newBuilder().authenticator(authenticator).proxy(proxySelector).build();
 
 	}
 
