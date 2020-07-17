@@ -13,6 +13,7 @@ public class TransformNullOrEmptyElementIntoEmptyOptional {
 		 */
 		Optional<String> ofNullable = Optional.ofNullable(null);
 		if (ofNullable.isEmpty()) {
+			System.out.println("yes empty ");
 			System.out.println(ofNullable.orElse(""));
 		}
 

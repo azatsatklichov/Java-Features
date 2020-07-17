@@ -12,7 +12,7 @@ public class RecursiveWalk {
 	public static void main(String[] args) {
 		Path itunes = Paths.get("/Users/amiller/Music/iTunes/iTunes Music");
 		try {
-			Files.walkFileTree(itunes, new Mp3Visitor(itunes));
+			Files.walkFileTree(itunes, new Mp3Visitor(itunes));//?
 		} catch (IOException e) {
 			// TBD
 			e.printStackTrace();

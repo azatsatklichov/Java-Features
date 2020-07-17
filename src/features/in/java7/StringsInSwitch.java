@@ -16,8 +16,8 @@ public class StringsInSwitch {
 			break;
 		case "foo":
 			break;
-//		case value2: // Non-final variables are not allowed
-//			break;
+			//case value2: // Non-final variables are not allowed
+			//break;
 		case "": //getStringValue(): // Method calls not allowed
 			break;
 		}

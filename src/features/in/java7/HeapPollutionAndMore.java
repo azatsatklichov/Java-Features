@@ -22,7 +22,7 @@ class GenericMethodTest {
 		Double[] doubleArray = { 1.1, 2.2, 3.3, 4.4 };
 		Character[] charArray = { 'H', 'E', 'L', 'L', 'O' };
 
-		System.out.println("Array integerArray contains:");
+		System.out.println("Array injtegerArray contains:");
 		printArray(intArray); // pass an Integer array
 
 		System.out.println("\nArray doubleArray contains:");

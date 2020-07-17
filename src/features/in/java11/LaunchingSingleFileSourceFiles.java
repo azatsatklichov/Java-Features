@@ -13,9 +13,7 @@ public class LaunchingSingleFileSourceFiles {
 		 * 
 		 * We do not clutter up our space with byte-code files and we do not need to
 		 * worry about Java packaging rules.
-		 * 
-		 * 
-		 * 
+		 *  
 		 */
 
 		// set Java12 env-var

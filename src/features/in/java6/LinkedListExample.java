@@ -50,7 +50,7 @@ public class LinkedListExample {
 		}
 		System.out.println();
 		System.out.println("Now the size of list: " + list.size());
-		System.out.println("Adding data at 3rd location: 55");
+		System.out.println("Adding data at 3rd location: 99");
 		// Adding data at 3rd position
 		list.add(2, 99);
 		System.out.print("Now the list contain: ");

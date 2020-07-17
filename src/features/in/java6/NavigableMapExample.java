@@ -26,13 +26,15 @@ public class NavigableMapExample {
 		// Retrieving last data
 		System.out.print("Last data: " + navMap.lastEntry() + "\n\n");
 		// Retrieving the nreatest less than or equal to the given key
-		System.out.print("Nearest less than or equal to the given key: " + navMap.floorEntry(5) + "\n");
+		System.out.print("Nearest less than or equal to the given key: " + navMap.floorEntry(3) + "\n");
+		// Retrieving the nreatest greater than or equal to the given key
+		System.out.print("Nearest greater than or equal to the given key: " + navMap.ceilingEntry(5) + "\n");
 		// Retrieving the greatest key strictly less than the given key
 		System.out.println("Retrieving the greatest key strictly less than the given key: " + navMap.lowerEntry(3));
 		// Retrieving a key-value associated with the least key strictly greater than
 		// the given key
 		System.out.println(
-				"Retriving data from navigable map greter than the given key: " + navMap.higherEntry(5) + "\n");
+				"Retriving data from navigable map greater than the given key: " + navMap.higherEntry(5) + "\n");
 		// Removing first
 		System.out.println("Removing First: " + navMap.pollFirstEntry());
 		// Removing last

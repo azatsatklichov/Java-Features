@@ -7,6 +7,7 @@ public class SimplifiedVarargs {
 	 * operation” warning. JDK 7 moves the warning from the call site to the method
 	 * declaration. This will enable API designers to use varargs due to the
 	 * reduction of warnings reported.
+	 * ?
 	 */
 
 }

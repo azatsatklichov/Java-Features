@@ -29,6 +29,21 @@ public class I_HttpClientBodyPublishers {
 		 * ofInputStream
 		 * 
 		 * noBody
+		 * 
+		 *  
+		 * 
+		 * BodyHandlers
+		 * 
+		 * - ofString -> String
+		 * 
+		 * - ofByteArray -> byte[]
+		 * 
+		 * - ofFile(Path) -> as response writes to Path you provided
+		 * 
+		 * - ofLines -> Stream<String>
+		 * 
+		 * - discarding -> Void - noBody, just used to check STATUS
+	 
 		 */
 
 		HttpRequest httpRequest = HttpRequest.newBuilder(URI.create("http://sahet.net"))

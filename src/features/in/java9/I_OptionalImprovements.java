@@ -34,13 +34,15 @@ public class I_OptionalImprovements {
         // if optional is non-empty, get the value in stream, otherwise return empty
         List<String> filteredList = list.stream().flatMap(o -> o.isPresent() ? Stream.of(o.get()) : Stream.empty())
                 .collect(Collectors.toList());
+        System.out.println(filteredList);
+        System.out.println();
 
         // Optional::stream method will return a stream of either one
         // or zero element if data is present or not.
         List<String> filteredListJava9 = list.stream().flatMap(Optional::stream).collect(Collectors.toList());
 
-        System.out.println(filteredList);
         System.out.println(filteredListJava9);
+        System.out.println();
 
         // If a value is present, performs the given action with the value, otherwise
         // performs the given empty-based action.

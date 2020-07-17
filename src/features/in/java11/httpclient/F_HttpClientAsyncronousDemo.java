@@ -16,6 +16,8 @@ public class F_HttpClientAsyncronousDemo {
 	private static HttpClient httpClient;
 
 	public static void main(String[] args) throws IOException, InterruptedException {
+		
+		System.out.println("See H_HttpClientConfigDemo to run this asynx tasks in parallel");
 
 		httpClient = HttpClient.newHttpClient();
 		List<CompletableFuture<String>> completableFutureStringListResponse = Files

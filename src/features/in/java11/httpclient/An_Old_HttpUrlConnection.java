@@ -20,7 +20,7 @@ class URLConnectionReader {
 	*
 	*- Designed for HTTP/1.1
 	*
-	*- Before  Generics, Enums, Lambdas
+	*- Before  Generics, Enums, Lambdas, so you can't use those benefits
 	*
 	*- You need to manage the edge cases, close connection etc
 	*
@@ -29,17 +29,19 @@ class URLConnectionReader {
 	*- Method names are string, e.g. GET, no ENUMs in Java 1.1.
 	 *
 	 *- returns raw input stream, need to decorate it it for readability
+	 *
+	 *- http client HttpUrlConnection doesn't support HTTP/2.  Use OkHttp or Java11-http client 
 	 * 
 	 * </pre>
 	 */
 	public static void main(String[] args) throws Exception {
 		URL oracle = new URL("https://docs.oracle.com/javase/tutorial/networking/urls/readingWriting.html");
 		// URLConnection conn = oracle.openConnection();
-		HttpURLConnection conn = (HttpURLConnection) oracle.openConnection();
-		conn.setRequestMethod("GET");
+		HttpURLConnection conn = (HttpURLConnection) oracle.openConnection(); //Casting
+		conn.setRequestMethod("GET"); //No ENUM
 		conn.setRequestProperty("User-Agent", "Java 1.1");
 
-		BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+		BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream())); //low-level
 		String inputLine;
 		while ((inputLine = in.readLine()) != null)
 			System.out.println(inputLine);
