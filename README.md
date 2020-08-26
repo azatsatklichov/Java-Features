@@ -1,4 +1,4 @@
-ï»¿[Java Features at GitHub](https://github.com/azatsatklichov/Java-Features.git) 
+[Java Features at GitHub](https://github.com/azatsatklichov/Java-Features.git) 
 
 [Oracle Java SE at a Glance](https://www.oracle.com/technetwork/java/javase/overview/index.html), 
 [JEP](https://openjdk.java.net/jeps/0), 
