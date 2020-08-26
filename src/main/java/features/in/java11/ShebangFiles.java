@@ -19,9 +19,10 @@ public class ShebangFiles {
 		//./single-shebang-file.sh
 
 
-		// Gotcha #4 — File name, not class name!
+		System.out.println("hallo");
+		// Gotcha #4 ï¿½ File name, not class name!
 		// https://medium.com/the-java-report/new-java-11-feature-launch-single-file-source-code-programs-fadd698abf54
-		// Gotcha #6 — No limits on public files in a source file , see shebang-file,
+		// Gotcha #6 ï¿½ No limits on public files in a source file , see shebang-file,
 		// now 2-public classes
 	}
 

@@ -1,8 +1,10 @@
-#!/c/apps/jdk-12.0.1/bin/java --source 11
+#!/c/apps/Java/jdk-11/bin/java --source 11
  
 
 public class ShebangFiles {
-	public static void main(String[] args) {
+  //./single-shebang-file.sh 3 4 5
+	public static void main(String[] args)
+	} {
 		if (args == null || args.length < 3) {
 			System.err.println("Three arguments required: principal, rate, period");
 			System.exit(1);

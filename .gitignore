@@ -3,3 +3,8 @@ bin/features/
 bin/net/
 bin/run-set-java12home.bat
 /target/
+.classpath
+.idea
+.project
+.settings
+Java-Features.iml

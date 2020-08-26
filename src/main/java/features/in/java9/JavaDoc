@@ -1,6 +1,6 @@
  
  -- old way of GENERATING 
- javadoc -d C:/JAVA_doc _IntroJava9.javajavadoc -d C:/JAVA _IntroJava9.java
+ javadoc -d C:/JAVA_doc _IntroJava9.java
  
  
  -- NEW Java9 javadoc way 

@@ -41,9 +41,11 @@ public class EnhancedDepracated {
 		System.out.println("E.g. see Object finalize method ");
 		//C:\apps\jdk-10.0.2\bin
 		/**
-		 *  JDK 9 supports UTF-8 based properties resource bundles (see JEP 226) and the conversion for UTF-8 based properties resource bundles to ISO-8859-1 is no longer needed.
+		 *  JDK 9 supports UTF-8 based properties resource bundles (see JEP 226) and the conversion
+		 *  for UTF-8 based properties resource bundles to ISO-8859-1 is no longer needed.
 		 */
-		System.out.println("E.g. Visual VM removed in JDK 9. The tool (jvisualvm, native2ascii ) is no longer included in Oracle JDK. But can be downloaded https://visualvm.github.io/ ");
+		System.out.println("E.g. Visual VM removed in JDK 9. The tool (jvisualvm, native2ascii ) is no longer " +
+				"included in Oracle JDK. But can be downloaded https://visualvm.github.io/ ");
 		System.out.println("E.g. serialver -show option has been removed (Serial Version Inspector ) ");
 		
 		 

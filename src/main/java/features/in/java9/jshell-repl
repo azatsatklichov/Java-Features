@@ -5,7 +5,7 @@ Thread.sleep(10)
 Thread.sleep(2000)
 "ab c".matches("[ab]+b\\sc")
 
-
+http://cr.openjdk.java.net/~rfield/tutorial/JShellTutorial.html
 >jshell --class-path commons-lang3-3.5.jar
 >StringUtils.left
 

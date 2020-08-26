@@ -34,4 +34,6 @@ class NoAloneUnderscore{
 	
 	//"_" Possible future use, so element is not taken into account just ignored
 	//list.forEach(_ -> doSomething())
+
+
 }

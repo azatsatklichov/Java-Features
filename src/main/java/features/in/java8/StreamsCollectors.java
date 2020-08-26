@@ -82,7 +82,7 @@ public class StreamsCollectors {
 		System.out.println(flattenedList);
 
 		System.out.println(
-				"Two type of Reductions (aggregation[reduce, min, max, findFirt, allMatch,..], collectors[Collectors...])");
+				"Two type of Reductions (aggregation[reduce, min, max, findFirst, allMatch,..], collectors[Collectors...])");
 		// Reduction
 		/**
 		 * {@link StringAndNumbersEnhancements}

@@ -26,7 +26,7 @@ public class OptionalClass {
 
     @Test
     public void orElseThrowValueTest() {
-        List<Integer> ints = List.of(1, 12, 6, -9);
+        List<Integer> ints = List.of(1, 12, 6, -9, 8);
         Integer firstEven = ints.stream().filter(i -> i % 2 == 0).findFirst().orElseThrow();
         assertEquals(firstEven, Integer.valueOf(12));
 

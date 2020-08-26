@@ -46,7 +46,7 @@ public class UnmodifiableCollections {
             List<String> list = List.of("A", "B", "A", "B", "C");
             System.out.println(list);
             list.add("gg");
-            List<String> copyList = List.copyOf(list);
+            List<String> copyList = List.copyOf(list);//
             System.out.println(copyList);
             copyList.add("Z");
         });
@@ -68,7 +68,7 @@ public class UnmodifiableCollections {
             List<Integer> ints = List.of(1, 12, 6, -9);
             List<Integer> evenList = ints.stream().filter(i -> i % 2 == 0).collect(Collectors.toUnmodifiableList());
             System.out.println(evenList);
-            evenList.add(4);
+            evenList.add(4);//
         });
     }
 

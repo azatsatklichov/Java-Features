@@ -18,7 +18,7 @@ import jdk.jfr.consumer.RecordingFile;
  * running Java application. Its performance overhead is negligible and that’s
  * usually below 1%. Hence it can be used in production applications.
  *
- * 
+ * https://www.baeldung.com/java-flight-recorder-monitoring
  */
 public class FlightRecorder {
 	public static void main(String[] args) {
@@ -71,6 +71,7 @@ public class FlightRecorder {
 		 */
 		System.out.println("JFR has two main concepts: events and dataflow");
 		// https://www.baeldung.com/java-flight-recorder-monitoring
+
 		/**
 		 * <pre>
 		 * java -XX:+UnlockCommercialFeatures -XX:+FlightRecorder 

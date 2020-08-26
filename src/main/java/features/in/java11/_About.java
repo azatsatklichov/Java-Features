@@ -30,17 +30,19 @@ public class _About {
     4.13 JEP 333: ZGC: A Scalable Low-Latency Garbage Collector (Experimental)
     4.14 JEP 335: Deprecate the Nashorn JavaScript Engine
     5 Conclusion
+
+
+
+     https://www.baeldung.com/oracle-jdk-vs-openjdk
      * </pre>
      */
     public static void main(String[] args) {
         System.out.println(
-                "Java 11 is the second LTS release after Java 8. Since Java 11, Oracle JDK would no longer be free for commercial use.");
+                "Java 11  is the second LTS release after Java 8. Since Java 11, Oracle JDK would no longer be free for commercial use.");
         System.out.println("You can use it in developing stages but to use it commercially, you need to buy a license. \n "
-                + "If you don’t, you can get an invoice bill from Oracle any day!");
+                + "If you donï¿½t, you can get an invoice bill from Oracle any day!");
         System.out.println("Java 10 was the last free Oracle JDK that could be downloaded."); 
-        System.out.println("Oracle stops Java 8 support from January 2019. You’ll need to pay for more support. Bugun January 20");
-        System.out.println("Meni DHL ITS de, ajayip ullandylar, in sonky project IMS, Java EE 1.4, almost kill the developer");
-  
+        System.out.println("Oracle stops Java 8 support from January 2019. Youï¿½ll need to pay for more support. Bugun January 20");
 
     }
 }
