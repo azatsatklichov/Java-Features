@@ -68,6 +68,8 @@
 				<version>${maven.compiler.plugin.version}</version>
 				<configuration>
 					<release>${java.version}</release>
+					<source>14</source>
+					<target>14</target>
 					<compilerArgs>--enable-preview</compilerArgs>
 				</configuration>
 			</plugin>

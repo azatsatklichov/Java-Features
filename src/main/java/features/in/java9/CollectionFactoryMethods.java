@@ -160,7 +160,7 @@ public class CollectionFactoryMethods {
 		System.out.println(age);
 
 		System.out.println(" From Java 9, we have yet another entry's package private implementation "
-				+ "—  java.util.KeyValueHolder — an immutable container that prevents instantiating an "
+				+ "ï¿½  java.util.KeyValueHolder ï¿½ an immutable container that prevents instantiating an "
 				+ "entry with a key or value equal to null ");
 
 		// throws NullPointerExcepton because of null key

@@ -29,7 +29,7 @@ public class E_Asyn_CompletableFuture {
 		 * Non blocking, it gets result via Callbacks, result is again
 		 * CompletableFuture<String>
 		 * 
-		 * thenApply transforms Future to another Future
+		 * thenApply transforms Future to another Future //
 		 */
 		CompletableFuture<String> completableFutureStringResponse = completableFutureHttpResponse
 				.thenApply(HttpResponse::body);

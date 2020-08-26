@@ -27,7 +27,7 @@ public class NegatePredicate {
 
 		System.out.println("\n Java 11 arrives with the Predicate.not() method");
 		people.stream().filter(Predicate.not(Person::isAdult)).collect(Collectors.toList()).forEach(System.out::println);
-		System.out.println(" even shorter");
+		System.out.println(" even shorter");//
 		people.stream().filter(not(Person::isAdult)).collect(Collectors.toList()).forEach(System.out::println);
 
 	}

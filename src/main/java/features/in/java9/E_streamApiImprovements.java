@@ -3,12 +3,16 @@ package features.in.java9;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
 import java.util.function.Predicate;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
- * 
+ *
  * <pre>
  *
  * Streams were introduced in Java to help developers perform aggregate
@@ -25,6 +29,9 @@ public class E_streamApiImprovements {
 		Stream.of("a", "b", "c", " ", "d", "", "z").takeWhile(s -> !s.isEmpty()).forEach(System.out::print);
 		System.out.println();
 
+		Stream.of("a", "b", "c", " ", "d", "", "z").takeWhile(s -> !s.isBlank()).forEach(System.out::print);
+		System.out.println();
+
 		/**
 		 * dropWhile method throw away all the values at the start until the predicate
 		 * returns true. It returns, in case of ordered stream, a stream consisting of
@@ -33,6 +40,9 @@ public class E_streamApiImprovements {
 		 */
 		Stream.of("a", "b", "c", " ", "d", "", "z").dropWhile(s -> !s.isEmpty()).forEach(System.out::print);
 		System.out.println();
+		Stream.of("a", "b", "c", " ", "d", "", "  ", "z").dropWhile(s -> !s.isBlank()).forEach(System.out::print);
+		System.out.println();
+
 		Stream.of("a", "b", "c", "", "e", "f").dropWhile(s -> !s.isEmpty()).forEach(System.out::print);
 		System.out.println();
 		Stream.of("a", "b", "c", "", "e", " ", "f").dropWhile(s -> !s.isEmpty()).forEach(System.out::print);
@@ -44,8 +54,19 @@ public class E_streamApiImprovements {
 		 */
 		IntStream.iterate(0, x -> x < 100, i -> i + 4).forEach(System.out::print);
 
+
+
+		List<String> ll = List.of("a", "b", "c"); //getList();
+		Stream<String> stream =  ll == null ? Stream.empty(): ll.stream();
+
+		//or via:
+		//org.apache.commons.collections4.CollectionUtils.emptyIfNull(list).stream().filter(...);
+
+		//or
+		stream = Optional.ofNullable(ll).orElse(List.of()).stream();
+
 		/**
-		 * 
+		 *
 		 * /** ofNullable method is introduced to prevent NullPointerExceptions and to
 		 * avoid null checks for streams. This method returns a sequential Stream
 		 * containing single element, if non-null, otherwise returns an empty Stream.
@@ -57,12 +78,23 @@ public class E_streamApiImprovements {
 		count = Stream.ofNullable(null).count();
 		System.out.println(count);
 
+		count = Stream.ofNullable(ll).count();
+		System.out.println(count);
+
+		Set<String> ss = null; //TBD
+		Stream<String> stream1 = ss == null ? Stream.empty() : ss.stream();
+
+		//Stream<Set<String>> ss1 = Stream.ofNullable(ss);
+		count = Stream.ofNullable(ss).count();
+		System.out.println(count);
+
+
 	}
 }
 
 class Example {
 
-	private final static String filePath = "\\workspace_ext\\Java-Features\\src\\features\\in\\java9\\jshell";
+	private final static String filePath = "\\workspace-eclipse\\Java-Features\\src\\main\\java\\features\\in\\java9\\jshell";
 
 	public static void main(String[] args) {
 		// Java 7 Path.of
@@ -76,7 +108,5 @@ class Example {
 		} catch (IOException e) {
 			System.err.println("Err" + e);
 		}
-
 	}
-
 }

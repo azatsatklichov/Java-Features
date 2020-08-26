@@ -41,6 +41,7 @@ public class I_OptionalImprovements {
         // or zero element if data is present or not.
         List<String> filteredListJava9 = list.stream().flatMap(Optional::stream).collect(Collectors.toList());
 
+        System.out.println("---");
         System.out.println(filteredListJava9);
         System.out.println();
 
@@ -52,14 +53,12 @@ public class I_OptionalImprovements {
         optional.ifPresentOrElse(x -> System.out.println("Value: " + x), () -> System.out.println("Not Present."));
 
         // OR
-        Optional<String> optional1 = Optional.of("Mahesh");
+        Optional<String> optional1 = Optional.of("Rimini");
         Supplier<Optional<String>> supplierString = () -> Optional.of("Not Present");
         optional1 = optional1.or(supplierString);
         optional1.ifPresent(x -> System.out.println("Value: " + x));
         optional1 = Optional.empty();
         optional1 = optional1.or(supplierString);
         optional1.ifPresent(x -> System.out.println("Value: " + x));
-        
     }
-
 }
