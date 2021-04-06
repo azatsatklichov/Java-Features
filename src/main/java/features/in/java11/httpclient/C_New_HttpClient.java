@@ -87,7 +87,8 @@ class HttpClientSendAsync {
 		var request2Way = HttpRequest.newBuilder().
 				uri(URI.create("https://www.baeldung.com/java-flight-recorder-monitoring")).build();
 
-		client.sendAsync(request, HttpResponse.BodyHandlers.ofString()).thenApply(HttpResponse::body)
+		client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
+				.thenApply(HttpResponse::body)
 				.thenAccept(System.out::println).join();
 
 	}

@@ -15,8 +15,8 @@ public class D_HttpClientSynchronousDemo {
 	public static void main(String[] args) throws IOException, InterruptedException {
 
 		httpClient = HttpClient.newHttpClient();
-		Files.lines(Path.of("C:/workspace-eclipse/Java-Features/src/features/in/java11/httpclient/domains.txt"))
-				.map(D_HttpClientSynchronousDemo::validateLink).forEach(System.out::println);
+		Files.lines(Path.of(Util.DOMAINS_TXT2)).map(D_HttpClientSynchronousDemo::validateLink)
+				.forEach(System.out::println);
 
 	}
 

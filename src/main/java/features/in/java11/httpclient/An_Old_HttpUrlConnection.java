@@ -36,7 +36,6 @@ class URLConnectionReader {
 	 */
 	public static void main(String[] args) throws Exception {
 		URL oracle = new URL("https://docs.oracle.com/javase/tutorial/networking/urls/readingWriting.html");
-		// URLConnection conn = oracle.openConnection();
 		HttpURLConnection conn = (HttpURLConnection) oracle.openConnection(); //Casting
 		conn.setRequestMethod("GET"); //No ENUM
 		conn.setRequestProperty("User-Agent", "Java 1.1");
@@ -47,8 +46,8 @@ class URLConnectionReader {
 			System.out.println(inputLine);
 		in.close();
 	}
-
 }
+
 
 class ParseURL {
 	public static void main(String[] args) throws Exception {

@@ -207,7 +207,7 @@ Oracle has released Java 9 with rich set of new features. It includes various up
 - Reactive Streams API: A new Reactive Streams API in Java SE 9 has been introduced to support reactive programming in java 9
 
 
-# Java 10 Features (GA 2018/03/20)
+# Java 10 Features (GA 20/03/2018)
 [JDK 10 doc](https://docs.oracle.com/javase/10/),
 [API](https://docs.oracle.com/javase/10/docs/api/overview-summary.html), 
 [What's New in JDK 10](https://www.oracle.com/technetwork/java/javase/10-relnote-issues-4108729.html#NewFeature),
@@ -229,7 +229,7 @@ Oracle has released Java 9 with rich set of new features. It includes various up
 - Deprecated Features and Options in Java 10
 
 
-# Java 11 Features (GA 2018/09/25)
+# Java 11 Features (GA 25/09/2018)
 [JDK 11 doc](https://docs.oracle.com/en/java/javase/11/),
 [API](https://docs.oracle.com/en/java/javase/11/docs/api/index.html),  
 [What's New in JDK 11](https://www.oracle.com/technetwork/java/javase/11-relnote-issues-5012449.html#NewFeature),  
@@ -258,7 +258,7 @@ Oracle has released Java 9 with rich set of new features. It includes various up
 - 286: Local-Variable Type Inference
 
 
-# Java 12 Features (GA 2019/03/19)
+# Java 12 Features (GA 19/03/2019)
 
 [JDK 12 doc](https://docs.oracle.com/en/java/javase/12/index.html),
 [API](https://docs.oracle.com/en/java/javase/12/docs/api/index.html),     
@@ -274,7 +274,7 @@ Oracle has released Java 9 with rich set of new features. It includes various up
 - 344:	Abortable Mixed Collections for G1
 - 346:	Promptly Return Unused Committed Memory from G1
 
-# Java 13 Features (GA 2019/09/17)
+# Java 13 Features (GA 17/09/2019)
 [JDK 13 doc](https://docs.oracle.com/en/java/javase/13/index.html),
 [API](https://docs.oracle.com/en/java/javase/13/docs/api/index.html),  
 [Open JDK](https://openjdk.java.net/projects/jdk/13/) 
@@ -288,13 +288,10 @@ Oracle has released Java 9 with rich set of new features. It includes various up
 - Support for Unicode 12.1
 - DOM and SAX Factories with Namespace Support
 
-# Java 14 Features (GA 2020/03/17)
+# Java 14 Features (GA 17/03/2020)
 [JDK 14 doc](https://docs.oracle.com/en/java/javase/14/index.html),
 [API](https://docs.oracle.com/en/java/javase/14/docs/api/index.html), 
 [Open JDK](https://openjdk.java.net/projects/jdk/14/) 
- 
-
-JEPs targeted to JDK 14, so far
 
 - 305:	Pattern Matching for instanceof (Preview)
 - 343:	Packaging Tool (Incubator)
@@ -313,6 +310,66 @@ JEPs targeted to JDK 14, so far
 - 368:	Text Blocks (Second Preview)
 - 370:	Foreign-Memory Access API (Incubator)
 
-# Java 15 Features  (in development)
 
-# Java 16 Features  (...)
+
+# Java 15 Features  (GA 15/09/2020)
+[JDK 15 doc](https://docs.oracle.com/en/java/javase/15/index.html),
+[API](https://docs.oracle.com/en/java/javase/15/docs/api/index.html), 
+[Open JDK](https://openjdk.java.net/projects/jdk/15/) 
+
+- 339:	Edwards-Curve Digital Signature Algorithm (EdDSA)
+- 360:	Sealed Classes (Preview)
+- 371:	Hidden Classes
+- 372:	Remove the Nashorn JavaScript Engine
+- 373:	Reimplement the Legacy DatagramSocket API
+- 374:	Disable and Deprecate Biased Locking
+- 375:	Pattern Matching for instanceof (Second Preview)
+- 377:	ZGC: A Scalable Low-Latency Garbage Collector
+- 378:	Text Blocks
+- 379:	Shenandoah: A Low-Pause-Time Garbage Collector
+- 381:	Remove the Solaris and SPARC Ports
+- 383:	Foreign-Memory Access API (Second Incubator)
+- 384:	Records (Second Preview)
+- 385:	Deprecate RMI Activation for Removal
+
+
+
+# Java 16 Features  (GA 16/03/2021)
+[JDK 16 doc](https://docs.oracle.com/en/java/javase/16/index.html),
+[API](https://docs.oracle.com/en/java/javase/16/docs/api/index.html), 
+[Open JDK](https://openjdk.java.net/projects/jdk/16/) 
+
+
+- 338:	Vector API (Incubator)
+- 347:	Enable C++14 Language Features
+- 357:	Migrate from Mercurial to Git
+- 369:	Migrate to GitHub
+- 376:	ZGC: Concurrent Thread-Stack Processing
+- 380:	Unix-Domain Socket Channels
+- 386:	Alpine Linux Port
+- 387:	Elastic Metaspace
+- 388:	Windows/AArch64 Port
+- 389:	Foreign Linker API (Incubator)
+- 390:	Warnings for Value-Based Classes
+- 392:	Packaging Tool
+- 393:	Foreign-Memory Access API (Third Incubator)
+- 394:	Pattern Matching for instanceof
+- 395:	Records
+- 396:	Strongly Encapsulate JDK Internals by Default
+- 397:	Sealed Classes (Second Preview)
+
+
+# Java 17 Features  (Expected GA 14/09/2021)
+[JDK 17 doc](https://docs.oracle.com/en/java/javase/17/index.html),
+[API](https://docs.oracle.com/en/java/javase/17/docs/api/index.html), 
+[Open JDK](https://openjdk.java.net/projects/jdk/17/) 
+
+
+JEPs targeted to JDK 17, so far
+
+- 356: Enhanced Pseudo-Random Number Generators 2021/02/04 
+- 382: New macOS Rendering Pipeline 2021/03/04 
+- 391: macOS/AArch64 Port 2021/03/23 
+- 398: Deprecate the Applet API for Removal 2021/03/23 
+
+

@@ -46,8 +46,8 @@ public class O_ServerPush {
       asyncRequests.add(cf);
     };
 
-    HttpClient client = null; //TBD
-	client.sendAsync(request, BodyHandlers.ofByteArray(), pph)
+    HttpClient httpClient = HttpClient.newHttpClient();
+    httpClient.sendAsync(request, BodyHandlers.ofByteArray(), pph)
           .thenApply(HttpResponse::body)
           .thenAccept(System.out::println)
           .join();

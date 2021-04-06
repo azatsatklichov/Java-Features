@@ -97,9 +97,7 @@ public class J_HttpClientCookiesAndHeaders {
 				.headers("User-Agent", "Java", "Cache-Control", "no-transform", "Cache-Control", "no-store")
 				// to replace header
 				.setHeader("Accept", "application/json")
-
 				.POST(BodyPublishers.ofString("some body infor form"))
-
 				.build();
 
 		httpClient.send(httpRequest, HttpResponse.BodyHandlers.discarding());

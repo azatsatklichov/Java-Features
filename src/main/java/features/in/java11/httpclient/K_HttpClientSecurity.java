@@ -18,9 +18,12 @@ public class K_HttpClientSecurity {
 		/**
 		 * Security
 		 * 
+		 * 
 		 * A) Provides a default set of root Certification Authority (CA) certificates
 		 * in the JDK. Default certiciates {@ link G_RootCertificate} {@ link
 		 * _PerformanceImprovementsAndMoreJEPs#RootCertificates}
+		 * 
+		 * TRY: > cd C:\apps\Java\jdk-11\lib\security > keytool -list -keystore cacerts >  changeit
 		 * 
 		 * 
 		 * B) Self signed certificates, which are not added in above list
@@ -47,7 +50,6 @@ public class K_HttpClientSecurity {
 		 */
 		SSLParameters sslParameters = new SSLParameters(new String[] { "TLSv1.3" },
 				new String[] { "TLS_AES_128_GCM_SHA256" });
-
 		HttpClient httpClient = HttpClient.newBuilder().sslContext(sslCtx).sslParameters(sslParameters).build();
 
 	}
@@ -102,9 +104,49 @@ class HttpClientBasicAuth {
 
 		// ProxySelector proxySelector = ProxySelector.getDefault();
 		ProxySelector proxySelector = ProxySelector.of(new InetSocketAddress("company.proxyserver.com", 8080));
-
-		HttpClient httpClient = HttpClient.newBuilder().authenticator(authenticator).proxy(proxySelector).build();
+		HttpClient httpClient = HttpClient.newBuilder()
+				.authenticator(authenticator)
+				.proxy(proxySelector).build();
 
 	}
+
+}
+
+
+/**
+ * 
+ * * Root Certificates
+ * 
+ * <pre>
+ * Provides a default set of root Certification Authority (CA) certificates in the JDK.
+ * 
+ * 
+ *JEP 319 will provide a default set of root Certification
+ * Authority making OpenJDK builds more appealing to developers. It also aims to
+ * reduce the difference between the OpenJDK and Oracle JDK builds. Critical
+ * security components such as TLS will now work by default in OpenJDK builds.
+ * 
+ *
+ * The cacerts keystore, which was initially empty so far, is intended to
+ * contain a set of root certificates that can be used to establish trust in the
+ * certificate chains used by various security protocols.
+ * 
+ * As a result, critical security components such as TLS didn�t work by default
+ * under OpenJDK builds.
+ * 
+ * With Java 10, Oracle has open-sourced the root certificates in Oracle�s Java
+ * SE Root CA program in order to make OpenJDK builds more attractive to
+ * developers and to reduce the differences between those builds and Oracle JDK
+ * builds.
+ * </pre>
+ * 
+ * The cacerts keystore will be populated with a set of root certificates issued
+ * by the CAs of Oracle's Java SE Root CA Program.
+ * 
+ * TRY: > cd C:\apps\Java\jdk-11\lib\security > keytool -list -keystore cacerts >  changeit
+ * 
+ * 
+ */
+class RootCertificateJ10 {
 
 }

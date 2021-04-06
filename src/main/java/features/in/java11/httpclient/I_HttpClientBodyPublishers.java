@@ -30,7 +30,7 @@ public class I_HttpClientBodyPublishers {
 		 * 
 		 * noBody
 		 * 
-		 *  
+		 * 
 		 * 
 		 * BodyHandlers
 		 * 
@@ -43,11 +43,20 @@ public class I_HttpClientBodyPublishers {
 		 * - ofLines -> Stream<String>
 		 * 
 		 * - discarding -> Void - noBody, just used to check STATUS
-	 
+		 * 
+		 * 
+		 * <pre>
+		 * HttpRequest.newBuilder().uri(new URI("https://postman-echo.com/post"))
+		 * 		.headers("Content-Type", "text/plain;charset=UTF-8")
+		 * 		.POST(ofFile(Paths.get("src/test/resources/data.txt"))).build();
+		 * </pre>
 		 */
 
 		HttpRequest httpRequest = HttpRequest.newBuilder(URI.create("http://sahet.net"))
 				.POST(BodyPublishers.ofString("some body infor form")).build();
+		//.POST(ofFile(Paths.get("src/test/resources/data.txt"))).build();
+
+		System.out.println("-----------------------------");
 
 		httpClient.sendAsync(httpRequest, HttpResponse.BodyHandlers.ofString()).thenApply(HttpResponse::body)
 				.thenAccept(System.out::println).join();

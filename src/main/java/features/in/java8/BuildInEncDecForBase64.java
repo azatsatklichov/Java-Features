@@ -23,7 +23,7 @@ public class BuildInEncDecForBase64 {
 			// A-Za-z0-9+_. Output is URL and filename safe.
 			base64encodedString = Base64.getUrlEncoder().encodeToString("features?java8".getBytes("utf-8"));
 			System.out.println("Base64 Encoded String (URL) :" + base64encodedString);
-			// Decode
+			// Decode  
 			base64decodedBytes = Base64.getUrlDecoder().decode(base64encodedString);
 			System.out.println("Original String: " + new String(base64decodedBytes, "utf-8"));
 			System.out.println();

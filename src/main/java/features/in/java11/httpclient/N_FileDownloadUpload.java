@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 /**
- * ownloading a file is very straightforward. Send a GET request and then handle
+ * Downloading a file is very straightforward. Send a GET request and then handle
  * the bytes in the response according to your use case. In this example, we
  * utilize a BodyHandler that automatically saves the bytes from the response
  * into a file on the local filesystem.

@@ -3,43 +3,35 @@ package features.in.java11.httpclient;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
-import java.net.http.HttpClient.Redirect;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 
-public class H_HttpClientConfigDemo {
+public class D2_HttpClientAsyncronousDemo {
 
 	private static HttpClient httpClient;
 
 	public static void main(String[] args) throws IOException, InterruptedException {
+		
+		System.out.println("See H_HttpClientConfigDemo to run this asynx tasks in parallel");
 
-		System.out.println("Async tasks run in parallel by 5 therads .. ");
-		httpClient = HttpClient.newBuilder()
-				.followRedirects(Redirect.NORMAL)
-				.connectTimeout(Duration.ofSeconds(5))
-				.executor(Executors.newFixedThreadPool(5)).build();
-
+		httpClient = HttpClient.newHttpClient();
 		List<CompletableFuture<String>> completableFutureStringListResponse = Files
 				.lines(Path
-						.of(Util.DOMAINS_TXT))
-				.map(H_HttpClientConfigDemo::validateLink).collect(Collectors.toList());
+						.of(Util.DOMAINS_TXT2))
+				.map(D2_HttpClientAsyncronousDemo::validateLink).collect(Collectors.toList());
 
-		// later these futures executed in parallel, is faster than
-		// D_HttpClientSynchronous
-		completableFutureStringListResponse.stream()
-											.map(CompletableFuture::join)
-											.forEach(System.out::println);
+		// later these futures executed in parallel, is faster than D_HttpClientSynchronous
+		completableFutureStringListResponse.stream().map(CompletableFuture::join).forEach(System.out::println);
 	}
 
 	private static CompletableFuture<String> validateLink(String link) {
-		HttpRequest httpRequest = HttpRequest.newBuilder(URI.create(link)).GET().build();
+		HttpRequest httpRequest = HttpRequest.newBuilder(URI.create(link))
+				.GET().build();
 
 		// including exception handling
 		return httpClient.sendAsync(httpRequest, HttpResponse.BodyHandlers.discarding())
@@ -49,13 +41,23 @@ public class H_HttpClientConfigDemo {
 
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	@SuppressWarnings("unused")
 	private static CompletableFuture<String> validateLink2(String link) {
 		HttpRequest httpRequest = HttpRequest.newBuilder(URI.create(link)).GET().build();
 
 		// thenApply only works for success case, in case Exception happens then nothing
-		return httpClient.sendAsync(httpRequest, HttpResponse.BodyHandlers.discarding()).thenApply(
-				asynResult -> 200 == asynResult.statusCode() ? link + " access OK  " : link + " access Failed");
+		return httpClient.sendAsync(httpRequest, HttpResponse.BodyHandlers.discarding())
+				.thenApply(asynResult -> 200 == asynResult.statusCode() ? link + " access OK  " : link + " access Failed");
 
 	}
 
