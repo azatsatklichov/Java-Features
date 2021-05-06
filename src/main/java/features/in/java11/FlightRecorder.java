@@ -15,10 +15,12 @@ import jdk.jfr.consumer.RecordingFile;
  * now open-sourced since Oracle JDK is itself not free anymore.
  * 
  * JFR is a profiling tool used to gather diagnostics and profiling data from a
- * running Java application. Its performance overhead is negligible and that’s
+ * running Java application. Its performance overhead is negligible and thatï¿½s
  * usually below 1%. Hence it can be used in production applications.
  *
  * https://www.baeldung.com/java-flight-recorder-monitoring
+ * 
+ *  java -XX:StartFlightRecording=duration=60s,settings=profile,filename=app.jfr FlightRecorder
  */
 public class FlightRecorder {
 	public static void main(String[] args) {
@@ -44,7 +46,7 @@ public class FlightRecorder {
 		System.out.println(
 				"JFR is a profiling tool used to gather diagnostics and profiling data from a running Java application");
 		System.out.println(
-				"JFR  - Its usage is closely related to two of the tools above — Java Mission Control and Diagnostic Command Tools.");
+				"JFR  - Its usage is closely related to two of the tools above ï¿½ Java Mission Control and Diagnostic Command Tools.");
 		/**
 		 * Java Flight Recorder (JFR) is a monitoring tool that collects information
 		 * about the events in a Java Virtual Machine (JVM) during the execution of a
@@ -61,7 +63,7 @@ public class FlightRecorder {
 		 * tool. We use Java Mission Control (JMC), which contains a plugin that allows
 		 * us to visualize the data collected by JFR.
 		 * 
-		 * These three components — JFR, jcmd and JMC — form a complete suite for
+		 * These three components ï¿½ JFR, jcmd and JMC ï¿½ form a complete suite for
 		 * collecting low-level runtime information of a running Java program.
 		 * 
 		 * If we have various versions of Java installed on our computer, it's important

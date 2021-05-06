@@ -14,6 +14,7 @@ import java.util.stream.Stream;
 
 class OldWayOfCreationOrConversion {
 	public static void main(String[] args) {
+		// verbose, not works as initializer
 		Set<String> set = new HashSet<>();
 		set.add("A");
 		set.add("B");
@@ -35,20 +36,27 @@ class OldWayOfCreationOrConversion {
 		map = Collections.unmodifiableMap(map);
 		System.out.println(map);
 
+		// Arrays here. Only helps for Lists, not for Set construction
 		List<Integer> integers = Arrays.asList(2, 4, 1, 3, 8, 4, 7, 5, 9, 6, 8);
 		System.out.println(integers);
 
 		List<String> strings = Arrays.asList("abc", "", "bc", "efg", "abcd", "", "jkl");
 		System.out.println(strings);
 
+		// try other way
+		// List<String> ooo = new ArrayList<>() {{ add("try workaround "); }};
+
 		strings = Collections.singletonList(new String("ds"));
 		System.out.println(strings);
 
+		// works for only EMPTY collection
+		Collections.emptyList();
+
 		// Java 8:
 		Stream<String> language = Stream.of("java", "python", "node", null, "ruby", null, "php");
-        List<String> result = language.collect(Collectors.toList());
-        System.out.println(result);
-        
+		List<String> result = language.collect(Collectors.toList());
+		System.out.println(result);
+
 		Stream<Integer> stream = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9);
 		stream.forEach(p -> System.out.println(p));
 
@@ -65,7 +73,6 @@ class OldWayOfCreationOrConversion {
 		stream = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9);
 		List<Integer> numbersList = stream.collect(Collectors.toList());
 		System.out.println(numbersList);
-		
 
 		stream = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9);
 		List<Integer> evenNumbersList = stream.filter(i -> i % 2 == 0).collect(Collectors.toList());
@@ -119,6 +126,7 @@ public class CollectionFactoryMethods {
 		// Set<String> set = Set.of("A", "B", "A", "B", "C"); Exception in thread "main"
 		// java.lang.IllegalArgumentException: duplicate element: A
 		Set<String> set = Set.of("A", "B", "A2", "B2", "C", "c", "C", null);
+		// Set<String> set = Set.of("A", "B", "A2", "B2", "C", "c");
 		System.out.println(set);
 
 		set = Set.of("A", "B", "A2", "B2", "C", "D", "E", "F", "G", "H", "I", "zz", "PP");
@@ -126,15 +134,17 @@ public class CollectionFactoryMethods {
 
 		List<String> list = List.of("A", "B", "A", "B", "C");
 		System.out.println(list);
-		
+
 		List<String> emptyList = List.of();
 		System.out.println(emptyList);
 
-		list.add("OO"); //It is unmodifiable, UnsupportedOperationException
+		list.add("OO"); // It is unmodifiable, UnsupportedOperationException
 		System.out.println(list);
-		
-		Stream<String> language = Stream.of("java", "python", "node", null, "ruby", null, "php");
+		System.out.println(list.getClass()); // java.util.ImmutableCollections$ListN
 
+		System.out.println(List.of(1).getClass()); // class java.util.ImmutableCollections$List12
+
+		Stream<String> language = Stream.of("java", "python", "node", null, "ruby", null, "php");
 
 		Map emptyImmutableMap = Map.of();
 		// emptyImmutableMap ==> {}
@@ -171,6 +181,9 @@ public class CollectionFactoryMethods {
 		age = Map.ofEntries(Map.entry("Bruce", 59L), null);
 		// we cannot create a map with duplicate values
 		age = Map.ofEntries(Map.entry("Bruce", 59L), Map.entry("Bruce", 59L));
+
+		//// IllegalArgumentException
+		Map.of("a", 1, "a", 2);
 
 		// NPE
 		Map<Integer, String> map2 = Map.of(1, "value1", 2, "value2", 3, "value3", 4, null);

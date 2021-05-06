@@ -9,3 +9,5 @@ bin/run-set-java12home.bat
 .settings
 Java-Features.iml
 /bin/
+
+/pluralsight

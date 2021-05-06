@@ -1,6 +1,16 @@
 package features.in.java11;
 
+import java.io.IOException;
+import java.net.Socket;
+import java.net.UnknownHostException;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.KeyPair;
+import java.security.KeyPairGenerator;
+import java.security.NoSuchAlgorithmException;
+import java.security.PrivateKey;
+import java.security.PublicKey;
 import java.security.spec.AlgorithmParameterSpec;
+import java.security.spec.NamedParameterSpec;
 import java.util.Base64;
 
 import javax.crypto.Cipher;
@@ -8,6 +18,7 @@ import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
+import javax.net.ssl.SSLSocketFactory;
 
 /**
  * ChaCha20 and ChaCha20-Poly1305 cipher implementations. These algorithms will
@@ -30,7 +41,7 @@ import javax.crypto.spec.SecretKeySpec;
  */
 public class TLSNewCryptographicAlgorithms {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws NoSuchAlgorithmException, InvalidAlgorithmParameterException {
 		/**
 		 * * more details {@link here https://tools.ietf.org/html/rfc7539} and
 		 * {@link here
@@ -40,9 +51,72 @@ public class TLSNewCryptographicAlgorithms {
 		 */
 		System.out.println(
 				"1. ChaCha20 is a relatively new stream cipher that can replace the older, insecure RC4 stream cipher.");
+		/**
+		 * ChaCha20 is a high-speed stream cipher, an encryption and decryption
+		 * algorithm. ChaCha20-Poly1305 means ChaCha20 running in AEAD mode with the
+		 * Poly1305 authenticator, encryption and authentication together, both are
+		 * defined in RFC 7539. This JEP update of ChaCha20 cryptographic algorithms is
+		 * a replacement for the insecure RC4 stream cipher.
+		 * 
+		 * The inputs to ChaCha20 are:
+		 * 
+		 * A 256-bit secret key (32 bytes) A 96-bit nonce (12 bytes) A 32-bit initial
+		 * count (4 bytes)
+		 */
+
+//
+//		byte[] nonce = "sdsdsdw%$d".getBytes();
+//		int counter = 8;
+//		ChaCha20ParameterSpec param = new ChaCha20ParameterSpec(nonce, counter);
+//
+//		KeyPairGenerator kpg = KeyPairGenerator.getInstance("XDH");
+//		NamedParameterSpec paramSpec = new NamedParameterSpec("X25519");
+//		kpg.initialize(paramSpec); // equivalent to kpg.initialize(255)
+//		// alternatively: kpg = KeyPairGenerator.getInstance("X25519")
+//		KeyPair kp = kpg.generateKeyPair();
+//		Key key = kp.getPrivate(); 
+//		cipher.init(Cipher.ENCRYPT_MODE, key, param);
+//
+//		byte[] pText = "saastwed".getBytes();
+//		byte[] encryptedText = cipher.doFinal(pText);
 
 		// https://tools.ietf.org/html/rfc7748
-		System.out.println("2. Curve25519 and Curve448 key agreement is impelented");
+		System.out.println("2. Curve25519 and Curve448 key agreement is implemented");
+		/**
+		 * JEP 324: Key Agreement with Curve25519 and Curve448 Java Cryptography related
+		 * item. It replaced the existing elliptic curve Diffie-Hellman (ECDH) scheme
+		 * with Curve25519 and Curve448 algorithms, a key agreement scheme defined in
+		 * RFC 7748.
+		 * 
+		 * A simple KeyPairGenerator example using the Curve25519 algorithm to generate
+		 * a key pair.
+		 */
+
+		KeyPairGenerator kpg = KeyPairGenerator.getInstance("XDH");
+		NamedParameterSpec paramSpec = new NamedParameterSpec("X25519");
+		kpg.initialize(paramSpec); // equivalent to kpg.initialize(255)
+		// alternatively: kpg = KeyPairGenerator.getInstance("X25519")
+		KeyPair kp = kpg.generateKeyPair();
+
+		System.out.println("--- Public Key ---");
+		PublicKey publicKey = kp.getPublic();
+
+		System.out.println(publicKey.getAlgorithm()); // XDH
+		System.out.println(publicKey.getFormat()); // X.509
+
+		// save this public key
+		byte[] pubKey = publicKey.getEncoded();
+
+		System.out.println("---");
+
+		System.out.println("--- Private Key ---");
+		PrivateKey privateKey = kp.getPrivate();
+
+		System.out.println(privateKey.getAlgorithm()); // XDH
+		System.out.println(privateKey.getFormat()); // PKCS#8
+
+		// save this private key
+		byte[] priKey = privateKey.getEncoded();
 
 	}
 
@@ -109,4 +183,25 @@ class ChaCha20Poly1305Example {
 
 		return new String(decryptedText);
 	}
+}
+
+class TLS13 {
+	/**
+	 * Java 11 supports RFC 8446 Transport Layer Security (TLS) 1.3 protocol.
+	 * However, not all TLS 1.3 feature is implemented, refer to this JEP 332 for
+	 * detail.
+	 * 
+	 * Java Secure Socket Extension (JSSE) + TLS 1.3 example.
+	 * @throws IOException 
+	 * @throws UnknownHostException 
+	 * 
+	 */
+	public static void main(String[] args) throws UnknownHostException, IOException {
+		SSLSocketFactory factory = (SSLSocketFactory) SSLSocketFactory.getDefault();
+		Socket socket = factory.createSocket("google.com", 443);
+
+		//socket.setEnabledProtocols(new String[] { "TLSv1.3" });
+		//socket.setEnabledCipherSuites(new String[] { "TLS_AES_128_GCM_SHA256" });
+	}
+
 }

@@ -1,0 +1,144 @@
+package net.sahet.utils;
+
+import java.util.EnumSet;
+import java.util.HashSet;
+import java.util.Set;
+ 
+
+public class EnumsetDemo {
+
+	public static final Set<ImplicitFields> IMPLICIT_FIELDS2 = EnumSet.allOf(ImplicitFields.class);
+	
+	//String values
+	public static final Set<String> IMPLICIT_FIELDS = new HashSet<>();
+	
+	static {
+		for (ImplicitFields sf : ImplicitFields.values()) {
+			IMPLICIT_FIELDS.add(sf.getMessage());
+		}
+		
+	}
+ 
+
+	public static void main(String[] args) {
+		
+		
+		IMPLICIT_FIELDS2.forEach(System.out::println);
+		
+		System.out.println("--------");
+		
+		IMPLICIT_FIELDS.forEach(System.out::println);
+		
+		System.out.println();
+		System.out.println(IMPLICIT_FIELDS.contains("SQLCA-DB-RLS"));
+		System.out.println(IMPLICIT_FIELDS.contains("SQLCA_ERR_LEN"));
+
+		System.out.println(IMPLICIT_FIELDS.contains(ImplicitFields.SQLCA_ERR_LEN));
+		
+		System.out.println(ImplicitFields.SQLCA_MISC_CODES_B.getMessage());
+
+	}
+
+}
+
+ 
+enum ImplicitFields {
+	  SQLCA("SQLCA"),
+	  SQLCA_AUTHID("SQLCA-AUTHID"),
+	  SQLCA_DB_RLS("SQLCA-DB-RLS"),
+	  SQLCA_DB_VRS("SQLCA-DB-VRS"),
+	  SQLCA_DBCODE("SQLCA-DBCODE"),
+	  SQLCA_DBCODE_EXT("SQLCA-DBCODE-EXT"),
+	  SQLCA_DBCODE_INT("SQLCA-DBCODE-INT"),
+	  SQLCA_DSFCODE("SQLCA-DSFCODE"),
+	  SQLCA_ERR_INFO_2("SQLCA-ERR-INFO-2"),
+	  SQLCA_ERR_LEN("SSQLCA-ERR-LEN"),
+	  SQLCA_ERR_MSG("SQLCA-ERR-MSG"),
+	  SQLCA_ERROR_DATA("SQLCA-ERROR-DATA"),
+	  SQLCA_ERROR_INFO("SQLCA-ERROR-INFO"),
+	  SQLCA_ERROR_PGM("SQLCA-ERROR-PGM"),
+	  SQLCA_EYE_CATCH("SQLCA-EYE-CATCH"),
+	  SQLCA_FILLER_1("SQLCA-FILLER-1"),
+	  SQLCA_FILLER_2("SQLCA-FILLER-2"),
+	  SQLCA_INFCODE("SQLCA-INFCODE"),
+	  SQLCA_LEN("SQLCA-LEN"),
+	  SQLCA_LUWID("SQLCA-LUWID"),
+	  SQLCA_MISC_CODE1("SQLCA-MISC-CODE1"),
+	  SQLCA_MISC_CODE2("SQLCA-MISC-CODE2"),
+	  SQLCA_MISC_CODE3("SQLCA-MISC-CODE3"),
+	  SQLCA_MISC_CODES_B("SQLCA-MISC-CODES-B"),
+	  SQLCA_PGM_NAME("SQLCA-PGM-NAME"),
+	  SQLCA_PLAN_NAME("SQLCA-PLAN-NAME"),
+	  SQLCA_SQLCODE("SQLCA-SQLCODE"),
+	  SQLCA_SQLSTATE("SQLCA-SQLSTATE"),
+	  SQLCA_WARNING("SQLCA-WARNING"),
+	  SQLCA_WRN_AREA("SQLCA-WRN-AREA"),
+	  SQLCABC("SQLCABC"),
+	  SQLCAID("SQLCAID"),
+	  SQLCODE("SQLCODE"),
+	  SQLD("SQLD"),
+	  SQLDA("SQLDA"),
+	  SQLDABC("SQLDABC"),
+	  SQLDAID("SQLDAID"),
+	  SQLDATA("SQLDATA"),
+	  SQLDATALEN("SQLDATALEN"),
+	  SQLDATATYPE_NAME("SQLDATATYPE-NAME"),
+	  SQLDATATYPE_NAMEC("SQLDATATYPE-NAMEC"),
+	  SQLDATATYPE_NAMEL("SQLDATATYPE_NAMEL"),
+	  SQLERRD("SQLERRD"),
+	  SQLERRD1("SQLERRD1"),
+	  SQLERRD2("SQLERRD2"),
+	  SQLERRD3("SQLERRD3"),
+	  SQLERRD4("SQLERRD4"),
+	  SQLERRD5("SQLERRD5"),
+	  SQLERRD6("SQLERRD6"),
+	  SQLERRM("SQLERRM"),
+	  SQLERRMC("SQLERRMC"),
+	  SQLERRMF("SQLERRMF"),
+	  SQLERRML("SQLERRML"),
+	  SQLERROR("SQLERROR"),
+	  SQLERRP("SQLERRP"),
+	  SQLEXCEPTION("SQLEXCEPTION"),
+	  SQLEXT("SQLEXT"),
+	  SQLID("SQLID"),
+	  SQLIND("SQLIND"),
+	  SQLLEN("SQLLEN"),
+	  SQLLONGLEN("SQLLONGLEN"),
+	  SQLN("SQLN"),
+	  SQLNAME("SQLNAME"),
+	  SQLNAMEC("SQLNAMEC"),
+	  SQLNAMEL("SQLNAMEL"),
+	  SQLPRECISION("SQLPRECISION"),
+	  SQLSCALE("SQLSCALE"),
+	  SQLSTATE("SQLSTATE"),
+	  SQLTYPE("SQLTYPE"),
+	  SQLVAR("SQLVAR"),
+	  SQLVAR1("SQLVAR1"),
+	  SQLVAR2("SQLVAR2"),
+	  SQLVAR2_RESERVED1("SQLVAR2-RESERVED-1"),
+	  SQLVAR2_RESERVED2("SQLVAR2-RESERVED-2"),
+	  SQLWARN("SQLWARN"),
+	  SQLWARN0("SQLWARN0"),
+	  SQLWARN1("SQLWARN1"),
+	  SQLWARN2("SQLWARN2"),
+	  SQLWARN3("SQLWARN3"),
+	  SQLWARN4("SQLWARN4"),
+	  SQLWARN5("SQLWARN5"),
+	  SQLWARN6("SQLWARN6"),
+	  SQLWARN7("SQLWARN7"),
+	  SQLWARN8("SQLWARN8"),
+	  SQLWARN9("SQLWARN9"),
+	  SQLWARN10("SQLWARN10"),
+	  SQLWARNA("SQLWARNA"),
+	  SQLWARNING("SQLWARNING");
+
+	  private String message;
+
+	  ImplicitFields(String message) {
+	    this.message = message;
+	  }
+
+	  public String getMessage() {
+	    return message;
+	  }
+	}

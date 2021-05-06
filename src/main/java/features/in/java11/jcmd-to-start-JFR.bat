@@ -1,0 +1,1 @@
+jcmd 11164 JFR.start duration=30s settings=profile filename=C:/workspace-JavaNew/Java-Features/leak2.jfr

@@ -83,7 +83,37 @@ class Outer {
 		Set<String> nestMembers = Arrays.stream(Outer.Inner.class.getNestMembers()).map(Class::getName)
 				.collect(Collectors.toSet());
 		System.out.println(nestMembers);
-		
+
 	}
 
+}
+
+/**
+ * It supports private access within nest members directly, no more via an
+ * auto-generated bridge method access$000. Furthermore, new nested APIs for
+ * validation and allowed private reflection access within nest members.
+ */
+//Before
+class Alphabet {
+	private String name = "I'm Alphabet!";
+
+	public class A {
+		public void printName() {
+			System.out.println(name); // access Alphabet's private member!
+		}
+
+		//
+
+		/**
+		 * If we compile the above class, it will generate two classes, Alphabet and
+		 * Alphabet$A, even a nested class is a typical class with a unique name. The
+		 * JVM access rule will not allow private access within different classes.
+		 * However, Java allowed private access within nest members, so the Java
+		 * compiler creates a bridge method access$000 to apply on the JVM access rule.
+		 * 
+		 * n Java 11, The Java compiler will not generate any bridge method access$000
+		 * for private access within nest members. This new JVM access rule, Nest-Based
+		 * Access Control allowed private access within nest members.
+		 */
+	}
 }

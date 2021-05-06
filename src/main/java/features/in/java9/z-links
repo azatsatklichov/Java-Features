@@ -13,6 +13,14 @@ JDK 9 reached General Availability on 21 September 2017. Production-ready binari
 
 The features and schedule of this release were proposed and tracked via the JEP Process, as amended by the JEP 2.0 proposal.
 
+<<<<<<< HEAD
+<link rel="shortcut icon" href="../src/sahet-logo/sahet.bmp" />
+<link href="../css/layout.css" rel="stylesheet" type="text/css" />
+  =======
+  <!-- no style -->
+>>>>>>> master
+  
+  
 Features
 102: Process API Updates
 110: HTTP 2 Client
@@ -129,7 +137,7 @@ Fix-request process (RDP 2 and later)
 Milestone definitions
 The milestone definitions for JDK 9 were the same as those for JDK 8, with the addition of:
 
-Feature Extension Complete — The date by which JEPs and small enhancements that have been granted extensions via the FC extension-request process must be integrated into the master forest.
+Feature Extension Complete ï¿½ The date by which JEPs and small enhancements that have been granted extensions via the FC extension-request process must be integrated into the master forest.
 
-Initial Release Candidate — The date on which the first release candidate is built and submitted for testing.
+Initial Release Candidate ï¿½ The date on which the first release candidate is built and submitted for testing.
 

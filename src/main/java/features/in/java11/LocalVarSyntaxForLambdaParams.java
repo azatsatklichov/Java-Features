@@ -1,7 +1,9 @@
 package features.in.java11;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import features.in.java10.LocalVarTypeInference;
@@ -22,7 +24,7 @@ public class LocalVarSyntaxForLambdaParams {
 				"JEP 323 allows var to be used to declare the formal parameters of an implicitly typed lambda expression.");
 
 		// (var s1, var s2) -> s1 + s2
-		// This was possible in Java 8 too but got removed in Java 10. Now it’s back in
+		// This was possible in Java 8 too but got removed in Java 10. Now itï¿½s back in
 		// Java 11 to keep things uniform.
 		// This makes the usage of var uniform in both local variables and lambda
 		// parameters.
@@ -46,13 +48,13 @@ public class LocalVarSyntaxForLambdaParams {
 		 */
 
 		// Local-Variable Syntax for Lambda Parameters
-		//System.out.println("J11 - Local-Variable Syntax for Lambda Parameters");
+		// System.out.println("J11 - Local-Variable Syntax for Lambda Parameters");
 		/**
 		 * local-Variable Syntax for Lambda Parameters is the only language feature
 		 * release in Java 11. In Java 10, Local Variable Type Inference was introduced.
 		 * Thus we could infer the type of the variable from the
 		 * 
-		 * RHS – var list = new ArrayList<String>();
+		 * RHS ï¿½ var list = new ArrayList<String>();
 		 * 
 		 * 
 		 */
@@ -62,5 +64,26 @@ public class LocalVarSyntaxForLambdaParams {
 		System.out.println(list2);
 		var list3 = List.of("hello", "hi");
 		System.out.println(list3);
+	}
+}
+
+class MoreExamples {
+	public static void main(String[] args) {
+		// Java 11 adds support for the var keyword in lambda parameters.
+		List<String> list = Arrays.asList("a", "b", "c");
+		String result = list.stream().map((var x) -> x.toUpperCase()).collect(Collectors.joining(","));
+		System.out.println(result);
+
+		// lambda can make type inference; the above example is equivalent to this:
+		List<String> list2 = Arrays.asList("a", "b", "c");
+		String result2 = list.stream().map(x -> x.toUpperCase()).collect(Collectors.joining(","));
+		System.out.println(result2);
+		
+		//why Java 11 adds var in lambda parameters? The benefit is now we can add annotations to the lambda parameters
+		//import org.jetbrains.annotations.NotNull;
+		  List<String> list3 = Arrays.asList("a", "b", "c", null);
+		  //String result3 = list.stream().map((@NotNull var x) -> x.toUpperCase()).collect(Collectors.joining(","));
+		  //System.out.println(result3);
+
 	}
 }

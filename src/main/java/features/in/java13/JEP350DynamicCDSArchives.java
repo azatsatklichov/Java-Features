@@ -69,9 +69,21 @@ public class JEP350DynamicCDSArchives {
 		 * activated with command line commands. In a future extension, the archiving of
 		 * classes could then run completely automatically and transparently.
 		 */
-		
-		//Dynamic AppCDS Archives
-		
+
+		// Dynamic AppCDS Archives
+		System.out.println("This JEP simplifying the process of creating CDS archives.");
+		/**
+		 * 
+		 * The Class Data Sharing (CDS) improves startup performance by creating a
+		 * class-data archive once and reusing it so that the JVM needs not to recreate
+		 * it again.
+		 * 
+		 * <pre>
+		 * $ java -XX:ArchiveClassesAtExit=hello.jsa -cp hello.jar Hello
+		 * 
+		 * 
+		 * </pre>
+		 */
 
 	}
 

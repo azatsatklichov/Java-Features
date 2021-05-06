@@ -6,7 +6,7 @@
 [Wikipedia](https://en.wikipedia.org/wiki/Java_version_history#JDK_1.0)
 
 
-# Java 1 Features 
+# Java 1 Features (GA January 1996), Java 1.1 (February 1997)
 The first version was released on January 23, 1996. The first stable version, JDK 1.0.2, is called Java 1.
 Java 1.1 Major additions in the release on February 19, 1997 included:
 - an extensive retooling of the AWT event model
@@ -20,7 +20,7 @@ Java 1.1 Major additions in the release on February 19, 1997 included:
 
 
 
-# Java 2 Features 
+# Java 2 Features (GA December 1998)
 Codename Playground. The release on December 8, 1998 and subsequent releases through J2SE were rebranded retrospectively Java 2 and the version name "J2SE" (Java 2 Platform, Standard Edition) replaced JDK to distinguish the base platform from J2EE (Java 2 Platform, Enterprise Edition) and J2ME (Java 2 Platform, Micro Edition). This was a very significant release of Java as it tripled the size of the Java platform to 1520 classes in 59 packages. Major additions included:
 - strictfp keyword
 - the Swing graphical API was integrated into the core classes
@@ -30,7 +30,7 @@ Codename Playground. The release on December 8, 1998 and subsequent releases thr
 - Collections framework
 
 
-# Java 3 Features
+# Java 3 Features (GA May 2000)
 Codename Kestrel ([API](https://docs.oracle.com/javase/1.3/docs/api/)). The most notable changes in the May 8, 2000 release were: 
 - HotSpot JVM included (the HotSpot JVM was first released in April 1999 for the J2SE 1.2 JVM)
 - RMI was modified to support optional compatibility with CORBA
@@ -40,7 +40,7 @@ Codename Kestrel ([API](https://docs.oracle.com/javase/1.3/docs/api/)). The most
 - Synthetic proxy classes
 
 
-# Java 4 Features
+# Java 4 Features (GA February 2002)
 Codename Merlin ([API](https://docs.oracle.com/javase/1.4.2/docs/api/)). The February 6, 2002 release was the first release of the Java platform developed under the Java Community Process as JSR 59. Major changes included:
 
 - Language changes
@@ -62,7 +62,7 @@ Public support and security updates for Java 1.4 ended in October 2008. Paid sec
 
 
 
-# Java 5 Features
+# Java 5 Features (GA September 2004)
 [Java SE 5 Documentation](https://docs.oracle.com/javase/1.5.0/docs/), 
 [API](https://docs.oracle.com/javase/1.5.0/docs/api/), 
 [Features](https://www.oracle.com/technetwork/articles/entarch/java-5-features-083037.html)
@@ -91,7 +91,7 @@ Version 1.5.0 or 5.0?  This correspondence continued through later releases (Jav
 
 
 
-# Java 6 Features
+# Java 6 Features (GA December 2006)
 [Java SE 6 Documentation](https://docs.oracle.com/javase/6/docs/),
 [API](https://docs.oracle.com/javase/6/docs/api/),  
 [Open JDK](https://openjdk.java.net/projects/jdk6/)
@@ -114,7 +114,7 @@ Major changes included in this version:
 
 
 
-# JavaSE 7 Features
+# JavaSE 7 Features (GA July 2011)
 [Java SE 7 Documentation](https://docs.oracle.com/javase/7/docs/index.html),
  [API](https://docs.oracle.com/javase/7/docs/api/), 
 [Open JDK](https://openjdk.java.net/projects/jdk7/)
@@ -130,7 +130,7 @@ The important features of JavaSE 7 are try with resource, catching multiple exce
 - Underscores in Numeric Literals (Java 7)
 
 
-# JavaSE 8 Features (initial release 18-Mar 2014)
+# JavaSE 8 Features (GA initial release 18-Mar 2014)
 [JDK 8 doc](https://docs.oracle.com/javase/8/),
 [API](https://docs.oracle.com/javase/8/docs/api/),  
 [What's New in JDK 8](https://www.oracle.com/technetwork/java/javase/8-whats-new-2157071.html), 
@@ -172,8 +172,7 @@ The important features of JavaSE 8 are lambda expressions, methods references, d
 - The `jarsigner`  command is provided to invoke the Nashorn engine.
 
 
-
-# Java 9 Features
+# Java 9 Features (GA 21/09/2017)
 [JDK 9 doc](https://docs.oracle.com/javase/9/),
 [API](https://docs.oracle.com/javase/9/docs/api/overview-summary.html),   
 [What's New in JDK 9](https://docs.oracle.com/javase/9/whatsnew/toc.htm), 
