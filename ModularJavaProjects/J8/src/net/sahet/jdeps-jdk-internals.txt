@@ -1,0 +1,35 @@
+C:\workspace-JavaNew\J8\src\net\sahet>javac --add-exports java.base/sun.security.x509=ALL-UNNAMED  MigrationExample.java
+MigrationExample.java:5: warning: X500Name is internal proprietary API and may be removed in a future release
+import sun.security.x509.X500Name;
+                        ^
+MigrationExample.java:10: warning: X500Name is internal proprietary API and may be removed in a future release
+                X500Name nem = new X500Name("CN=user");
+                ^
+MigrationExample.java:10: warning: X500Name is internal proprietary API and may be removed in a future release
+                X500Name nem = new X500Name("CN=user");
+                                   ^
+3 warnings
+
+C:\workspace-JavaNew\J8\src\net\sahet>jdeps MigrationExample.class
+MigrationExample.class -> java.base
+   net.sahet                                          -> java.io                                            java.base
+   net.sahet                                          -> java.lang                                          java.base
+   net.sahet                                          -> sun.security.x509                                  JDK internal API (java.base)
+
+C:\workspace-JavaNew\J8\src\net\sahet>jdeps -jdkinternals  MigrationExample.class
+MigrationExample.class -> java.base
+   net.sahet.MigrationExample                         -> sun.security.x509.X500Name                         JDK internal API (java.base)
+
+Warning: JDK internal APIs are unsupported and private to JDK implementation that are
+subject to be removed or changed incompatibly and could break your application.
+Please modify your code to eliminate dependence on any JDK internal APIs.
+For the most recent update on JDK internal API replacements, please check:
+https://wiki.openjdk.java.net/display/JDK8/Java+Dependency+Analysis+Tool
+
+JDK Internal API                         Suggested Replacement
+----------------                         ---------------------
+sun.security.x509.X500Name               Use javax.security.auth.x500.X500Principal @since 1.4
+
+C:\workspace-JavaNew\J8\src\net\sahet>javac MigrationExampleReplaced.java
+
+C:\workspace-JavaNew\J8\src\net\sahet>

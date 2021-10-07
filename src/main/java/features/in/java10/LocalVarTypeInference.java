@@ -69,6 +69,10 @@ public class LocalVarTypeInference {
 		 * Local declared in for loop
 		 */
 		var numbers = List.of(1, 2, 3, 4, 5); // inferred value List<Integer>
+		
+		//unmodifiable copies, using Java 10 new method.
+		var numms = List.copyOf(numbers);
+		
 		// Index of Enhanced For Loop
 		for (var number : numbers) {
 			System.out.println(number);
@@ -87,6 +91,8 @@ public class LocalVarTypeInference {
 		// public var = "hello"; // error: 'var' is not allowed here
 		// var p = (String s) -> s.length() > 10; // error: lambda expression needs an
 		// explicit target-type
+		
+		var arr = new int[] {1,2,3};
 		// var arr = { 1, 2, 3 }; // error: array initializer needs an explicit
 		// target-type
 
@@ -123,7 +129,7 @@ public class LocalVarTypeInference {
 		 */
 
 		var empList = new ArrayList<>();
-		// ArrayList<Object>
+		// inferred as ArrayList<Object>
 
 		// The type of empListwill be ArrayList<Object>and not List<Object>.
 		// If we want it to be ArrayList<Employee>, we will have to be explicit:
@@ -131,12 +137,17 @@ public class LocalVarTypeInference {
 
 		// Using var with non-denotable types could cause unexpected error.
 		// var obj = new Object() {};
+		//inferred type is: Object$1 extends Object 
+		
 		// assertFalse(obj.getClass().equals(Object.class));
 
 		// Now, if we try to assign another Objectto obj, we would get a compilation
 		// error:
 		// obj = new Object(); // error: Object cannot be converted to <anonymous
 		// Object>
+		
+		//another non-denotable type is
+		var lll = List.of(1, 3.6, "4.6"); //List<? extends Serializable & Comparable<..>> 
 
 		// This enhancement helps in reducing the boilerplate code; for example:
 		// Pre Java 10
@@ -249,11 +260,13 @@ class LegalLocalVarInferenceDemo {
 }
 
 class IllegalLocalVarInferenceDemo2 {
-	// Not permitted in class fields
+	// Not permitted in class fields/member
 	// var someProperty;
 
 	// Not allowed as parameter for constructor
 	// public LocalVarInferenceDemo(var param1){
+	
+	//here compiler knows type, only via tracing all stack-invocations,....
 
 	// }
 

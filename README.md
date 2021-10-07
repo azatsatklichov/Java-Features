@@ -366,9 +366,21 @@ Oracle has released Java 9 with rich set of new features. It includes various up
 
 JEPs targeted to JDK 17, so far
 
-- 356: Enhanced Pseudo-Random Number Generators 2021/02/04 
-- 382: New macOS Rendering Pipeline 2021/03/04 
-- 391: macOS/AArch64 Port 2021/03/23 
-- 398: Deprecate the Applet API for Removal 2021/03/23 
+- 306: Restore Always-Strict Floating-Point Semantics
+- 356: Enhanced Pseudo-Random Number Generators
+- 382: New macOS Rendering Pipeline
+- 391: macOS/AArch64 Port
+- 398: Deprecate the Applet API for Removal
+- 403: Strongly Encapsulate JDK Internals
+- 406: Pattern Matching for switch (Preview)
+- 407: Remove RMI Activation
+- 409: Sealed Classes
+- 410: Remove the Experimental AOT and JIT Compiler
+- 411: Deprecate the Security Manager for Removal
+- 412: Foreign Function & Memory API (Incubator)
+- 414: Vector API (Second Incubator)
+- 415: Vector API (Second Incubator) 
+
+
 
 

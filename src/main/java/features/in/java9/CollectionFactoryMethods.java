@@ -44,7 +44,7 @@ class OldWayOfCreationOrConversion {
 		System.out.println(strings);
 
 		// try other way
-		// List<String> ooo = new ArrayList<>() {{ add("try workaround "); }};
+		List<String> ooo = new ArrayList<>() {{ add("try workaround1 ");add("try workaround2 "); }};
 
 		strings = Collections.singletonList(new String("ds"));
 		System.out.println(strings);

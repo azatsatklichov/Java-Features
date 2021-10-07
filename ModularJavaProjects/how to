@@ -1,0 +1,12 @@
+
+1. Import each of these 4 projects as separate java projects
+
+2. J8 - shows Java 8 and Java 9 migration issue
+
+3. In J8 there are instructions how to create modular app. and how to
+create runtime-images
+
+4. ModularJava project - shows how to create 2 modular app., and usage of one into another
+
+5. These 2 projects, modulclient and modulcore applications are how to create modular app in Eclipse
+via  exploded source modul and modular jar file. 

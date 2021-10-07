@@ -10,4 +10,16 @@ bin/run-set-java12home.bat
 Java-Features.iml
 /bin/
 
-/pluralsight
+leak.jfr
+leak2.jfr
+7z.exe
+ModularJavaProjects/bin
+ModularJavaProjects/out
+ModularJavaProjects/out-jar
+ModularJavaProjects/out-standalone
+ModularJavaProjects/out-standalone-optimized
+ModularJavaProjects/J8/.project
+ModularJavaProjects/J8/.classpath
+ModularJavaProjects/J8/.settings
+/location.obj
+/java

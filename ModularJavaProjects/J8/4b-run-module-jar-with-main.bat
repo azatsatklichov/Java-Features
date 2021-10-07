@@ -1,0 +1,1 @@
+java -jar out-jar/core-modul-with-main.jar

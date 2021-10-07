@@ -1,0 +1,46 @@
+4 << 9
+2<<3
+2>>>3
+$4+1
+4 << 9
+2<<3
+2>>>3
+$4+1
+4 << 9
+2<<3
+2>>>3
+echo $2;
+$4+1
+System.out.println("halo")
+Thread.sleep(10)
+Thread.sleep(10000)
+"ab c".matches("[ab]+b\sc")
+"ab c".matches("[ab]+b\sc")
+"ab c".matches("[ab]+b\\sc")
+"ada me".matches("[ad]+b\\sme")
+"ada me".matches("[ada]+b\\sme")
+"ad me".matches("[ad]+b\\sme")
+"ada me".matches("[ada]+b\sme")
+"ad me".matches("[ada]+b\sme")
+"ad me".matches("[ad]+b\sme")
+"ad e".matches("[ad]+b\se")
+"ad e".matches("[ad]+b\\se")
+"ab c".matches("[ab]+b\sc")
+"ad c".matches("[ad]+b\sc")
+"az c".matches("[az]+b\sc")
+"az c".matches("[az]+b\sc")
+"ab c".matches("[ab]+b\sc")
+"az c".matches("[az]b\sc")
+"az c".matches("[a]+z\sc")
+"aaaz c".matches("[a]+z\sc")
+int x=1;
+int i=23;
+i=34
+Module which(Class c){
+    return c.getModule();
+}
+which(String.class)
+which(java.util.List.class)
+class Cat {
+    int v=3;
+}

@@ -2,11 +2,13 @@
 
 Read about Java Modularity more: https://javamodularity.com/
 
-
 >java --list-modules
+
+>java --describe-module java.sql
 
 //like opening a module-info.class or module-info.java
 >java --describe-module java.sql
+
 
 
 -- Migrating Java 8 to Modular-Java9 or greater
@@ -34,6 +36,7 @@ Or if you can not change the code the
 
 -- Profile TOOL "jdeps" to find out how deep encapsulated modules used
 >jdeps  -jdkinternals Main.class
+
 > jdeps -jdkinternals zAllOtherNews.class
 >C:\workspace_ext\Java-Features\bin\features\in\java9>jdeps -jdkinternals SafeVargs.class
 

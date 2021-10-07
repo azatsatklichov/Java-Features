@@ -1,0 +1,38 @@
+
+https://www.journaldev.com/13543/javase9-simple-module-cmd-prompt-part3
+
+ DO OPERATION ON COMMAND LINE (not in Eclipse)
+ 
+1. run compile-core 
+>compile-core-module-both.bat
+
+2. run create-core-modul jar 
+>2b-create-core-module-jar.bat 
+
+3. to continue with client modul, remove output (clean up)
+>3-rmdir-cleanup.bat
+
+4. compile client module
+
+>4a
+>4b
+
+5. run app
+
+>5-run-client.bat 
+ 
+ 
+
+I just tried with this approach, but on different naming (works, but need to update some commands)
+Modules: "core.modul", "app.client.modul" 
+ 
+ 1. javac -d output core.modul\core\modul\Fibo.java core.modul\module-info.java
+ 2a. jar -c -f  core.modul.jar -C output . 
+ 2b. just move/copy above created jar file under mlib manually (this approach easier)
+ 
+ 3. remove output folder (cleanup, before building client module)
+ 
+ 4a. javac --module-path mlib -d output app.client.modul\module-info.java
+ 4b. javac --module-path mlib -d output app.client.modul\module-info.java
+ 
+ 5. java --module-path "mlib;output" -m app.client.modul/app.client.modul.ClientApp

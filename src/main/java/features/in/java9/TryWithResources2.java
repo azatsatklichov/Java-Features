@@ -13,16 +13,14 @@ public class TryWithResources2 {
     }
 
     public void doWithFile(FileInputStream fis) throws IOException {
-
         // fis = null; // Re-assignment makes fis not 'effectively final'
         try (FileInputStream fis2 = fis) {
             fis2.read();
         }
-
         // Only if fis is 'effectively final', can this form be used
+        //effective final is: declared and defined before but never re-assigned during program-execution
         try (fis) {
             fis.read();
         }
-
     }
 }

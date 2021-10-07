@@ -1,0 +1,1 @@
+java --source 11 single-shebang-incmd

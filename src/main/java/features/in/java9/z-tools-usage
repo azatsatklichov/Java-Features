@@ -1,0 +1,64 @@
+
+-- jdeprscan --
+
+C:\workspace-JavaNew\Java-Features\src\main\java\features\in\java9>javac ProcessApiImprovements_JEP102.java
+
+C:\workspace-JavaNew\Java-Features\src\main\java\features\in\java9>jdeprscan.exe  --class-path  . ProcessApiImprovements_JEP102
+class features/in/java9/ProcessApiImprovements_JEP102 uses deprecated method java/awt/List::addItem(Ljava/lang/String;)V
+
+
+-- jdeps --
+C:\workspace-JavaNew\Java-Features\src\main\java\features\in\java9>jdeps .
+. -> java.base
+. -> java.desktop
+. -> java.management
+   features.in.java9                                  -> java.awt                                           java.desktop
+   features.in.java9                                  -> java.io                                            java.base
+   features.in.java9                                  -> java.lang                                          java.base
+   features.in.java9                                  -> java.lang.invoke                                   java.base
+   features.in.java9                                  -> java.lang.management                               java.management
+   features.in.java9                                  -> java.time                                          java.base
+   features.in.java9                                  -> java.util                                          java.base
+   features.in.java9                                  -> java.util.concurrent                               java.base
+   features.in.java9                                  -> java.util.function                                 java.base
+   features.in.java9                                  -> java.util.stream                                   java.base
+
+or
+C:\workspace-JavaNew\Java-Features\src\main\java\features\in\java9>jdeps   -summary .
+. -> java.base
+. -> java.desktop
+. -> java.management
+
+or
+C:\workspace-JavaNew\Java-Features>jdeps  -jdkinternals .
+
+or 
+C:\workspace-JavaNew\Java-Features\src\main\java>jdeps .
+
+or
+>jdeps -jdkinternals ProcessApiImprovements_JEP102.class
+
+
+
+on JAR
+
+-on java modules
+>jdeps -m java.base
+>jdeps -m java.httpclient
+
+--to find one module dependent to other
+>jdeps --require java.logging -m java.sql
+
+
+
+-- jlink --
+>jlink --module-path mods/:%JAVA_HOME/jmods --add-modules comp-packt --output img 
+
+
+
+
+--jmod---
+
+
+
+ 

@@ -1,0 +1,1 @@
+javac -d output core.modul\core\modul\Fibo.java core.modul\module-info.java

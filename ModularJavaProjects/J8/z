@@ -1,0 +1,19 @@
+
+http://tutorials.jenkov.com/java/modules.html#java-module-benefits
+
+
+Compiling a Java Module
+
+1-compile-module.bat
+
+//in case running command line with any Java version, you can change it
+>"C:\Program Files\Java\jdk-9.0.4\bin\javac" -d out  javac -d out --module-source-path src --module test.core.modul
+
+or you can build-it with ANT:
+http://tutorials.jenkov.com/ant/build-java-modules.html
+
+
+
+-- jlink other ways
+
+ 

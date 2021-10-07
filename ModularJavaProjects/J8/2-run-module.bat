@@ -1,0 +1,1 @@
+java --module-path out --module test.core.modul/test.core.modul.Fibo

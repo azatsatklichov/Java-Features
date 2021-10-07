@@ -1,0 +1,1 @@
+java --module-path out-jar -m test.core.modul/test.core.modul.Fibo

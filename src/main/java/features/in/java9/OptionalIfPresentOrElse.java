@@ -6,6 +6,11 @@ import java.util.Optional;
 public class OptionalIfPresentOrElse {
 
     public static void main(String... args) {
+    	
+    	Optional<Integer> i = Optional.empty();
+    	i.map(n -> n + 1); 
+    	System.out.println("? = "+i);
+    	
         Optional<Book2> full = Optional.of(new Book2("Oka", 4.4)); //Book2.getBook()
 
         // Before ifPresentOrElse
