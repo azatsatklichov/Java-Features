@@ -1,0 +1,67 @@
+
+======> BIG FILE
+--- on GraalVM  enabling (by default) Graal compiler -----  
+
+
+--- on Java 11 - Hotspot ----- Disabling Graal: java  -XX:-UseJVMCICompiler  Demo2
+ 
+Processing ...
+the = 798000
+antlr = 756000
+and = 476000
+a = 420000
+in = 308000
+of = 280000
+to = 280000
+for = 266000
+is = 266000
+language = 252000
+
+Elapsed time = 12826 millisec
+
+
+
+
+
+
+
+======> SMAAL FILE
+--- on GraalVM  enabling (by default) Graal compiler -----  
+Processing ...
+the = 39628
+antlr = 37546
+and = 23644
+a = 20861
+in = 15295
+of = 13909
+to = 13907
+is = 13216
+for = 13214
+language = 12515
+
+Elapsed time = 913 millisec
+
+
+--- on Java 11 - Hotspot ----- Disabling Graal: java  -XX:-UseJVMCICompiler  Demo2
+Processing ...
+the = 39628
+antlr = 37546
+and = 23644
+a = 20861
+in = 15295
+of = 13909
+to = 13907
+is = 13216
+for = 13214
+language = 12515
+
+Elapsed time = 1101 millisec
+
+
+--- on GraalVM  using AOT --  One of those is to compile ahead-of-time, to a native executable image, instead of compiling just-in-time at runtime.   
+>  native-image --no-server --no-fallback Demo2
+
+For runtime components like the garbage collector we are running our own new VM called the SubstrateVM, which like GraalVM is also written in Java.
+
+
+

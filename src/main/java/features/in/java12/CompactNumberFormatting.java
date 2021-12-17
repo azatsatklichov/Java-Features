@@ -18,14 +18,24 @@ public class CompactNumberFormatting {
 	 */
 	public static void main(String[] args) {
 		System.out.println("Compact Formatting\n");
+		
+		
 		NumberFormat upvotes = NumberFormat.getCompactNumberInstance(new Locale("en", "US"), NumberFormat.Style.SHORT);
-		upvotes.setMaximumFractionDigits(1);
 
 		
+		//rounding case 
+		System.out.println("\n rounding case Number:  NumberFormat::setRoundingMode");
+		System.out.println(upvotes.format(1500)); 
+		
+		
+		upvotes.setMaximumFractionDigits(1);		
 		System.out.println(upvotes.format(2592) + " upvotes");
+		System.out.println(upvotes.format(1500)); 
+		
 		upvotes.setMaximumFractionDigits(2);
 
 		System.out.println(upvotes.format(2592) + " upvotes\n");
+		System.out.println(upvotes.format(1500)); 
 
 		NumberFormat upvotes2 = NumberFormat.getCompactNumberInstance(new Locale("en", "US"), NumberFormat.Style.LONG);
 		upvotes2.setMaximumFractionDigits(2);
@@ -33,6 +43,7 @@ public class CompactNumberFormatting {
 
 		final String[] compactPatterns = { "", "", "", "0k", "00k", "000k", "0m", "00m", "000m", "0b", "00b", "000b",
 				"0t", "00t", "000t" };
+		//or look compact-number docs for more
 
 		final DecimalFormat decimalFormat = (DecimalFormat) NumberFormat.getNumberInstance(Locale.GERMANY);
 
@@ -40,6 +51,8 @@ public class CompactNumberFormatting {
 
 		final CompactNumberFormat customCompactNumberFormat = new CompactNumberFormat(decimalFormat.toPattern(),
 				decimalFormat.getDecimalFormatSymbols(), compactPatterns);
+		
+	
 		
 		
 		

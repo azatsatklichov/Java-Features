@@ -2,10 +2,16 @@ package features.in.java14;
 
 import java.time.Duration;
 
+//see the packahe: net.sahet.record 
 public class RecordsDemo {
 	public static void main(String... args) {
 		Course course = new Course("What's New in Java 14", Duration.ofHours(1), 5);
-		Course course2 = new Course("What's New in Java 14", Duration.ofHours(1), 6);
+		Course course2 = new Course("What's New in Java 14", Duration.ofHours(1), 5);
+
+		System.out.println(course == course2);
+		System.out.println(course.equals(course2));
+		
+		course2 = new Course("What's New in Java 14", Duration.ofHours(1), 6);
 
 		System.out.println(course == course2);
 		System.out.println(course.equals(course2));

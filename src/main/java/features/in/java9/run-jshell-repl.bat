@@ -4,6 +4,8 @@ jshell
 
 jshell>1+3
 
+ ^l  like clr
+
 
 
 echo int doubled(int i){ return i*2;}

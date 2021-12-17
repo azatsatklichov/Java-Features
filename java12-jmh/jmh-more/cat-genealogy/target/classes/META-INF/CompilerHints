@@ -1,0 +1,11 @@
+dontinline,*.*_all_jmhStub
+dontinline,*.*_avgt_jmhStub
+dontinline,*.*_sample_jmhStub
+dontinline,*.*_ss_jmhStub
+dontinline,*.*_thrpt_jmhStub
+inline,com/joshcummings/cats/DistinctCatsUsingJmh.setup
+inline,com/joshcummings/cats/DistinctCatsUsingJmh.testArrayList
+inline,com/joshcummings/cats/DistinctCatsUsingJmh.testHashSet
+inline,com/joshcummings/cats/DistinctCatsUsingJmh.testLinkedList
+inline,com/joshcummings/cats/DistinctCatsUsingJmh.testParallelStream
+inline,com/joshcummings/cats/DistinctCatsUsingJmh.testStream

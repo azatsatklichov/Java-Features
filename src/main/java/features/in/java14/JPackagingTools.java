@@ -11,6 +11,8 @@ public class JPackagingTools {
 	// JEP392
 
 	/**
+	 * read: https://www.baeldung.com/java14-jpackage
+	 * 
 	 * <pre>
 	 * # compile
 	>  javac JPackagingTools.java
@@ -20,23 +22,13 @@ public class JPackagingTools {
 	> C:\apps\Java\jdk-15\bin\jpackage  -i . -n JPackagingTools --main-jar hello.jar --main-class JPackagingTools
 	
 	
-	
-	# create a jar file
-	$ jar cvf JPackagingTools.jar JPackagingTools.class
-	
-	# package the jar file into platform-specific package
-	$ /opt/jdk-16/bin/jpackage -i . -n JPackagingTools --main-jar JPackagingTools.jar --main-class JPackagingTools
-	
-	# The jpackage created this jep392_1.0-1_amd64.deb
-	$ ls -lsah
-	4.0K -rw-rw-r--  1 mkyong mkyong  994 Mac  15 13:52 hello.jar
-	30M -rw-r--r--  1 mkyong mkyong  30M Mac  15 14:01 jep392_1.0-1_amd64.deb
+	  
 	 * </pre>
 	 */
 	public static void main(String[] args) {
 
-		//https://mkyong.com/java/what-is-new-in-java-16/#jep-392-packaging-tool
-		
+		// https://mkyong.com/java/what-is-new-in-java-16/#jep-392-packaging-tool
+
 		JFrame frame = new JFrame("Hello World Java Swing");
 		// display frame site
 		frame.setMinimumSize(new Dimension(800, 600));

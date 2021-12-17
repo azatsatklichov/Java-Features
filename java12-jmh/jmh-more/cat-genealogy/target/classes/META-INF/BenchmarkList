@@ -1,0 +1,5 @@
+JMH S 42 com.joshcummings.cats.DistinctCatsUsingJmh S 75 com.joshcummings.cats.generated.DistinctCatsUsingJmh_testLinkedList_jmhTest S 14 testLinkedList S 10 Throughput E A 1 1 1 E E E E E E E E E E E E E E E E E 
+JMH S 42 com.joshcummings.cats.DistinctCatsUsingJmh S 79 com.joshcummings.cats.generated.DistinctCatsUsingJmh_testParallelStream_jmhTest S 18 testParallelStream S 10 Throughput E A 1 1 1 E E E E E E E E E E E E E E E E E 
+JMH S 42 com.joshcummings.cats.DistinctCatsUsingJmh S 74 com.joshcummings.cats.generated.DistinctCatsUsingJmh_testArrayList_jmhTest S 13 testArrayList S 10 Throughput E A 1 1 1 E E E E E E E E E E E E E E E E E 
+JMH S 42 com.joshcummings.cats.DistinctCatsUsingJmh S 71 com.joshcummings.cats.generated.DistinctCatsUsingJmh_testStream_jmhTest S 10 testStream S 10 Throughput E A 1 1 1 E E E E E E E E E E E E E E E E E 
+JMH S 42 com.joshcummings.cats.DistinctCatsUsingJmh S 72 com.joshcummings.cats.generated.DistinctCatsUsingJmh_testHashSet_jmhTest S 11 testHashSet S 10 Throughput E A 1 1 1 E E E E E E E E E E E E E E E E E 

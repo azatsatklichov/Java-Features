@@ -1,0 +1,1 @@
+jcmd 17660 JFR.start duration=30s settings=profile filename=C:/workspace-JavaNew/Java-Features/leak_bigMemory_jcmd.jfr

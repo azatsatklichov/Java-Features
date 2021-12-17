@@ -1,11 +1,10 @@
 package features.in.java10;
 
 /**
- * I.A. Taze baslyk steward aydypdy, birotala Java 11 e gecyas didyi, sebabi LTS
- * - Long term Support model of Oracle
+ * I.A. Okuz steven aydypdy, birotala Java 11 e gecyas didyi, sebabi LTS
  * 
- *
- * Time-Based Release Versioning
+ * - Long term Support model of Oracle
+ * - Time-Based Release Versioning
  * 
  * <pre>
  * This JEP talks about revising the version

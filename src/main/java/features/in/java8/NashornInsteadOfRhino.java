@@ -23,10 +23,10 @@ public class NashornInsteadOfRhino {
 				+ "but suffered from two faults";
 		/*
 		 * First, compiling time was long since generating bytecode and loading the
-		 * generated classes was a resource-intensive process. Also, the implementation
-		 * effectively leaked memory since most Java Virtual Machines (JVM) didn't
-		 * collect unused classes or the strings that are interned as a result of
-		 * loading a class file
+		 * generated classes was a resource-intensive process. 
+		 * 
+		 * Also, the implementation effectively leaked memory since most Java Virtual Machines (JVM) didn't
+		 * collect unused classes or the strings that are interned as a result of loading a class file
 		 */
 
 		System.out.println();

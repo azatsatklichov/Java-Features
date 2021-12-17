@@ -1,0 +1,1 @@
+emcc -o floyd.wasm floyd.c

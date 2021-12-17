@@ -35,5 +35,32 @@ public class IformativeNPE {
 	public static String showUpperCase(String str) {
 		return str.toUpperCase(Locale.US);
 	}
+}
 
+class HelpfulNPEDemo {
+
+	public static void main(String... args) {
+		Object myObject = null;
+		myObject.toString().hashCode(); 
+	}
+
+}
+
+
+class HelpfulNPEDemo2 {
+
+	public static void main(String... args) { 
+		var a = null; // new A();
+		a.b = 1; // Exception in thread "main" java.lang.NullPointerException: Cannot assign
+					// field "b" because "a" is null
+		var a = new Object[][] { null };
+		a[0][1] = new Object(); // … Cannot store to object array because "a[0]" is null because "a" is null
+
+	}
+
+}
+
+//TBD
+class A {
+	int b;
 }

@@ -1,0 +1,1 @@
+wasm --Builtins=wasi_snapshot_preview1 floyd.wasm

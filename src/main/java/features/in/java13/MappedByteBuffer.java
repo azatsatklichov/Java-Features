@@ -5,6 +5,8 @@ import java.nio.ByteBuffer;
 public class MappedByteBuffer {
 
 	public static void main(String[] args) {
+
+		System.out.println("bb");
 		ByteBuffer bbuf = ByteBuffer.allocate(10);
 
 		int capacity = bbuf.capacity();
@@ -23,6 +25,8 @@ public class MappedByteBuffer {
 		bbuf.limit(7); // 1 left
 
 		bbuf.rewind(); // 7 left
+		
+		System.out.println("done");
 	}
 
 }

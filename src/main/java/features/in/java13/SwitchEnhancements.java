@@ -3,7 +3,7 @@ package features.in.java13;
 /**
  * 1. from java 13 onwards - multi-label case statements
  * 
- * 2. A new keyword �yield� is introduced to return a value from the switch.
+ * 2. A new keyword yield is introduced to return a value from the switch.
  *
  */
 public class SwitchEnhancements {
@@ -21,7 +21,7 @@ public class SwitchEnhancements {
 			break;
 		case 4:
 		case 5:
-		case 6:
+		case 6: 
 			result = "four or five or six";
 			break;
 		default:
@@ -29,7 +29,15 @@ public class SwitchEnhancements {
 		}
 		;
 		return result;
-	}
+	} 
+	
+	 
+	
+	 
+ 
+	
+ 
+	 
 
 	// In Java 12, we can use break to return a value from a switch.
 //	private static String getNumberViaBreak(int number) {
@@ -96,7 +104,7 @@ public class SwitchEnhancements {
 		case 4, 5, 6 -> {
 			int i = 0;
 			i++;
-			yield "four or five or six :" + 1;
+			yield "four or five or six :" + 1; //return in BLOCK 
 		}
 		default -> "unknown";
 		};
@@ -133,7 +141,7 @@ public class SwitchEnhancements {
 
 		// switch expressions, use yield to return, in Java 12 it was break
 		/**
-		 * A new keyword �yield� is introduced to return a value from the switch. Python
+		 * A new keyword  yield  is introduced to return a value from the switch. Python
 		 * has similar concept.
 		 * 
 		 * P.S This is a preview language feature in Java 13

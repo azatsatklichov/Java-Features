@@ -10,7 +10,7 @@ import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 public class IOEnhancements {
-	private final static String filePath = "\\workspace_ext\\Java-Features\\src\\features\\in\\java8\\test.js";
+	private final static String filePath = "\\workspace-JavaNew\\Java-Features\\src\\main\\java\\features\\in\\java8\\test.js";
 
 	public static void main(String[] args) {
 		// Java 7

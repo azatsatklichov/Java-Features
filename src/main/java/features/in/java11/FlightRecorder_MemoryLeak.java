@@ -11,12 +11,10 @@ public class FlightRecorder_MemoryLeak {
 	/**
 	 * Run with JVM option
 	 * 
-	 * -XX:StartFlightRecording
+	 * -XX:StartFlightRecording=duration=30s,settings=profile,filename=leak2.jfr
 	 * 
 	 * 
-	 * OR in CMD >java
-	 * -XX:StartFlightRecording=duration=30s,settings=profile,filename=leak.jfr
-	 * FlightRecorder_MemoryLeak
+	 * OR in CMD >java -XX:StartFlightRecording=duration=30s,settings=profile,filename=leak2.jfr  FlightRecorder_MemoryLeak
 	 * 
 	 * 
 	 * 

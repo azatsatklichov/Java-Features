@@ -1,0 +1,1 @@
+java -XX:+PrintCompilation Demo2

@@ -2,6 +2,8 @@ package features.in.java12;
 
 import java.time.DayOfWeek;
 
+// see Java 13
+
 /**
  * Switch Expressions This is a preview feature.
  * 
@@ -16,113 +18,129 @@ import java.time.DayOfWeek;
  * javac -Xlint:preview --enable-preview -source 12 src/main/java/SwitchExpressions.java
  *
  */
-public class SwitchExpressions {
-
-	public static void main(String[] args) {
-		// day of week, starting from 1-sunday
-		final int day = 3;
-
-		// traditional switch
-		switch (day) {
-		case 2:
-		case 3:
-		case 4:
-		case 5:
-		case 6:
-			System.out.println("weekday 3,4,5,6");
-			break;
-		case 7:
-		case 1:
-			System.out.println("weekend");
-			break;
-		default:
-			System.out.println("invalid");
-		}
-
-		// case L -> syntax no break necessary, only code next to -> runs
-		switch (day) {
-		case 2, 3, 4, 5, 6 -> System.out.println("weekday -> 3,4,5,6");
-		case 7, 1 -> System.out.println("weekend");
-		default -> System.out.println("invalid");
-		}
-
-		// switch expression
-		final String attr = switch (day) {
-		case 2, 3, 4, 5, 6 -> "workings day";
-		case 7, 1 -> "weekend";
-		// it is possible to do this without a block and break
-		// so default -> "invalid"; is actually enough here
-		default ->  "invalid"; 
-		};
- 
-		System.out.println();
-		System.out.println("VALUE returned by SWITCH -> "+attr);
-		System.out.println();
-
-		
-		new SwitchExpressions().foo(2);
-		new SwitchExpressions().foo2(2);
-
-	}
-
-	public void foo(int i) {
-		switch (i) {
-		case 0, 1, 2:
-			System.out.println("Hello");
-		default:
-			System.out.println("World");
-		}
-	}
-
-	@SuppressWarnings("preview")
-	public void foo2(int i) {
-		switch (i) {
-			case 2 -> System.out.println("Hello2");
-			default -> System.out.println("World2");
-		}
-	}
-
-}
-
-class Test {
+//public class SwitchExpressions {
+//
+//	public static void main(String[] args) {
+//		// day of week, starting from 1-sunday
+//		final int day = 3;
+//
+//		// traditional switch
+//		switch (day) {
+//		case 2:
+//		case 3:
+//		case 4:
+//		case 5:
+//		case 6:
+//			System.out.println("weekday 3,4,5,6");
+//			break;
+//		case 7:
+//		case 1:
+//			System.out.println("weekend");
+//			break;
+//		default:
+//			System.out.println("invalid");
+//		}
+//
+//		// case L -> syntax no break necessary, only code next to -> runs
+//		switch (day) {
+//		case 2, 3, 4, 5, 6 -> System.out.println("weekday -> 3,4,5,6");
+//		case 7, 1 -> System.out.println("weekend");
+//		default -> System.out.println("invalid");
+//		}
+//
+//		// switch expression
+//		final String attr = switch (day) {
+//		case 2, 3, 4, 5, 6 -> "workings day";
+//		case 7, 1 -> "weekend";
+//		// it is possible to do this without a block and break
+//		// so default -> "invalid"; is actually enough here
+//		default ->  "invalid"; 
+//		};
+// 
+//		System.out.println();
+//		System.out.println("VALUE returned by SWITCH -> "+attr);
+//		System.out.println();
+//
+//		
+//		new SwitchExpressions().foo(2);
+//		new SwitchExpressions().foo2(2);
+//		
+//
+//		//block scope in Java 12 with break, but removed in Java 13
+//		String val = switch (day) {
+////		case 1 -> {
+////			String month = "Jan";
+////			break month;
+////		}
+////		case 2 -> {
+////			String month = "Feb";
+////			break month;
+////		}
+////		default -> "Unknown";
+////		};
+//
+//	}
+//
+//	public void foo(int i) {
+//		switch (i) {
+//		case 0, 1, 2:
+//			System.out.println("Hello");
+//		default:
+//			System.out.println("World");
+//		}
+//	}
+//
+//	@SuppressWarnings("preview")
+//	public void foo2(int i) {
+//		switch (i) {
+//			case 2 -> System.out.println("Hello2");
+//			default -> System.out.println("World2");
+//		}
+//	}
+//
+//}
+//
+//class Test {
+//	
+//	public static void main(String[] args) {
+//		String day_1 = getDay_1(Day.THUR);
+//		System.out.println(day_1);
+//	}
+//
+//	enum Day {
+//		MON, TUE, WED, THUR, FRI, SAT, SUN
+//	};
+//
+//	@SuppressWarnings("preview")
+//	public static String getDay_1(Day today) {
+//		return switch (today) {
+//		case MON, TUE, WED, THUR, FRI -> " today's working day is = "+today;
+//		case SAT, SUN -> "Weekend";
+//		}; 
+//	}
+//}
+//
+//class SwitchStatement {
+//
+//    public static void main(String[] args) {
+//
+//        DayOfWeek day = DayOfWeek.SATURDAY;
+//
+//        String activity;
+//
+//        switch (day) {
+//            case SATURDAY:
+//            case SUNDAY: activity = "Relax";
+//                         break;
+//            case MONDAY: activity = "Try to work";
+//                         break;
+//            default: activity = "Work";
+//        }
+//
+//        System.out.println(activity);  
+//
+//    }
+//}
+// 
 	
-	public static void main(String[] args) {
-		String day_1 = getDay_1(Day.THUR);
-		System.out.println(day_1);
-	}
-
-	enum Day {
-		MON, TUE, WED, THUR, FRI, SAT, SUN
-	};
-
-	@SuppressWarnings("preview")
-	public static String getDay_1(Day today) {
-		String day = switch (today) {
-		case MON, TUE, WED, THUR, FRI -> " today's working day is = "+today;
-		case SAT, SUN -> "Weekend";
-		};
-		return day;
-	}
-}
-
-class SwitchStatement {
-
-    public static void main(String[] args) {
-
-        DayOfWeek day = DayOfWeek.SATURDAY;
-
-        String activity;
-
-        switch (day) {
-            case SATURDAY:
-            case SUNDAY: activity = "Relax";
-                         break;
-            case MONDAY: activity = "Try to work";
-                         break;
-            default: activity = "Work";
-        }
-
-        System.out.println(activity);
-
-    }
-}
+ 

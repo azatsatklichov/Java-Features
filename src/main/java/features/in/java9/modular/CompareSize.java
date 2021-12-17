@@ -6,6 +6,7 @@ import java.text.DecimalFormat;
 public class CompareSize {
 
 	public static void main(String[] args) {
+		//To run this comparison test, first run the project J8 under Modular Java Projects 
 		System.out.println("MODULAR JAVA - see in ModularJavaProjects folder");
 		File folder1 = new File("C:\\apps\\Java\\jdk-17");
 		File folder2 = new File("C:\\workspace-JavaNew\\J8\\out-standalone");

@@ -1,0 +1,16 @@
+dontinline,*.*_all_jmhStub
+dontinline,*.*_avgt_jmhStub
+dontinline,*.*_sample_jmhStub
+dontinline,*.*_ss_jmhStub
+dontinline,*.*_thrpt_jmhStub
+inline,com/joshcummings/cats/DescendentsBenchmark.baseline
+inline,com/joshcummings/cats/DescendentsBenchmark.countCounting
+inline,com/joshcummings/cats/DescendentsBenchmark.listCats
+inline,com/joshcummings/cats/DescendentsBenchmark2$CatServiceState.init
+inline,com/joshcummings/cats/DescendentsBenchmark2.addRemove
+inline,com/joshcummings/cats/DescendentsBenchmark2.baseline
+inline,com/joshcummings/cats/DescendentsBenchmark2.baselineAddRemove
+inline,com/joshcummings/cats/DescendentsBenchmark2.countCounting
+inline,com/joshcummings/cats/DescendentsBenchmark2.listCats
+inline,com/joshcummings/cats/StartupTest.baseline
+inline,com/joshcummings/cats/StartupTest.startup

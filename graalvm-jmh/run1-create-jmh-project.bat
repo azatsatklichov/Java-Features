@@ -1,0 +1,1 @@
+mvn archetype:generate -DinteractiveMode=false -DarchetypeGroupId=org.openjdk.jmh -DarchetypeArtifactId=jmh-java-benchmark-archetype -DgroupId=measures.in.graalvm -DartifactId=graalvm-jmh -Dversion=1.0

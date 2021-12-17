@@ -22,7 +22,7 @@ import java.util.Optional;
 public class StringNewMethods {
 
 	public static void main(String[] args) {
-		System.out.println("indent(int n)");
+		System.out.println("indent(int n)"); //intented to work with multi-line strings
 		String str = "*****\n  Hi\n\tHello fri end\rHow are you?\n*****";
 
 		System.out.println(str.indent(0));
@@ -67,9 +67,16 @@ public class StringNewMethods {
 		System.out.println("\nString resolveConstantDesc​(MethodHandles.Lookup lookup)");
 		String so1 = "Hello";
 		String resolveConstantDesc = so1.resolveConstantDesc(MethodHandles.lookup());
-		System.out.println(resolveConstantDesc);
+		System.out.println(resolveConstantDesc);  
+	}
+}
 
-		
-
+class StrUtil {
+	public static String removeDollar(String s) {
+		return s.replaceAll("\\$", "");
+	}
+	
+	public static String[] words(String s) {
+		return s.split(" ");
 	}
 }

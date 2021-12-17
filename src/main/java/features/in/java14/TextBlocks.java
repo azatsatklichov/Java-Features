@@ -29,16 +29,18 @@ public class TextBlocks {
 	                        </html>
 	                        """;
 
+	        //\  <end-of-line> suppresses the line termination.  \s is translated into a single space.
 	        String java14 = """
 	                        <html>
 	                            <body>\
-	                                <p>Hello, '\s' World</p>\
+	                                <p>Hello, '\s' World "\s\s" oo</p>
 	                            </body>
 	                        </html>
 	                        """;
 
 	        System.out.println(html);
 	        System.out.println(java13);
+	        //useful to hold in single line 
 	        System.out.println(java14);
 
 	    }

@@ -1,0 +1,1 @@
+jpackage  -i . -n JPackagingTools --main-jar hello.jar --main-class JPackagingTools --type exe --java-options '--enable-preview'

@@ -17,13 +17,21 @@ public class TeeingCollections {
 	 * 
 	 * Teeing Collector is the new collector utility introduced in the Streams API.
 	 * 
-	 * This collector has three arguments – Two collectors and a Bi-function. All
+	 * This collector has three arguments ï¿½ Two collectors and a Bi-function. All
 	 * input values are passed to each collector and the result is available in the
 	 * Bi-function.
 	 */
 	public static void main(String[] args) {
+
+		//orta arifmetik qiymat 
+		var ints = Stream.of(45, 75, 61, 19);
+		Long arithAverage = ints.collect(Collectors.teeing(Collectors.summingInt(Integer::valueOf),
+				Collectors.counting(), (sum, count) -> sum / count));
+		System.out.println(arithAverage);
 		List<Employee> employeeList = Arrays.asList(new Employee(2, "B", 200), new Employee(1, "A", 100),
 				new Employee(3, "C", 300), new Employee(4, "D", 400));
+
+		System.out.println();
 
 		HashMap<String, Employee> result = employeeList.stream()
 				.collect(Collectors.teeing(Collectors.maxBy(Comparator.comparing(Employee::getSalary)),
@@ -49,12 +57,6 @@ public class TeeingCollections {
 						}));
 
 		System.out.println(result2);
-
-		System.out.println();
-		var ints = Stream.of(45, 75, 67, 23);
-		Long arithAverage = ints.collect(Collectors.teeing(Collectors.summingInt(Integer::valueOf),
-				Collectors.counting(), (sum, count) -> sum / count));
-		System.out.println(arithAverage);
 
 	}
 }

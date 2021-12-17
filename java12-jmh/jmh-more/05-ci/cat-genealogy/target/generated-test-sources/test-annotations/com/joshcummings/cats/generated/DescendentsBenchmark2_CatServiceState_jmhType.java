@@ -1,0 +1,4 @@
+package com.joshcummings.cats.generated;
+public class DescendentsBenchmark2_CatServiceState_jmhType extends DescendentsBenchmark2_CatServiceState_jmhType_B3 {
+}
+

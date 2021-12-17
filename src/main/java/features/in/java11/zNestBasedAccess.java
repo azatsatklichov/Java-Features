@@ -45,7 +45,7 @@ class Outer {
 			Method method = outer.getClass().getDeclaredMethod("outerPrivate");
 			method.invoke(outer);
 
-			// Outer.Inner inner = outer.new Inner();
+			//Outer.Inner inner = outer.new Inner();
 		} catch (Exception e) { // InstantiationException | NoSuchMethodException | SecurityException |
 								// IllegalAccessException | IllegalArgumentException | InvocationTargetException
 			System.err.println(e.getMessage());

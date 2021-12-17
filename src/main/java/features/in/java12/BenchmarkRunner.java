@@ -10,8 +10,9 @@ public class BenchmarkRunner {
 
 	}
 
+	//see:  workspace-JavaNew\Java-Features\java12-jmh
 	@Benchmark
-	@BenchmarkMode(value = { null })
+	//@BenchmarkMode(value = {Mode.All, Mode.AverageTime} )
 	public void init() {
 		// Do nothing
 	}

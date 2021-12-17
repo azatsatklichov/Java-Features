@@ -1,0 +1,5 @@
+textcontains excaping characters \n football 
+subaru\t\tforester\n
+toyota\t\trav4\n
+honda\tcrv sky
+rock
