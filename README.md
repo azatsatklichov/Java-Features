@@ -401,7 +401,7 @@ JEPs targeted to JDK 17, so far
  
 
 # Java 19 Features  (Expected GA 22/09/2022)
-[JDK 20 doc](https://docs.oracle.com/en/java/javase/19/index.html),
+[JDK 19 doc](https://docs.oracle.com/en/java/javase/19/index.html),
 [API](https://docs.oracle.com/en/java/javase/19/docs/api/index.html), 
 [Open JDK](https://openjdk.java.net/projects/jdk/19/) 
 
