@@ -4,6 +4,7 @@
 - [Java Doc](https://docs.oracle.com/en/java/index.html), 
 - [The Java Tutorials](https://docs.oracle.com/javase/tutorial/), 
 - [Sahet.Net JAVA Guide](http://sahet.net/htm/java.html),  
+- [JCP](https://en.wikipedia.org/wiki/Java_Community_Process), 
 - [JEP](https://openjdk.java.net/jeps/0), 
 - [Wikipedia](https://en.wikipedia.org/wiki/Java_version_history#JDK_1.0), 
 - [Oracle Java SE at a Glance](https://www.oracle.com/technetwork/java/javase/overview/index.html), 
