@@ -9,6 +9,12 @@
 - [Wikipedia](https://en.wikipedia.org/wiki/Java_version_history#JDK_1.0), 
 - [Oracle Java SE at a Glance](https://www.oracle.com/technetwork/java/javase/overview/index.html), 
 
+# Five main goals which Java language intended to bring  
+- Simple, object-oriented, and familiar.
+- Robust and secure.
+- Architecture-neutral (agnostic) and portable.
+- Execute with high performance.
+- Interpreted, threaded, and dynamic.
 
 
 # Java 1 Features (GA January 1996), Java 1.1 (February 1997)
