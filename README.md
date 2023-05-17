@@ -144,8 +144,10 @@ The important features of JavaSE 7 are try with resource, catching multiple exce
 # JavaSE 8 Features (GA initial release 18-Mar 2014)
 [JDK 8 doc](https://docs.oracle.com/javase/8/),
 [API](https://docs.oracle.com/javase/8/docs/api/),  
+[Docs](https://docs.oracle.com/javase/8/docs/), 
 [What's New in JDK 8](https://www.oracle.com/technetwork/java/javase/8-whats-new-2157071.html), 
 [Open JDK](https://openjdk.java.net/projects/jdk8/)
+
 
 Codename Spider
 The important features of JavaSE 8 are lambda expressions, methods references, default methods, functional interface, java 8 date/time, stream classes etc. 
@@ -398,12 +400,35 @@ JEPs targeted to JDK 17, so far
 [JDK 18 doc](https://docs.oracle.com/en/java/javase/18/index.html),
 [API](https://docs.oracle.com/en/java/javase/18/docs/api/index.html), 
 [Open JDK](https://openjdk.java.net/projects/jdk/18/) 
+
+
+JEPs targeted to JDK 18, so far
+
+- 400:	UTF-8 by Default
+- 408:	Simple Web Server
+- 413:	Code Snippets in Java API Documentation
+- 416:	Reimplement Core Reflection with Method Handles
+- 417:	Vector API (Third Incubator)
+- 418:	Internet-Address Resolution SPI
+- 419:	Foreign Function & Memory API (Second Incubator)
+- 420:	Pattern Matching for switch (Second Preview)
+- 421:	Deprecate Finalization for Removal
  
 
-# Java 19 Features  (Expected GA 22/09/2022)
+# Java 19 Features  (Expected GA 20/09/2022)
 [JDK 19 doc](https://docs.oracle.com/en/java/javase/19/index.html),
 [API](https://docs.oracle.com/en/java/javase/19/docs/api/index.html), 
 [Open JDK](https://openjdk.java.net/projects/jdk/19/) 
+
+JEPs targeted to JDK 19, so far
+
+- 405:	Record Patterns (Preview)
+- 422:	Linux/RISC-V Port
+- 424:	Foreign Function & Memory API (Preview)
+- 425:	Virtual Threads (Preview)
+- 426:	Vector API (Fourth Incubator)
+- 427:	Pattern Matching for switch (Third Preview)
+- 428:	Structured Concurrency (Incubator)
 
 
 # Java 20 Features  (Expected GA 21/03/2023)
@@ -411,6 +436,35 @@ JEPs targeted to JDK 17, so far
 [API](https://docs.oracle.com/en/java/javase/20/docs/api/index.html), 
 [Open JDK](https://openjdk.java.net/projects/jdk/20/) 
 
+JEPs targeted to JDK 20, so far
+
+- 429:	Scoped Values (Incubator)
+- 432:	Record Patterns (Second Preview)
+- 433:	Pattern Matching for switch (Fourth Preview)
+- 434:	Foreign Function & Memory API (Second Preview)
+- 436:	Virtual Threads (Second Preview)
+- 437:	Structured Concurrency (Second Incubator)
+- 438:	Vector API (Fifth Incubator)
+
+# Java 21 Features  (Expected GA 19/09/2023)
+[JDK 21 doc](https://docs.oracle.com/en/java/javase/21/index.html),
+[API](https://docs.oracle.com/en/java/javase/21/docs/api/index.html), 
+[Open JDK](https://openjdk.java.net/projects/jdk/21/) 
+
+
+JEPs proposed to target JDK 21	review ends
+- 449:	Deprecate the Windows 32-bit x86 Port for Removal	
+- 404:	Generational Shenandoah (Experimental)
+- 430:	String Templates (Preview)
+- 431:	Sequenced Collections
+- 439:	Generational ZGC
+- 440:	Record Patterns
+- 441:	Pattern Matching for switch
+- 442:	Foreign Function & Memory API (Third Preview)
+- 443:	Unnamed Patterns and Variables (Preview)
+- 444:	Virtual Threads
+- 445:	Unnamed Classes and Instance Main Methods (Preview)
+- 448:	Vector API (Sixth Incubator)
 
 
 
