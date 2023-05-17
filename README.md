@@ -371,7 +371,7 @@ Oracle has released Java 9 with rich set of new features. It includes various up
 - 397:	Sealed Classes (Second Preview)
 
 
-# Java 17 Features  (Expected GA 14/09/2021)
+# Java 17 Features  (GA 14/09/2021)
 [JDK 17 doc](https://docs.oracle.com/en/java/javase/17/index.html),
 [API](https://docs.oracle.com/en/java/javase/17/docs/api/index.html), 
 [Open JDK](https://openjdk.java.net/projects/jdk/17/) 
@@ -396,7 +396,7 @@ JEPs targeted to JDK 17, so far
 
 
 
-# Java 18 Features  (Expected GA 22/03/2022)
+# Java 18 Features  (GA 22/03/2022)
 [JDK 18 doc](https://docs.oracle.com/en/java/javase/18/index.html),
 [API](https://docs.oracle.com/en/java/javase/18/docs/api/index.html), 
 [Open JDK](https://openjdk.java.net/projects/jdk/18/) 
@@ -415,7 +415,7 @@ JEPs targeted to JDK 18, so far
 - 421:	Deprecate Finalization for Removal
  
 
-# Java 19 Features  (Expected GA 20/09/2022)
+# Java 19 Features  (GA 20/09/2022)
 [JDK 19 doc](https://docs.oracle.com/en/java/javase/19/index.html),
 [API](https://docs.oracle.com/en/java/javase/19/docs/api/index.html), 
 [Open JDK](https://openjdk.java.net/projects/jdk/19/) 
@@ -431,7 +431,7 @@ JEPs targeted to JDK 19, so far
 - 428:	Structured Concurrency (Incubator)
 
 
-# Java 20 Features  (Expected GA 21/03/2023)
+# Java 20 Features  (GA 21/03/2023)
 [JDK 20 doc](https://docs.oracle.com/en/java/javase/20/index.html),
 [API](https://docs.oracle.com/en/java/javase/20/docs/api/index.html), 
 [Open JDK](https://openjdk.java.net/projects/jdk/20/) 
@@ -446,7 +446,7 @@ JEPs targeted to JDK 20, so far
 - 437:	Structured Concurrency (Second Incubator)
 - 438:	Vector API (Fifth Incubator)
 
-# Java 21 Features  (Expected GA 19/09/2023)
+# Java 21 Features  (GA 19/09/2023)
 [JDK 21 doc](https://docs.oracle.com/en/java/javase/21/index.html),
 [API](https://docs.oracle.com/en/java/javase/21/docs/api/index.html), 
 [Open JDK](https://openjdk.java.net/projects/jdk/21/) 
