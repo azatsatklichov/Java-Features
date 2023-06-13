@@ -1,7 +1,7 @@
 mkdir mlib 
-echo jar -c -f mlib\net.modul.jar -C output .
-jar -c -f  mlib\core.modul.jar -C output .
-echo move core.modul.jar mlib
 
-echo jar tvf mlib\core.modul.jar
+echo create core.modul.jar from output folder
+jar -c -f  mlib\core.modul.jar -C output .
+
+echo move core.modul.jar into mlib 
 jar tvf mlib\core.modul.jar

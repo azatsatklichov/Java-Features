@@ -1,0 +1,4 @@
+
+This is a Eclipse way of working on modules
+Just import J8 project to see the warning etc.... 
+Best way working with modular app is just open it as a folder structure in any editor 

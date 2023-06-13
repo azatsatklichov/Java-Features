@@ -1,4 +1,4 @@
-cd C:\workspace-JavaNew\J8\out-standalone-optimized
+cd C:\workspace-17\Java-Features\ModularJavaProjects\J8\out-standalone-optimized
 cd bin
 dir 
 fibo
