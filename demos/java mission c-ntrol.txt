@@ -1,0 +1,9 @@
+https://docs.oracle.com/javase/8/docs/technotes/guides/management/jdp.html
+
+
+https://docs.oracle.com/javase/8/
+
+
+G1 (Garbage First, or compacting-collector) Garbage Collector – incremental GC. Paper 2004, experimental in Java 6, official in Java 7, and default GC since Java 9. Designed for apps running on multi-cores with large memory space. Goal is:  Througput/Latency balance. Tuneable pause goals.  A bit more CPU intensive. Regions (#2000, size 2MB for 4GB heap)  
+Evacuation (moved/copied between regions).  Minor & Major collection,.. 
+>java -XX:+UseG1GC -jar App.java 
