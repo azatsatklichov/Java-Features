@@ -31,7 +31,7 @@ import java.net.http.HttpResponse;
  * not support HTTP/2 protocol and WebSocket, works only in Blocking mode and
  * lot of performance issues.), they are replacing this HttpURLConnection API
  * with new HTTP client. They are going to introduce new HTTP 2 Client API under
- * “java.net.http” package. It supports both HTTP/1.1 and HTTP/2 protocols. It
+ * ï¿½java.net.httpï¿½ package. It supports both HTTP/1.1 and HTTP/2 protocols. It
  * supports both Synchronous (Blocking Mode) and Asynchronous Modes. It supports
  * Asynchronous Mode using WebSocket API.
  * 
@@ -54,22 +54,13 @@ public class NewHttpClient {
 	public static void main(String[] args) throws URISyntaxException, IOException, InterruptedException {
 
 		HttpClient client = HttpClient.newHttpClient();
-
 		HttpRequest req = 
 				HttpRequest.newBuilder(URI.create("http://www.google.com")).header("User-Agent", "Java")
 				.GET()
 				.build();
-
 		//sync
 		HttpResponse<String> resp = client.send(req, HttpResponse.BodyHandlers.ofString());
-		
-		 
-
 		System.out.println(req.bodyPublisher().get()); 
-		
-		
-		
-		
 	}
 
 }

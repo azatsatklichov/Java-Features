@@ -78,14 +78,14 @@ public class SerialDemo {
 }
 
  
+//
+//enum MyEnum { 
+//    @Serial 
+//    private void readObjectNoData() throws ObjectStreamException {} // Compilation error 
+//}
 
-enum MyEnum { 
-    @Serial 
-    private void readObjectNoData() throws ObjectStreamException {} // Compilation error 
-}
-
-class MyExternalizableClass implements Externalizable {
-    @Serial 
-    private void writeObject(ObjectOutputStream stream) throws IOException {}  
- 
-}
+//class MyExternalizableClass implements Externalizable {
+//    @Serial 
+//    private void writeObject(ObjectOutputStream stream) throws IOException {}  
+// 
+//}

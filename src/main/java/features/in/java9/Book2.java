@@ -49,13 +49,20 @@ public class Book2 implements PricedObject {
 
 	public static Stream<Book2> getBooks() {
 		//just test purpose
-		List authors  = List.of("Berdi Kerbabayew", "Atajan Tagan", "Elwan",  "Viktor Hugo");
+		List authors  = List.of("Berdi Kerbabayew", "Atajan Tagan", "Elwan",  "Viktor Hugo", 
+				"Berdinazar Hudaynazarow", "Kerim Gurbannepesow", "Gurbannazar Ezizow");
 		Book2 b1 = new Book2("Book1", 11.99);
 		Book2 b2 = new Book2("Book2", 12.99);
 		Book2 b3 = new Book2("Book3", 13.99);
 		Book2 b4 = new Book2("Book4", 14.99);
 		
-		return List.of(b1, b2, b3, b4).stream();
+		//return List.of(b1, b2, b3, b4).stream();
+		return authors.stream();
+	}
+	
+	@Override
+	public String toString() { 
+		return  "Book[ "+getTitle()+", "+getAuthors()+"]";
 	}
 
 }

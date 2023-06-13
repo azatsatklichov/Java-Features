@@ -50,11 +50,13 @@ public class B_CollectionFactoryMethods {
 		System.out.println(list);
 
 		Map<Integer, String> map = Map.of(1, "Ole", 3, "Gule", 5, "Sule");
-		// # of parameters Must be EVEN number
-		// Map<Integer, String> mapOdd = Map.of(1, "Ole", 3);
+		// # of parameters Must be EVEN number, e.g. below are invalid definitions  - Compiler error
+		//The method of(K, V, K, V) in the type Map is not applicable for the arguments (int, String, int)
+		//Map<Integer, String> mapOdd = Map.of(1, "Ole", 3);
 
-		// Map<Integer, String> map = Map.of("Bir", "Ole", "Uc", "Gule", "Bas", "Sule");
 		// compile issue
+		//Map<String, Integer> map2 = Map.of("Bir", "Ole", "Uc", "Gule", "Bas", "Sule", "sass");
+
 		System.out.println(map);
 		Map<String, String> map1 = Map.ofEntries(new AbstractMap.SimpleEntry<>("A", "Apple"),
 				new AbstractMap.SimpleEntry<>("B", "Boy"), new AbstractMap.SimpleEntry<>("C", "Cat"));
@@ -77,6 +79,12 @@ class OldWayOfCreation {
 		list.add("B");
 		list.add("C");
 		list = Collections.unmodifiableList(list);
+		/*
+		 * Exception in thread "main" java.lang.UnsupportedOperationException at
+		 * java.base/java.util.Collections$UnmodifiableCollection.add(Collections.java:
+		 * 1067)
+		 */
+		//list.add("dsd");
 		System.out.println(list);
 		Map<String, String> map = new HashMap<>();
 

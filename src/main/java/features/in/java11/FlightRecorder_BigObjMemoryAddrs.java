@@ -14,7 +14,7 @@ public class FlightRecorder_BigObjMemoryAddrs {
 
 	// or try run without option and use via JPS its PID for below command
 	//> jps   //to find PID 
-	// > jcmd 35088 JFR.start duration=30s settings=profile filename=C:/workspace-JavaNew/Java-Features/leak_bigMemory_jcmd.jfr
+	// > jcmd 35088 JFR.start duration=30s settings=profile filename=C:/workspace-17/Java-Features/leak_bigMemory_jcmd.jfr
 
 	public static void main(String... args) throws Exception {
 		int arraySize = 1000000;

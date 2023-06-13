@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.function.BinaryOperator;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -78,6 +79,8 @@ public class StreamsCollectors {
 
 		System.out.println();
 		System.out.println("Thanks to prof. Eshchanov, I solved his Task this way");
+		System.out.println("Thanks to prof. Eshchanov, I solved CC-Consolidated json map that way also");
+		//flattening just remove one cover e.g.  List<List<Integer>>  --->  <List<Integer> 
 		List<Integer> flattenedList = listOfList.stream().flatMap(x -> x.stream()).collect(Collectors.toList());
 		System.out.println(flattenedList);
 
@@ -88,7 +91,9 @@ public class StreamsCollectors {
 		 * {@link StringAndNumbersEnhancements}
 		 */
 		int sumOfValues = flattenedList.stream().reduce(0, (a, b) -> a + b).intValue();
-		System.out.println(sumOfValues);
+		System.out.println(sumOfValues);		
+		int productOfValues = flattenedList.stream().reduce(1, (a, b) -> a * b).intValue();
+		System.out.println(productOfValues+"\n");
 
 		sumOfValues = flattenedList.stream().reduce(0, binaryOpt()).intValue();
 		System.out.println(sumOfValues);
@@ -97,9 +102,17 @@ public class StreamsCollectors {
 		sumOfValues = flattenedList.stream().reduce(0, sum).intValue();
 		System.out.println(sumOfValues);
 
+		BinaryOperator<Integer> prod = (a,b) -> a*b;
+		productOfValues = flattenedList.stream().reduce(1, prod).intValue();
+		System.out.println(productOfValues+"\n");
+
 		Stream<Integer> empty = Stream.empty();
 		sumOfValues = empty.reduce(0, sum).intValue();
 		System.out.println(sumOfValues);
+		empty = Stream.empty();
+		productOfValues = empty.reduce(1, prod).intValue();
+		System.out.println(productOfValues+"\n");
+		
 
 		// Collectors
 		String joined = l.stream().filter(Predicate.not(predicateAhoj)).collect(Collectors.joining(","));
@@ -107,6 +120,8 @@ public class StreamsCollectors {
 
 		List<String> list = l.stream().filter(Predicate.not(predicateAhoj)).collect(Collectors.toList());
 		System.out.println(list);
+		Set<String> set = l.stream().filter(Predicate.not(predicateAhoj)).collect(Collectors.toSet());
+		System.out.println(set+"\n");
 
 		// Collecting into MAP
 		System.out.println("Collecting into MAP");
@@ -114,7 +129,7 @@ public class StreamsCollectors {
 				.collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 		System.out.println(map);
 
-		List<Item> items = Arrays.asList(new Item(1, "bir"), new Item(2, "iki"), new Item(2, "ikki"),
+		List<Item> items = Arrays.asList(new Item(1, "bir"), new Item(1, "birr"), new Item(2, "iki"), new Item(2, "ikki"),
 				new Item(3, "uc"));
 
 		Map<Integer, List<Item>> itemMaps1 = items.stream().collect(Collectors.groupingBy(Item::getId));
@@ -124,6 +139,7 @@ public class StreamsCollectors {
 		System.out.println(itemMaps2);
 
 		// via DownstreamCollector
+		System.out.println(" via DownstreamCollector");
 		Map<Integer, Long> itemMaps3 = items.stream()
 				.collect(Collectors.groupingBy(Item::getId, Collectors.counting()));
 		System.out.println(itemMaps3);

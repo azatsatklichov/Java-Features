@@ -16,7 +16,7 @@ public class ImprovedJavaDoc {
 	 * 
 	 * You can search the Javadocs for the following:
 	 * 
-	 * Method parameter types (Such as Int, String…) Module names Types and members
+	 * Method parameter types (Such as Int, Stringï¿½) Module names Types and members
 	 * Packages
 	 * 
 	 * <p>
@@ -26,8 +26,9 @@ public class ImprovedJavaDoc {
 	 * @param args command line arguments
 	 */
 	public static void main(String[] args) {
-		System.out.println("Java 9 - We no longer need to use Google to find the right documentation. The new Javadoc came with search right in the API documentation itself. "
-				+ "Moreover, the Javadoc output was HTML5 compliant."
+		System.out.println("Java 9 - We no longer need to use Google to find the right documentation. The new Javadoc came with \n"
+				+ "search right in the API documentation itself. "
+				+ "Moreover, the Javadoc output was HTML5 compliant. \n"
 				+ "Every Javadoc page includes information on which JDK module the class or interface comes from.");
 	}
 }

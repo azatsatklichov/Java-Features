@@ -6,8 +6,9 @@ package features.in.java9;
  * <pre>
 Constant variables
 Abstract methods
-So we cannot have method implementation in interfaces or more precisely a default implementation prior to Java 8. See the example.
-With Java 9 interfaces can have following type of variables/methods.
+
+So we cannot have method implementation in interfaces or more precisely a default implementation prior to Java 8. 
+See the example. With Java 9 interfaces can have following type of variables/methods.
 
 Constant variables
 Abstract methods

@@ -2,7 +2,7 @@ package features.in.java11;
 
 public class A_LaunchingSingleFileSourceFiles {
 	/**
-	 * C:\workspace-JavaNew\Java-Features\src\main\java\features\in\java11>java
+	 * C:\workspace-17\Java-Features\src\main\java\features\in\java11>java
 	 * A_LaunchingSingleFileSourceFiles.java
 	 * 
 	 * Java 11 example

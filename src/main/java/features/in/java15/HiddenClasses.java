@@ -3,9 +3,16 @@ package features.in.java15;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodHandles;
 import java.lang.invoke.MethodType;
+import java.lang.reflect.Constructor;
 import java.util.Base64;
 
+import org.junit.jupiter.api.Test;
+
 /**
+ * https://foojay.io/today/what-are-hidden-classes-in-java-15/
+ * https://mkyong.com/java/what-is-new-in-java-15/#jep-371hidden-classes 
+ * 
+ * 
  * JEP 371: Hidden Classes 3.1 This JEP introduces hidden classes that are not
  * discoverable and have a limited lifecycle (shorter live), good for developers
  * that generate classes dynamically at runtime. And now we can use this new
@@ -62,3 +69,22 @@ public class HiddenClasses {
 	}
 
 }
+//
+//class HiddenClassDemo {
+//	public static void main(String[] args) throws Throwable {
+//		MethodHandles.Lookup lookup = MethodHandles.lookup();
+//		ClassWriter cw = GenerateClass.getClassWriter(HiddenClassDemo.class);
+//		byte[] bytes = cw.toByteArray();
+//
+//		Class<?> c = lookup.defineHiddenClass(bytes, true, NESTMATE).lookupClass();
+//		Constructor<?> constructor = c.getConstructor(null);
+//		Object object = constructor.newInstance(null);
+//		Test test = (Test) object;
+//		/*
+//		 * This way of creating instance is deprecated. Test test =
+//		 * (Test)c.newInstance();
+//		 */
+//		test.test(new String[] { "sample" });
+//		System.out.println("End of main method in class " + HiddenClassDemo.class.getName());
+//	}
+//}

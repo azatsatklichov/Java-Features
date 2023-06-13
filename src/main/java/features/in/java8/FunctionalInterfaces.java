@@ -12,12 +12,12 @@ import java.util.function.Predicate;
  * 
  * <pre>
 Functional interfaces have a single functionality to exhibit. For example, a Comparable interface with a 
-single method ‘compareTo’ is used for comparison purpose.
+single method ï¿½compareToï¿½ is used for comparison purpose.
 Java 8 has defined a lot of functional interfaces to be used extensively in lambda expressions. Following 
 is the list of functional interfaces defined in java.util.Function package.
 
 
-Functional interfaces, which are gathered in the java.util.function package, satisfy most developers’ needs in providing 
+Functional interfaces, which are gathered in the java.util.function package, satisfy most developersï¿½ needs in providing 
 target types for lambda expressions and method references.
  * </pre>
  */
@@ -36,7 +36,7 @@ public class FunctionalInterfaces {
 		list.forEach(System.out::println);
 
 		System.out.println("\nPrint all numbers:");
-		evalViaPredicate(list, n -> true);
+		evalViaPredicate(list, n -> true); //n > 2
 
 		System.out.println("Print even numbers:");
 		evalViaPredicate(list, (n) -> n % 2 == 0);
@@ -48,7 +48,7 @@ public class FunctionalInterfaces {
 		evalViaPredicate(list, n -> n > 3);
 
 		System.out.println("\nPrint if two numbers sum is greater than 7  :");
-		evalViaBiPredicate(list, (a, b) -> a + b > 7);
+		evalViaBiPredicate(list, (a, b) -> a + b > 9);
 
 		List<String> l = Arrays.asList("alma", "enar", "uzum", "enjir");
 		List<String> result = new ArrayList<>();
@@ -88,7 +88,7 @@ public class FunctionalInterfaces {
 }
 
 /**
- * Note that the @FunctionalInterface annotation isn’t mandatory, but it’s good
+ * Note that the @FunctionalInterface annotation isnï¿½t mandatory, but itï¿½s good
  * practice to use it when an interface is designed for that purpose. You can
  * think of it like the @Override notation to indicate that a method is
  * overridden.
@@ -117,10 +117,12 @@ class UseFI {
 
 		UseFI useFoo = new UseFI();
 		String result = useFoo.add("Message ", fi);
+		System.out.println(result);
 
 		// To execute this, we can write:
 		Function<String, String> fn = parameter -> parameter + " from lambda";
 		result = useFoo.add("Message ", fn);
+		System.out.println(result);
 	}
 
 	// Now we can remove interface Foo completely and change our code to:

@@ -22,7 +22,7 @@ public class SwitchExpressions {
 		switch (monthNumber) {
 		case 1 -> monthName = "January";
 		case 2 -> monthName = "February";
-		case 3 : monthName = "March"; // ERR
+	//	case 3 : monthName = "March"; // ERR
 		};
 	}
 

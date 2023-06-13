@@ -30,7 +30,7 @@ public class zCompletableFutureAPIImprovements {
 		CompletableFuture<String> cf = CompletableFuture.completedFuture("message");
 		if (cf.isDone()) {
 			String msg = cf.getNow(null);
-			System.out.println(msg);
+			System.out.println("--> "+msg);
 		}
 
 		System.out.println("Running a Simple Asynchronous Stage");
@@ -57,6 +57,9 @@ public class zCompletableFutureAPIImprovements {
 		// with a specific value by one second.
 		CompletableFuture<Object> future = new CompletableFuture<>();
 		future.completeAsync(() -> "input", CompletableFuture.delayedExecutor(1, TimeUnit.SECONDS));
+		if (future.isDone()) {
+			System.out.println("--> "+future.getNow(null));
+		}
 
 		System.out.println("See also ProcessAPIImprovements#onExit");
 		System.out.println("See also Reactivestreams - nonblocking API");

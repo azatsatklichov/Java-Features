@@ -35,7 +35,7 @@ public class LambdaExpressions {
 	public static void main(String args[]) {
 
 		/**
-		 * Lambdas technically don’t let you do anything that you couldn’t do prior to
+		 * Lambdas technically donï¿½t let you do anything that you couldnï¿½t do prior to
 		 * Java 8.
 		 * 
 		 * But you no longer have to write clumsy code using anonymous classes to
@@ -136,7 +136,7 @@ public class LambdaExpressions {
 
 		greetService.hi("Roma");
 
-		System.out.println("\n Avoid Blocks of Code in Lambda’s Body");
+		System.out.println("\n Avoid Blocks of Code in Lambdaï¿½s Body");
 		// use
 		GreetingService2 gs = parameter -> buildString(parameter);
 		// instead of:

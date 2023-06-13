@@ -1,4 +1,4 @@
-Classfile /C:/workspace-JavaNew/Java-Features/src/main/java/net/sahet/record/AdamRec.class
+Classfile /C:/workspace-17/Java-Features/src/main/java/net/sahet/record/AdamRec.class
   Last modified Jul 1, 2021; size 1288 bytes
   SHA-256 checksum 1363b35119b8e22d2ec2e1adbd44af202f876528007f610610366bdd37098062
   Compiled from "AdamRec.java"

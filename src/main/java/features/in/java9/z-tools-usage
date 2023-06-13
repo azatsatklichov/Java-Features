@@ -1,14 +1,14 @@
 
 -- jdeprscan --
 
-C:\workspace-JavaNew\Java-Features\src\main\java\features\in\java9>javac ProcessApiImprovements_JEP102.java
+C:\workspace-17\Java-Features\src\main\java\features\in\java9>javac ProcessApiImprovements_JEP102.java
 
-C:\workspace-JavaNew\Java-Features\src\main\java\features\in\java9>jdeprscan.exe  --class-path  . ProcessApiImprovements_JEP102
+C:\workspace-17\Java-Features\src\main\java\features\in\java9>jdeprscan.exe  --class-path  . ProcessApiImprovements_JEP102
 class features/in/java9/ProcessApiImprovements_JEP102 uses deprecated method java/awt/List::addItem(Ljava/lang/String;)V
 
 
 -- jdeps --
-C:\workspace-JavaNew\Java-Features\src\main\java\features\in\java9>jdeps .
+C:\workspace-17\Java-Features\src\main\java\features\in\java9>jdeps .
 . -> java.base
 . -> java.desktop
 . -> java.management
@@ -24,16 +24,16 @@ C:\workspace-JavaNew\Java-Features\src\main\java\features\in\java9>jdeps .
    features.in.java9                                  -> java.util.stream                                   java.base
 
 or
-C:\workspace-JavaNew\Java-Features\src\main\java\features\in\java9>jdeps   -summary .
+C:\workspace-17\Java-Features\src\main\java\features\in\java9>jdeps   -summary .
 . -> java.base
 . -> java.desktop
 . -> java.management
 
 or
-C:\workspace-JavaNew\Java-Features>jdeps  -jdkinternals .
+C:\workspace-17\Java-Features>jdeps  -jdkinternals .
 
 or 
-C:\workspace-JavaNew\Java-Features\src\main\java>jdeps .
+C:\workspace-17\Java-Features\src\main\java>jdeps .
 
 or
 >jdeps -jdkinternals ProcessApiImprovements_JEP102.class

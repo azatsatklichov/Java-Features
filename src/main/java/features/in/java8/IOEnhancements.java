@@ -10,7 +10,7 @@ import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 public class IOEnhancements {
-	private final static String filePath = "\\workspace-JavaNew\\Java-Features\\src\\main\\java\\features\\in\\java8\\test.js";
+	private final static String filePath = "\\workspace-17\\Java-Features\\src\\main\\java\\features\\in\\java8\\test.js";
 
 	public static void main(String[] args) {
 		// Java 7
@@ -36,7 +36,7 @@ public class IOEnhancements {
 		}
 
 		// Walking on Files
-		path = Path.of("C:\\workspace_ext\\Java-Features\\src");
+		path = Path.of("C:\\workspace-17\\Java-Features\\src");
 		// Java 8 Files.lines
 		try (Stream<Path> stream = Files.walk(path)) {
 			stream.filter(f -> f.toFile().isDirectory()).forEach(s -> {

@@ -38,6 +38,8 @@ class OldWayOfCreationOrConversion {
 
 		// Arrays here. Only helps for Lists, not for Set construction
 		List<Integer> integers = Arrays.asList(2, 4, 1, 3, 8, 4, 7, 5, 9, 6, 8);
+		//Type mismatch: cannot convert from List<Integer> to Set<Integer>
+		//Set<Integer> integersz = Arrays.asList(2, 4, 1, 3, 8, 4, 7, 5, 9, 6, 8);
 		System.out.println(integers);
 
 		List<String> strings = Arrays.asList("abc", "", "bc", "efg", "abcd", "", "jkl");

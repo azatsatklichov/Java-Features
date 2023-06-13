@@ -12,33 +12,44 @@ import java.util.stream.IntStream;
 public class StreamsDemo {
 
 	public static void main(String[] args) {
-		//https://howtodoinjava.com/java8/java-streams-by-examples/
-		
+		// https://howtodoinjava.com/java8/java-streams-by-examples/
+
 		System.out.println(
-				"\nStream is a new abstract layer introduced in Java 8. Using stream, you can process data in a declarative way similar to SQL statements.");
+				"\nStream is a new abstract layer introduced in Java 8. Using stream, you can process data in "
+				+ "a declarative way similar to SQL statements.");
 		System.out.println(
-				"To resolve such issues, Java 8 introduced the concept of stream that lets the developer to process data declaratively and \n"
+				"To resolve such issues, Java 8 introduced the concept of stream that lets the developer "
+				+ "to process data declaratively and \n"
 						+ "leverage multicore architecture without the need to write any specific code for it.");
 
 		Random random = new Random();
 		IntStream ints = random.ints();
-		ints.limit(4).forEach(System.out::println);
+		ints.limit(7).forEach(System.out::println);
+		System.out.println("Count ints = " + random.ints().count());
 
 		System.out.println("\nThe  - sorted -  method is used to sort the stream.");
 		random.ints().limit(10).sorted().forEach(System.out::println);
 
 		List<Integer> integers = Arrays.asList(2, 4, 1, 3, 8, 4, 7, 5, 9, 6, 8);
-		integers.stream().sorted((i1, i2) -> i2.compareTo(i1)).forEach(System.out::println);
+		System.out.println();
+		integers.stream().sorted((i1, i2) -> i2.compareTo(i1)).forEach(x -> System.out.print(x));
+		System.out.println();
+		
 		System.out.println("squaresList = " + integers.stream().map(i -> i * i).collect(Collectors.toList()));
 		System.out.println(
 				"distinct squaresList = " + integers.stream().map(i -> i * i).distinct().collect(Collectors.toList()));
-
+		
+		System.out.println(
+				"distinct squaresList by HAshSet = " + integers.stream().map(i -> i * i).collect(Collectors.toSet()));
+		integers.stream().sorted(Comparator.reverseOrder()).map(i -> i * i).forEach(System.out::print);
+		
 		List<String> strings = Arrays.asList("abc", "", "bc", "efg", "abcd", "", "jkl");
 		strings.stream().sorted().forEach(System.out::println);
 		strings.stream().sorted(Comparator.reverseOrder()).forEach(System.out::println);
 
 		System.out.println(
-				"\nCollectors are used to combine the result of processing on the elements of a stream. Collectors can be used to return a list or a string.");
+				"\nCollectors are used to combine the result of processing on the elements of a stream. "
+				+ "Collectors can be used to return a list or a string.");
 
 		strings = Arrays.asList("abc", "", "bc", "efg", "abcd", "", "jkl");
 		System.out.println(
@@ -91,11 +102,11 @@ public class StreamsDemo {
 
 		System.out.println("\n Parallel array sorting  ");
 		int[] intArray = { 18, 1, 14, 2, 15, 12, 5, 4 };
-		System.out.println(Arrays.toString(intArray)); 
+		System.out.println(Arrays.toString(intArray));
 		// Parallel Sorting
 		Arrays.parallelSort(intArray);
 		System.out.println("---After Parallel Sort---");
-		System.out.println(Arrays.toString(intArray)); 
+		System.out.println(Arrays.toString(intArray));
 
 	}
 

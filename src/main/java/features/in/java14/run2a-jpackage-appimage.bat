@@ -1,0 +1,1 @@
+jpackage --type app-image --name HelloImage --input .  --main-jar hello.jar --main-class JPackagingTools 

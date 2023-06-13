@@ -7,10 +7,10 @@ public class CompareSize {
 
 	public static void main(String[] args) {
 		//To run this comparison test, first run the project J8 under Modular Java Projects 
-		System.out.println("MODULAR JAVA - see in ModularJavaProjects folder");
+		System.out.println("MODULAR JAVA - see in ModularJavaProjects/J8 folder");
 		File folder1 = new File("C:\\apps\\Java\\jdk-17");
-		File folder2 = new File("C:\\workspace-JavaNew\\J8\\out-standalone");
-		File folder3 = new File("C:\\workspace-JavaNew\\J8\\out-standalone-optimized"); 
+		File folder2 = new File("C:\\workspace-17\\Java-Features\\ModularJavaProjects\\J8\\out-standalone");
+		File folder3 = new File("C:\\workspace-17\\Java-Features\\ModularJavaProjects\\J8\\out-standalone-optimized"); 
 		
 		long sizeJDK17 = getFolderSize(folder1);
 		long sizeImage = getFolderSize(folder2);

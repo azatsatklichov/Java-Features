@@ -6,13 +6,13 @@ class Outer_Demo {
     // inner class
     private class Inner_Demo {
         private void print() {
-            System.out.println("This is an inner class");
+            System.out.println("This is a private inner class");
         }
     }
 
     public class Inner_Demo2 {
         public void print() {
-            System.out.println("This is an inner class");
+            System.out.println("This is an public inner class");
         }
     }
 
@@ -30,6 +30,9 @@ public class InnerClassesDemo {
 
         // Accessing the display_Inner() method.
         outer.display_Inner();
+        
+        //Outer_Demo.Inner_Demo  inn = outer.new Inner_Demo();
+        //inn.print();
 
         Outer_Demo.Inner_Demo2 inn = outer.new Inner_Demo2();
         inn.print();

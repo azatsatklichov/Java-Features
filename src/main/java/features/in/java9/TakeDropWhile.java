@@ -31,7 +31,7 @@ class FindGitConflict {
 	public static void main(String... args) throws Exception {
 
 		// Files.lines -> Stream<String>
-		Files.lines(Paths.get("C:\\workspace-JavaNew\\Java-Features\\src\\main\\java\\features\\in\\java9\\z-links"))
+		Files.lines(Paths.get("C:\\workspace-17\\Java-Features\\src\\main\\java\\features\\in\\java9\\z-links"))
 				.dropWhile(l -> !l.contains("<<<<<<<")).skip(1).takeWhile(l -> !l.contains(">>>>>>>"))
 				.forEach(System.out::println);
 

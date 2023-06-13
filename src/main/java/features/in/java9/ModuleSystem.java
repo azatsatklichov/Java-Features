@@ -2,7 +2,7 @@ package features.in.java9;
 
 /**
  * 
- * Java 9 Modular System – Jigsaw Project
+ * Java 9 Modular System ï¿½ Jigsaw Project
  * 
  * 
  * Java Module System is a major change in Java 9 version. Java added this
@@ -62,13 +62,13 @@ public class ModuleSystem {
 	 * Mother of Java 9 Module System
 	As of now, Java 9 Module System has 95 modules in Early Access JDK. Oracle Corp has separated JDK jars and Java SE Specifications into two set of Modules.
 	
-	All JDK Modules starts with “jdk.*”
-	All Java SE Specifications Modules starts with “java.*”
-	Java 9 Module System has a “java.base” Module. It’s known as Base Module. It’s an Independent module and does NOT dependent on any other modules. By default, all other Modules dependent on this module.
+	All JDK Modules starts with jdk.*
+	All Java SE Specifications Modules starts with ï¿½java.*ï¿½
+	Java 9 Module System has a ï¿½java.baseï¿½ Module. Itï¿½s known as Base Module. Itï¿½s an Independent module and does NOT dependent on any other modules. By default, all other Modules dependent on this module.
 	
-	That’s why “java.base” Module is also known as The Mother of Java 9 Modules.
+	Thatï¿½s why ï¿½java.baseï¿½ Module is also known as The Mother of Java 9 Modules.
 	
-	It’s default module for all JDK Modules and User-Defined Modules.
+	Itï¿½s default module for all JDK Modules and User-Defined Modules.
 	 * </pre>
 	 * 
 	 * @param args

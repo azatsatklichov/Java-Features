@@ -20,6 +20,16 @@ import java.util.List;
  * you want to avoid NullPointerException in your code.
  *
  */
+
+
+@Target({ ElementType.TYPE_PARAMETER, ElementType.TYPE_USE })
+@interface Encrypted {
+}
+
+@Target({ ElementType.TYPE_PARAMETER, ElementType.TYPE_USE })
+@interface NonNull {
+}
+
 public class TypeAnnotationsAndRepeatingAnnotations {
 
 	@Encrypted
@@ -32,13 +42,6 @@ public class TypeAnnotationsAndRepeatingAnnotations {
 
 }
 
-@Target({ ElementType.TYPE_PARAMETER, ElementType.TYPE_USE })
-@interface Encrypted {
-}
-
-@Target({ ElementType.TYPE_PARAMETER, ElementType.TYPE_USE })
-@interface NonNull {
-}
 
 @interface Color {
 	String name();

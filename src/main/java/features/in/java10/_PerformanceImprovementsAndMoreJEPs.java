@@ -51,7 +51,7 @@ reducing the stop-the-world time during full GC.
  G1 was made the default GC, which was
  
  * designed to avoid full collections, but when the concurrent collections
- * couldn’t reclaim memory quick enough it would end up falling back on a full
+ * couldnï¿½t reclaim memory quick enough it would end up falling back on a full
  * GC, and here is where the problem lies.
  * 
  * The aim of JEP 307 is to parallelize the full GC algorithm so that in the
@@ -148,7 +148,7 @@ class GarbageCollectorInterface {
 
 CDS only allowed the bootstrap class loader, limiting the feature to system classes only. 
 Application CDS (AppCDS) extends CDS to allow the built-in system class loader 
-(a.k.a., the “app class loader”), the built-in platform class loader, and custom class loaders to 
+(a.k.a., the ï¿½app class loaderï¿½), the built-in platform class loader, and custom class loaders to 
 load archived classes. 
 
 This makes it possible to use the feature for application classes.
@@ -208,7 +208,7 @@ However, keep in mind that it is in an experimental stage and definitely not rec
  * 
  * 
 *Graal is a dynamic compiler written in Java that integrates with the HotSpot JVM; 
-*it’s focused on high performance and extensibility. It’s also the basis of the experimental 
+*itï¿½s focused on high performance and extensibility. Itï¿½s also the basis of the experimental 
 *Ahead-of-Time (AOT) compiler introduced in JDK 9.
 
 JDK 10 enables the Graal compiler, to be used as an experimental JIT compiler on the Linux/x64 platform.
@@ -355,10 +355,9 @@ class ThreadLocalHandshake {
 /**
  * 
  * <pre>
- * 
- * JVMs are now aware of being run in a Docker container and will extract
+ *  * JVMs are now aware of being run in a Docker container and will extract
  * container-specific configuration instead of querying the operating system
- * itself – it applies to data like the number of CPUs and total memory that
+ * itself ï¿½ it applies to data like the number of CPUs and total memory that
  * have been allocated to the container.
  *
  *
@@ -393,10 +392,10 @@ class ContainerAwareness_eg_Docker {
  * contain a set of root certificates that can be used to establish trust in the
  * certificate chains used by various security protocols.
  * 
- * As a result, critical security components such as TLS didn’t work by default
+ * As a result, critical security components such as TLS didnï¿½t work by default
  * under OpenJDK builds.
  * 
- * With Java 10, Oracle has open-sourced the root certificates in Oracle’s Java
+ * With Java 10, Oracle has open-sourced the root certificates in Oracleï¿½s Java
  * SE Root CA program in order to make OpenJDK builds more attractive to
  * developers and to reduce the differences between those builds and Oracle JDK
  * builds.
@@ -441,7 +440,8 @@ class AdditionalUnicodeLanguageTagExtensions {
  * NV-DIMM memory, and instead only allocate the higher priority processes to
  * the DRAM.
  * 
- * 
+ * A NVDIMM (pronounced "en-vee-dimm") or non-volatile DIMM is a type of persistent random-access memory for computers using widely used DIMM form-factors.
+ * A DIMM (/dÉªm/) (Dual In-line Memory Module), commonly called a RAM stick, comprises a series of dynamic random-access memory integrated circuits. 
  * 
  * A non-volatile dual in-line memory module (NVDIMM) is a type of random-access memory for computers.
  * </pre>

@@ -49,14 +49,14 @@ class HelpfulNPEDemo {
 
 class HelpfulNPEDemo2 {
 
-	public static void main(String... args) { 
-		var a = null; // new A();
-		a.b = 1; // Exception in thread "main" java.lang.NullPointerException: Cannot assign
-					// field "b" because "a" is null
-		var a = new Object[][] { null };
-		a[0][1] = new Object(); // … Cannot store to object array because "a[0]" is null because "a" is null
-
-	}
+//	public static void main(String... args) { 
+//		var a = null; // new A();
+//		a.b = 1; // Exception in thread "main" java.lang.NullPointerException: Cannot assign
+//					// field "b" because "a" is null
+//		var a = new Object[][] { null };
+//		a[0][1] = new Object(); // … Cannot store to object array because "a[0]" is null because "a" is null
+//
+//	}
 
 }
 

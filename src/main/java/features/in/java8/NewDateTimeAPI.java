@@ -82,14 +82,14 @@ class LocalDateTimeDemo {
 		// Get the current date and time
 		LocalDateTime currentTime = LocalDateTime.now();
 		System.out.println("Current DateTime: " + currentTime);
-
+		
 		LocalDate date1 = currentTime.toLocalDate();
 		System.out.println("date1: " + date1);
-
+		
 		Month month = currentTime.getMonth();
 		int day = currentTime.getDayOfMonth();
 		int seconds = currentTime.getSecond();
-
+		 
 		System.out.println("Month:" + month + " day:" + day + " seconds:" + seconds);
 
 		System.out.println();
@@ -101,8 +101,11 @@ class LocalDateTimeDemo {
 		System.out.println(" date3: " + date3);
 
 		// 22 hour 15 minutes
-		LocalTime date4 = LocalTime.of(22, 15);
+		LocalTime date4 = LocalTime.of(22, 15); //.of(27, 15) Exception in thread "main" java.time.DateTimeException: Invalid value for HourOfDay (valid values 0 - 23): 27
 		System.out.println("date4: " + date4);
+		System.out.println("date4.getMinute(): " + date4.getMinute());
+		System.out.println("date4.getHour(): " + date4.getHour());
+		System.out.println("date4.getSecond(): " + date4.getSecond());
 
 		// parse a string
 		LocalTime date5 = LocalTime.parse("20:15:30");
@@ -123,7 +126,8 @@ class LocalDateTimeDemo {
 		// bed time cal
 		LocalTime time2Sleep = LocalTime.of(23, 49);
 		LocalTime wakeUp = time2Sleep.plusHours(7); // LocalTime.of(7, 33);
-		System.out.println(time2Sleep + ", " + wakeUp);
+		System.out.println("time to sleep: "+time2Sleep );
+		System.out.println("wake up time: " + wakeUp);
 
 	}
 
@@ -174,9 +178,20 @@ class ZonedDateTimeDemo {
 		ZoneId currentZone = ZoneId.systemDefault();
 		System.out.println("CurrentZone: " + currentZone);
 		System.out.println();
-		System.out.println("All: " + ZoneId.SHORT_IDS);
-
+		System.out.println("All short IDs: " + ZoneId.SHORT_IDS.size());
+		System.out.println("All short IDs: " + ZoneId.SHORT_IDS);
+		System.out.println();		
+		
 		Set<String> availableZoneIds = ZoneId.getAvailableZoneIds();
+		System.out.println("All available Zones: " + availableZoneIds.size() );
+		int ctn = 0;
+		for (String val : availableZoneIds) {
+			ctn++;
+			if(ctn % 40 == 0) {
+				System.out.println();
+			}
+			System.out.print(val + ", ");			
+		}
 		System.out.println(availableZoneIds);
 
 		ZoneId dubai = ZoneId.of("Asia/Dubai");
@@ -185,8 +200,8 @@ class ZonedDateTimeDemo {
 		System.out.println("Time in Dubai now: " + date);
 
 		// custom
-		ZonedDateTime meeting = ZonedDateTime.of(1733, Month.MAY.getValue(), 18, 23, 0, 0, 0, ZoneId.of("Asia/Aqtau"));
-		System.out.println("Time in Dubai now: " + meeting);
+		ZonedDateTime meeting = ZonedDateTime.of(1733, Month.MAY.getValue(), 18, 30, 0, 0, 0, ZoneId.of("Asia/Ashgabat"));
+		System.out.println("Time in Ashgabat Turkmenistan now: " + meeting);
 
 		// meeting organizing
 		meeting = ZonedDateTime.of(LocalDate.of(2020, Month.APRIL, 1), LocalTime.of(9, 30), ZoneId.of("Europe/Prague"));
@@ -241,17 +256,19 @@ class InstantDurationAndPeriod {
 		Thread.currentThread().sleep(3000);
 		Instant end = Instant.now();
 		Duration elapsed = Duration.between(start, end);
-		System.out.println("Duration  = " + elapsed);
+		System.out.println("Duration  elapsed = " + elapsed);
 
 		LocalTime time1 = LocalTime.now();
 
-		Duration twentyFiveHours = Duration.ofHours(25);
+		Duration twentyFiveHours = Duration.ofHours(28);
 		LocalTime time2 = time1.plus(twentyFiveHours);
 		// LocalTime time2 = time1.plus(2, ChronoUnit.HOURS);
 
 		Duration duration = Duration.between(time1, time2);
 
 		System.out.println("Duration: " + duration);
+		System.out.println("Days" + duration.toDays());
+		System.out.println("Hours: " + duration.toHours());
 		System.out.println("Nanos  = " + duration.toNanos());
 		System.out.println("Days  = " + duration.toDays());
 	}
@@ -273,6 +290,7 @@ class InstantDurationAndPeriod {
 		System.out.println(birth);
 		Period yearsPassed = birth.until(LocalDate.now());
 		System.out.println("Years passed: " + yearsPassed.getYears());
+		System.out.println("Days passed (ramins after years, if you want exact number, then use ChronoUnit.DAYS ): " + yearsPassed.getDays());
 
 		long years2Way = birth.until(LocalDate.now(), ChronoUnit.YEARS);
 		System.out.println("Years passed: " + years2Way);
@@ -307,7 +325,7 @@ class TemporalAdjustersDemo {
 		LocalDate nextTuesday = date1.with(TemporalAdjusters.next(DayOfWeek.TUESDAY));
 		System.out.println("Next Tuesday on : " + nextTuesday);
 
-		// get the second saturdmonth
+		// get the second saturday of month
 		LocalDate firstInYear = LocalDate.of(date1.getYear(), date1.getMonth(), 1);
 		LocalDate secondSaturday = firstInYear.with(TemporalAdjusters.nextOrSame(DayOfWeek.SATURDAY))
 				.with(TemporalAdjusters.next(DayOfWeek.SATURDAY));
@@ -315,10 +333,10 @@ class TemporalAdjustersDemo {
 
 		// shows week day in month, so first friday in this month
 		LocalDate daysOfWeekInMonth = LocalDate.now().with(TemporalAdjusters.dayOfWeekInMonth(1, DayOfWeek.FRIDAY));
-		System.out.println("daysOfWeekInMonth : " + daysOfWeekInMonth);
+		System.out.println("first friday : " + daysOfWeekInMonth);
 		// after five weeks (4 weeks for this month), Friday
 		daysOfWeekInMonth = LocalDate.now().with(TemporalAdjusters.dayOfWeekInMonth(5, DayOfWeek.FRIDAY));
-		System.out.println("daysOfWeekInMonth : " + daysOfWeekInMonth);
+		System.out.println("5th friday : " + daysOfWeekInMonth);
 	}
 }
 
@@ -388,6 +406,8 @@ class DateTimeFormatters {
 		DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.DEFAULT, locale);
 		String date = dateFormat.format(new Date());
 		System.out.print(date);
+		System.out.println();
+		System.out.println();
 
 		// http://tutorials.jenkov.com/java-internationalization/simpledateformat.html
 		String pattern = "EEEEE dd MMMMM yyyy HH:mm:ss.SSSZ";
@@ -395,10 +415,11 @@ class DateTimeFormatters {
 
 		date = simpleDateFormat.format(new Date());
 		System.out.println(date);
+		System.out.println();
 
 		locale = new Locale("en", "UK");
 		DateFormatSymbols dateFormatSymbols = new DateFormatSymbols(locale);
-		dateFormatSymbols.setWeekdays(new String[] { "Unused", "Sad Sunday", "Manic Monday", "Thriving Tuesday",
+		dateFormatSymbols.setWeekdays(new String[] { "Unused", "Sam Sunday", "Manic Monday", "Thriving Tuesday",
 				"Wet Wednesday", "Total Thursday", "Fat Friday", "Super Saturday", });
 
 		pattern = "EEEEE MMMMM yyyy";

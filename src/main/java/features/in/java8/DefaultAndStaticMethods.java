@@ -22,7 +22,7 @@ public class DefaultAndStaticMethods {
 		v2.print3();
 
 		System.out.println(
-				"\n Java interface static method is similar to default method except that we can’t override them in the implementation classes. \n");
+				"\n Java interface static method is similar to default method except that we canï¿½t override them in the implementation classes. \n");
 		Car2 obj = new Car2();
 		obj.print("IFace");
 		System.out.println();
@@ -34,24 +34,24 @@ public class DefaultAndStaticMethods {
 interface Vehicle {
 
 	default void print() {
-		System.out.println("I am a vehicle!");
+		System.out.println("print() - I am a vehicle!");
 	}
 
 	void print2();
 
 	default void print3() {
-		System.out.println("print3 - I am a vehicle! ");
+		System.out.println("print3() - I am a vehicle! ");
 	}
 
 	default void print(String str) {
 		System.out.println();
 		if (!isNull(str))
-			System.out.println("MyData Print::" + str);
+			System.out.println("print(String str)  - MyData Print::" + str);
 	}
 
 	/**
 	 * Java interface static method is similar to default method except that we
-	 * can’t override them in the implementation classes. This feature helps us in
+	 * can't override them in the implementation classes. This feature helps us in
 	 * avoiding undesired results in case of poor implementation in implementation
 	 * classes.
 	 * 
@@ -80,12 +80,11 @@ interface FourWheeler {
  * cases
  * 
  */
-class Car implements FourWheeler, Vehicle { // overrides who comes first:
-											// Vehicle, FourWheeler
+class Car implements FourWheeler, Vehicle { // overrides who comes first: so FourWheeler's print
+											//try this  Vehicle, FourWheeler
 
 	// overrides
 	public void print() {
-		// FourWheeler.super.print();
 		System.out.println("I am a four wheeler car vehicle!");
 	}
 
@@ -99,7 +98,7 @@ class Car implements FourWheeler, Vehicle { // overrides who comes first:
  * Second solution is to call the default method of the specified interface
  * using super.
  */
-class Car2 implements Vehicle, FourWheeler {
+class Car2 implements FourWheeler, Vehicle  { //not care about order, because we explicitly define super.print()
 
 	// default of vehicle, overrides
 	public void print() {

@@ -11,11 +11,13 @@ import java.util.Map;
 public class CollectionsMapsAndComparators {
 
 	public static void main(String[] args) {
-		List<String> l = List.of("A", "B", "C"); // immutable you can't modify
+		List<String> l = List.of("A", "B", "C"); // immutable you can't modify		
 		l.stream().forEach(System.out::print);
+		
+		
 		System.out.println();
 
-		l = Arrays.asList("A", "Z", "M", "C"); // java.lang.UnsupportedOperationException: remove
+		l = Arrays.asList("A", "Z", "M", "A", "C", "y", "b"); // java.lang.UnsupportedOperationException: remove
 		ArrayList<String> ll = new ArrayList<>(l);
 		ll.removeIf(x -> "A".equals(x));
 		ll.replaceAll(String::toLowerCase);
@@ -28,8 +30,10 @@ public class CollectionsMapsAndComparators {
 		// Maps
 		Map<String, Auto> maps = new HashMap<>();
 		maps.put("citroen", new Auto("Citroen C1", "ABC 164521", 4));
-		Auto ford = new Auto("Frod fusion", "FRD 12363", 5);
+		Auto ford = new Auto("Ford fusion", "1AA 5091", 5);
 		maps.put("ford", ford);
+		maps.put("skoda", new Auto("Skoda Fabia Combi", "8P0 8257", 5));
+		maps.put("toyota", new Auto("Toyata RAV4", "9AD 6998", 5));
 		maps.put("dodge", new Auto("Dodge Ram", "KLM 845990", 3));
 		// BiConsumer as a Parameter
 		maps.forEach((k, v) -> System.out.println(k + "=" + v));
@@ -37,7 +41,7 @@ public class CollectionsMapsAndComparators {
 
 		// if no key
 		Auto defaultAuto = new Auto("Skoda Fabia", "AMD 345591", 5);
-		Auto auto = maps.getOrDefault("ford", defaultAuto);
+		Auto auto = maps.getOrDefault("masyn", defaultAuto);
 		System.out.println("defaultAuto = " + auto);
 
 		System.out.println("Auto = " + maps.get("dodge"));
@@ -82,8 +86,15 @@ public class CollectionsMapsAndComparators {
 		// chained Comparator (in CGI 2013 tried by old way)
 		Comparator<String> cmp3 = Comparator.comparingInt(String::length).thenComparing(String::lastIndexOf);
 		System.out.println();
+		
+ 
 
-		List<Auto> list = new ArrayList<>(Arrays.asList(new Auto("Citroen C1", "ABC 164521", 5),
+		List<Auto> list = new ArrayList<>(Arrays.asList(
+				new Auto("Togg", "AA 5091", 5),
+				new Auto("Ford fusion", "1AA 5091", 5),
+				new Auto("Skoda Fabia Combi", "8P0 8257", 5),
+				new Auto("Toyata RAV4", "9AD 6998", 5),				
+				new Auto("Citroen C1", "ABC 164521", 5),
 				new Auto("Volvo V40", "XYZ 201845", 5), new Auto("Citroen C1", "ABC 164521", 4),
 				new Auto("Dodge", "KLM 845990", 2), new Auto("Dodge Ram", "KLM 845990", 3)));
 

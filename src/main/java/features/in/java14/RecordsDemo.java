@@ -7,6 +7,12 @@ public class RecordsDemo {
 	public static void main(String... args) {
 		Course course = new Course("What's New in Java 14", Duration.ofHours(1), 5);
 		Course course2 = new Course("What's New in Java 14", Duration.ofHours(1), 5);
+		
+		//via canonical construtors
+		//Course course3 = new Course();
+		Course course4 = new Course("What's New in Java 14",  5);
+		course.hi();
+		int i = Course.i;
 
 		System.out.println(course == course2);
 		System.out.println(course.equals(course2));

@@ -34,7 +34,7 @@ public class PatternMatching {
 		System.out.println(getPerimeter(new Circle(2.4)));
 
 		// also in case statement
-		System.out.println(getPerimeter2(new Circle(2.4)));
+	//	System.out.println(getPerimeter2(new Circle(2.4)));
 
 		Shape sh = new Circle(2.3);
 		// BRILLIANT
@@ -54,10 +54,10 @@ public class PatternMatching {
 			// return 2 * s.length() + 2 * s.width(); //also fails
 		}
 
-		if (!(sh instanceof Circle c) && c.radius() > 2) {
-			return 2 * sh.radius() * Math.PI;
-			// return 2 * s.length() + 2 * s.width(); //also fails
-		}
+//		if (!(sh instanceof Circle c) && c.radius() > 2) {
+//			return 2 * sh.radius() * Math.PI;
+//			// return 2 * s.length() + 2 * s.width(); //also fails
+//		}
 	}
 
 	public static double getPerimeter(Shape shape) throws IllegalArgumentException {
@@ -70,25 +70,25 @@ public class PatternMatching {
 		}
 	}
 
-	// FUTURE oriented
-	public static double getPerimeter2(Shape shape) {
-		return switch (shape) {
-		case Rectangle r -> 2 * r.length() + 2 * r.width();
-		case Circle c -> 2 * c.radius() * Math.PI;
-		default -> 5.5;
-		};
-	}
-
-	@SuppressWarnings("preview")
-	public static String format(Object o) {
-		return switch (o) {
-		case Integer i -> String.format("int %d", i);
-		case Long l -> String.format("int %d", l);
-		case Double d -> String.format("int %f", d);
-		case String s -> String.format("int %s", s);
-		default -> o.toString();
-		};
-	}
+//	// FUTURE oriented
+//	public static double getPerimeter2(Shape shape) {
+//		return switch (shape) {
+//		case Rectangle r -> 2 * r.length() + 2 * r.width();
+//		case Circle c -> 2 * c.radius() * Math.PI;
+//		default -> 5.5;
+//		};
+//	}
+//
+//	@SuppressWarnings("preview")
+//	public static String format(Object o) {
+//		return switch (o) {
+//		case Integer i -> String.format("int %d", i);
+//		case Long l -> String.format("int %d", l);
+//		case Double d -> String.format("int %f", d);
+//		case String s -> String.format("int %s", s);
+//		default -> o.toString();
+//		};
+//	}
 
 	/// record pattern
 //	public static void recPattern() {

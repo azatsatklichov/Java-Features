@@ -14,7 +14,7 @@ public class StringAndNumbersEnhancements {
 		// (char)letter).peek(System.out::print).count();
 
 		is.mapToObj(letter -> (char) letter).peek(System.out::print).forEach(x -> {
-			System.out.println(" Heyjanelek janelek " + x);
+			System.out.println("Heyjanelek janelek cakga cakyp bereyin, gurbaganyn ayagyna yupler dakyp bereyin  " + x);
 		});
 
 		// Concatenation
