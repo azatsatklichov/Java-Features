@@ -1,3 +1,21 @@
+
+# Java-Features  
+Project has in detailed focus on below ares 
+- Java Virtual Machine (Hotspot) and Memory Management
+- Modular Java 
+- GraalVM 
+- Java Benchmarking Harness
+- Java Features, since Java JDK 1.0
+
+# Five main goals which Java language intended to bring  
+- Simple, object-oriented, and familiar.
+- Robust and secure.
+- Architecture-neutral (agnostic) and portable.
+- Execute with high performance.
+- Interpreted, threaded, and dynamic.
+
+Main Pages for JDK specs and more 
+
 - [Java Features at GitHub](https://github.com/azatsatklichov/Java-Features.git), 
 - [Open JDK](https://openjdk.java.net/), 
 - [Specs](https://docs.oracle.com/javase/specs/),  
@@ -7,14 +25,7 @@
 - [JCP](https://en.wikipedia.org/wiki/Java_Community_Process), 
 - [JEP](https://openjdk.java.net/jeps/0), 
 - [Wikipedia](https://en.wikipedia.org/wiki/Java_version_history#JDK_1.0), 
-- [Oracle Java SE at a Glance](https://www.oracle.com/technetwork/java/javase/overview/index.html), 
-
-# Five main goals which Java language intended to bring  
-- Simple, object-oriented, and familiar.
-- Robust and secure.
-- Architecture-neutral (agnostic) and portable.
-- Execute with high performance.
-- Interpreted, threaded, and dynamic.
+- [Oracle Java SE at a Glance](https://www.oracle.com/technetwork/java/javase/overview/index.html)
 
 
 # Java 1 Features (GA January 1996), Java 1.1 (February 1997)
