@@ -1,3 +1,5 @@
+>jps   //to get PID 
+
 jstat -gccapacity <pid>
 
 jstat -gcutil <pid>

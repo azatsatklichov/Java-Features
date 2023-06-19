@@ -7,8 +7,9 @@ import java.util.Random;
 
 public class E_BigObjMemoryAddrs {
 
+	//Default G1 - (no need to put: (-XX:+UseG1GC  )
 	//-XX:+UseParallelGC
-	//-XX:+UseConcMarkSweepGC 
+	//-XX:+UseConcMarkSweepGC - Unrecognized VM option 'UseConcMarkSweepGC' 
 	public static void main(String... args) throws Exception {
 		int arraySize = 1000000;
 		BigObj[] bigArr = new BigObj[arraySize]; 
