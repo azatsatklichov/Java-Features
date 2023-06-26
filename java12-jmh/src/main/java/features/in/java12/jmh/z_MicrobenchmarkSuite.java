@@ -28,6 +28,25 @@ package features.in.java12.jmh;
  * through the optimization phases, and then finally drop them when emitting the
  * generated code.
  * 
+ * Passing Value to a Black Hole
+An alternative to returning a combined value is to pass the calculated values (or returned / generated objects or whatever the result of your benchmark is) into a JMH black hole. Here is how passing values into a black hole looks:
+
+package com.jenkov;
+
+import org.openjdk.jmh.annotations.Benchmark;
+import org.openjdk.jmh.infra.Blackhole;
+
+public class MyBenchmark {
+
+    @Benchmark
+   public void testMethod(Blackhole blackhole) {
+        int a = 1;
+        int b = 2;
+        int sum = a + b;
+        blackhole.consume(sum);
+    }
+}
+ * 
  */
 public class z_MicrobenchmarkSuite {
 	public static void main(String[] args) {

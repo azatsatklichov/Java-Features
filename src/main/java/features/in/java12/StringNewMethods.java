@@ -7,11 +7,12 @@ import java.util.List;
 import java.util.Optional;
  
 /**
+ * 
  * 4 new methods have been introduced in Java 12 which are:
  * 
  * indent(int n) - The string is conceptually separated into lines using lines(). lines() is the String API introduced in Java 11.
  * 
- * transform(Function f)
+ * transform(Function f) - promoting PIPE way of doing 
  * 
  * Optional describeConstable()
  * 
@@ -43,6 +44,7 @@ public class StringNewMethods {
 
 		List<String> transformedNames = new ArrayList<>();
 
+		//promoting PIPE way of doing 
 		for (String name : names) {
 			String transformedName = name.transform(String::strip).transform(String::toUpperCase);
 			transformedNames.add(transformedName);
@@ -57,7 +59,7 @@ public class StringNewMethods {
 		System.out.println("Optional<String> describeConstable()");
 		/**
 		 * If you look at the String class documentation, it implements two new
-		 * interfaces from Constants API – Constable, and ConstantDesc.
+		 * interfaces from Constants API – 
 		 */
 		String so = "Hello";
 		Optional<String> os = so.describeConstable();
