@@ -2,7 +2,7 @@ package features.in.java14;
 
 import java.util.Locale;
 
-public class IformativeNPE {
+public class InformativeNPE {
 
 	/**
 	 * Improved the description of NullPointerExceptions by telling which variable

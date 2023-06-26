@@ -23,11 +23,13 @@ public class TeeingCollections {
 	 */
 	public static void main(String[] args) {
 
-		//orta arifmetik qiymat 
+		//orta arifmetik hasaby 
 		var ints = Stream.of(45, 75, 61, 19);
 		Long arithAverage = ints.collect(Collectors.teeing(Collectors.summingInt(Integer::valueOf),
 				Collectors.counting(), (sum, count) -> sum / count));
-		System.out.println(arithAverage);
+		System.out.println("arithAverage = "+arithAverage);
+		
+		
 		List<Employee> employeeList = Arrays.asList(new Employee(2, "B", 200), new Employee(1, "A", 100),
 				new Employee(3, "C", 300), new Employee(4, "D", 400));
 

@@ -71,10 +71,6 @@ public class SerialDemo {
 	
 	@Serial
 	private static final long seralVersionUID = 123L; // compile-time error, should be 'serialVersionUID'
-
-	
- 
-
 }
 
  

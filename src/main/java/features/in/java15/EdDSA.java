@@ -17,6 +17,10 @@ import java.util.Base64;
  * it is also one of the signatures schemes that are allowed in TLS 1.3.
  *
  * https://en.wikipedia.org/wiki/EdDSA
+ * https://medium.com/risan/upgrade-your-ssh-key-to-ed25519-c6e8d60d3c54
+ * 
+ * e.g. 
+ * ed25519 
  *
  */
 public class EdDSA {
@@ -24,6 +28,8 @@ public class EdDSA {
 
 		KeyPairGenerator kpg = KeyPairGenerator.getInstance("Ed25519");
 		KeyPair kp = kpg.generateKeyPair();
+		System.out.println("Private = "+kp.getPrivate());
+		System.out.println("Public"+kp.getPublic());
 
 		String str = "abc";
 		byte[] msg = str.getBytes(StandardCharsets.UTF_8);

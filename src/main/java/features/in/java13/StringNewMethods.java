@@ -8,11 +8,20 @@ public class StringNewMethods {
 	 */
 	public static void main(String[] args) {
 
+		//has incidental white spaces?
 		String output = """
 			    Name: %s
 			    Phone: %d
-			    Salary: $%.2f
+			    	Salary: $%.2f
 			    """.formatted("Pankaj", 123456789, 2000.5555);
+
+		System.out.println(output);
+		//indidental removed
+		output = """
+			    Name: %s
+			    Phone: %d
+			    	Salary: $%.2f
+			""".formatted("Pankaj", 123456789, 2000.5555);
 
 		System.out.println(output);
 
