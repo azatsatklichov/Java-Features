@@ -1,7 +1,8 @@
 
 # Java-Features  
 Project has in detailed focus on below ares 
-- Java Virtual Machine (Hotspot) and Memory Management
+- JVM Architecture, ClassLoading and Reflection
+- JVM Memory Management-Garbage Collection, GC Tools, Java References
 - Modular Java 
 - GraalVM 
 - Java Benchmarking Harness

@@ -23,7 +23,7 @@ public class PatternMatching {
 
 		// new way is -- Early Java12  NO CASTING NEEDED
 //		if (obj instanceof String x) {
-//		    System.out.println(x);
+//		    System.out.println(x); //context aware  - e.g. so all String methods available 
 //		} 
 	}
 }

@@ -29,7 +29,7 @@ public class FileMismatchMethod {
 
 		long mismatch = Files.mismatch(filePath1, filePath2);
 
-		System.out.println("File Mismatch position... It returns -1 if there is no mismatch\n");
+		System.out.println("File Mismatch position... It returns -1 if there is no mismatch (SAME FILES)\n");
 
 		System.out.print("Mismatch position in file1 and file2 is >>>> ");
 		System.out.println(mismatch);

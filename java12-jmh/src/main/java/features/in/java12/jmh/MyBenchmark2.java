@@ -38,7 +38,8 @@ import org.openjdk.jmh.annotations.*;
 
 import java.util.concurrent.TimeUnit;
 
-@BenchmarkMode(Mode.AverageTime)  //LATENCY 
+@BenchmarkMode(Mode.AverageTime)  //LATENCY - LOW is good, #of avearge time spent to do all operations
+//@BenchmarkMode(Mode.Throughput)  //Throughput - HIGH is good, #of transaction(opeartion) per second
 @OutputTimeUnit(TimeUnit.NANOSECONDS)
 @Fork(1)  //only on Single JVM, not like by default on 5 different JVMs
 @State(Scope.Benchmark)

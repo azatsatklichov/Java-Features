@@ -13,6 +13,21 @@ package features.in.java12.jmh;
  * This allows contributors to focus their efforts on a single 64-bit ARM
  * implementation
  * 
+ * 
+ * NOTE: Current JVM experimentally supports Compiler Blackholes, and they are
+ * in use. Please exercise extra caution when trusting the results, look into
+ * the generated code to check the benchmark still works, and factor in a small
+ * probability of new VM bugs. Additionally, while comparisons between different
+ * JVMs are already problematic, the performance difference caused by different
+ * Blackhole modes can be very significant. Please make sure you use the
+ * consistent Blackhole mode for comparisons.
+ * 
+ * 
+ * 
+ * Compiler blackholes are instructing the compilers to carry all arguments
+ * through the optimization phases, and then finally drop them when emitting the
+ * generated code.
+ * 
  */
 public class z_MicrobenchmarkSuite {
 	public static void main(String[] args) {
@@ -31,8 +46,8 @@ public class z_MicrobenchmarkSuite {
 		 * Prevent performance regaression
 		 * 
 		 */
-		//Use Maven Archetype
-		//jmh-java-benchmark-archetype
+		// Use Maven Archetype
+		// jmh-java-benchmark-archetype
 //		/@Benchmark
 //		/@BenchmarkMode		
 	}
