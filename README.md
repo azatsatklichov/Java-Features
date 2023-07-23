@@ -4,7 +4,7 @@ Project has in detailed focus on below ares
 - JVM Architecture, ClassLoading and Reflection
 - JVM Memory Management-Garbage Collection, GC Tools, Java References
 - Modular Java 
-- GraalVM 
+- GraalVM (separate project graalvm-features)
 - Java Benchmarking Harness
 - Java Features, since Java JDK 1.0
 
