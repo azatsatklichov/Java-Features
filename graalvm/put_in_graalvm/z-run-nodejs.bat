@@ -1,1 +1,0 @@
-node validate-domain-async1.js

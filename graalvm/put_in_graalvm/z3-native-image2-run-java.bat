@@ -1,1 +1,0 @@
-java -cp C:\apps\Java\graalvm-ce-java11-21.3.0\bin  NativeImage
