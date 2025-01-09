@@ -19,6 +19,9 @@ public class RandomDemo {
         System.out.println(getRandomNumber(12, 67));
         System.out.println(getRandomNumberUsingNextInt(12, 67));
 
+
+
+
         System.out.println(getRandomNumberUsingInts(12, 67));
 
         getSecureRandom();
