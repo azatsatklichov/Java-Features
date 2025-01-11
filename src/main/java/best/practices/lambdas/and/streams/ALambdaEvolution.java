@@ -5,6 +5,7 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 
 
+//read medium blog related to this topic here - https://medium.com/@azat-satklichov
 public class ALambdaEvolution {
     public static void main(String[] args) {
         System.out.println("Hello Lambda Expression - Samples");
@@ -32,36 +33,46 @@ public class ALambdaEvolution {
 
         // Or another example, which implements well known Runnable Interface in three ways
         /**
-         *Another example, which implements well-known Java Runnable Interface, to witness the
-         * implementation with lambda expression is more readable and shortest of all three.
+         *Another example, which implements well-known MyPrinter Interface, to witness the
+         * implementation with lambda expression is more readable, but with method reference it is the shortest of all four.
          */
 
-
-        //1-way Using a class to implement the Runnable interface
-        class AppThread implements Runnable {
+         //or implement MyPrinter in 4 ways
+        //1-way Using a class to implement MyPrinter
+        class MyHpPrinter implements MyPrinter {
             @Override
-            public void run() {
-                System.out.println("Zero parameter & return void");
+            public void print(String s) {
+                System.out.println("Using "+ s + ", printed by HP");
             }
         }
-        Runnable r1 = new AppThread();
-        r1.run();
+        MyPrinter p1 = new MyHpPrinter();
+        p1.print("Class");
 
-        //2-way Classic Runnable interface implementation using anonymous class
-        Runnable r2 = new Runnable() {
-            public void run() {
-                System.out.println("Zero parameter & return void");
+        //2-way Using anonymous class
+        MyPrinter p2 = new MyPrinter() {
+            public void print(String s) {
+                System.out.println("Using "+ s + ", printed by HP");
             }
         };
-        r2.run();
+        p2.print("Anonymous Class");
 
-        //3-way Implementation with Lambda expression with no type declaration, no input parameter, and no return value
-        Runnable r3 = () -> System.out.println("Zero parameter & return void");
-        r3.run();
+        //3-way Implementation with Lambda expression with no type declaration, but with input parameter, and return value
+        MyPrinter p3 = (s) -> System.out.println("Using "+ s + ", printed by HP");
+        p2.print("Lambda Expression");
+
+
+        //4-way Using Method Reference
+        MyPrinter p4 = System.out::println;
+        p2.print("Method Reference");
+
 
         System.out.println("\n Guitar Solution DEMO Applying Classic Java Solution, Lambdas, Method References, Functional Interfaces and Stream API");
         Guitar.main(null);
     }
+}
+
+interface MyPrinter {
+    public void print(String s);
 }
 
 
@@ -362,5 +373,42 @@ enum Wood {
             default:
                 return "unspecified";
         }
+    }
+}
+
+
+
+class LambdaScopeTest {
+
+    public int x = 0;
+
+    class FirstLevel {
+
+        public int x = 1;
+
+        void methodInFirstLevel(int x) {
+
+            // The following statement causes the compiler to generate
+            // the error "local variables referenced from a lambda expression
+            // must be final or effectively final" in statement A:
+            //
+            // x = 99;
+
+            Consumer<Integer> myConsumer = (y) -> {
+                System.out.println("x = " + x); // Statement A
+                System.out.println("y = " + y);
+                System.out.println("this.x = " + this.x);
+                System.out.println("LambdaScopeTest.this.x = " + LambdaScopeTest.this.x);
+            };
+
+            myConsumer.accept(x);
+
+        }
+    }
+
+    public static void main(String... args) {
+        LambdaScopeTest st = new LambdaScopeTest();
+        LambdaScopeTest.FirstLevel fl = st.new FirstLevel();
+        fl.methodInFirstLevel(23);
     }
 }

@@ -1,9 +1,4 @@
-package best.practices.lambdas.and.streams;
-
-import static java.util.Comparator.comparing;
-import static java.util.stream.Collectors.counting;
-import static java.util.stream.Collectors.groupingBy;
-import static java.util.stream.Collectors.toList;
+package best.practices.lambdas.and.streams.not.doneyet;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -13,10 +8,13 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.stream.Stream;
 
+import static java.util.Comparator.comparing;
+import static java.util.stream.Collectors.*;
+
 public class StreamsProperUsage {
 	public static void main(String[] args) throws FileNotFoundException {
 		String path; // = args[0]
-		path = "C:\\workspace-17\\Java-Features\\src\\main\\java\\best\\practices\\lambdas\\and\\streams\\freq.txt";
+		path = "C:\\workspace-17\\java-in-deep\\src-practical\\net\\sahet\\streams\\and\\effective\\lambdas\\freq.txt";
 		File file = new File(path);
 		Map<String, Long> freq = new HashMap<>();
 

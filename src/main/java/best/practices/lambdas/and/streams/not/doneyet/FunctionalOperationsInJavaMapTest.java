@@ -1,6 +1,6 @@
-package best.practices.lambdas.and.streams;
+package best.practices.lambdas.and.streams.not.doneyet;
 
-import static org.junit.jupiter.api.Assertions.fail;
+import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Stream;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.fail;
 
 class FunctionalOperationsInJavaMapTest {
 

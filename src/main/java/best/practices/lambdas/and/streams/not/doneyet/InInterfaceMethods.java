@@ -1,4 +1,4 @@
-package best.practices.lambdas.and.streams;
+package best.practices.lambdas.and.streams.not.doneyet;
 
 /**
  * Prior to java 8, interfaces can have following type of variables/methods.
