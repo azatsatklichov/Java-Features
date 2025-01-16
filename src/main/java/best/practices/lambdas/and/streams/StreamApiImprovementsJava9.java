@@ -1,4 +1,4 @@
-package best.practices.lambdas.and.streams.not.doneyet;
+package best.practices.lambdas.and.streams;
 
 import java.util.*;
 import java.util.stream.IntStream;

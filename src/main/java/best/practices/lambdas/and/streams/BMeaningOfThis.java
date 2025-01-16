@@ -1,11 +1,11 @@
-package best.practices.lambdas.and.streams.not.doneyet;
+package best.practices.lambdas.and.streams;
 
-public class MeaningOfThis {
+public class BMeaningOfThis {
 
 	public final String value = "23s";
 
 	public static void main(String... args) {
-		MeaningOfThis m = new MeaningOfThis();
+		BMeaningOfThis m = new BMeaningOfThis();
 
 		m.doIt();
 		m.scopeExperiment();

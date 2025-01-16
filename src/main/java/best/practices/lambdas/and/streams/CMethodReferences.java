@@ -2,7 +2,7 @@ package best.practices.lambdas.and.streams;
 
 import java.util.function.Function;
 
-public class MethodReferences {
+public class CMethodReferences {
 
     private String name = "MyInstanceValue";
     private static String staticName = "MyStaticValue";

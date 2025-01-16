@@ -1,4 +1,4 @@
-package best.practices.lambdas.and.streams.not.doneyet;
+package best.practices.lambdas.and.streams;
 
 public class Auto implements Comparable<Auto> {
 	public String brand;

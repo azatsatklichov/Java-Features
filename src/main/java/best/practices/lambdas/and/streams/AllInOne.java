@@ -1,97 +1,18 @@
 package best.practices.lambdas.and.streams;
+//read medium blog related to this topic here - https://medium.com/@azat-satklichov
 
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
-
-//read medium blog related to this topic here - https://medium.com/@azat-satklichov
-public class ALambdaEvolution {
+public class AllInOne {
     public static void main(String[] args) {
-        System.out.println("Hello Lambda Expression - Samples");
-        /**
-         Lambda expression (un-named function) represents instances of single-method classes
-         (implementation of Functional Interface) more compactly. Lambda function is a short block of code that
-         takes in (0-N) parameter(s) and execute an expression to return a value or nothing.
-
-         Lambda expression can be serialized if its target type and arguments are serializable,
-         but strongly discouraged as like in inner classes.
-         */
-
-        //single-method interface
-        interface Arithmetic {
-            int compute(int a, int b);
-        }
-
-        // with type declaration, two input parameters and returns value
-        Arithmetic addition = (int a, int b) -> a + b;
-        System.out.println(addition.compute(3, 8)); //11
-
-        // without type declaration, two input parameters and returns value
-        Arithmetic subtraction = (a, b) -> a - b;
-        System.out.println(subtraction.compute(3, 8)); //-5
-
-        // Or another example, which implements well known Runnable Interface in three ways
-        /**
-         *Another example, which implements well-known MyPrinter Interface, to witness the
-         * implementation with lambda expression is more readable, but with method reference it is the shortest of all four.
-         */
-
-         //or implement MyPrinter in 4 ways
-        //1-way Using a class to implement MyPrinter
-        class MyHpPrinter implements MyPrinter {
-            @Override
-            public void print(String s) {
-                System.out.println("Using "+ s + ", printed by HP");
-            }
-        }
-        MyPrinter p1 = new MyHpPrinter();
-        p1.print("Class");
-
-        //2-way Using anonymous class
-        MyPrinter p2 = new MyPrinter() {
-            public void print(String s) {
-                System.out.println("Using "+ s + ", printed by HP");
-            }
-        };
-        p2.print("Anonymous Class");
-
-        //3-way Implementation with Lambda expression with no type declaration, but with input parameter, and return value
-        MyPrinter p3 = (s) -> System.out.println("Using "+ s + ", printed by HP");
-        p2.print("Lambda Expression");
-
-
-        //4-way Using Method Reference
-        MyPrinter p4 = System.out::println;
-        p2.print("Method Reference");
-
-
         System.out.println("\n Guitar Solution DEMO Applying Classic Java Solution, Lambdas, Method References, Functional Interfaces and Stream API");
         Guitar.main(null);
     }
 }
 
-interface MyPrinter {
-    public void print(String s);
-}
 
-
-/**
- * Lambda Expressions
- *
- * <pre>
- * Lambda Expressions
- * Problem with classic anonymous class (un-named class) is, once it implements a
- * very simple interface that contains only single method, then the syntax of anonymous classes
- * may seem excessive (writing definitions for short methods which are not used much) and unclear.
- * In these cases, you are usually trying to pass functionality as an argument to another method,
- * such as what action should be taken when someone clicks a button. Lambda expressions enable you
- * to do this, to treat functionality as method argument, or code as a data
- *
- * </pre>
- * <p>
- * *
- */
 class Guitar {
 
     private String serialNumber;
@@ -376,39 +297,3 @@ enum Wood {
     }
 }
 
-
-
-class LambdaScopeTest {
-
-    public int x = 0;
-
-    class FirstLevel {
-
-        public int x = 1;
-
-        void methodInFirstLevel(int x) {
-
-            // The following statement causes the compiler to generate
-            // the error "local variables referenced from a lambda expression
-            // must be final or effectively final" in statement A:
-            //
-            // x = 99;
-
-            Consumer<Integer> myConsumer = (y) -> {
-                System.out.println("x = " + x); // Statement A
-                System.out.println("y = " + y);
-                System.out.println("this.x = " + this.x);
-                System.out.println("LambdaScopeTest.this.x = " + LambdaScopeTest.this.x);
-            };
-
-            myConsumer.accept(x);
-
-        }
-    }
-
-    public static void main(String... args) {
-        LambdaScopeTest st = new LambdaScopeTest();
-        LambdaScopeTest.FirstLevel fl = st.new FirstLevel();
-        fl.methodInFirstLevel(23);
-    }
-}

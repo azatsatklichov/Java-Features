@@ -1,4 +1,4 @@
-package best.practices.lambdas.and.streams.not.doneyet;
+package best.practices.lambdas.and.streams;
 
 import java.util.ArrayList;
 import java.util.Arrays;
