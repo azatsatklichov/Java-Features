@@ -52,18 +52,30 @@ public class ALambdaExpression {
          but strongly discouraged as like in inner classes.
          */
 
-        //single-method interface
-        interface Arithmetic {
+        //single-method interface – functional interface
+        interface Operation {
             int compute(int a, int b);
         }
 
-        // with type declaration, two input parameters and returns value
-        Arithmetic addition = (int a, int b) -> a + b;
-        System.out.println(addition.compute(3, 8)); //11
+        //or implement Arithmetic in 4 ways
+        //before Java 8
+        //1-way Using a class to implement MyPrinter
+        class ArithmeticOperation implements Operation {
+            @Override
+            public int compute(int a, int b) {
+                return a + b;
+            }
+        }
+        Operation o1 = new ArithmeticOperation();
+        System.out.println(o1.compute(3, 8));
 
-        // without type declaration, two input parameters and returns value
-        Arithmetic subtraction = (a, b) -> a - b;
-        System.out.println(subtraction.compute(3, 8)); //-5
+        //2-way Using anonymous class
+        Operation o2 = new Operation() {
+            public int compute(int a, int b) {
+                return a + b;
+            }
+        };
+        System.out.println(o2.compute(3, 8));
 
 
         /**
@@ -79,40 +91,52 @@ public class ALambdaExpression {
          * implementation with lambda expression is more readable, but with method reference it is the shortest of all four.
          */
 
-        //or implement MyPrinter in 4 ways
-        //before Java 8
-        //1-way Using a class to implement MyPrinter
-        class MyHpPrinter implements MyPrinter {
-            @Override
-            public void print(String s) {
-                System.out.println("Using " + s + ", printed by HP");
-            }
-        }
-        MyPrinter p1 = new MyHpPrinter();
-        p1.print("Class");
-
-        //2-way Using anonymous class
-        MyPrinter p2 = new MyPrinter() {
-            public void print(String s) {
-                System.out.println("Using " + s + ", printed by HP");
-            }
-        };
-        p2.print("Anonymous Class");
-
         //with Java 8
         //3-way Implementation with Lambda expression with no type declaration, but with input parameter, and return value
-        MyPrinter p3 = (s) -> System.out.println("Using " + s + ", printed by HP");
-        p2.print("Lambda Expression");
+        // with type declaration, two input parameters and returns value
+        Operation o3 = (int a, int b) -> a + b;
+        System.out.println(o3.compute(3, 8)); //11
+
+        // without type declaration, two input parameters and returns value
+        Operation subtraction = (a, b) -> a - b;
+        System.out.println(subtraction.compute(3, 8)); //-5
 
 
         //4-way Using Method Reference
-        MyPrinter p4 = System.out::println;
-        p2.print("Method Reference");
-    }
-}
+        Operation o4 = ALambdaExpression::add;
+        System.out.println(o4.compute(3, 8));
 
-interface MyPrinter {
-    public void print(String s);
+        //or other example
+        //1-way Using a class to implement the Runnable interface
+        class AppThread implements Runnable {
+            @Override
+            public void run() {
+                System.out.println("Zero parameter & return void");
+            }
+        }
+        Runnable r1 = new AppThread();
+        r1.run();
+
+        //2-way Classic Runnable interface implementation using anonymous class
+        Runnable r2 = new Runnable() {
+            public void run() {
+                System.out.println("Zero parameter & return void");
+            }
+        };
+        r2.run();
+
+        //3-way Implementation with Lambda expression with no type declaration, no input parameter, and no return value
+        Runnable r3 = () -> System.out.println("Zero parameter & return void");
+        r3.run();
+
+
+
+
+    }
+
+    private static int add(int a, int b) {
+        return a + b;
+    }
 }
 
 

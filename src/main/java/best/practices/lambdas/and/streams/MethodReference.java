@@ -16,6 +16,19 @@ import java.util.function.Consumer;
     Static methods
     Instance methods
     Constructors using new operator (TreeSet::new)
+
+
+ Functional interfaces can provide a target type in multiple contexts, such as assignment context, method invocation, or cast context:
+
+ // Assignment context
+ Predicate<String> p = String::isEmpty;
+
+ // Method invocation context
+ stream.filter(e -> e.getSize() > 10)...
+
+ // Cast context
+ stream.map((ToIntFunction) e -> e.getSize())...
+
  * 
  * </pre>
  */

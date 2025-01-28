@@ -31,6 +31,15 @@ public class FunctionalInterfaces {
         lambda.run();
         lambda.runDefault("Welcome to Java Functional Interface");
 
+        System.out.println("\n  Legacy Functional Interfaces");
+        /**
+         * Not all functional interfaces appeared in Java 8. Many interfaces from
+         * previous versions of Java conform to the constraints of a FunctionalInterface
+         * and can be used as lambdas.
+         */
+        Thread thread = new Thread(() -> System.out.println("Hello From Another Thread"));
+        thread.start();
+
 
         /**
          Java Standard functional interfaces in java.util.function.*
@@ -98,6 +107,17 @@ public class FunctionalInterfaces {
         System.out.println(namesWithA);
 
 
+        //double predicate
+        DoublePredicate isFiveDotOne = (d) -> Double.compare(d, 5.1) == 0;
+        boolean test1 = isFiveDotOne.test(5.11);//false
+        System.out.println(test1);
+
+
+        //bi-predicate
+        BiPredicate<Integer, String> validator = (num, txt) -> num > 63 && txt.length() > 63;
+        validator.test(63, "Adam");//false
+
+
         System.out.println("\nSupplier [Producer] - public <T> get()");
         /**
          * The Java Supplier interface is a functional interface that represents an
@@ -154,6 +174,9 @@ public class FunctionalInterfaces {
          * implements the Consumer functional interface:
          */
 
+        Consumer<Integer> c = System.out::println;
+        c.accept(71);
+
         Consumer<Integer> cs2 = (i) -> {
             System.out.println(i + 4);
         };
@@ -185,6 +208,9 @@ public class FunctionalInterfaces {
 
         ages.forEach((name, age) -> System.out.println(name + " is " + age + " years old"));
 
+        BiConsumer<String, Integer> bC = (name, age) -> System.out.println(name + " is " + age + " years old.");
+        bC.accept("Meret", 41);
+
 
         System.out.println("Function - public <R> apply(T parameter)");
         /**
@@ -209,10 +235,19 @@ public class FunctionalInterfaces {
         Long resultt = duplicate.apply((long) 4);//8
         System.out.println("result = " + resultt);
 
+        Function<Integer, String> myGrade = (a) -> "My Grade is: " + a;
+        String s1 = myGrade.apply(84);//My Grade is: 84
+        System.out.println(s1);
+
         //or via lambda
         Function<Integer, Integer> multiplyByTwo = (a) -> a * 2; //a + a
         Integer duplicatedVal = multiplyByTwo.apply(41); //82
         System.out.println(duplicatedVal);
+
+        //you can do it with UnaryOperator if return type is same as input type
+        UnaryOperator<Integer> multiplyByTwo2 = (a) -> a * 2; //a + a
+        Integer apply1 = multiplyByTwo2.apply(41);//82
+        System.out.println(apply1);
 
 
         Map<String, Integer> nameMap = new HashMap<>();
@@ -251,14 +286,17 @@ public class FunctionalInterfaces {
         List<String> strList = Arrays.asList("Red", "Blue", "Green");
         Collections.sort(strList, (a, b) -> a.compareTo(b));
 
-        System.out.println("\n  Legacy Functional Interfaces");
-        /**
-         * Not all functional interfaces appeared in Java 8. Many interfaces from
-         * previous versions of Java conform to the constraints of a FunctionalInterface
-         * and can be used as lambdas.
-         */
-        Thread thread = new Thread(() -> System.out.println("Hello From Another Thread"));
-        thread.start();
+        BiFunction<Integer, Integer, Integer> sum1 = (a, b) -> a + b;
+        System.out.println(sum1.apply(23, 71));//94
+
+        //try same with operator
+        BinaryOperator<Integer> sum2 = (a, b) -> a + b;
+        System.out.println(sum2.apply(23, 71));//94
+
+
+        //try same with primitive - for optimization
+        IntBinaryOperator sum3 = (a, b) -> a + b;
+        System.out.println(sum3.applyAsInt(23, 71));
 
 
         System.out.println("\n Primitive Function Specializations");
@@ -292,7 +330,7 @@ public class FunctionalInterfaces {
          * list with some computed values of the same type:
          */
         OperationOld old = OperationOld.PLUS;
-        System.out.println(old.apply(4343,56));
+        System.out.println(old.apply(4343, 56));
 
         double x = Double.parseDouble(args[0]);
         double y = Double.parseDouble(args[1]);
@@ -375,6 +413,58 @@ public class FunctionalInterfaces {
         System.out.println();
     }
 }
+
+class PrimitiveSpecializatons {
+    public static void main(String[] args) {
+        /*  Java Boxing concept - to convert a primitive type into a corresponding reference type.
+         UnBoxing - converts to backward, and Autoboxing does boxing and unboxing implicitly.
+
+         This has performance cost if you work with numbers a lot.
+         Boxed values (reference type) are stored on the HEAP memory.
+         Uses more memory and, and heap memory is slower than the stack-memory access.
+
+         */
+        viaBoxing(); //comes with a performance cost, timeElapsed=10sec or 11sec
+
+        /**
+
+         * Java 8 added a specialized primitive version of the functional interfaces
+         * to deal with number computations operations, to avoid autoboxing operations when the inputs or outputs are primitives.
+         */
+        viaPrimitiveSpecialization(); //no performance cost, timeElapsed=3sec or 2sec
+    }
+
+    private static void viaBoxing() {
+        long start = System.nanoTime();
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < Integer.MAX_VALUE; i++) {
+            if (i % 7 == 0 || i % 13 == 0) { //boxing
+                list.add(i);
+            }
+        }
+        printElapsedTime(start);//comes with a performance cost, timeElapsed=10sec
+    }
+
+    private static void viaPrimitiveSpecialization() {
+        long start = System.nanoTime();
+        IntPredicate divisibleBy7And13 = (i) -> i % 7 == 0 && i % 13 == 0;
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < Integer.MAX_VALUE; i++) {
+            if (divisibleBy7And13.test(i)) {//no boxing needed
+                list.add(i);
+            }
+        }
+        printElapsedTime(start);//no performance cost, timeElapsed=2sec
+    }
+
+
+    private static void printElapsedTime(long start) {
+        long finish = System.nanoTime();
+        long timeElapsed = (finish - start) / 1000000000;
+        System.out.println("timeElapsed=" + timeElapsed + "sec");
+    }
+}
+
 
 /**
  * Lambda expression implements single-method Interface (no other possibility).
@@ -508,8 +598,7 @@ class Name {
 }
 
 
-
- enum OperationOld {
+enum OperationOld {
 
     PLUS("+") {
         public double apply(double x, double y) {
@@ -547,9 +636,9 @@ class Name {
 }
 
 enum OperationNew {
-    PLUS  ("+", (x, y) -> x + y),
-    MINUS ("-", (x, y) -> x - y),
-    TIMES ("*", (x, y) -> x * y),
+    PLUS("+", (x, y) -> x + y),
+    MINUS("-", (x, y) -> x - y),
+    TIMES("*", (x, y) -> x * y),
     DIVIDE("/", (x, y) -> x / y);
 
     private final String symbol;
@@ -560,7 +649,10 @@ enum OperationNew {
         this.op = op;
     }
 
-    @Override public String toString() { return symbol; }
+    @Override
+    public String toString() {
+        return symbol;
+    }
 
     public double apply(double x, double y) {
         return op.applyAsDouble(x, y);

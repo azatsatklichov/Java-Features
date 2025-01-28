@@ -75,12 +75,12 @@ public class CMethodReferences {
         Factory factory = String::new;
         // This is equivalent to this Java lambda expression:
         factory = chars -> new String(chars);
-
-
     }
-
 }
 
+interface MyPrinter{
+    void print(String s);
+}
 
 interface Tester {
     public int test(String s1, String s2);

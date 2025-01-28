@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
-public class AllInOne {
+public class GBehaviorParameterization {
     public static void main(String[] args) {
         System.out.println("\n Guitar Solution DEMO Applying Classic Java Solution, Lambdas, Method References, Functional Interfaces and Stream API");
         Guitar.main(null);
@@ -84,7 +84,7 @@ class Guitar {
          * However syntax of anonymous classes is excessive excessive -
          * writing definitions for short methods (here for only one method) and unclear.
          * In this case, you can use a lambda expression instead of an anonymous class.
-         * Even you can see the IntelliJ warnign.
+         * Even you can see the IntelliJ warning.
          */
         displayGuitars(guitars, (Guitar guitar) -> guitar.type == GuitarType.ACOUSTIC && guitar.getPrice() >= 712.6 && guitar.getPrice() <= 980.3);
 
