@@ -142,7 +142,7 @@ public class ALambdaExpression {
 
 class LambdaExpressionsDetailed {
 
-    final static String salutation = "Hello! ";
+    final static String hey = "Hey! ";
 
     public static void main(String args[]) {
 
@@ -194,7 +194,7 @@ class LambdaExpressionsDetailed {
                 "\nstarting in Java 8, a local class can access local variables and parameters of the enclosing block that are final or effectively final. "
                         + "\nA variable or parameter whose value is never changed after it is initialized is effectively final.\n");
 
-        String hey = "Hey - effectively final unless re-assigned";
+        String hey = "Hey - I am effectively final unless re-assigned";
         final String eHey = "eHey - final";
 
         GreetingService greetService = message -> {
@@ -208,15 +208,15 @@ class LambdaExpressionsDetailed {
             System.out.println();
 
             message += " second time ";
-            System.out.println(salutation + message);
+            System.out.println(LambdaExpressionsDetailed.hey + message);
         };
 
         greetService.hi("Hello");
 
-        greetService = (String message) -> System.out.println(salutation + message);
+        greetService = (String message) -> System.out.println(LambdaExpressionsDetailed.hey + message);
         greetService.hi("Inter");
         // without parenthesis
-        greetService = message -> System.out.println(salutation + message);
+        greetService = message -> System.out.println(LambdaExpressionsDetailed.hey + message);
         greetService.hi("Milan");
         greetService = message -> {
             System.out.println(4 * 4 + "  " + message);
@@ -234,9 +234,9 @@ class LambdaExpressionsDetailed {
             return result;
         };
 
-        // more examples - pass Lanbda function as Parameter
+        System.out.println("\nmore examples - pass Lambda function as Parameter");
         FileFilter ff = (File f) -> f.getName().endsWith(".java");
-        File dir = new File("C:\\workspace_ext\\Java-Features\\src\\features\\in\\java8");
+        File dir = new File("C:\\workspace-17\\Java-Features\\src\\main\\java\\best\\practices\\lambdas\\and\\streams");
         File[] fArr = dir.listFiles(ff);
         Arrays.asList(fArr).forEach(System.out::println);
 
@@ -289,7 +289,7 @@ class LambdaExpressionsDetailed {
 
 
     /**
-     * Donn't Treat Lambda Expressions as Inner Classes
+     * Don't Treat Lambda Expressions as Inner Classes
      * <p>
      *
      * <pre>
@@ -347,11 +347,8 @@ interface Foo {
     }
 }
 
-interface GreetingService {
-    void hi(String message);
-}
 
-interface GreetingService2 {
+interface Hey {
     String msg(String message);
 }
 
@@ -377,7 +374,7 @@ class EffectifelyFinal {
 
     public void method() {
         String localVariable = "Local";
-        GreetingService2 foo = parameter -> {
+        Hey foo = parameter -> {
             //String localVariable = parameter; //here must not be assigned
             return localVariable;
         };
@@ -417,5 +414,63 @@ class LambdaScopeTest {
         LambdaScopeTest st = new LambdaScopeTest();
         LambdaScopeTest.FirstLevel fl = st.new FirstLevel();
         fl.methodInFirstLevel(23);
+    }
+}
+
+class MeaningOfThis {
+
+    public final String value = "23s";
+
+    public static void main(String... args) {
+        MeaningOfThis m = new MeaningOfThis();
+
+        m.doIt();
+        m.scopeExperiment();
+
+    }
+
+    public void doIt() {
+        String value = "Ysn105";
+        Runnable r = new Runnable() {
+            public final String value = "Inner Wow";
+
+            @Override
+            public void run() {
+                String value = "10i";
+                System.out.println("Inner class 'this' means its own field =  " + this.value);
+            }
+        };
+        r.run();
+    }
+
+    public String scopeExperiment() {
+        Fooo fooIC = new Fooo() {
+            String value = "Inner class value";
+
+            @Override
+            public String method(String string) {
+                System.out.println("Inner class 'this' means its own field =  " + this.value);
+                return this.value;
+            }
+        };
+        String resultIC = fooIC.method("");
+
+        Fooo fooLambda = parameter -> {
+            String value = "saa";
+            System.out.println("Lambda 'this' means outer instance of class, field =  " + this.value);
+            return this.value;
+        };
+        String resultLambda = fooLambda.method("");
+
+        return "Results: resultIC = " + resultIC + ", resultLambda = " + resultLambda;
+    }
+
+}
+
+@FunctionalInterface
+interface Fooo {
+    String method(String string);
+
+    default void defaultMethod() {
     }
 }

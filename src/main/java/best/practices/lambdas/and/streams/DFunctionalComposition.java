@@ -7,7 +7,7 @@ import java.util.function.Predicate;
  * You can compose individual lambdas into a single function yourself, but you do not need to do that,
  * Java comes with built-in support for functional composition that makes your job easy.
  */
-public class FunctionalComposition {
+public class DFunctionalComposition {
 
     public static void main(String[] args) {
         /**
@@ -82,7 +82,7 @@ public class FunctionalComposition {
         Country country = new Country("Czech Republic");
         Function<String, String> capital = Country::addCapital;
         Function<String, String> fifaChecker = capital.andThen(Country::addPhoneCode).andThen(Country::checkParticipation);
-        System.out.println(fifaChecker.apply(country.name()));
+        System.out.println("Is Czech Republic qualified to FIFA's next tournament? " + fifaChecker.apply(country.name()));
     }
 
 }

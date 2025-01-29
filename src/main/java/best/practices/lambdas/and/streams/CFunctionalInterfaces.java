@@ -20,10 +20,11 @@ import java.util.stream.Stream;
  * </pre>
  */
 
-public class FunctionalInterfaces {
+public class CFunctionalInterfaces {
 
     public static void main(String[] args) {
 
+        System.out.println("\n  Legacy Functional Interfaces (e.g. Runnable, Clallable, or your own.)");
         System.out.println("\nFunctional Interfaces Can Be Implemented by a Lambda Expression");
         MyFunctionalInterface lambda = () -> {
             System.out.println("Welcome to Java Functional Interface");
@@ -31,7 +32,6 @@ public class FunctionalInterfaces {
         lambda.run();
         lambda.runDefault("Welcome to Java Functional Interface");
 
-        System.out.println("\n  Legacy Functional Interfaces");
         /**
          * Not all functional interfaces appeared in Java 8. Many interfaces from
          * previous versions of Java conform to the constraints of a FunctionalInterface
@@ -312,7 +312,7 @@ public class FunctionalInterfaces {
          * BiFunction has both arguments and a return type generified, while
          * ToDoubleBiFunction and others allow you to return a primitive value.
          */
-        System.out.println("\n Two-Arity Function Specializations - BiFunctional");
+        System.out.println("\n Function Specializations - BiFunctional");
         Map<String, Integer> salaries = new HashMap<>();
         salaries.put("John", 40000);
         salaries.put("Freddy", 30000);
@@ -416,12 +416,11 @@ public class FunctionalInterfaces {
 
 class PrimitiveSpecializatons {
     public static void main(String[] args) {
-        /*  Java Boxing concept - to convert a primitive type into a corresponding reference type.
-         UnBoxing - converts to backward, and Autoboxing does boxing and unboxing implicitly.
-
-         This has performance cost if you work with numbers a lot.
-         Boxed values (reference type) are stored on the HEAP memory.
-         Uses more memory and, and heap memory is slower than the stack-memory access.
+        /*
+        However, what about Autoboxing? It works the same for anonymous classes and lambda expressions.
+Yes, Java 5 introduced the Autoboxing concept (automated boxing & unboxing). The Java compiler makes the automatic
+conversion between the primitive types and their corresponding object wrapper classes. For example,
+converting an int to an Integer, a double to a Double, and so on.
 
          */
         viaBoxing(); //comes with a performance cost, timeElapsed=10sec or 11sec
@@ -658,7 +657,6 @@ enum OperationNew {
         return op.applyAsDouble(x, y);
     }
 
-    // Main method from Item 34 (Page 163)
     public static void main(String[] args) {
         double x = Double.parseDouble(args[0]);
         double y = Double.parseDouble(args[1]);

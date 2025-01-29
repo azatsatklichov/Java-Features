@@ -1,13 +1,14 @@
 package best.practices.lambdas.and.streams;
-//read medium blog related to this topic here - https://medium.com/@azat-satklichov
+//read medium blog related to this topic 'Java Lambda Expressions - Behavior Parameterization Pattern' here - https://medium.com/@azat-satklichov
 
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Predicate;
 
-public class GBehaviorParameterization {
+public class EBehaviorParameterization {
     public static void main(String[] args) {
-        System.out.println("\n Guitar Solution DEMO Applying Classic Java Solution, Lambdas, Method References, Functional Interfaces and Stream API");
+        System.out.println("\n Guitar Solution DEMO Applying - Classic Java Solution, Lambdas, Method References, Functional Interfaces and Stream API");
         Guitar.main(null);
     }
 }
@@ -186,11 +187,13 @@ class Guitar {
 
 
     /**
+     * Java Functional Interface has one abstract method and optionally annotated with @FunctionalInterface.
+     * You can use Java Standard Functional Interface and make it standardized.
+     * So, use Predicate<T> in place of GuitarValidator
+     * <p>
      * This parameterized type contains a method that has the same return type and
      * parameters as GuitarValidator boolean test(Guitar guitar).
      * <p>
-     * Uou can use Java Standard Functional Interface and make it standardized.
-     * So, use Predicate<T> in place of GuitarValidator
      */
     public static void displayGuitarsWithPredicate(List<Guitar> guitars, Predicate<Guitar> predicate) {
         for (Guitar guitar : guitars) {
@@ -200,12 +203,6 @@ class Guitar {
         }
     }
 
-    /**
-     * Java Functional Interface @see {@link java.util.function.Predicate}
-     */
-    interface Predicate<Guitar> {
-        boolean test(Guitar guitar);
-    }
 
     public static boolean isValidGuitar(Guitar guitar) {
         return guitar.type == GuitarType.ACOUSTIC && guitar.getPrice() >= 712.6 && guitar.getPrice() <= 980.3;
@@ -213,7 +210,7 @@ class Guitar {
 
 
     /**
-     * Applying Java Funtional Interfaces - Predicate, Consumer
+     * Applying STANDARD Java Funtional Interfaces - java.util.function.Predicate, java.util.function.Consumer
      */
     public static void processGuitars(List<Guitar> guitars, Predicate<Guitar> tester, Consumer<Guitar> consumer) {
         for (Guitar guitar : guitars) {
