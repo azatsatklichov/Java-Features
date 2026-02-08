@@ -5,6 +5,7 @@ import java.lang.reflect.Field;
 import sun.misc.Unsafe;
 
 //https://www.baeldung.com/java-unsafe
+//https://www.baeldung.com/jvm-measuring-object-sizes 
 public class B1_BigObjAllocation {
 	private static Unsafe unsafe;
 
