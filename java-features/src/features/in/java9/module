@@ -1,0 +1,57 @@
+Java 9, a new kind of programming component called module has been introduced. A module is a self-describing collection of code and data and has a name to identify it.
+
+Features
+With the Modules component, following enhancements has been added in Java 9 −
+
+A new optional phase,link time, is introduced. This phase is in-between compile time and run time. During this phase, a set of modules can be assembled and optimized, making a custom runtime image using jlink tool.
+
+javac, jlink, and java have additional options to specify module paths, which further locate definitions of modules.
+
+JAR format updated as modular JAR, which contains module-info.class file in its root directory.
+
+JMOD format introduced, a packaging format (similar to JAR) which can include native code and configuration files.
+
+Creating Module
+Following the steps to create a module say com.tutorialspoint.greetings.
+
+Step 1
+Create a folder C:\>JAVA\src. Now create a folder com.tutorialspoint.greetings which is same as the name of module we're creating.
+
+Step 2
+Create module-info.java in C:\>JAVA\src\com.tutorialspoint.greetings folder with following code.
+
+module-info.java
+
+module com.tutorialspoint.greetings { }
+module-info.java is the file which is used to create module. In this step we've created a module named com.tutorialspoint.greetings. By convention this file should reside in the folder whose name is same as module name.
+
+Step 3
+Add the source code in the module. Create Java9Tester.java in C:\>JAVA\src\com.tutorialspoint.greetings\com\ tutorialspoint\greetings folder with following code.
+
+Java9Tester.java
+
+package com.tutorialspoint.greetings;
+
+public class Java9Tester {
+   public static void main(String[] args) {
+      System.out.println("Hello World!");
+   }
+}
+By convention, the source code of a module to lie in same directory which is the name of the module.
+
+Step 4
+Create a folder C:\>JAVA\mods. Now create a folder com.tutorialspoint.greetings which is same as the name of module we've created. Now compile the module to mods directory.
+
+C:/ > JAVA > javac -d mods/com.tutorialspoint.greetings 
+   src/com.tutorialspoint.greetings/module-info.java 
+   src/com.tutorialspoint.greetings/com/tutorialspoint/greetings/Java9Tester.java
+Step 5
+Let's run the module to see the result. Run the following command.
+
+C:/>JAVA>java --module-path mods -m com.tutorialspoint.greetings/com.tutorialspoint.greetings.Java9Tester
+Here module-path provides the module location as mods and -m signifies the main module.
+
+Output
+It will print the following output on console.
+
+Hello World!

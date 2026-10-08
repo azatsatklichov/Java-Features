@@ -1,0 +1,12 @@
+echo https://docs.oracle.com/javase/8/docs/technotes/guides/scripting/nashorn/shell.html
+
+jjs> function fibo(n){
+...> return n<=1 ? n:n+fibo(n-1)
+...> }
+
+jjs>fibo(10)
+
+
+jjs> var s = new java.lang.String("elh")
+jjs> s
+elh

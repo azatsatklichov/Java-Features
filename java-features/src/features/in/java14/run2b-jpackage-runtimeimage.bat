@@ -1,0 +1,1 @@
+jpackage --name myapp --input lib --main-jar myApp.jar \ --runtime-image jdk-14+fx

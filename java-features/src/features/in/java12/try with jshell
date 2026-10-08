@@ -1,0 +1,7 @@
+jshell> import java.lang.invoke.MethodHandles;
+
+jshell> String so1 = "Hello";
+so1 ==> "Hello"
+
+jshell> so1.resolveConstantDesc(MethodHandles.lookup());
+$18 ==> "Hello"

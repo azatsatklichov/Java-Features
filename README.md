@@ -23,7 +23,7 @@ Project has in detailed focus on below ares
 - Interpreted, threaded, and dynamic.
 
 Main Pages for JDK specs and more 
-
+- [Sahet.Net](https://sahet.net/htm/java.html)
 - [Java Features at GitHub](https://github.com/azatsatklichov/Java-Features.git), 
 - [Open JDK](https://openjdk.java.net/), 
 - [Specs](https://docs.oracle.com/javase/specs/),  
@@ -158,6 +158,9 @@ The important features of JavaSE 7 are try with resource, catching multiple exce
 - The try-with-resources (Java 7)
 - Caching Multiple Exceptions by single catch (Java 7)
 - Underscores in Numeric Literals (Java 7)
+- Collections API:  `TransferQueue<E>`
+    extends `BlockingQueue<E>` interface
+    implementated by `LinkedTransferQueue<E>`
 
 
 # JavaSE 8 Features (GA initial release 18-Mar 2014)
