@@ -1,3 +1,10 @@
+# Java downloads
+[Oracle](https://www.oracle.com/java/technologies/downloads/), 
+[Java Archive](https://www.oracle.com/java/technologies/downloads/archive/), 
+[Open JDK](https://jdk.java.net/), 
+[Sahet.Net](https://sahet.net/htm/java.html)
+
+
 
 # Java-Features  
 Project has in detailed focus on below ares 
@@ -388,8 +395,7 @@ Oracle has released Java 9 with rich set of new features. It includes various up
 [API](https://docs.oracle.com/en/java/javase/17/docs/api/index.html), 
 [Open JDK](https://openjdk.java.net/projects/jdk/17/) 
 
-
-JEPs targeted to JDK 17, so far
+ 
 
 - 306: Restore Always-Strict Floating-Point Semantics
 - 356: Enhanced Pseudo-Random Number Generators
@@ -413,8 +419,7 @@ JEPs targeted to JDK 17, so far
 [API](https://docs.oracle.com/en/java/javase/18/docs/api/index.html), 
 [Open JDK](https://openjdk.java.net/projects/jdk/18/) 
 
-
-JEPs targeted to JDK 18, so far
+ 
 
 - 400:	UTF-8 by Default
 - 408:	Simple Web Server
@@ -431,8 +436,7 @@ JEPs targeted to JDK 18, so far
 [JDK 19 doc](https://docs.oracle.com/en/java/javase/19/index.html),
 [API](https://docs.oracle.com/en/java/javase/19/docs/api/index.html), 
 [Open JDK](https://openjdk.java.net/projects/jdk/19/) 
-
-JEPs targeted to JDK 19, so far
+ 
 
 - 405:	Record Patterns (Preview)
 - 422:	Linux/RISC-V Port
@@ -448,8 +452,7 @@ JEPs targeted to JDK 19, so far
 [API](https://docs.oracle.com/en/java/javase/20/docs/api/index.html), 
 [Open JDK](https://openjdk.java.net/projects/jdk/20/) 
 
-JEPs targeted to JDK 20, so far
-
+ 
 - 429:	Scoped Values (Incubator)
 - 432:	Record Patterns (Second Preview)
 - 433:	Pattern Matching for switch (Fourth Preview)
@@ -463,8 +466,7 @@ JEPs targeted to JDK 20, so far
 [API](https://docs.oracle.com/en/java/javase/21/docs/api/index.html), 
 [Open JDK](https://openjdk.java.net/projects/jdk/21/) 
 
-
-JEPs proposed to target JDK 21	review ends
+ 
 - 449:	Deprecate the Windows 32-bit x86 Port for Removal	
 - 404:	Generational Shenandoah (Experimental)
 - 430:	String Templates (Preview)
@@ -479,5 +481,152 @@ JEPs proposed to target JDK 21	review ends
 - 448:	Vector API (Sixth Incubator)
 
 
+# Java 22 Features  (GA 19/03/2024)
+[JDK 22 doc](https://docs.oracle.com/en/java/javase/22/index.html),
+[API](https://docs.oracle.com/en/java/javase/22/docs/api/index.html), 
+[Open JDK](https://openjdk.org/projects/jdk/22/) 
+ 
+- 423:	Region Pinning for G1
+- 447:	Statements before super(...) (Preview)
+- 454:	Foreign Function & Memory API
+- 456:	Unnamed Variables & Patterns
+- 457:	Class-File API (Preview)
+- 458:	Launch Multi-File Source-Code Programs
+- 459:	String Templates (Second Preview)
+- 460:	Vector API (Seventh Incubator)
+- 461:	Stream Gatherers (Preview)
+- 462:	Structured Concurrency (Second Preview)
+- 463:	Implicitly Declared Classes and Instance Main Methods (Second Preview)
+- 464:	Scoped Values (Second Preview)
+ 
+
+ # Java 23 Features  (GA 17/09/2024)
+[JDK 23 doc](https://docs.oracle.com/en/java/javase/23/index.html),
+[API](https://docs.oracle.com/en/java/javase/23/docs/api/index.html), 
+[Open JDK](https://openjdk.org/projects/jdk/23/) 
+ 
+- 455:	Primitive Types in Patterns, instanceof, and switch (Preview)
+- 466:	Class-File API (Second Preview)
+- 467:	Markdown Documentation Comments
+- 469:	Vector API (Eighth Incubator)
+- 473:	Stream Gatherers (Second Preview)
+- 471:	Deprecate the Memory-Access Methods in sun.misc.Unsafe for Removal
+- 474:	ZGC: Generational Mode by Default
+- 476:	Module Import Declarations (Preview)
+- 477:	Implicitly Declared Classes and Instance Main Methods (Third Preview)
+- 480:	Structured Concurrency (Third Preview)
+- 481:	Scoped Values (Third Preview)
+- 482:	Flexible Constructor Bodies (Second Preview)
+ 
+
+  # Java 24 Features  (GA 18/03/2025)
+ [JDK 24 doc](https://docs.oracle.com/en/java/javase/24/index.html),
+ [API](https://docs.oracle.com/en/java/javase/24/docs/api/index.html), 
+ [Open JDK](https://openjdk.org/projects/jdk/24/) 
+ 
+- 404:	Generational Shenandoah (Experimental)
+- 450:	Compact Object Headers (Experimental)
+- 472:	Prepare to Restrict the Use of JNI
+- 475:	Late Barrier Expansion for G1
+- 478:	Key Derivation Function API (Preview)
+- 479:	Remove the Windows 32-bit x86 Port
+- 483:	Ahead-of-Time Class Loading & Linking
+- 484:	Class-File API
+- 485:	Stream Gatherers
+- 486:	Permanently Disable the Security Manager
+- 487:	Scoped Values (Fourth Preview)
+- 488:	Primitive Types in Patterns, instanceof, and switch (Second Preview)
+- 489:	Vector API (Ninth Incubator)
+- 490:	ZGC: Remove the Non-Generational Mode
+- 491:	Synchronize Virtual Threads without Pinning
+- 492:	Flexible Constructor Bodies (Third Preview)
+- 493:	Linking Run-Time Images without JMODs
+- 494:	Module Import Declarations (Second Preview)
+- 495:	Simple Source Files and Instance Main Methods (Fourth Preview)
+- 496:	Quantum-Resistant Module-Lattice-Based Key Encapsulation Mechanism
+- 497:	Quantum-Resistant Module-Lattice-Based Digital Signature Algorithm
+- 498:	Warn upon Use of Memory-Access Methods in sun.misc.Unsafe
+- 499:	Structured Concurrency (Fourth Preview)
+- 501:	Deprecate the 32-bit x86 Port for Removal
 
 
+ # Java 25 Features  (GA 16/09/2025)
+[JDK 25 doc](https://docs.oracle.com/en/java/javase/25/index.html),
+[API](https://docs.oracle.com/en/java/javase/25/docs/api/index.html), 
+[Open JDK](https://openjdk.org/projects/jdk/25/) 
+ 
+- 470:	PEM Encodings of Cryptographic Objects (Preview)
+- 502:	Stable Values (Preview)
+- 503:	Remove the 32-bit x86 Port
+- 505:	Structured Concurrency (Fifth Preview)
+- 506:	Scoped Values
+- 507:	Primitive Types in Patterns, instanceof, and switch (Third Preview)
+- 508:	Vector API (Tenth Incubator)
+- 509:	JFR CPU-Time Profiling (Experimental)
+- 510:	Key Derivation Function API
+- 511:	Module Import Declarations
+- 512:	Compact Source Files and Instance Main Methods
+- 513:	Flexible Constructor Bodies
+- 514:	Ahead-of-Time Command-Line Ergonomics
+- 515:	Ahead-of-Time Method Profiling
+- 518:	JFR Cooperative Sampling
+- 519:	Compact Object Headers
+- 520:	JFR Method Timing & Tracing
+- 521:	Generational Shenandoah
+
+
+
+ # Java 26 Features  (GA 17/03/2026)
+[JDK 26 doc](https://docs.oracle.com/en/java/javase/26/index.html),
+[API](https://docs.oracle.com/en/java/javase/26/docs/api/index.html), 
+[Open JDK](https://openjdk.org/projects/jdk/26/) 
+ 
+- 500:	Prepare to Make Final Mean Final
+- 504:	Remove the Applet API
+- 516:	Ahead-of-Time Object Caching with Any GC
+- 517:	HTTP/3 for the HTTP Client API
+- 522:	G1 GC: Improve Throughput by Reducing Synchronization
+- 524:	PEM Encodings of Cryptographic Objects (Second Preview)
+- 525:	Structured Concurrency (Sixth Preview)
+- 526:	Lazy Constants (Second Preview)
+- 529:	Vector API (Eleventh Incubator)
+- 530:	Primitive Types in Patterns, instanceof, and switch (Fourth Preview)
+
+
+
+ # Java 27 Features  (GA 17/03/2026)
+[JDK 27 doc](https://docs.oracle.com/en/java/javase/27/index.html),
+[API](https://docs.oracle.com/en/java/javase/27/docs/api/index.html), 
+[Open JDK](https://openjdk.org/projects/jdk/27/) 
+ 
+- 523:	Make G1 the Default Garbage Collector in All Environments
+- 527:	Post-Quantum Hybrid Key Exchange for TLS 1.3
+- 531:	Lazy Constants (Third Preview)
+- 532:	Primitive Types in Patterns, instanceof, and switch (Fifth Preview)
+- 533:	Structured Concurrency (Seventh Preview)
+- 534:	Compact Object Headers by Default
+- 536:	JFR In-Process Data Redaction
+- 537:	Vector API (Twelfth Incubator)
+- 538:	PEM Encodings of Cryptographic Objects (Third Preview)
+
+
+
+ # Java 28 Features  (GA 23/03/2027)
+[JDK 28 doc](https://docs.oracle.com/en/java/javase/28/index.html),
+[API](https://docs.oracle.com/en/java/javase/28/docs/api/index.html), 
+[Open JDK](https://openjdk.org/projects/jdk/28/) 
+ 
+JEPs proposed to target JDK 28	review ends
+- 543:	Structured Concurrency	2026/10/13
+- 545:	Faster Startup and Warmup with ZGC	2026/10/14
+- 546:	Adaptive Heap Sizing for ZGC	2026/10/14
+
+JEPs targeted to JDK 28, so far
+- 401:	Value Objects (Preview)
+- 535:	Shenandoah GC: Generational Mode by Default
+- 539:	Strict Field Initialization in the JVM (Preview)
+- 540:	Simple JSON API (Incubator)
+- 541:	Deprecate the macOS/x64 Port for Removal
+- 542:	PEM Encodings of Cryptographic Objects
+- 544:	Ahead-of-Time Code Compilation
+ 
