@@ -1,5 +1,3 @@
-# See examples by Java version features in java-features project  
-
 # Java downloads
 [Oracle](https://www.oracle.com/java/technologies/downloads/), 
 [Java Archive](https://www.oracle.com/java/technologies/downloads/archive/), 
@@ -7,10 +5,9 @@
 [Sahet.Net](https://sahet.net/htm/java.html)
 
 
-
 # Java-Features  
 Project has in detailed focus on below ares 
-- Java Features, since Java JDK 1.0
+- Java Features, since Java JDK 1.0 - See examples splitted by Java versions 
 - Java Essentials 
 - JVM Architecture, ClassLoading and Reflection
 - JVM Memory Management-Garbage Collection, GC Tools, Java References
