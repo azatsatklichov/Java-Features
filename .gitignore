@@ -23,3 +23,7 @@ ModularJavaProjects/J8/.classpath
 ModularJavaProjects/J8/.settings
 /location.obj
 /java
+
+
+/java-features/bin/
+/java-essentials/bin/
