@@ -1,1 +1,0 @@
-java -XX:ArchiveClassesAtExit=HelloCDS.jsa -cp HelloCDS.jar JEP350DynamicCDSArchives

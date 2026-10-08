@@ -1,1 +1,0 @@
-java --list-modules

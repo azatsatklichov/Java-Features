@@ -1,1 +1,0 @@
-mvn archetype:generate -DinteractiveMode=false -DarchetypeGroupId=org.openjdk.jmh -DarchetypeArtifactId=jmh-java-benchmark-archetype -DgroupId=features.in.java12.jmh -DartifactId=java12-jmh -Dversion=1.0

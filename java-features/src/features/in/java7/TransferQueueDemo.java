@@ -7,6 +7,7 @@ import java.util.concurrent.TransferQueue;
 import java.util.concurrent.TimeUnit;
 
 public class TransferQueueDemo {
+	//from https://github.com/wesleyegberto/java-new-features/tree/master/java-7
 	public static void main(String[] args) throws Exception {
 		TransferQueue<String> queue = new LinkedTransferQueue<>();
 

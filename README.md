@@ -1,3 +1,5 @@
+# See examples by Java version features in java-features project  
+
 # Java downloads
 [Oracle](https://www.oracle.com/java/technologies/downloads/), 
 [Java Archive](https://www.oracle.com/java/technologies/downloads/archive/), 
@@ -8,12 +10,14 @@
 
 # Java-Features  
 Project has in detailed focus on below ares 
+- Java Features, since Java JDK 1.0
+- Java Essentials 
 - JVM Architecture, ClassLoading and Reflection
 - JVM Memory Management-Garbage Collection, GC Tools, Java References
 - Modular Java 
 - GraalVM (separate project graalvm-features)
 - Java Benchmarking Harness
-- Java Features, since Java JDK 1.0
+
 
 # Five main goals which Java language intended to bring  
 - Simple, object-oriented, and familiar.
